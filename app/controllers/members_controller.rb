@@ -13,11 +13,21 @@ class MembersController < ApplicationController
   # GET /members/1
   # GET /members/1.xml
   def show
-    @member = Member.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @member }
+    begin
+      if params["search_by_email"].nil?
+        @members = Member.find(:all)
+      else
+        @members = Member.find(:all, :conditions => ['email like ?', params["search_by_email"]])
+      end
+    rescue ActiveRecord::RecordNotFound
+      logger.error("Attempt to access invalid member")
+      flash[:notice] = "Member Not Found"
+      redirect_to :action => :index
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @member }
+      end
     end
   end
 

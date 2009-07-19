@@ -1,24 +1,43 @@
-<h1>Listing members</h1>
-
-<table>
+<h1>Members</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
   <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Create New Member', :action => "new" %></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td><b>Search By</b></td></tr>
+        <tr>
+          <td>
+            <% form_tag '/members/show' do -%>
+            <table border="0" cellspacing="0" cellpadding="0" width="50%">
+              <tr><td width="10">Email&nbsp;&nbsp;&nbsp;</td><td width="60"><%= text_field_tag  'search_by_email','', :size => 15 %>&nbsp;&nbsp;</td>
+              <tr><td><%= submit_tag 'Go' %></td></tr>
+            </table>
+            <% end -%>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
   </tr>
-
-<% @members.each do |member| %>
   <tr>
-    <td><%=h member.name %></td>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="60%">
+  <tr>
+    <td width="100"><b>Name</b></td>
+    <td width="200"><b>Email</b></td>
+    <td width="100"><b>Phone</b></td>
+  </tr>
+<% for member in @members -%>
+  <tr>
+    <td><%= member.name %></td>
     <td><%=h member.email %></td>
     <td><%=h member.phone %></td>
-    <td><%= link_to 'Show', member %></td>
-    <td><%= link_to 'Edit', edit_member_path(member) %></td>
-    <td><%= link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+      </table>
+</td>
+  </tr>
 </table>
-
-<br />
-
-<%= link_to 'New member', new_member_path %>

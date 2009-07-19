@@ -1,17 +1,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Members: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+<title>Center Management System</title>
+<%= stylesheet_link_tag "default", :media => "all" %>
+<%= javascript_include_tag :defaults %>
 </head>
-<body>
-
-<p style="color: green"><%= flash[:notice] %></p>
-
-<%= yield %>
-
+<body id="store">
+<div id="banner">
+<%= image_tag("AOL.png") %>
+<%= @page_title || "Center Management System" %>
+</div>
+<div id="columns">
+<div id="side">
+	<a href="/members">Manage Members</a><br /><br />
+	<a href="#">Manage Users</a><br /><br />
+	<a href="#">Manage Courses</a><br />
+</div>
+<div id="main">
+	<% if flash[:notice] -%>
+	<div id="notice"><%= flash[:notice] %></div>
+	<% end -%>
+	
+	<%= yield :layout %>
+</div>
+</div>
 </body>
 </html>
