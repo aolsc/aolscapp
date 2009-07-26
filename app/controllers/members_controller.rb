@@ -17,7 +17,7 @@ class MembersController < ApplicationController
       if params["search_by_email"].nil?
         @members = Member.find(:all)
       else
-        @members = Member.find(:all, :conditions => ['email like ?', params["search_by_email"]])
+        @members = Member.find(:all, :conditions => ['email like ?', "%"+params["search_by_email"]+"%"])
       end
     rescue ActiveRecord::RecordNotFound
       logger.error("Attempt to access invalid member")

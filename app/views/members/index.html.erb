@@ -12,8 +12,8 @@
           <td>
             <% form_tag '/members/show' do -%>
             <table border="0" cellspacing="0" cellpadding="0" width="50%">
-              <tr><td width="10">Email&nbsp;&nbsp;&nbsp;</td><td width="60"><%= text_field_tag  'search_by_email','', :size => 15 %>&nbsp;&nbsp;</td>
-              <tr><td><%= submit_tag 'Go' %></td></tr>
+              <tr><td width="10">Email contains&nbsp;&nbsp;&nbsp;</td><td width="60"><%= text_field_tag  'search_by_email','', :size => 15 %>&nbsp;&nbsp;</td>
+              <tr<tr><td><%= button_to 'Go', :action => "show" %></td></tr>
             </table>
             <% end -%>
           </td>
