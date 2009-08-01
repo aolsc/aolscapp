@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @course.name %>
+</p>
+
+<p>
+  <b>Displayname:</b>
+  <%=h @course.displayName %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%=h @course.deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

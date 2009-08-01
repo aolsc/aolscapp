@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  course_id: MyString
+  displayname: MyString
+  center_id: 1
+  start_date: 2009-08-01 15:59:03
+  end_date: 2009-08-01 15:59:03
+  location_name: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  teacher_name: MyString
+  deleted: MyString
+
+two:
+  course_id: MyString
+  displayname: MyString
+  center_id: 1
+  start_date: 2009-08-01 15:59:03
+  end_date: 2009-08-01 15:59:03
+  location_name: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  teacher_name: MyString
+  deleted: MyString

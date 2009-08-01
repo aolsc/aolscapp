@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  member_id: 1
+  course_schedule_id: 1
+  start_date: 2009-08-01
+  end_date: 2009-08-01
+  deleted: MyString
+
+two:
+  member_id: 1
+  course_schedule_id: 1
+  start_date: 2009-08-01
+  end_date: 2009-08-01
+  deleted: MyString
