@@ -2936,3 +2936,57 @@ ActionController::RoutingError (No route matches "/images/AOL.png" with {:method
   :1:in `start'
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMembers (20090613195127)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE `members` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `phone` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090613195127')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMembers (20090613195127)
+Migrating to CreateCourses (20090801201050)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE `courses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `displayName` varchar(255), `deleted` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090801201050')[0m
+Migrating to CreateCourseSchedules (20090801225903)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE `course_schedules` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `course_id` varchar(255), `displayname` varchar(255), `center_id` integer(10), `start_date` datetime, `end_date` datetime, `location_name` varchar(255), `address1` varchar(255), `address2` varchar(255), `city` varchar(255), `state` varchar(255), `country` varchar(255), `teacher_name` varchar(255), `deleted` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090801225903')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMembers (20090613195127)
+Migrating to CreateCourses (20090801201050)
+Migrating to CreateCourseSchedules (20090801225903)
+Migrating to CreateMemberCourses (20090801230228)
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCREATE TABLE `member_courses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `member_id` integer(10), `course_schedule_id` integer(10), `start_date` date, `end_date` date, `deleted` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090801230228')[0m
+Migrating to CreateMemberCourseInterests (20090801230410)
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCREATE TABLE `member_course_interests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `member_id` integer(10), `course_id` integer(10), `interest_date` date, `deleted` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090801230410')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMembers (20090613195127)
+Migrating to CreateCourses (20090801201050)
+Migrating to CreateCourseSchedules (20090801225903)
+Migrating to CreateMemberCourses (20090801230228)
+Migrating to CreateMemberCourseInterests (20090801230410)
+Migrating to CreateMemberGeneralFeedbacks (20090801230650)
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE `member_general_feedbacks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `member_id` integer(10), `feedback` varchar(255), `feedback_date` date, `deleted` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090801230650')[0m
+Migrating to CreateMemberPersonalInfos (20090801230938)
+  [4;36;1mSQL (11.0ms)[0m   [0;1mCREATE TABLE `member_personal_infos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `member_id` integer(10), `gender` varchar(255), `agetype` varchar(255), `address1` varchar(255), `address2` varchar(255), `city` varchar(255), `state` varchar(255), `zip` integer(10), `country` varchar(255), `homephone` varchar(255), `cellphone` varchar(255), `employer` varchar(255), `profession` varchar(255), `deleted` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090801230938')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMembers (20090613195127)
+Migrating to CreateCourses (20090801201050)
+Migrating to CreateCourseSchedules (20090801225903)
+Migrating to CreateMemberCourses (20090801230228)
+Migrating to CreateMemberCourseInterests (20090801230410)
+Migrating to CreateMemberGeneralFeedbacks (20090801230650)
+Migrating to CreateMemberPersonalInfos (20090801230938)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m

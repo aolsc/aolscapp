@@ -9,7 +9,80 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090613195127) do
+ActiveRecord::Schema.define(:version => 20090801230938) do
+
+  create_table "course_schedules", :force => true do |t|
+    t.string   "course_id"
+    t.string   "displayname"
+    t.integer  "center_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "location_name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "teacher_name"
+    t.string   "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses", :force => true do |t|
+    t.string   "name"
+    t.string   "displayName"
+    t.string   "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "member_course_interests", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "course_id"
+    t.date     "interest_date"
+    t.string   "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "member_courses", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "course_schedule_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "member_general_feedbacks", :force => true do |t|
+    t.integer  "member_id"
+    t.string   "feedback"
+    t.date     "feedback_date"
+    t.string   "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "member_personal_infos", :force => true do |t|
+    t.integer  "member_id"
+    t.string   "gender"
+    t.string   "agetype"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "country"
+    t.string   "homephone"
+    t.string   "cellphone"
+    t.string   "employer"
+    t.string   "profession"
+    t.string   "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "members", :force => true do |t|
     t.string   "name"
