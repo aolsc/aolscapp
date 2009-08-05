@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  memberid: 1
+  username: MyString
+  password: MyString
+  updateby: MyString
+
+two:
+  memberid: 1
+  username: MyString
+  password: MyString
+  updateby: MyString
