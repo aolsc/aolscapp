@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :course_schedules
+  
+  map.resources :users
 
   map.resources :courses
 
