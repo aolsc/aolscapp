@@ -1,0 +1,64 @@
+<h1>Editing course_schedule</h1>
+
+<% form_for(@course_schedule) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :course_id %><br />
+    <%= f.text_field :course_id %>
+  </p>
+  <p>
+    <%= f.label :displayname %><br />
+    <%= f.text_field :displayname %>
+  </p>
+  <p>
+    <%= f.label :center_id %><br />
+    <%= f.text_field :center_id %>
+  </p>
+  <p>
+    <%= f.label :start_date %><br />
+    <%= f.datetime_select :start_date %>
+  </p>
+  <p>
+    <%= f.label :end_date %><br />
+    <%= f.datetime_select :end_date %>
+  </p>
+  <p>
+    <%= f.label :location_name %><br />
+    <%= f.text_field :location_name %>
+  </p>
+  <p>
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= f.label :teacher_name %><br />
+    <%= f.text_field :teacher_name %>
+  </p>
+  <p>
+    <%= f.label :deleted %><br />
+    <%= f.text_field :deleted %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @course_schedule %> |
+<%= link_to 'Back', course_schedules_path %>
