@@ -1,0 +1,48 @@
+<h1>Course Schedules for Course '<%=  @course.displayName %>'</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Add Course Schedule', new_course_course_schedule_path(@course) %></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<table>
+  <tr>
+    <th>Displayname</th>
+    <th>Center</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Location name</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Teacher name</th>
+  </tr>
+
+  <% for course_schedule in @course_schedules -%>
+  <tr>
+    <td><%=h course_schedule.displayname %></td>
+    <td><%=h course_schedule.center_id %></td>
+    <td><%=h course_schedule.start_date %></td>
+    <td><%=h course_schedule.end_date %></td>
+    <td><%=h course_schedule.location_name %></td>
+    <td><%=h course_schedule.address1 %></td>
+    <td><%=h course_schedule.address2 %></td>
+    <td><%=h course_schedule.city %></td>
+    <td><%=h course_schedule.state %></td>
+    <td><%=h course_schedule.country %></td>
+    <td><%=h course_schedule.teacher_name %></td>
+  </tr>
+<% end %>
+</table>
+</td>
+  </tr>
+</table>
