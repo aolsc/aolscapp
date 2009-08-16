@@ -1,24 +1,29 @@
-<h1>Listing courses</h1>
-
-<table>
+<h1>Courses</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
   <tr>
-    <th>Name</th>
-    <th>Displayname</th>
-    <th>Deleted</th>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Add Course', :action => "new" %></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
   </tr>
-
-<% @courses.each do |course| %>
   <tr>
-    <td><%=h course.name %></td>
-    <td><%=h course.displayName %></td>
-    <td><%=h course.deleted %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="60%">
+  <tr>
+    <td width="200"><b>Name</b></td>
+    <td width="200"><b>Manage Schedules</b></td>
+  </tr>
+<% for course in @courses -%>
+  <tr>
+    <td><%= link_to course.displayName, edit_course_path(course) %></td>
+    <td><%= link_to 'Edit', course_course_schedules_path(course.id) %></td>
   </tr>
 <% end %>
+      </table>
+</td>
+  </tr>
 </table>
-
-<br />
-
-<%= link_to 'New course', new_course_path %>
