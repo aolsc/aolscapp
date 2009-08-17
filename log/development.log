@@ -1,41 +1,255 @@
-# Logfile created on Sun Aug 16 15:52:47 -0700 2009/!\ FAILSAFE /!\  Sun Aug 16 15:52:53 -0700 2009
-  Status: 500 Internal Server Error
-  The driver encountered an error: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-jdbc-adapter-0.9.1/lib/active_record/connection_adapters/jdbc_adapter.rb:330:in `initialize'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-jdbc-adapter-0.9.1/lib/active_record/connection_adapters/jdbc_adapter.rb:457:in `initialize'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-jdbc-adapter-0.9.1/lib/active_record/connection_adapters/jdbc_adapter.rb:53:in `jdbc_connection'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-jdbc-adapter-0.9.1/lib/jdbc_adapter/jdbc_mysql.rb:18:in `mysql_connection'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/monitor.rb:191:in `mon_synchronize'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:48:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:46:in `service'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    :1:in `start'
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-08-16 18:37:30) [GET]
+  [4;35;1mCourse Load (5.0ms)[0m   [0mSELECT * FROM `courses` [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 467ms (View: 248, DB: 6) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:37:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2009-08-16 18:37:34) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+Rendering template within layouts/course_schedules
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) [0m
+Completed in 89ms (View: 34, DB: 2) | 200 OK [http://localhost/courses/2/course_schedules]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:37:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:37:36) [POST]
+  Parameters: {"authenticity_token"=>"codmXs4ewNn8597EXn9RYWTeEkZwVv4KDOybATGneIQ="}
+
+ActionController::MethodNotAllowed (Only get, put, and delete requests are allowed.):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendered rescues/_trace (66.0ms)
+Rendered rescues/_request_and_response (14.0ms)
+Rendering rescues/layout (method_not_allowed)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-08-16 18:37:47) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mActiveRecord::ActiveRecordError: Table 'aolscapp_development.users' doesn't exist: SELECT * FROM `users` [0m
+
+ActiveRecord::StatementInvalid (ActiveRecord::ActiveRecordError: Table 'aolscapp_development.users' doesn't exist: SELECT * FROM `users` ):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-jdbc-adapter-0.9.1/lib/active_record/connection_adapters/jdbc_adapter.rb:563:in `execute'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-jdbc-adapter-0.9.1/lib/active_record/connection_adapters/jdbc_adapter.rb:623:in `select'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/gems/1.8/gems/activerecord-jdbc-adapter-0.9.1/lib/active_record/connection_adapters/jdbc_adapter.rb:548:in `jdbc_select_all'
+  app/controllers/users_controller.rb:5:in `index'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMembers (20090613195127)
+Migrating to CreateCourses (20090801201050)
+Migrating to CreateCourseSchedules (20090801225903)
+Migrating to CreateMemberCourses (20090801230228)
+Migrating to CreateMemberCourseInterests (20090801230410)
+Migrating to CreateMemberGeneralFeedbacks (20090801230650)
+Migrating to CreateMemberPersonalInfos (20090801230938)
+Migrating to CreateUsers (20090804035327)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `memberid` integer(10), `username` varchar(255), `password` varchar(255), `updateby` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090804035327')[0m
+Migrating to RemoveMemberidFromUser (20090812055409)
+  [4;36;1mSQL (9.0ms)[0m   [0;1mALTER TABLE `users` DROP `memberid`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090812055409')[0m
+Migrating to AddMemberIdToUser (20090812055803)
+  [4;36;1mSQL (11.0ms)[0m   [0;1mALTER TABLE `users` ADD `member_id` integer(10)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090812055803')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-08-16 18:38:22) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 55ms (View: 45, DB: 2) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:38:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-16 18:38:26) [POST]
+  Parameters: {"authenticity_token"=>"codmXs4ewNn8597EXn9RYWTeEkZwVv4KDOybATGneIQ="}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 58ms (View: 31, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:38:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-08-16 18:38:32) [GET]
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/members
+Rendering members/index
+Completed in 51ms (View: 43, DB: 1) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:38:32) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-08-16 18:38:38) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 43ms (View: 28, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:38:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-08-16 18:38:43) [GET]
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/members
+Rendering members/index
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:38:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-08-16 18:40:17) [GET]
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/members
+Rendering members/index
+Completed in 40ms (View: 26, DB: 1) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:40:17) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-08-16 18:40:19) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 52ms (View: 43, DB: 1) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:40:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-08-16 18:40:23) [GET]
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/members
+Rendering members/index
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-16 18:40:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/NetBeans 6.7.1/ruby2/jruby-1.2.0/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  :1:in `start'
+
+Rendering rescues/layout (not_found)

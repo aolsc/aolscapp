@@ -10,7 +10,7 @@ development:
   database: aolscapp_development
   pool: 5
   username: root
-  password: aoljgd
+  password: root
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -23,7 +23,7 @@ test:
   database: aolscapp_test
   pool: 5
   username: root
-  password: aoljgd
+  password: root
   host: localhost
 
 production:
@@ -33,6 +33,6 @@ production:
   database: aolscapp_production
   pool: 5
   username: root
-  password: aoljgd
+  password: root
   host: localhost
 
