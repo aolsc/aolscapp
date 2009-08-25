@@ -1,63 +1,65 @@
 <h1>New course_schedule</h1>
 
-<% form_for [@course_schedule, @course] do |f| %>
-  <%= f.error_messages %>
+<% form_tag :action => 'create', :course_id => params[:id] do %>
+<% params[:id] %>
+  <%#= f.error_messages %>
 
   <p>
-    <%= f.label :course_id %><br />
-    <%= f.text_field :course_id %>
+    <%#*<label for ="course_id">Course_Id </label><br />%>
+    <%= hidden_field 'course_schedule', 'course_id', :value => params[:id]%>
   </p>
   <p>
-    <%= f.label :displayname %><br />
-    <%= f.text_field :displayname %>
+    <label for ="displayname"> DisplayName </label><br />
+    <%= text_field 'course_schedule', 'displayname' %>
   </p>
   <p>
-    <%= f.label :center_id %><br />
-    <%= f.text_field :center_id %>
+    <label for ="center_id"> Center_Id </label><br />
+    <%= text_field 'course_schedule', 'center_id' %>
+  </p>
+ <p>
+    <label for ="start_date"> StartDate </label><br />
+    <%= text_field 'course_schedule', 'start_date' %>
   </p>
   <p>
-    <%= f.label :start_date %><br />
-    <%= f.datetime_select :start_date %>
+    <label for ="end_date"> Enddate </label><br />
+    <%= text_field 'course_schedule', 'end_date' %>
   </p>
   <p>
-    <%= f.label :end_date %><br />
-    <%= f.datetime_select :end_date %>
+    <label for ="location_name"> LocationName </label><br />
+    <%= text_field 'course_schedule', 'location_name' %>
+  </p>
+ <p>
+    <label for ="address1"> Address 1 </label><br />
+    <%= text_field 'course_schedule', 'address1' %>
   </p>
   <p>
-    <%= f.label :location_name %><br />
-    <%= f.text_field :location_name %>
+    <label for ="address2"> Address 2 </label><br />
+    <%= text_field 'course_schedule', 'address2' %>
   </p>
   <p>
-    <%= f.label :address1 %><br />
-    <%= f.text_field :address1 %>
+    <label for ="city"> City </label><br />
+    <%= text_field 'course_schedule', 'city' %>
+  </p>
+ <p>
+    <label for ="state"> State </label><br />
+    <%= text_field 'course_schedule', 'state' %>
+  </p>
+ <p>
+    <label for ="country"> Country </label><br />
+    <%= text_field 'course_schedule', 'country' %>
   </p>
   <p>
-    <%= f.label :address2 %><br />
-    <%= f.text_field :address2 %>
+    <label for ="teacher_name"> Teachername </label><br />
+    <%= text_field 'course_schedule', 'teacher_name' %>
   </p>
   <p>
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
+    <label for ="deleted"> Deleted </label><br />
+    <%= text_field 'course_schedule', 'deleted' %>
   </p>
+
   <p>
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <%= submit_tag "Submit", {:action => 'create', :course_id => params[:id]} %>
   </p>
-  <p>
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </p>
-  <p>
-    <%= f.label :teacher_name %><br />
-    <%= f.text_field :teacher_name %>
-  </p>
-  <p>
-    <%= f.label :deleted %><br />
-    <%= f.text_field :deleted %>
-  </p>
-  <p>
-    <%= f.submit "Submit" %>
-  </p>
+
 <% end %>
-
-<%= link_to 'Back', course_schedules_path %>
+<%#= link_to 'Back', course_schedules_path %>

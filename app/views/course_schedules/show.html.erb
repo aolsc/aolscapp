@@ -1,5 +1,5 @@
 <p>
-  <b>Course:</b>
+  <b>CourseId:</b>
   <%=h @course_schedule.course_id %>
 </p>
 
@@ -65,4 +65,4 @@
 
 
 <%= link_to 'Edit', edit_course_schedule_path(@course_schedule) %> |
-<%= link_to 'Back', course_schedules_path %>
+<%= link_to 'Back', { :action => 'index', :controller => 'course_schedules', :course_id => @course_schedule.course_id} %>
