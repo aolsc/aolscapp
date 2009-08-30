@@ -1,4 +1,4 @@
-<h1>New course_schedule</h1>
+<h1>Course Schedule for Course '<%=  @course.displayName %>'</h1>
 
 <% form_tag :action => 'create', :course_id => params[:id] do %>
 <% params[:id] %>
@@ -8,53 +8,17 @@
     <%#*<label for ="course_id">Course_Id </label><br />%>
     <%= hidden_field 'course_schedule', 'course_id', :value => params[:id]%>
   </p>
-  <p>
-    <label for ="displayname"> DisplayName </label><br />
-    <%= text_field 'course_schedule', 'displayname' %>
-  </p>
-  <p>
-    <label for ="center_id"> Center_Id </label><br />
-    <%= text_field 'course_schedule', 'center_id' %>
-  </p>
  <p>
-    <label for ="start_date"> StartDate </label><br />
+    <label for ="start_date"> Start Date (MM-DD-YYYY) </label><br />
     <%= text_field 'course_schedule', 'start_date' %>
   </p>
   <p>
-    <label for ="end_date"> Enddate </label><br />
+    <label for ="end_date"> End Date </label><br />
     <%= text_field 'course_schedule', 'end_date' %>
   </p>
   <p>
-    <label for ="location_name"> LocationName </label><br />
-    <%= text_field 'course_schedule', 'location_name' %>
-  </p>
- <p>
-    <label for ="address1"> Address 1 </label><br />
-    <%= text_field 'course_schedule', 'address1' %>
-  </p>
-  <p>
-    <label for ="address2"> Address 2 </label><br />
-    <%= text_field 'course_schedule', 'address2' %>
-  </p>
-  <p>
-    <label for ="city"> City </label><br />
-    <%= text_field 'course_schedule', 'city' %>
-  </p>
- <p>
-    <label for ="state"> State </label><br />
-    <%= text_field 'course_schedule', 'state' %>
-  </p>
- <p>
-    <label for ="country"> Country </label><br />
-    <%= text_field 'course_schedule', 'country' %>
-  </p>
-  <p>
-    <label for ="teacher_name"> Teachername </label><br />
+    <label for ="teacher_name"> Teacher Name </label><br />
     <%= text_field 'course_schedule', 'teacher_name' %>
-  </p>
-  <p>
-    <label for ="deleted"> Deleted </label><br />
-    <%= text_field 'course_schedule', 'deleted' %>
   </p>
 
   <p>

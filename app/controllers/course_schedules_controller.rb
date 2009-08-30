@@ -25,7 +25,9 @@ class CourseSchedulesController < ApplicationController
   # GET /course_schedules/new
   # GET /course_schedules/new.xml
   def new
+    @course = Course.find(params[:id])
     @course_schedule = CourseSchedule.new(params[:courseschedule])
+    
   end
 
   # GET /course_schedules/1/edit
@@ -42,8 +44,8 @@ class CourseSchedulesController < ApplicationController
     respond_to do |format|
       if @course_schedule.save
         flash[:notice] = 'CourseSchedule was successfully created.'
-        format.html { redirect_to(@course_schedule) }
-        format.xml  { render :xml => @course_schedule, :status => :created, :location => @course_schedule }
+        format.html { redirect_to(course_course_schedules_path(@course.id))}
+        format.xml  { head :ok }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @course_schedule.errors, :status => :unprocessable_entity }
