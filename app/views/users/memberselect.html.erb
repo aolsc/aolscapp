@@ -1,0 +1,49 @@
+
+<% form_tag '/users/new' do -%>
+<br>
+<br>
+<p> Please Select the required member </p>
+
+<br>
+
+
+ <table border="2" cellspacing="0" cellpadding="5" width="60%">
+  <tr>
+    
+    <td width="100"><b>Firstname</b></td>
+    <td width="200"><b>Lastname</b></td>
+    <td width="100"><b>EmailId By</b></td>
+    <td width="100"><b>Emailsubscribe</b></td>
+    <td width="400"><b>startDate</b></td>
+    <td width="400"><b>UpdateDate</b></td>
+    <td width="100"><b>Deleted</b></td>
+    <td width="100"><b>UpdatedBy</b></td>
+     <td width="100"><b>Select</b></td>
+
+  </tr>
+  <div id="radio_buttons">
+<% for member in @members %>
+  <tr>
+    <td><%= member.firstname %></td>
+    <td><%=h member.lastname %></td>
+    <td><%=h member.emailid %></td>
+     <td><%=h member.emailsubscribe %></td>
+    <td> <%=h member.startdate %></td>
+    <td><%=h member.updatedate %></td>
+    <td><%=h member.deleted %></td>
+    <td><%=h member.updateby %></td>
+    <td><%= radio_button_tag 'id',member.id%> </td>
+
+  </tr>
+
+<% end %>
+</div>
+  </table>
+  <br>
+
+
+
+
+ <%= submit_tag "Next" , :url => {:action => "new"}, :submit => 'radio_buttons'%>
+
+<%  end %>

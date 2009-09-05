@@ -1,0 +1,24 @@
+<% form_tag :action => "memberselect" do -%>
+<br>
+<br>
+<p> Please Enter Members details </p>
+<p>
+    <label for ="firstname"> FirstName </label><br />
+    <br>
+    <%= text_field 'member', 'firstname' %>
+  </p>
+  <p>
+    <label for ="lastname"> LastName </label><br />
+    <br>
+    <%= text_field 'member', 'lastname' %>
+  </p>
+  <p>
+    <label for ="emailid"> Email </label><br />
+    <br>
+    <%= text_field 'member', 'emailid' %>
+  </p>
+<br>
+  <%= submit_tag "Search", {:action => "memberselect", :controller => "users"} %>
+  <br>
+<br>
+<% end %>

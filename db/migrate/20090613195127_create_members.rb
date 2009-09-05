@@ -1,9 +1,16 @@
 class CreateMembers < ActiveRecord::Migration
   def self.up
     create_table :members do |t|
-      t.string :name
-      t.string :email
+      t.integer :centerid
+      t.string :firstname
+      t.string :lastname
+      t.string :emailid
+      t.string :emailsubscribe
       t.string :phone
+      t.datetime :startdate
+      t.datetime :updatedate
+      t.string :updateby
+      t.string :deleted
 
       t.timestamps
     end

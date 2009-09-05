@@ -92,4 +92,16 @@ class MembersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+   def memberselect
+    begin
+     @member = Member.new(params[:member])
+     @members = Member.find(:all, :conditions => ["firstname = ? OR lastname = ? OR emailid = ?" ,@member.firstname, @member.lastname, @member.emailid])
+     if @members.length == nil
+       redirect_to  :controller => "users", :action => "memberselect"
+     else
+     end
+   end
+  end
+  
 end

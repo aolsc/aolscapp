@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :members
 
+  map.resources :login
+
   map.resources :courses, :has_many => :course_schedules
 
   # The priority is based upon order of creation: first created -> highest priority.

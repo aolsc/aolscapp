@@ -2,22 +2,30 @@
 
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
-
+  <%=h params[:id]%>
   <p>
-    <%= f.label :member_id %><br />
-    <%= f.text_field :member_id %>
-  </p>
+    <% f.label :memberid %><br />
+    <%= hidden_field 'user', 'memberid', :value => params[:id]%>
+ </p>
   <p>
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </p>
   <p>
     <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </p>
   <p>
     <%= f.label :updateby %><br />
     <%= f.text_field :updateby %>
+  </p>
+  <p>
+    <%= f.label :UpdateDate %><br />
+    <%= f.text_field :updatedate %>
+  </p>
+  <p>
+    <%= f.label :Deleted %><br />
+    <%= f.text_field :deleted %>
   </p>
   <p>
     <%= f.submit 'Create' %>

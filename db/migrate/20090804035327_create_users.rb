@@ -5,7 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :username
       t.string :password
       t.string :updateby
-
+      t.datetime :updatedate
+      t.string :deleted
       t.timestamps
     end
   end

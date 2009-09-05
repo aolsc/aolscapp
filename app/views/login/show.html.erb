@@ -1,0 +1,12 @@
+<% form_tag :action => 'validate'  do %>
+<p>
+	<label for="username">UserName</label>
+    <%= text_field "user", "username" %>
+</p>
+<p>
+	<label for="password">Password</label>
+    <%= password_field 'user', 'password' %>
+</p>
+
+<%= submit_tag "Validate" %>
+<% end  %>

@@ -6,7 +6,7 @@
     <td>
       <table border="0" cellspacing="0" cellpadding="0" width="80%">
         <tr>
-          <td><%= button_to 'Create New user', :action => "new" %></td>
+          <td><%= button_to 'Create New user', :action => "membersearch" %></td>
         </tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td><b>Search By</b></td></tr>
@@ -35,7 +35,7 @@
 <% for user in @users -%>
   <tr>
     <td><%= user.username %></td>
-    <td><%=h user.member_id %></td>
+    <td><%=h user.memberid %></td>
     <td><%=h user.updateby %></td> 
   </tr>
 <% end %>
