@@ -25,18 +25,18 @@
   <tr>
     <td>
       <table border="0" cellspacing="0" cellpadding="0" width="60%">
-  <tr>
-    <td width="100"><b>Name</b></td>
-    <td width="200"><b>Email</b></td>
-    <td width="100"><b>Phone</b></td>
-  </tr>
-<% for member in @members -%>
-  <tr>
-    <td><%= member.name %></td>
-    <td><%=h member.email %></td>
-    <td><%=h member.phone %></td>
-  </tr>
-<% end %>
+      <tr>
+        <td width="100"><b>Name</b></td>
+        <td width="200"><b>Email</b></td>
+        <td width="100"><b>Phone</b></td>
+      </tr>
+    <% for member in @members -%>
+      <tr>
+        <td><%= member.firstname %>&nbsp;<%= member.lastname %></td>
+        <td><%=h member.emailid %></td>
+        <td></td>
+      </tr>
+    <% end %>
       </table>
 </td>
   </tr>

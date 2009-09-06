@@ -6,7 +6,6 @@ class CreateMembers < ActiveRecord::Migration
       t.string :lastname
       t.string :emailid
       t.string :emailsubscribe
-      t.string :phone
       t.datetime :startdate
       t.datetime :updatedate
       t.string :updateby

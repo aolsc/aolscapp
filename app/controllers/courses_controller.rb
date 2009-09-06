@@ -10,8 +10,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  
-
   # GET /courses/1
   # GET /courses/1.xml
   def show

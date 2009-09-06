@@ -13,7 +13,7 @@
             <% form_tag '/members/show' do -%>
             <table border="0" cellspacing="0" cellpadding="0" width="50%">
               <tr><td width="10">Email contains&nbsp;&nbsp;&nbsp;</td><td width="60"><%= text_field_tag  'search_by_email','', :size => 15 %>&nbsp;&nbsp;</td>
-              <tr<tr><td><%= button_to 'Search Again', :action => "show" %></td></tr>
+              <tr><td><%= button_to 'Search Again', :action => "show" %></td></tr>
             </table>
             <% end -%>
           </td>
@@ -32,9 +32,9 @@
   </tr>
 <% for member in @members -%>
   <tr>
-    <td><%= member.name %></td>
-    <td><%=h member.email %></td>
-    <td><%=h member.phone %></td>
+    <td><%= member.firstname %>&nbsp;<%= member.lastname %></td>
+    <td><%=h member.emailid %></td>
+    <td></td>
   </tr>
 <% end %>
       </table>
