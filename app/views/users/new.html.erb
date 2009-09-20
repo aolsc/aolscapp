@@ -2,18 +2,14 @@
 
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
-  <%=h params[:id]%>
-  <p>
-    <% f.label :memberid %><br />
-    <%= hidden_field 'user', 'member_id', :value => params[:id]%>
- </p>
+  <%= hidden_field 'user', 'member_id', :value => params[:id]%>
   <p>
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </p>
   <p>
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :value => @mem.emailid %>
   </p>
   <p>
     <%= f.label :password %><br />

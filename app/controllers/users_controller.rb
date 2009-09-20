@@ -46,11 +46,7 @@ end
   # GET /users/new
   # GET /users/new.xml
   def new
-
-    puts "in new "
-
-    @mem = Member.new(params[:members])
-   
+    @mem = Member.find(params[:id])
     @user = User.new
 
     respond_to do |format|
@@ -70,7 +66,7 @@ end
     @user = User.new(params[:user])
     if @user.save
        flash[:notice] = 'Registration successful.'
-       redirect_to root_url
+       redirect_to users_path
     else
       render :action => "new"
      end
