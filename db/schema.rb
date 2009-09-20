@@ -99,8 +99,12 @@ ActiveRecord::Schema.define(:version => 20090812055803) do
   end
 
   create_table "users", :force => true do |t|
+    t.integer  "memberid"
     t.string   "username"
-    t.string   "password"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
     t.string   "updateby"
     t.datetime "updatedate"
     t.string   "deleted"

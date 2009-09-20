@@ -1,5 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 <title>Center Management System</title>
@@ -11,19 +9,12 @@
 <%= image_tag("AOL.png") %>
 <%= @page_title || "Center Management System" %>
 </div>
-<div id="columns">
-<div id="side">
-	<a href="/members">Manage Members</a><br /><br />
-	<a href="#">Manage Users</a><br /><br />
-	<a href="/courses">Manage Courses</a><br />
-</div>
-<div id="main">
+<div id="login">
 	<% if flash[:notice] -%>
 	<div id="notice"><%= flash[:notice] %></div>
 	<% end -%>
 
 	<%= yield :layout %>
-</div>
 </div>
 </body>
 </html>

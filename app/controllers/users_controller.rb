@@ -61,25 +61,18 @@ end
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # POST /users
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-    @validateuser = User.find(:all, :conditions => ["username = ? ", @user.username])
-    puts @validateuser.length
-    if @validateuser.length == 0
-       @user.save
-       flash[:notice] = 'User was successfully created.'
-       redirect_to :action => "index"
- 
+    if @user.save
+       flash[:notice] = 'Registration successful.'
+       redirect_to root_url
     else
-     
-       flash[:notice] = 'User already Exists.'
       render :action => "new"
-      
      end
 #
 #    if @validateuser.length .nil?
@@ -109,7 +102,7 @@ end
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

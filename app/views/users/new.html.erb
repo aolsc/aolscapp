@@ -12,20 +12,16 @@
     <%= f.text_field :username %>
   </p>
   <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :updateby %><br />
-    <%= f.text_field :updateby %>
-  </p>
-  <p>
-    <%= f.label :UpdateDate %><br />
-    <%= f.text_field :updatedate %>
-  </p>
-  <p>
-    <%= f.label :Deleted %><br />
-    <%= f.text_field :deleted %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </p>
   <p>
     <%= f.submit 'Create' %>

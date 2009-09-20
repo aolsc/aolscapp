@@ -78,6 +78,11 @@ h1 {
   text-align: center;
 }
 
+#user-nav {
+    float: right;
+    font-size: 12px;
+}
+
 #banner img {
   float: left;
 }
@@ -88,6 +93,13 @@ h1 {
 
 #main {
   margin-left: 13em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#login {
+  margin-left: 27em;
   padding-top: 4ex;
   padding-left: 2em;
   background: white;

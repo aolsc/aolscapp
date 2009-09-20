@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+
+  
   # GET /members
   # GET /members.xml
   def index
