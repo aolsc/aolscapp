@@ -10,6 +10,15 @@
 <div id="banner">
 <%= image_tag("AOL.png") %>
 <%= @page_title || "Center Management System" %>
+  <div align="right" style="font-size:medium;">
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(:current) %> |
+      <%= link_to "Logout", logout_path  %>&nbsp;&nbsp;
+    <% else %>
+      <%= link_to "Register", new_user_path  %> |
+      <%= link_to "Login", login_path  %>
+    <% end %>
+  </div>
 </div>
 <div id="columns">
 <div id="side">
@@ -18,20 +27,10 @@
 	<a href="/users">Manage Users</a><br /><br />
 </div>
 <div id="main">
+  
 	<% if flash[:notice] -%>
 	<div id="notice"><%= flash[:notice] %></div>
 	<% end -%>
-
-  <div id="user_nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(:current) %> |
-      <%= link_to "Logout", logout_path  %>
-    <% else %>
-      <%= link_to "Register", new_user_path  %> |
-      <%= link_to "Login", login_path  %>
-    <% end %>
-  </div>
-
 	<%= yield :layout %>
 </div>
 </div>
