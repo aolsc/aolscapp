@@ -1,0 +1,29 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<% "insert_feedback.html" %>
+
+
+<br> <br> <br>
+  
+<table border="2" cellspacing="0" width="60%">
+
+   <% if @feedbacks.nil? %>
+
+    <% else %>
+     <tr>
+   <td> Feedback </td>
+     <td> Feedback Date </td>
+
+  <% for f in @feedbacks %>
+  <tr>
+    <td><%= f.feedback %></td>
+    <td><%= f.feedback_date %></td>
+  </tr>
+ <% end %>
+ <%  end %>
+</table>
+
+<%= link_to 'back' , :action => 'index' %>

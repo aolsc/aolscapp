@@ -1,0 +1,26 @@
+
+<% "member_feedback.html" %>
+
+ <% form_tag :action => 'insert_feedback'do %>
+
+<p>Please Enter The Feedback </p>
+ <p> 
+<%=  params[:member_id] %>  </p>
+
+<br> <br> <br>
+
+<label for ="feedback"> FeedBack  : </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= text_field 'feedback', 'feedback' %>
+<br> <br> <br>
+<label for ="feedback"> FeedBackDate  : </label>
+<%= text_field 'feedback', 'feedback_date' %>
+<br> <br><br>
+
+
+
+<%= hidden_field "feedback", 'member_id', :value => params[:member_id] %>
+<%= submit_tag  "Submit", {:action => 'insert_feedback'} %>
+
+
+
+ <% end %>

@@ -24,19 +24,26 @@
   </tr>
   <tr>
     <td>
-      <table border="0" cellspacing="0" cellpadding="0" width="60%">
-      <tr>
-        <td width="100"><b>Name</b></td>
-        <td width="200"><b>Email</b></td>
-        <td width="100"><b>Phone</b></td>
-      </tr>
-    <% for member in @members -%>
-      <tr>
-        <td><%= member.firstname %>&nbsp;<%= member.lastname %></td>
-        <td><%=h member.emailid %></td>
-        <td></td>
-      </tr>
-    <% end %>
+      <table border="1" cellspacing="0" cellpadding="5" width="100%">
+  <tr>
+    <td width="2000"><b>FirstName</b></td>
+    <td width="2000"><b>LastName</b></td>
+    <td width="5000"><b>Email</b></td>
+    <td width="8000"><b> Courses Attended </b></td>
+    <td width="3000"><b> Interests </b></td>
+      <td width="1000"><b> Feedback </b></td>
+  </tr>
+<% for member in @members -%>
+  <tr>
+    <td><%= member.firstname %></td>
+    <td><%= member.lastname %></td>
+    <td><%=h member.emailid %></td>
+   <td><%= button_to 'edit',{:action => "course_schedule_index", :member_id => member.id} %>   </td>
+   <td><%= button_to 'edit', {:action => "member_course_interest", :member_id => member.id} %>   </td>
+    <td><%= button_to 'edit', {:action => "member_feedback", :member_id => member.id} %>   </td>
+    
+  </tr>
+<% end %>
       </table>
 </td>
   </tr>

@@ -1,0 +1,27 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= "member_course_interest.html" %>
+
+<% form_tag :action => 'insert_course_interest' do %>
+
+
+<br> <br> <br>
+<p> Existing Courses : </p>
+<% for course in @courses %>
+
+    
+
+
+ &nbsp;&nbsp;&nbsp;&nbsp;  <%= course.name %> &nbsp; <%= check_box_tag  "name[]", course.id, checked = false  %>
+<% end %>
+<br><br><br> 
+<label for="interestdate"> Interest Date  : </label>
+<%= text_field 'membercourseinterest', 'interest_date' %>
+
+<%= hidden_field 'membercourseinterest', 'member_id', :value => params[:member_id] %>
+<br> <br> <br>
+  <%= submit_tag "Submit" , {:action => "insert_course_interest"} %>
+<% end %>

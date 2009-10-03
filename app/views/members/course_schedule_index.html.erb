@@ -1,0 +1,42 @@
+<h1>Course Schedules</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Assign Course Schedule', {:action => "course_schedule_search", :member_id => params[:member_id] } %> </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+       
+        <td> <table border="1" cellspacing="0" cellpadding="5" width="100%">
+           <br> <br> <br><br> <br>
+  <tr>
+    
+    <td width="2000"><b>Address1</b></td>
+    <td width="5000"><b>Address2</b></td>
+    <td width="8000"><b> State </b></td>
+    <td width="3000"><b> City </b></td>
+      <td width="1000"><b> Country </b></td>
+  </tr>
+  <% if @course_schedules.nil? %>
+    
+    <% else %>
+    <% for course_schedule in @course_schedules -%>
+  <tr>
+    <td><%= course_schedule.address1 %></td>
+    <td><%= course_schedule.address2 %></td>
+    <td><%= course_schedule.state %></td>
+    <td><%= course_schedule.city %></td>
+    <td><%= course_schedule.country %></td>
+    <td><%= course_schedule.id %></td>
+   
+  </tr>
+  <% end %>
+<% end %>
+      </table></td>
+         
+      </table>
+    </td>
+  </tr>
+ 
+</table>
