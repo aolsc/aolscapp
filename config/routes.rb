@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :member_general_feedbacks
+
   map.root :controller => "members"
   
   map.login "login", :controller => "user_sessions", :action => "new"
@@ -6,14 +8,15 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :user_sessions
 
-  map.resources :course_schedules
+  map.resources :course_schedules, :has_many => :member_courses
   
   map.resources :users
 
   map.resources :courses
 
-  map.resources :members
-
+  map.resources :members, :has_many => :member_general_feedbacks
+  map.resources :members, :has_many => :member_courses
+  
   map.resources :login
 
   map.resources :courses, :has_many => :course_schedules

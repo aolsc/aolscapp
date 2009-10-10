@@ -1,0 +1,19 @@
+<h1>Enter feedback for member '<%=  @member.lastname %>'</h1>
+
+<% form_for :member_general_feedback, @member_general_feedback, :url => {:action => 'create', :member_id => params[:id]} do |f| %>
+  <%#= f.error_messages %>
+ <p>
+    <label for ="feedback"> Feedback </label><br />
+    <%= f.text_field :feedback %>
+  </p>
+  <p>
+    <label for ="feedback_date"> Feedback provided on </label><br />
+    <%= f.date_select :feedback_date %>
+  </p>
+
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+
+<% end %>
+<%#= link_to 'Back', member_general_feedbacks_path %>

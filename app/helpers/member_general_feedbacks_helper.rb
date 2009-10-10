@@ -1,0 +1,2 @@
+module MemberGeneralFeedbacksHelper
+end

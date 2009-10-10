@@ -162,11 +162,6 @@ class MembersController < ApplicationController
   end
 
   def course_schedule_insert
-
-    puts "memerdfdfsd"
-    puts params[:member_id]
-    puts params[:id]
-
     @member_course = MemberCourse.new()
     @member_course.course_schedule_id = params[:id]
     @member_course.member_id = params[:member_id]

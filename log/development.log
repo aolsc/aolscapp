@@ -7296,3 +7296,2890 @@ ActionController::RoutingError (No route matches "/images/AOL.png" with {:method
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-07 23:44:22) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 2347ms (DB: 4) | 302 Found [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-10-07 23:44:25) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 54ms (View: 21, DB: 6) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:44:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-10-07 23:44:31) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"admin", "password"=>"admin"}, "authenticity_token"=>"OEQgoHf3ZbvVwcPwdYkVPDyehG54R82WVfF9TaB+g1o="}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 309ms (DB: 5) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-07 23:44:33) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 87ms (View: 34, DB: 12) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:44:36) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-07 23:44:47) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 66ms (View: 11, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:44:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-10-07 23:45:24) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` LIMIT 0, 5[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `courses` [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 121ms (View: 79, DB: 13) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:45:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2009-10-07 23:45:27) [GET]
+  Parameters: {"course_id"=>"4"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 4) [0m
+  [4;36;1mCourseSchedule Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+Completed in 379ms (View: 295, DB: 20) | 200 OK [http://localhost/courses/4/course_schedules]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:45:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#new (for 127.0.0.1 at 2009-10-07 23:45:34) [POST]
+  Parameters: {"authenticity_token"=>"OEQgoHf3ZbvVwcPwdYkVPDyehG54R82WVfF9TaB+g1o=", "id"=>"4"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;35;1mCourseSchedule Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+Rendering template within layouts/application
+Rendering course_schedules/new
+Completed in 83ms (View: 14, DB: 17) | 200 OK [http://localhost/course_schedules/new/4]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:45:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:48:28) [GET]
+
+ActionController::RoutingError (No route matches "/member_general_feedback/new/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:49:58) [GET]
+
+ActionController::RoutingError (No route matches "/member_general_feedback/new/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-07 23:50:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (3.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/member_general_feedbacks
+Rendering member_general_feedbacks/new
+Completed in 112ms (View: 19, DB: 26) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-07 23:50:18) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"OEQgoHf3ZbvVwcPwdYkVPDyehG54R82WVfF9TaB+g1o="}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  app/controllers/member_general_feedbacks_controller.rb:44:in `create'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-07 23:50:38) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 59ms (View: 11, DB: 10) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:50:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-07 23:54:16) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 145ms (View: 15, DB: 13) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:54:19) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-07 23:54:21) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` [0m
+Rendering template within layouts/member_general_feedbacks
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 73ms (View: 15, DB: 11) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-07 23:57:08) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/member_general_feedbacks
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 58ms (View: 8, DB: 13) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-07 23:59:11) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/member_general_feedbacks
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 70ms (View: 12, DB: 17) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-07 23:59:42) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (3.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 153ms (View: 81, DB: 17) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-07 23:59:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-07 23:59:53) [GET]
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  app/controllers/member_general_feedbacks_controller.rb:28:in `new'
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-07 23:59:59) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  app/controllers/member_general_feedbacks_controller.rb:28:in `new'
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-08 00:06:04) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+
+ActionView::TemplateError (undefined method `fistname' for #<Member:0x5710cf0>) on line #1 of app/views/member_general_feedbacks/index.html.erb:
+1: <h1>Feedbacks provided by Member '<%=  @member.fistname %>'</h1>
+2: <table border="0" cellspacing="0" cellpadding="0" width="80%">
+3:   <tr>
+4:     <td>
+
+    app/views/member_general_feedbacks/index.html.erb:1
+    app/controllers/member_general_feedbacks_controller.rb:8:in `index'
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-08 00:07:15) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (1.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 109ms (View: 20, DB: 21) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-08 00:07:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-08 00:07:35) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+
+ActionView::TemplateError (undefined method `first_name' for #<Member:0x57344e8>) on line #1 of app/views/member_general_feedbacks/index.html.erb:
+1: <h1>Feedbacks provided by Member '<%=  @member.first_name %>'</h1>
+2: <table border="0" cellspacing="0" cellpadding="0" width="80%">
+3:   <tr>
+4:     <td>
+
+    app/views/member_general_feedbacks/index.html.erb:1
+    app/controllers/member_general_feedbacks_controller.rb:8:in `index'
+
+Rendered rescues/_trace (66.0ms)
+Rendered rescues/_request_and_response (4.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-08 00:07:57) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (1.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 80ms (View: 14, DB: 17) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-08 00:08:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-08 00:08:09) [POST]
+  Parameters: {"authenticity_token"=>"OEQgoHf3ZbvVwcPwdYkVPDyehG54R82WVfF9TaB+g1o=", "id"=>"1"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 142ms (View: 6, DB: 16) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-08 00:08:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-08 00:14:08) [POST]
+  Parameters: {"authenticity_token"=>"OEQgoHf3ZbvVwcPwdYkVPDyehG54R82WVfF9TaB+g1o=", "id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 91ms (View: 17, DB: 18) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-08 00:14:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-08 00:14:20) [POST]
+  Parameters: {"member_general_feedback"=>{"member_id"=>"1"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"OEQgoHf3ZbvVwcPwdYkVPDyehG54R82WVfF9TaB+g1o=", "course_schedule"=>{"feedback_date"=>"1/12/2009", "feedback"=>"newfeed"}}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberGeneralFeedback Create (1.0ms)[0m   [0mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES(NULL, '2009-10-08 07:14:20', 1, NULL, NULL, '2009-10-08 07:14:20')[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member_general_feedbacks/4
+Completed in 85ms (DB: 23) | 302 Found [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#show (for 127.0.0.1 at 2009-10-08 00:14:21) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMemberGeneralFeedback Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mMemberGeneralFeedback Load (2.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.`id` = 4) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/show
+Completed in 70ms (View: 11, DB: 13) | 200 OK [http://localhost/member_general_feedbacks/4]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-08 00:14:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-08 00:14:27) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  app/controllers/member_general_feedbacks_controller.rb:5:in `index'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-08 00:14:36) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (3.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 98ms (View: 16, DB: 25) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-08 00:14:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-08 00:15:01) [GET]
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 69ms (View: 12, DB: 13) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-08 00:15:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+/!\ FAILSAFE /!\  Fri Oct 09 22:55:20 -0700 2009
+  Status: 500 Internal Server Error
+  127: The specified procedure could not be found.   - C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/mysql_adapter.rb:65:in `mysql_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    C:/tools/ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 22:55:40 -0700 2009
+  Status: 500 Internal Server Error
+  127: The specified procedure could not be found.   - C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/mysql_adapter.rb:65:in `mysql_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    C:/tools/ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 22:55:44 -0700 2009
+  Status: 500 Internal Server Error
+  127: The specified procedure could not be found.   - C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/mysql_adapter.rb:65:in `mysql_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    C:/tools/ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 22:55:58 -0700 2009
+  Status: 500 Internal Server Error
+  127: The specified procedure could not be found.   - C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/mysql_adapter.rb:65:in `mysql_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    C:/tools/ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 22:56:46 -0700 2009
+  Status: 500 Internal Server Error
+  127: The specified procedure could not be found.   - C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/mysql_adapter.rb:65:in `mysql_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    C:/tools/ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 23:00:10 -0700 2009
+  Status: 500 Internal Server Error
+  127: The specified procedure could not be found.   - C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/mysql_adapter.rb:65:in `mysql_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    C:/tools/ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 23:01:10 -0700 2009
+  Status: 500 Internal Server Error
+  127: The specified procedure could not be found.   - C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mysql-2.7.3-x86-mswin32/ext/mysql.so
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:156:in `require'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/mysql_adapter.rb:65:in `mysql_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    C:/tools/ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:02:48) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 2442ms (DB: 7) | 302 Found [http://localhost/]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:02:50) [GET]
+
+ArgumentError (A copy of ApplicationController has been removed from the module tree but is still active!):
+  app/controllers/application_controller.rb:26:in `current_user_session'
+  app/controllers/application_controller.rb:31:in `current_user'
+  app/controllers/application_controller.rb:17:in `ensure_login'
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:02:51) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 24ms (DB: 3) | 302 Found [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-10-09 23:02:52) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 39ms (View: 17, DB: 5) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:02:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-10-09 23:03:00) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"admin", "password"=>"admin"}, "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 288ms (DB: 6) | 302 Found [http://localhost/user_sessions]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:03:01) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (3.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 69ms (View: 28, DB: 13) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:03:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-09 23:05:04) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (3.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 82ms (View: 18, DB: 16) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:05:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-09 23:05:07) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 129ms (View: 12, DB: 13) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:05:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-10-09 23:06:11) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM `courses` LIMIT 0, 5[0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `courses` [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 60ms (View: 15, DB: 12) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:06:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-10-09 23:06:13) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+Rendering template within layouts/application
+Rendering courses/new
+Completed in 50ms (View: 12, DB: 10) | 200 OK [http://localhost/courses/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:06:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:07:22) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 47ms (View: 9, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:07:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-09 23:07:25) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (1.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 60ms (View: 9, DB: 15) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:07:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-09 23:07:30) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 59ms (View: 7, DB: 16) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:07:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-09 23:07:36) [POST]
+  Parameters: {"member_general_feedback"=>{"member_id"=>"1"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "course_schedule"=>{"feedback_date"=>"12-12-2000", "feedback"=>"ff"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberGeneralFeedback Create (1.0ms)[0m   [0mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES(NULL, '2009-10-10 06:07:36', 1, NULL, NULL, '2009-10-10 06:07:36')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member_general_feedbacks/5
+Completed in 59ms (DB: 16) | 302 Found [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#show (for 127.0.0.1 at 2009-10-09 23:07:37) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mMemberGeneralFeedback Load (2.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.`id` = 5) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/show
+Completed in 52ms (View: 9, DB: 10) | 200 OK [http://localhost/member_general_feedbacks/5]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:07:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-09 23:07:42) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  app/controllers/member_general_feedbacks_controller.rb:5:in `index'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:07:46) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 46ms (View: 8, DB: 8) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:07:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-09 23:07:48) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 61ms (View: 10, DB: 15) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:07:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-09 23:07:54) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 57ms (View: 7, DB: 14) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:07:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:12:07) [GET]
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 46ms (View: 9, DB: 7) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:12:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-09 23:12:09) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (0.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 62ms (View: 10, DB: 15) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-09 23:12:11) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 57ms (View: 7, DB: 14) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:12:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-09 23:12:22) [POST]
+  Parameters: {"member_general_feedback"=>{"member_id"=>"1"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "course_schedule"=>{"feedback_date"=>"12-12-2000", "feedback"=>"new"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberGeneralFeedback Create (0.0ms)[0m   [0mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES(NULL, '2009-10-10 06:12:22', 1, NULL, NULL, '2009-10-10 06:12:22')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+
+ActionController::RoutingError (member_member_general_feedback_url failed to generate from {:action=>"show", :member_id=>1, :controller=>"member_general_feedbacks"}, expected: {:action=>"show", :controller=>"member_general_feedbacks"}, diff: {:member_id=>1}):
+  (eval):16:in `member_member_general_feedback_path'
+  app/controllers/member_general_feedbacks_controller.rb:51:in `create'
+  app/controllers/member_general_feedbacks_controller.rb:48:in `create'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-09 23:12:53) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 62ms (View: 10, DB: 14) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:12:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:13:02) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 47ms (View: 9, DB: 7) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:13:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-09 23:13:05) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 58ms (View: 11, DB: 13) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:13:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-09 23:13:09) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 59ms (View: 7, DB: 11) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:13:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-09 23:13:16) [POST]
+  Parameters: {"member_general_feedback"=>{"member_id"=>"1"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "course_schedule"=>{"feedback_date"=>"", "feedback"=>"test"}}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberGeneralFeedback Create (0.0ms)[0m   [0;1mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES(NULL, '2009-10-10 06:13:16', 1, NULL, NULL, '2009-10-10 06:13:16')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+
+ActionController::RoutingError (member_member_general_feedback_url failed to generate from {:action=>"show", :member_id=>1, :controller=>"member_general_feedbacks"}, expected: {:action=>"show", :controller=>"member_general_feedbacks"}, diff: {:member_id=>1}):
+  (eval):16:in `member_member_general_feedback_path'
+  app/controllers/member_general_feedbacks_controller.rb:51:in `create'
+  app/controllers/member_general_feedbacks_controller.rb:48:in `create'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-09 23:13:20) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (0.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 59ms (View: 11, DB: 14) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:13:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-09 23:13:28) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 46ms (View: 8, DB: 11) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 23:13:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-10 11:20:55) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 48ms (View: 10, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:20:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-10 11:21:33) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (1.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 61ms (View: 9, DB: 13) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:21:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-10-10 11:21:40) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` LIMIT 0, 5[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `courses` [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 49ms (View: 7, DB: 9) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:21:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2009-10-10 11:21:44) [GET]
+  Parameters: {"course_id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Load (4.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 1) [0m
+  [4;36;1mCourseSchedule Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+Completed in 142ms (View: 89, DB: 17) | 200 OK [http://localhost/courses/1/course_schedules]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:21:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#new (for 127.0.0.1 at 2009-10-10 11:21:50) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourseSchedule Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+Rendering template within layouts/application
+Rendering course_schedules/new
+Completed in 65ms (View: 14, DB: 12) | 200 OK [http://localhost/course_schedules/new/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:21:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#new (for 127.0.0.1 at 2009-10-10 11:44:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+Rendering template within layouts/application
+Rendering course_schedules/new
+Completed in 358ms (View: 302, DB: 16) | 200 OK [http://localhost/course_schedules/new/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:44:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#new (for 127.0.0.1 at 2009-10-10 11:44:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourseSchedule Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+Rendering template within layouts/application
+Rendering course_schedules/new
+
+ActionView::TemplateError (undefined method `textfield' for #<ActionView::Helpers::FormBuilder:0x555cb70>) on line #14 of app/views/course_schedules/new.html.erb:
+11:   </p>
+12:   <p>
+13:     <label for ="teacher_name"> Teacher Name </label><br />
+14:     <%= f.textfield :teacher_name %>
+15:   </p>
+16: 
+17:   <p>
+
+    app/views/course_schedules/new.html.erb:14
+    app/views/course_schedules/new.html.erb:3
+
+Rendered rescues/_trace (58.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#new (for 127.0.0.1 at 2009-10-10 11:44:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+Rendering template within layouts/application
+Rendering course_schedules/new
+Completed in 72ms (View: 21, DB: 13) | 200 OK [http://localhost/course_schedules/new/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:44:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#create (for 127.0.0.1 at 2009-10-10 11:45:01) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "course_id"=>"1", "course_schedule"=>{"end_date(3i)"=>"14", "end_date(4i)"=>"18", "end_date(5i)"=>"44", "start_date(1i)"=>"2009", "start_date(2i)"=>"10", "start_date(3i)"=>"10", "start_date(4i)"=>"18", "start_date(5i)"=>"44", "teacher_name"=>"sridhar", "end_date(1i)"=>"2009", "end_date(2i)"=>"10"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCourseSchedule Create (0.0ms)[0m   [0mINSERT INTO `course_schedules` (`start_date`, `end_date`, `address1`, `city`, `address2`, `updated_at`, `displayname`, `country`, `deleted`, `teacher_name`, `course_id`, `center_id`, `location_name`, `state`, `created_at`) VALUES('2009-10-10 18:44:00', '2009-10-14 18:44:00', NULL, NULL, NULL, '2009-10-10 18:45:01', NULL, NULL, NULL, 'sridhar', 1, NULL, NULL, NULL, '2009-10-10 18:45:01')[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1/course_schedules
+Completed in 62ms (DB: 18) | 302 Found [http://localhost/courses/1/course_schedules]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2009-10-10 11:45:02) [GET]
+  Parameters: {"course_id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 1) [0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+Completed in 62ms (View: 9, DB: 14) | 200 OK [http://localhost/courses/1/course_schedules]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:45:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-10 11:45:22) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 47ms (View: 9, DB: 8) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:45:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-10 11:45:25) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (1.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 62ms (View: 10, DB: 13) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:45:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 11:45:54) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 59ms (View: 7, DB: 13) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 11:45:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:16:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 71ms (View: 16, DB: 15) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:16:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-10 12:16:37) [POST]
+  Parameters: {"member_general_feedback"=>{"feedback_date(2i)"=>"10", "feedback_date(3i)"=>"10", "feedback_date(4i)"=>"19", "feedback_date(5i)"=>"16", "feedback"=>"new feeds", "feedback_date(1i)"=>"2009"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberGeneralFeedback Create (1.0ms)[0m   [0mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES('2009-10-10', '2009-10-10 19:16:37', 1, NULL, 'new feeds', '2009-10-10 19:16:37')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+
+ActionController::RoutingError (member_member_general_feedback_url failed to generate from {:action=>"show", :member_id=>1, :controller=>"member_general_feedbacks"}, expected: {:action=>"show", :controller=>"member_general_feedbacks"}, diff: {:member_id=>1}):
+  (eval):16:in `member_member_general_feedback_path'
+  app/controllers/member_general_feedbacks_controller.rb:51:in `create'
+  app/controllers/member_general_feedbacks_controller.rb:48:in `create'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:17:43) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 142ms (View: 90, DB: 12) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:17:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-10 12:17:48) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 50ms (View: 9, DB: 10) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:17:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-10 12:17:50) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (0.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 61ms (View: 12, DB: 12) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:17:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:17:53) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 61ms (View: 11, DB: 13) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:17:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-10 12:18:01) [POST]
+  Parameters: {"member_general_feedback"=>{"feedback_date(2i)"=>"11", "feedback_date(3i)"=>"10", "feedback"=>"newmyfeeds", "feedback_date(1i)"=>"2009"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberGeneralFeedback Create (1.0ms)[0m   [0mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES('2009-11-10', '2009-10-10 19:18:02', 1, NULL, 'newmyfeeds', '2009-10-10 19:18:02')[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+
+ActionController::RoutingError (member_member_general_feedback_url failed to generate from {:action=>"show", :member_id=>1, :controller=>"member_general_feedbacks"}, expected: {:action=>"show", :controller=>"member_general_feedbacks"}, diff: {:member_id=>1}):
+  (eval):16:in `member_member_general_feedback_path'
+  app/controllers/member_general_feedbacks_controller.rb:51:in `create'
+  app/controllers/member_general_feedbacks_controller.rb:48:in `create'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-10 12:18:13) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (1.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 62ms (View: 10, DB: 13) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:18:17) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:18:51) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 61ms (View: 10, DB: 14) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:18:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-10 12:19:27) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 48ms (View: 9, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:19:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-10 12:19:29) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (39.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (1.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 97ms (View: 9, DB: 49) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:19:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:19:32) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 66ms (View: 13, DB: 13) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:19:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-10 12:19:42) [POST]
+  Parameters: {"member_general_feedback"=>{"feedback_date(2i)"=>"12", "feedback_date(3i)"=>"14", "feedback"=>"mymy", "feedback_date(1i)"=>"2009"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberGeneralFeedback Create (0.0ms)[0m   [0mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES('2009-12-14', '2009-10-10 19:19:42', 1, NULL, 'mymy', '2009-10-10 19:19:42')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+
+ActionController::RoutingError (member_member_general_feedback_url failed to generate from {:action=>"show", :member_id=>1, :controller=>"member_general_feedbacks"}, expected: {:action=>"show", :controller=>"member_general_feedbacks"}, diff: {:member_id=>1}):
+  (eval):16:in `member_member_general_feedback_path'
+  app/controllers/member_general_feedbacks_controller.rb:51:in `create'
+  app/controllers/member_general_feedbacks_controller.rb:48:in `create'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-10 12:20:23) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 62ms (View: 11, DB: 13) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:20:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:20:27) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+ERROR: compiling _run_erb_app47views47member_general_feedbacks47new46html46erb RAISED compile error
+C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15: unterminated string meets end of file
+C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15: syntax error, unexpected $end, expecting ')'
+Function body:           def _run_erb_app47views47member_general_feedbacks47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Enter feedback for member '"; @output_buffer.concat((  @member.lastname ).to_s); @output_buffer.concat "'</h1>\n"
+@output_buffer.concat "\n"
+ form_for :member_general_feedback, @member_general_feedback, :url => {:action => 'create', :member_id => params[:id]} do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat "\n"
+@output_buffer.concat " <p>\n"
+@output_buffer.concat "    <label for =\"feedback\"> Feedback </label><br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_field :feedback ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    <label for =\"feedback_date\"> Feedback provided on </label><br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.date_select :feedback_date ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( submit_tag 'Submit'' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15:in `compile!'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+C:/other/ror/aolscapp/app/controllers/member_general_feedbacks_controller.rb:31:in `new'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15: unterminated string meets end of file
+C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15: syntax error, unexpected $end, expecting ')') on line #15 of app/views/member_general_feedbacks/new.html.erb:
+12:   </p>
+13: 
+14:   <p>
+15:     <%= submit_tag 'Submit'' %>
+16:   </p>
+17: 
+18: <% end %>
+
+    app/views/member_general_feedbacks/new.html.erb:15:in `compile!'
+    app/controllers/member_general_feedbacks_controller.rb:31:in `new'
+
+Rendered rescues/_trace (61.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:20:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+ERROR: compiling _run_erb_app47views47member_general_feedbacks47new46html46erb RAISED compile error
+C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15: unterminated string meets end of file
+C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15: syntax error, unexpected $end, expecting ')'
+Function body:           def _run_erb_app47views47member_general_feedbacks47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Enter feedback for member '"; @output_buffer.concat((  @member.lastname ).to_s); @output_buffer.concat "'</h1>\n"
+@output_buffer.concat "\n"
+ form_for :member_general_feedback, @member_general_feedback, :url => {:action => 'create', :member_id => params[:id]} do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat "\n"
+@output_buffer.concat " <p>\n"
+@output_buffer.concat "    <label for =\"feedback\"> Feedback </label><br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_field :feedback ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    <label for =\"feedback_date\"> Feedback provided on </label><br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.date_select :feedback_date ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( submit_tag 'Submit ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15:in `compile!'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+C:/other/ror/aolscapp/app/controllers/member_general_feedbacks_controller.rb:31:in `new'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+C:/tools/ruby/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+C:/tools/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15: unterminated string meets end of file
+C:/other/ror/aolscapp/app/views/member_general_feedbacks/new.html.erb:15: syntax error, unexpected $end, expecting ')') on line #15 of app/views/member_general_feedbacks/new.html.erb:
+12:   </p>
+13: 
+14:   <p>
+15:     <%= submit_tag 'Submit %>
+16:   </p>
+17: 
+18: <% end %>
+
+    app/views/member_general_feedbacks/new.html.erb:15:in `compile!'
+    app/controllers/member_general_feedbacks_controller.rb:31:in `new'
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:20:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (3.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 68ms (View: 15, DB: 16) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:20:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-10 12:20:57) [POST]
+  Parameters: {"member_general_feedback"=>{"feedback_date(2i)"=>"10", "feedback_date(3i)"=>"10", "feedback"=>"onemore", "feedback_date(1i)"=>"2009"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberGeneralFeedback Create (0.0ms)[0m   [0;1mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES('2009-10-10', '2009-10-10 19:20:57', 1, NULL, 'onemore', '2009-10-10 19:20:57')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+
+ActionController::RoutingError (member_member_general_feedback_url failed to generate from {:action=>"show", :member_id=>1, :controller=>"member_general_feedbacks"}, expected: {:action=>"show", :controller=>"member_general_feedbacks"}, diff: {:member_id=>1}):
+  (eval):16:in `member_member_general_feedback_path'
+  app/controllers/member_general_feedbacks_controller.rb:51:in `create'
+  app/controllers/member_general_feedbacks_controller.rb:48:in `create'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-10 12:22:42) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (1.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 66ms (View: 10, DB: 15) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:22:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#new (for 127.0.0.1 at 2009-10-10 12:22:46) [POST]
+  Parameters: {"authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "id"=>"1"}
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/new
+Completed in 61ms (View: 10, DB: 11) | 200 OK [http://localhost/member_general_feedbacks/new/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:22:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#create (for 127.0.0.1 at 2009-10-10 12:22:50) [POST]
+  Parameters: {"member_general_feedback"=>{"feedback_date(2i)"=>"10", "feedback_date(3i)"=>"10", "feedback"=>"oklast", "feedback_date(1i)"=>"2009"}, "commit"=>"Submit", "member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberGeneralFeedback Create (0.0ms)[0m   [0mINSERT INTO `member_general_feedbacks` (`feedback_date`, `updated_at`, `member_id`, `deleted`, `feedback`, `created_at`) VALUES('2009-10-10', '2009-10-10 19:22:50', 1, NULL, 'oklast', '2009-10-10 19:22:50')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members/1/member_general_feedbacks
+Completed in 58ms (DB: 16) | 302 Found [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-10 12:22:52) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (0.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 62ms (View: 13, DB: 14) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 12:22:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-10 14:16:32) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 49ms (View: 9, DB: 9) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 14:16:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#member_course_interest (for 127.0.0.1 at 2009-10-10 14:16:37) [POST]
+  Parameters: {"member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` [0m
+Rendering template within layouts/application
+Rendering members/member_course_interest
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+Completed in 52ms (View: 13, DB: 9) | 200 OK [http://localhost/members/member_course_interest?member_id=1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 14:16:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#insert_course_interest (for 127.0.0.1 at 2009-10-10 14:20:03) [POST]
+  Parameters: {"name"=>["2"], "commit"=>"Submit", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk=", "membercourseinterest"=>{"interest_date"=>"", "member_id"=>"1"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMemberCourseInterest Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (course_id = 2) [0m
+
+ActionView::MissingTemplate (Missing template members/insert_course_interest.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-10 14:20:11) [GET]
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 48ms (View: 9, DB: 7) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 14:20:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#course_schedule_index (for 127.0.0.1 at 2009-10-10 14:20:19) [POST]
+  Parameters: {"member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMemberCourse Load (4.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '1') [0m
+Rendering template within layouts/application
+Rendering members/course_schedule_index
+Completed in 122ms (View: 12, DB: 9) | 200 OK [http://localhost/members/course_schedule_index?member_id=1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 14:20:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#course_schedule_index (for 127.0.0.1 at 2009-10-10 14:21:51) [POST]
+  Parameters: {"member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '1') [0m
+Rendering template within layouts/application
+Rendering members/course_schedule_index
+Completed in 53ms (View: 7, DB: 4) | 200 OK [http://localhost/members/course_schedule_index?member_id=1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 14:21:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#course_schedule_search (for 127.0.0.1 at 2009-10-10 14:21:57) [POST]
+  Parameters: {"member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/course_schedule_search
+Completed in 41ms (View: 11, DB: 8) | 200 OK [http://localhost/members/course_schedule_search?member_id=1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 14:21:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#course_schedule_search (for 127.0.0.1 at 2009-10-10 14:23:40) [POST]
+  Parameters: {"member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/course_schedule_search
+Completed in 33ms (View: 5, DB: 5) | 200 OK [http://localhost/members/course_schedule_search?member_id=1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 14:23:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-10 15:01:43) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 50ms (View: 10, DB: 11) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 15:01:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#course_schedule_index (for 127.0.0.1 at 2009-10-10 15:02:59) [POST]
+  Parameters: {"member_id"=>"1", "authenticity_token"=>"U/1l08DnlNsGM/5LbpPowINY+x0OOu5GIJOb5DwwOGk="}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '1') [0m
+Rendering template within layouts/application
+Rendering members/course_schedule_index
+Completed in 51ms (View: 10, DB: 6) | 200 OK [http://localhost/members/course_schedule_index?member_id=1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 15:03:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

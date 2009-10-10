@@ -1,28 +1,21 @@
 <h1>Course Schedule for Course '<%=  @course.displayName %>'</h1>
 
-<% form_tag :action => 'create', :course_id => params[:id] do %>
-<% params[:id] %>
-  <%#= f.error_messages %>
-
-  <p>
-    <%#*<label for ="course_id">Course_Id </label><br />%>
-    <%= hidden_field 'course_schedule', 'course_id', :value => params[:id]%>
-  </p>
+<% form_for :course_schedule, @course_schedule, :url => {:action => 'create', :course_id => params[:id]} do |f| %>
  <p>
-    <label for ="start_date"> Start Date (MM-DD-YYYY) </label><br />
-    <%= text_field 'course_schedule', 'start_date' %>
+    <label for ="start_date"> Start Date </label><br />
+    <%= f.datetime_select :start_date %>
   </p>
   <p>
     <label for ="end_date"> End Date </label><br />
-    <%= text_field 'course_schedule', 'end_date' %>
+    <%= f.datetime_select :end_date %>
   </p>
   <p>
     <label for ="teacher_name"> Teacher Name </label><br />
-    <%= text_field 'course_schedule', 'teacher_name' %>
+    <%= f.text_field :teacher_name %>
   </p>
 
   <p>
-    <%= submit_tag "Submit", {:action => 'create', :course_id => params[:id]} %>
+    <%= submit_tag 'Submit' %>
   </p>
 
 <% end %>

@@ -1,0 +1,34 @@
+<h1>Feedbacks provided by Member '<%=  @member.lastname %>'</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Add New Feedback',{:action => 'new', :controller => 'member_general_feedbacks', :id => @member.id}  %></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<table>
+  <tr>
+    <th width="200">Feedback</th>
+    <th width="200">Date</th>
+  </tr>
+
+  <% for feedback in @member_general_feedbacks -%>
+  <tr>
+    <td><%=h feedback.feedback %></td>
+    <td><%=h feedback.feedback_date %></td>
+  </tr>
+<% end %>
+</table>
+</td>
+  </tr>
+</table>
+<br>
+<br>
+
+<%= link_to 'Back', member_general_feedbacks_path %>

@@ -38,9 +38,9 @@
     <td><%= member.firstname %></td>
     <td><%= member.lastname %></td>
     <td><%=h member.emailid %></td>
-   <td><%= button_to 'edit',{:action => "course_schedule_index", :member_id => member.id} %>   </td>
+   <td><%= link_to 'edit', member_member_courses_path(member.id) %>   </td>
    <td><%= button_to 'edit', {:action => "member_course_interest", :member_id => member.id} %>   </td>
-    <td><%= button_to 'edit', {:action => "member_feedback", :member_id => member.id} %>   </td>
+   <td><%= link_to 'Edit', member_member_general_feedbacks_path(member.id) %></td>
     
   </tr>
 <% end %>
