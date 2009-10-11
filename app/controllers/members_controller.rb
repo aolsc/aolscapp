@@ -1,5 +1,7 @@
 class MembersController < ApplicationController
-      
+  add_crumb("Members") { |instance| instance.send :members_path }
+
+  
   # GET /members
   # GET /members.xml
   def index

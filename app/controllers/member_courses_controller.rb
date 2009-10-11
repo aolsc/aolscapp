@@ -1,7 +1,11 @@
 class MemberCoursesController < ApplicationController
+  add_crumb("Members") { |instance| instance.send :members_path }
+  
+  
   # GET /member_courses
   # GET /member_courses.xml
   def index
+    add_crumb("Member Courses") { |instance| instance.send :member_member_courses_path }
     @course_schedules = []
     @member = Member.find(params[:member_id])
     @member_courses = MemberCourse.find(:all, :conditions => ["member_id = ?", params[:member_id]])
@@ -19,6 +23,7 @@ class MemberCoursesController < ApplicationController
   # GET /member_courses/1
   # GET /member_courses/1.xml
   def show
+    add_crumb("Member Courses") { |instance| instance.send :member_member_courses_path }
     @course_schedules = []
     @member = Member.find(params[:member_id])
     @member_courses = MemberCourse.find(:all, :conditions => ["member_id = ?", params[:member_id]])
@@ -36,6 +41,7 @@ class MemberCoursesController < ApplicationController
   # GET /member_courses/new
   # GET /member_courses/new.xml
   def new
+    add_crumb("Member Courses") { |instance| instance.send :member_member_courses_path }
     @member = Member.find(params[:id])
     @member_general_feedback = MemberCourse.new(params[:membercourse])
 
@@ -47,12 +53,14 @@ class MemberCoursesController < ApplicationController
 
   # GET /member_courses/1/edit
   def edit
+    add_crumb("Member Courses") { |instance| instance.send :member_member_courses_path }
     @member_course = MemberCourse.find(params[:id])
   end
 
   # POST /member_courses
   # POST /member_courses.xml
   def create
+    add_crumb("Member Courses") { |instance| instance.send :member_member_courses_path }
     @member = Member.find(params[:member_id])
     @member_course = @member.member_courses.build(params[:member_course])
 
@@ -71,6 +79,7 @@ class MemberCoursesController < ApplicationController
   # PUT /member_courses/1
   # PUT /member_courses/1.xml
   def update
+    add_crumb("Member Courses") { |instance| instance.send :member_member_courses_path }
     @member_course = MemberCourse.find(params[:id])
 
     respond_to do |format|
@@ -88,6 +97,7 @@ class MemberCoursesController < ApplicationController
   # DELETE /member_courses/1
   # DELETE /member_courses/1.xml
   def destroy
+    add_crumb("Member Courses") { |instance| instance.send :member_member_courses_path }
     @member_course = MemberCourse.find(params[:id])
     @member_course.destroy
 
@@ -129,10 +139,11 @@ class MemberCoursesController < ApplicationController
   end
 
  def course_schedule_search
+   add_crumb("Attended course search")
     @courses = Course.find(:all)
 
     for course in @courses
-      @course_schedules = CourseSchedule.find(:all, :conditions => ["course_id = ? AND start_date = ? AND end_date = ? ", course.id, params[:startdate], params[:enddate]])
+      @course_schedules = CourseSchedule.find(:all, :conditions => ["course_id = ?", course.id])
     end
   end
 

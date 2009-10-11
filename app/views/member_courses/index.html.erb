@@ -4,7 +4,7 @@
     <td>
       <table border="0" cellspacing="0" cellpadding="0" width="80%">
         <tr>
-          <td><%= button_to 'Assign Attended Course', {:action => "course_schedule_search", :member_id => params[:member_id] } %> </td>
+          <td><%= button_to 'Add an attended Course', {:controller => "member_courses", :action => "course_schedule_search", :member_id => params[:member_id] } %> </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
 

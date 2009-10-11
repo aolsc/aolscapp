@@ -4,6 +4,8 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
+  add_crumb "Home", '/'
+
   before_filter :ensure_login
 
   protect_from_forgery # See ActionController::RequestForgeryProtection for details

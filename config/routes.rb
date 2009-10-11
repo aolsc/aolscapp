@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :member_courses
 
   map.resources :member_general_feedbacks
 
@@ -16,6 +15,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :members, :has_many => :member_general_feedbacks
   map.resources :members, :has_many => :member_courses
+
+  map.resources :member_courses
   
   map.resources :login
 

@@ -1,8 +1,7 @@
 <% form_for :course_schedule, @course_schedule, :url => {:action => 'course_schedule_select'} do |f| %>
-<p><b> Select course schedule</b> </p>
+<p><b> Search for past courses</b> </p>
 <p>
     <label for ="coursename">Course Name</label><br />
-   <br>
    <%= collection_select(:course, :id, @courses, :id, :displayName, options ={:prompt => "Select a course"}) %>
   </p>
   <p>

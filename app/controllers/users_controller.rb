@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  add_crumb("Users") { |instance| instance.send :users_path }
+
   # GET /users
   # GET /users.xml
   def index

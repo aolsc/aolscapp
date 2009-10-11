@@ -31,8 +31,11 @@
 	<% if flash[:notice] -%>
 	<div id="notice"><%= flash[:notice] %></div>
 	<% end -%>
+        <%= render_crumbs %>
 	<%= yield :layout %>
+        
 </div>
 </div>
+ 
 </body>
 </html>
