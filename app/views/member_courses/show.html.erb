@@ -1,0 +1,34 @@
+<h1>Courses attended by Member '<%=  @member.lastname %>'</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Add New Course Attended',{:action => "course_schedule_index", :member_id => member.id}  %></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<table>
+  <tr>
+    <th width="200">Course</th>
+    <th width="200">Date attended</th>
+  </tr>
+
+  <% for feedback in @member_course -%>
+  <tr>
+    <td><%=h feedback.feedback %></td>
+    <td><%=h feedback.feedback_date %></td>
+  </tr>
+<% end %>
+</table>
+</td>
+  </tr>
+</table>
+<br>
+<br>
+
+<%= link_to 'Back', member_courses_path %>

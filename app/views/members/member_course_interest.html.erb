@@ -12,9 +12,6 @@
 <p> Existing Courses : </p>
 <% for course in @courses %>
 
-    
-
-
  &nbsp;&nbsp;&nbsp;&nbsp;  <%= course.name %> &nbsp; <%= check_box_tag  "name[]", course.id, checked = false  %>
 <% end %>
 <br><br><br> 

@@ -1,0 +1,28 @@
+<% form_tag '/member_courses/course_schedule_insert' do -%>
+  <% if @course_schedules.nil? %>
+    <p><b> No Course Schedules were found for the given input </b></p>
+  <% else %>
+    <h1>List of past '<%= @course.name %>' courses</h1>
+    <p><b>Please select the specific one from the below list</b> </p>
+    <table border="2" cellspacing="0" cellpadding="5" width="60%">
+      <tr>
+        <td width="100"><b>Course Date</b></td>
+        <td width="100"><b> Teacher Name</b></td>
+        <td width="100"><b> Select </b></td>
+      </tr>
+
+      <% for course_schedule in @course_schedules %>
+        <tr>
+          <td><%=h course_schedule.start_date %></td>
+          <td><%=h course_schedule.teacher_name %></td>
+          <td><%= radio_button_tag  'id',course_schedule.id %> </td>
+          <%= hidden_field_tag   'member_id',   params[:member_id] %>
+        </tr>
+
+      <% end %>
+  </table>
+    <br>
+          <%= submit_tag "Add" , {:action => "course_schedule_insert"} %>
+
+<% end %>
+<%  end %>

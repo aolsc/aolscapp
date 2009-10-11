@@ -1,0 +1,32 @@
+<h1>Attended Courses by Member '<%= @member.lastname %>'</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Assign Attended Course', {:action => "course_schedule_search", :member_id => params[:member_id] } %> </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+
+        <tr><td> <table border="1" cellspacing="0" cellpadding="5" width="100%">
+              <tr>
+                <td width="2000"><b>Name</b></td>
+                <td width="5000"><b>Date Attended</b></td>
+                <td width="8000"><b>Teacher</b></td>
+              </tr>
+              <% if @course_schedules.nil? %>
+              <% else %>
+                <% for course_schedule in @course_schedules -%>
+                  <tr>
+                    <td><%= course_schedule.course.name %></td>
+                    <td><%= course_schedule.start_date %></td>
+                    <td><%= course_schedule.teacher_name %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </table>
+          </td></tr>
+      </table>
+    </td>
+  </tr>
+</table>

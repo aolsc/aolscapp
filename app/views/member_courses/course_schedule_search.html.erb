@@ -1,0 +1,23 @@
+<% form_for :course_schedule, @course_schedule, :url => {:action => 'course_schedule_select'} do |f| %>
+<p><b> Select course schedule</b> </p>
+<p>
+    <label for ="coursename">Course Name</label><br />
+   <br>
+   <%= collection_select(:course, :id, @courses, :id, :displayName, options ={:prompt => "Select a course"}) %>
+  </p>
+  <p>
+    <label for ="startdate">From Date</label><br />
+    <%= date_select('range', 'from_date', :order => [:month, :day, :year])%>
+  </p>
+  <p>
+    <label for ="enddate"> To Date </label><br />
+   <%= date_select('range', 'to_date', :order => [:month, :day, :year])%>
+  </p>
+  <p>
+  <%= hidden_field_tag 'member_id', 'memberid',  :value => params[:member_id] %>
+  </p>
+<br>
+  <%= submit_tag "Search", {:action => "course_schedule_select"} %> &nbsp;&nbsp;&nbsp;
+  <br>
+<br>
+<% end %>

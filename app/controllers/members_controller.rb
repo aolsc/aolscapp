@@ -124,61 +124,6 @@ class MembersController < ApplicationController
 #   end
 #  end
 
-  def course_schedule_index
-     @course_schedules = []  
-    @member_courses = MemberCourse.find(:all, :conditions => ["member_id = ?", params[:member_id]])
-    if @member_courses.length == 0
-    else
-      for member_course in @member_courses
-        puts member_course.course_schedule_id
-        @c_s = CourseSchedule.find(:all, :conditions => ["id = ? ", member_course.course_schedule_id])
-        for cs in @c_s
-      puts cs.displayname
-      @course_schedules.push(cs)
-    end
-        
-      end
-    end
-#    for d in @course_schedules
-#      puts "sdifsdkfklsdfklsdfnkdsnflksdnfksdfklsdfl"
-#      puts d.displayname
-#    end
-#    
-  end
-  
-
-  def course_schedule_select
-      puts "member id"
-      puts params[:member_id]
-      puts "in course select"
-      puts "dsfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
-      @courses = Course.find(:all, :conditions => ["name = ?" , params[:coursename]])
-
-    for course in @courses
-      puts course.displayName
-      puts course.id
-      @course_schedules = CourseSchedule.find(:all, :conditions => ["course_id = ? AND start_date = ? AND end_date = ? ", course.id, params[:startdate], params[:enddate]])
-    end
-  end
-
-  def course_schedule_insert
-    @member_course = MemberCourse.new()
-    @member_course.course_schedule_id = params[:id]
-    @member_course.member_id = params[:member_id]
-    @validatecoursescheduleid = MemberCourse.find(:all, :conditions => ["course_schedule_id = ?", @member_course.course_schedule_id] )
-
-    puts @validatecoursescheduleid.length
-    if @validatecoursescheduleid.length == 0
-      puts "in if loop"
-    @member_course.save
-     flash[:notice] = "The selected Schedule was successfully assigned to this member... Search Again If you want to assign more"
-     render :action => "course_schedule_index", :member_id => params[:member_id]
-    else
-     puts "in else loop"
-     flash[:notice] = "The selected Schedule was already assigned to this member....Search again If you still want to assign more"
-     render :action => "course_schedule_search", :member_id => params[:member_id]
-    end
-  end
 
   def insert_feedback
      @feedback = MemberGeneralFeedback.new(params[:feedback])
