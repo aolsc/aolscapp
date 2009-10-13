@@ -2,18 +2,61 @@
 
 <% form_for(@member) do |f| %>
   <%= f.error_messages %>
-
   <p>
-    <%= f.label :firstname %><br />
+    Email Id<br />
+    <%= f.text_field :emailid %>
+  </p>
+  <p>
+    First Name<br />
     <%= f.text_field :firstname %>
   </p>
   <p>
-    <%= f.label :lastname %><br />
+    Last Name<br />
     <%= f.text_field :lastname %>
   </p>
   <p>
-    <%= f.label :emailid %><br />
-    <%= f.text_field :emailid %>
+    Home Phone&nbsp;(Format: xxx-xxx-xxxx)<br />
+    <%= f.text_field :homephone %>
+  </p>
+  <p>
+    Cell Phone&nbsp;(Format: xxx-xxx-xxxx)<br />
+    <%= f.text_field :cellphone %>
+  </p>
+  <p>
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </p>
+  <p>
+    <%= f.label :agetype %><br />
+    <%= f.text_field :agetype %>
+  </p>
+  <p>
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.label :employer %><br />
+    <%= f.text_field :employer %>
+  </p>
+  <p>
+    <%= f.label :profession %><br />
+    <%= f.text_field :profession %>
   </p>
   <p>
     <%= f.submit 'Create' %>

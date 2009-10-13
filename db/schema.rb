@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091010072500) do
+ActiveRecord::Schema.define(:version => 20091012082033) do
 
   create_table "course_schedules", :force => true do |t|
     t.integer  "course_id"
@@ -65,8 +65,16 @@ ActiveRecord::Schema.define(:version => 20091010072500) do
     t.datetime "updated_at"
   end
 
-  create_table "member_personal_infos", :force => true do |t|
-    t.integer  "member_id"
+  create_table "members", :force => true do |t|
+    t.integer  "centerid"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "emailid"
+    t.string   "emailsubscribe"
+    t.string   "updateby"
+    t.string   "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "gender"
     t.string   "agetype"
     t.string   "address1"
@@ -79,23 +87,6 @@ ActiveRecord::Schema.define(:version => 20091010072500) do
     t.string   "cellphone"
     t.string   "employer"
     t.string   "profession"
-    t.string   "deleted"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "members", :force => true do |t|
-    t.integer  "centerid"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "emailid"
-    t.string   "emailsubscribe"
-    t.datetime "startdate"
-    t.datetime "updatedate"
-    t.string   "updateby"
-    t.string   "deleted"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
