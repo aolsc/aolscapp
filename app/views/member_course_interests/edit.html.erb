@@ -1,0 +1,12 @@
+<h1>Editing member_general_feedback</h1>
+
+<% form_for(@member_general_feedback) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @member_general_feedback %> |
+<%= link_to 'Back', member_general_feedbacks_path %>

@@ -39,7 +39,7 @@
     <td><%= member.lastname %></td>
     <td><%=h member.emailid %></td>
    <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>
-   <td><%= link_to 'Edit', {:action => "member_course_interest", :member_id => member.id} %>   </td>
+   <td><%= link_to 'Edit', member_member_course_interests_path(member.id) %>   </td>
    <td><%= link_to 'Edit', member_member_general_feedbacks_path(member.id) %></td>
     
   </tr>

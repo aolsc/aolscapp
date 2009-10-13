@@ -19142,3 +19142,1364 @@ ActionController::RoutingError (No route matches "/images/AOL.png" with {:method
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-11 22:44:52) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 122ms (View: 24, DB: 10) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 22:44:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-11 22:45:01) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (0.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 146ms (View: 19, DB: 18) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 22:45:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 22:45:09) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/member_course_interests
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (1.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+Completed in 97ms (View: 21, DB: 16) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 22:56:39) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (1.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+
+ActionView::TemplateError (undefined method `course' for #<MemberCourseInterest:0x55b20c0>) on line #23 of app/views/member_course_interests/index.html.erb:
+20: 
+21:   <% for interest in @member_course_interests -%>
+22:   <tr>
+23:     <td><%=h interest.course.name %></td>
+24:     <td><%=h interest.interest_date %></td>
+25:   </tr>
+26: <% end %>
+
+    app/views/member_course_interests/index.html.erb:23
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/member_course_interests/index.html.erb:21
+    app/controllers/member_course_interests_controller.rb:8:in `index'
+
+Rendered rescues/_trace (72.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 22:57:15) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+Completed in 100ms (View: 20, DB: 24) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 22:57:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-11 22:59:17) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 50ms (View: 9, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 22:59:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2009-10-11 22:59:19) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '1') [0m
+  [4;35;1mMemberCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 9 ) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 8 ) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 10 ) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 11 ) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 12 ) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 14 ) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 15 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 6) [0m
+Completed in 374ms (View: 267, DB: 29) | 200 OK [http://localhost/members/1/member_courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 22:59:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#course_schedule_search (for 127.0.0.1 at 2009-10-11 23:01:58) [POST]
+  Parameters: {"member_id"=>"1", "authenticity_token"=>"k5pSrQC6IwpAa0I5Xy+PFQcCfhcBZdhmQKWS4p3gMyc="}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (course_id = 1) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (course_id = 2) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (course_id = 3) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (course_id = 4) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (course_id = 5) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (course_id = 6) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (course_id = 7) [0m
+Rendering template within layouts/application
+Rendering member_courses/course_schedule_search
+Completed in 141ms (View: 15, DB: 11) | 200 OK [http://localhost/member_courses/course_schedule_search?member_id=1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:01:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-11 23:02:11) [GET]
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 71ms (View: 12, DB: 11) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:02:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2009-10-11 23:02:27) [GET]
+  Parameters: {"member_id"=>"1", "id"=>"member_course_interest"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 76ms (View: 18, DB: 10) | 200 OK [http://localhost/members/member_course_interest?member_id=1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:02:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-11 23:03:42) [GET]
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+
+ActionView::TemplateError (undefined method `member_member_interests_path' for #<ActionView::Base:0x5234c04>) on line #42 of app/views/members/index.html.erb:
+39:     <td><%= member.lastname %></td>
+40:     <td><%=h member.emailid %></td>
+41:    <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>
+42:    <td><%= link_to 'Edit', member_member_interests_path(member.id) %>   </td>
+43:    <td><%= link_to 'Edit', member_member_general_feedbacks_path(member.id) %></td>
+44:     
+45:   </tr>
+
+    app/views/members/index.html.erb:42
+    app/views/members/index.html.erb:36:in `each'
+    app/views/members/index.html.erb:36
+    app/controllers/members_controller.rb:10:in `index'
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-11 23:03:55) [GET]
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 64ms (View: 16, DB: 15) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:03:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:05:50) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;35;1mMemberCourseInterest Load (1.0ms)[0m   [0mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;36;1mMemberCourseInterest Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+Completed in 83ms (View: 22, DB: 22) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:05:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#new (for 127.0.0.1 at 2009-10-11 23:14:58) [POST]
+  Parameters: {"authenticity_token"=>"k5pSrQC6IwpAa0I5Xy+PFQcCfhcBZdhmQKWS4p3gMyc=", "id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+Rendering template within layouts/application
+Rendering member_course_interests/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map) on line #7 of app/views/member_course_interests/new.html.erb:
+4:   <%#= f.error_messages %>
+5:  <p>
+6:     <label> Course </label><br />
+7:     <%= collection_select(:course, :id, @courses, :id, :displayName, options ={:prompt => "Select a course"}) %>
+8:   </p>
+9:   <p>
+10:     <label for ="interest_date"> Date member was interested on </label><br />
+
+    app/views/member_course_interests/new.html.erb:7
+    app/views/member_course_interests/new.html.erb:3
+    app/controllers/member_course_interests_controller.rb:31:in `new'
+
+Rendered rescues/_trace (68.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#new (for 127.0.0.1 at 2009-10-11 23:15:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mMember Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+Rendering template within layouts/application
+Rendering member_course_interests/new
+  [4;36;1mCourse Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+Completed in 130ms (View: 12, DB: 36) | 200 OK [http://localhost/member_course_interests/new/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:15:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#new (for 127.0.0.1 at 2009-10-11 23:19:48) [POST]
+  Parameters: {"authenticity_token"=>"k5pSrQC6IwpAa0I5Xy+PFQcCfhcBZdhmQKWS4p3gMyc=", "id"=>"1"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` [0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberCourseInterest Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+Rendering template within layouts/application
+Rendering member_course_interests/new
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+Completed in 93ms (View: 13, DB: 15) | 200 OK [http://localhost/member_course_interests/new/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:19:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#create (for 127.0.0.1 at 2009-10-11 23:19:52) [POST]
+  Parameters: {"commit"=>"Submit", "member_course_interest"=>{"interest_date(1i)"=>"2009", "interest_date(2i)"=>"10", "interest_date(3i)"=>"12"}, "member_id"=>"1", "authenticity_token"=>"k5pSrQC6IwpAa0I5Xy+PFQcCfhcBZdhmQKWS4p3gMyc=", "course"=>{"id"=>"7"}}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberCourseInterest Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourseInterest Create (0.0ms)[0m   [0;1mINSERT INTO `member_course_interests` (`updated_at`, `interest_date`, `member_id`, `deleted`, `course_id`, `created_at`) VALUES('2009-10-12 06:19:53', '2009-10-12', 1, NULL, 7, '2009-10-12 06:19:53')[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/members/1/member_course_interests
+Completed in 84ms (DB: 20) | 302 Found [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:19:54) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+Completed in 82ms (View: 22, DB: 17) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:19:57) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#new (for 127.0.0.1 at 2009-10-11 23:20:53) [POST]
+  Parameters: {"authenticity_token"=>"k5pSrQC6IwpAa0I5Xy+PFQcCfhcBZdhmQKWS4p3gMyc=", "id"=>"1"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` [0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberCourseInterest Columns (13.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+Rendering template within layouts/application
+Rendering member_course_interests/new
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+Completed in 101ms (View: 13, DB: 28) | 200 OK [http://localhost/member_course_interests/new/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:20:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#new (for 127.0.0.1 at 2009-10-11 23:23:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+Rendering template within layouts/application
+Rendering member_course_interests/new
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+Completed in 93ms (View: 12, DB: 20) | 200 OK [http://localhost/member_course_interests/new/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:23:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#create (for 127.0.0.1 at 2009-10-11 23:23:29) [POST]
+  Parameters: {"commit"=>"Submit", "member_course_interest"=>{"interest_date(1i)"=>"2009", "interest_date(2i)"=>"10", "interest_date(3i)"=>"12"}, "member_id"=>"1", "authenticity_token"=>"k5pSrQC6IwpAa0I5Xy+PFQcCfhcBZdhmQKWS4p3gMyc=", "course"=>{"id"=>""}}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourseInterest Create (0.0ms)[0m   [0mINSERT INTO `member_course_interests` (`updated_at`, `interest_date`, `member_id`, `deleted`, `course_id`, `created_at`) VALUES('2009-10-12 06:23:29', '2009-10-12', 1, NULL, NULL, '2009-10-12 06:23:29')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members/1/member_course_interests
+Completed in 84ms (DB: 19) | 302 Found [http://localhost/members/1/member_course_interests]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:23:30) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;35;1mMemberCourseInterest Load (1.0ms)[0m   [0mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;36;1mMemberCourseInterest Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #23 of app/views/member_course_interests/index.html.erb:
+20: 
+21:   <% for interest in @member_course_interests -%>
+22:   <tr>
+23:     <td width="200"><%=h interest.course.name %></td>
+24:     <td width="200"><%=h interest.interest_date %></td>
+25:   </tr>
+26: <% end %>
+
+    app/views/member_course_interests/index.html.erb:23
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/member_course_interests/index.html.erb:21
+    app/controllers/member_course_interests_controller.rb:8:in `index'
+
+Rendered rescues/_trace (138.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#create (for 127.0.0.1 at 2009-10-11 23:23:35) [POST]
+  Parameters: {"commit"=>"Submit", "member_course_interest"=>{"interest_date(1i)"=>"2009", "interest_date(2i)"=>"10", "interest_date(3i)"=>"12"}, "member_id"=>"1", "authenticity_token"=>"k5pSrQC6IwpAa0I5Xy+PFQcCfhcBZdhmQKWS4p3gMyc=", "course"=>{"id"=>"4"}}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberCourseInterest Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourseInterest Create (1.0ms)[0m   [0;1mINSERT INTO `member_course_interests` (`updated_at`, `interest_date`, `member_id`, `deleted`, `course_id`, `created_at`) VALUES('2009-10-12 06:23:35', '2009-10-12', 1, NULL, 4, '2009-10-12 06:23:35')[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/members/1/member_course_interests
+Completed in 65ms (DB: 17) | 302 Found [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:23:36) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #23 of app/views/member_course_interests/index.html.erb:
+20: 
+21:   <% for interest in @member_course_interests -%>
+22:   <tr>
+23:     <td width="200"><%=h interest.course.name %></td>
+24:     <td width="200"><%=h interest.interest_date %></td>
+25:   </tr>
+26: <% end %>
+
+    app/views/member_course_interests/index.html.erb:23
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/member_course_interests/index.html.erb:21
+    app/controllers/member_course_interests_controller.rb:8:in `index'
+
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:23:56) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;35;1mMemberCourseInterest Load (1.0ms)[0m   [0mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;36;1mMemberCourseInterest Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #23 of app/views/member_course_interests/index.html.erb:
+20: 
+21:   <% for interest in @member_course_interests -%>
+22:   <tr>
+23:     <td width="200"><%=h interest.course.name %></td>
+24:     <td width="200"><%=h interest.interest_date %></td>
+25:   </tr>
+26: <% end %>
+
+    app/views/member_course_interests/index.html.erb:23
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    C:/tools/ruby/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/member_course_interests/index.html.erb:21
+    app/controllers/member_course_interests_controller.rb:8:in `index'
+
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:24:28) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 103ms (View: 23, DB: 23) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:24:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:25:19) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (3.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 108ms (View: 28, DB: 23) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:25:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:25:56) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 85ms (View: 27, DB: 21) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:25:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:26:26) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (1.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 85ms (View: 25, DB: 18) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:26:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-11 23:26:53) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 68ms (View: 10, DB: 10) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:26:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-11 23:26:55) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;36;1mMemberGeneralFeedback Load (1.0ms)[0m   [0;1mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;35;1mMemberGeneralFeedback Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 74ms (View: 12, DB: 15) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:26:57) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2009-10-11 23:27:00) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '1') [0m
+  [4;35;1mMemberCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 9 ) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 8 ) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 10 ) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 11 ) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 12 ) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 14 ) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 15 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 6) [0m
+Completed in 125ms (View: 23, DB: 29) | 200 OK [http://localhost/members/1/member_courses]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:27:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-11 23:28:46) [GET]
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 49ms (View: 9, DB: 7) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:28:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2009-10-11 23:28:49) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '1') [0m
+  [4;35;1mMemberCourse Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 9 ) [0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 8 ) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 10 ) [0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 11 ) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 12 ) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 14 ) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 15 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mCourseSchedule Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 6) [0m
+Completed in 118ms (View: 26, DB: 27) | 200 OK [http://localhost/members/1/member_courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:28:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:28:53) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (1.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 104ms (View: 24, DB: 23) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:28:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:29:15) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (1.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 105ms (View: 26, DB: 23) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:29:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:29:29) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 149ms (View: 27, DB: 19) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:29:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-11 23:29:38) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (0.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 92ms (View: 27, DB: 17) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-11 23:29:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-12 20:07:19) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 424ms (DB: 7) | 302 Found [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-10-12 20:07:21) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 58ms (View: 25, DB: 6) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:07:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-10-12 20:07:28) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"admin", "password"=>"admin"}, "authenticity_token"=>"TtRgiurjIp9+spBpgipq2zAm89SgDaWrVXgBn/X2YJA="}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 314ms (DB: 7) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-12 20:07:29) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (4.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 96ms (View: 33, DB: 15) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:07:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-12 20:07:35) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (3.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 133ms (View: 32, DB: 27) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:07:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-12 20:07:41) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;36;1mMemberCourseInterest Load (1.0ms)[0m   [0;1mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;35;1mMemberCourseInterest Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 81ms (View: 20, DB: 20) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:07:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-12 20:07:49) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  app/controllers/member_course_interests_controller.rb:5:in `index'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-12 20:07:57) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 74ms (View: 12, DB: 13) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:07:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2009-10-12 20:08:17) [POST]
+  Parameters: {"authenticity_token"=>"TtRgiurjIp9+spBpgipq2zAm89SgDaWrVXgBn/X2YJA="}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Completed in 76ms (View: 19, DB: 11) | 200 OK [http://localhost/members/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:08:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCourseInterestsController#index (for 127.0.0.1 at 2009-10-12 20:08:30) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_course_interests/index
+  [4;35;1mMemberCourseInterest Load (1.0ms)[0m   [0mSELECT * FROM `member_course_interests` WHERE (`member_course_interests`.member_id = 1) [0m
+  [4;36;1mMemberCourseInterest Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 7) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 4) [0m
+Completed in 115ms (View: 23, DB: 32) | 200 OK [http://localhost/members/1/member_course_interests]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:08:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberGeneralFeedbacksController#index (for 127.0.0.1 at 2009-10-12 20:08:33) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering member_general_feedbacks/index
+  [4;35;1mMemberGeneralFeedback Load (4.0ms)[0m   [0mSELECT * FROM `member_general_feedbacks` WHERE (`member_general_feedbacks`.member_id = 1) [0m
+  [4;36;1mMemberGeneralFeedback Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+Completed in 126ms (View: 31, DB: 25) | 200 OK [http://localhost/members/1/member_general_feedbacks]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:08:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-10-12 20:08:43) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 61ms (View: 19, DB: 7) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:08:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2009-10-12 20:08:51) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 70ms (View: 12, DB: 11) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:08:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2009-10-12 20:09:11) [POST]
+  Parameters: {"authenticity_token"=>"TtRgiurjIp9+spBpgipq2zAm89SgDaWrVXgBn/X2YJA="}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Completed in 68ms (View: 11, DB: 11) | 200 OK [http://localhost/members/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:09:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2009-10-12 20:10:09) [POST]
+  Parameters: {"authenticity_token"=>"TtRgiurjIp9+spBpgipq2zAm89SgDaWrVXgBn/X2YJA="}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Completed in 49ms (View: 8, DB: 9) | 200 OK [http://localhost/members/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-12 20:10:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/AOL.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

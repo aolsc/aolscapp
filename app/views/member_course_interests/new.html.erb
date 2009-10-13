@@ -1,0 +1,19 @@
+<h1>Enter course interested by member '<%=  @member.lastname %>'</h1>
+
+<% form_for :member_course_interest, @member_course_interest, :url => {:action => 'create', :member_id => params[:id]} do |f| %>
+  <%#= f.error_messages %>
+ <p>
+    <label> Course </label><br />
+    <%= collection_select(:course, :id, @courses, :id, :displayName, options ={:prompt => "Select a course"}) %>
+  </p>
+  <p>
+    <label for ="interest_date"> Date member was interested on </label><br />
+    <%= f.date_select :interest_date %>
+  </p>
+
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+
+<% end %>
+<%#= link_to 'Back', member_course_interests_path %>
