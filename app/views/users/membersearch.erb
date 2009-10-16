@@ -1,5 +1,9 @@
 <% form_tag :action => "memberselect" do -%>
 <p> <b>Member Lookup</b> </p>
+  <p>
+    <label for ="emailid"> Email </label><br />
+    <%= text_field 'member', 'emailid' %>
+  </p>
 <p>
     <label for ="firstname"> FirstName </label><br />
     <%= text_field 'member', 'firstname' %>
@@ -7,10 +11,6 @@
   <p>
     <label for ="lastname"> LastName </label><br />
     <%= text_field 'member', 'lastname' %>
-  </p>
-  <p>
-    <label for ="emailid"> Email </label><br />
-    <%= text_field 'member', 'emailid' %>
   </p>
 <br>
   <%= submit_tag "Search", {:action => "memberselect", :controller => "users"} %>

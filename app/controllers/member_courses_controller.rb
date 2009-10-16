@@ -9,6 +9,8 @@ class MemberCoursesController < ApplicationController
     @course_schedules = []
     @member = Member.find(params[:member_id])
     @member_courses = MemberCourse.find(:all, :conditions => ["member_id = ?", params[:member_id]])
+
+
     if @member_courses.length == 0
     else
       for member_course in @member_courses
@@ -130,7 +132,7 @@ class MemberCoursesController < ApplicationController
     @course = Course.find(@sel_id)
     @from_date = Date.civil(params[:range][:"from_date(1i)"].to_i,params[:range][:"from_date(2i)"].to_i,params[:range][:"from_date(3i)"].to_i)
     @to_date = Date.civil(params[:range][:"to_date(1i)"].to_i,params[:range][:"to_date(2i)"].to_i,params[:range][:"to_date(3i)"].to_i)
-    @course_schedules = @course.course_schedules.find(:all, :conditions => ["start_date > ? AND start_date < ? ", @from_date, @to_date])
+    @course_schedules = @course.course_schedules.find(:all, :conditions => ["start_date > ? AND start_date < ? ", @from_date, @to_date]).paginate :page => params[:page], :per_page => 10
 
     respond_to do |format|
       format.html # course_schedule_select.html.erb

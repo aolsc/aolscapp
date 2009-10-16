@@ -14,23 +14,28 @@
   </tr>
   <tr>
     <td>
-<table>
-  <tr>
-    <th width="200">Start date</th>
-    <th width="200">End date</th>
-    <th>Teacher name</th>
+<table border="1" cellspacing="0" cellpadding="5" width="70%">
+  <tr bgcolor="#A9F5F2">
+    <th width="60">Start date</th>
+    <th width="60">End date</th>
+    <th width="60">Teacher name</th>
   </tr>
 
   <% for course_schedule in @course_schedules -%>
   <tr>
-    <td><%=h course_schedule.start_date %></td>
-    <td><%=h course_schedule.end_date %></td>
+    <td><%=h course_schedule.start_date.strftime('%m-%d-%Y %I:%M %p') %></td>
+    <td><%=h course_schedule.end_date.strftime('%m-%d-%Y %I:%M %p') %></td>
     <td><%=h course_schedule.teacher_name %></td>
   </tr>
 <% end %>
 </table>
 </td>
   </tr>
+     <tr>
+   <td align="center"><br>
+    <%= will_paginate @course_schedules %>
+   </td>
+
 </table>
 <br>
 <br>

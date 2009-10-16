@@ -1,9 +1,13 @@
 class CourseSchedulesController < ApplicationController
+  add_crumb("Courses") { |instance| instance.send :courses_path }
+  add_crumb("Course Schedules") { |instance| instance.send :course_course_schedules_path }
+
   # GET /course_schedules
   # GET /course_schedules.xml
   def index
     @course = Course.find(params[:course_id])
-    @course_schedules = @course.course_schedules
+    @course_schedules = @course.course_schedules.paginate :page => params[:page], :per_page => 10
+
 
     respond_to do |format|
       format.html # index.html.erb

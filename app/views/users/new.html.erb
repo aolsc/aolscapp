@@ -7,10 +7,7 @@
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :value => @mem.emailid %>
-  </p>
+  <%= hidden_field 'user', 'email', :value => @mem.emailid %>
   <p>
     <%= f.label :password %><br />
     <%= f.password_field :password %>

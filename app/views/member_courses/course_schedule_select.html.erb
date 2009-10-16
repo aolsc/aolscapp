@@ -20,7 +20,11 @@
         </tr>
 
       <% end %>
+
   </table>
+    <br>
+    <div align="center"><%= will_paginate @course_schedules %></div>
+
     <br>
           <%= submit_tag "Add" , {:action => "course_schedule_insert"} %>
 

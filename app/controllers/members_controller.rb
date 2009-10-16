@@ -5,7 +5,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   def index
-    @members = Member.all
+    @members = Member.paginate :page => params[:page], :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,10 +17,12 @@ class MembersController < ApplicationController
   # GET /members/1.xml
   def show
     begin
-      if params["search_by_emailid"].nil?
-        @members = Member.find(:all)
+      if params["search_by_emailid"].nil? and params["search_by_name"].nil?
+        @members = Member.find(:all).paginate :page => params[:page], :per_page => 10
+      elsif params["search_by_name"].nil?
+        @members = Member.find(:all, :conditions => ['emailid like ?', "%"+params["search_by_emailid"]+"%"]).paginate :page => params[:page], :per_page => 10
       else
-        @members = Member.find(:all, :conditions => ['emailid like ?', "%"+params["search_by_emailid"]+"%"])
+        @members = Member.find(:all, :conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%"]).paginate :page => params[:page], :per_page => 10
       end
     rescue ActiveRecord::RecordNotFound
       logger.error("Attempt to access invalid member")

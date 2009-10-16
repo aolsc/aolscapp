@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.xml
   def index
-    @courses = Course.paginate :page => params[:page], :per_page => 5
+    @courses = Course.paginate :page => params[:page], :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,7 +47,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
         flash[:notice] = 'Course was successfully created.'
-        format.html { redirect_to(@course) }
+        format.html { redirect_to courses_path }
         format.xml  { render :xml => @course, :status => :created, :location => @course }
       else
         format.html { render :action => "new" }

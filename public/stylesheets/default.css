@@ -1,3 +1,7 @@
+headerbg {
+    background-color: #000000;
+}
+
 #notice {
   border: 2px solid red;
   padding: 1em;
@@ -9,13 +13,18 @@
 h1 {
         font:  150% sans-serif;
         color: #226;
+}
+
+dottedline {
+        color: #226;
         border-bottom: 3px dotted #77d;
 }
 
 #banner {
-  background: #9c9;
+  background: white;
   padding-top: 10px;
   padding-bottom: 2px;
+  padding-right: 70px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
   color: #282;
@@ -25,6 +34,7 @@ h1 {
 
 #banner img {
   float: left;
+  padding-left: 5px;
 }
 
 #columns {
@@ -43,16 +53,20 @@ h1 {
   padding-top: 4ex;
   padding-left: 2em;
   background: white;
-  font-size: 12px;
+  font-size: 13px;
   padding-bottom: 1em;
 }
 
 
 #login {
-  margin-left: 27em;
+  border: 1px solid green;
+  margin-left: 26em;
+  margin-right: 33em;
+  margin-top: 3em;
   padding-top: 4ex;
   padding-left: 2em;
-  background: white;
+  background: #CCFFFF;
+
 }
 
 #side {
