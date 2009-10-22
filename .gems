@@ -1,4 +1,4 @@
-authlogic
+authlogic --version 2.1.2
 will_paginate
 populator
 faker
