@@ -12,7 +12,12 @@ class SendEmailsController < ApplicationController
   end
 
   def composemessage
-    redirect_to :action => "searchmembers"
+    @members = Member.find(params[:member_ids])
+    @members.each do |member|
+      puts member.id
+      MemberMailer.deliver_sendemail_for_members(member)
+    end
+    redirect_to :action => "completionstatus"
   end
 
   def completionstatus
