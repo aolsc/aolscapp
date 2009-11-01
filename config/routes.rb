@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
-  map.sendemails "sendemails", :controller => "send_emails", :action => "searchmembers"
+  map.sendemails "sendemails", :controller => "send_emails"
   
   map.resources :user_sessions
 

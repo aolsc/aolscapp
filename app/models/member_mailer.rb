@@ -1,8 +1,8 @@
 class MemberMailer < ActionMailer::Base
-  def sendemail_for_members(member)
-    recipients  member.emailid
-    from        "abc@santaclara.com"
-    subject     "Thank you for Registering"
-    body        :member => member
+  def sendemail_for_members(from, to, subject, selection_option, content)
+    recipients  to
+    from        from
+    subject     subject
+    body        content
   end
 end

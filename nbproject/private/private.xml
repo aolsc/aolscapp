@@ -3,8 +3,12 @@
     <coverage xmlns="http://www.netbeans.org/ns/code-coverage/1" enabled="false"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/C:/other/ror/aolscapp/config/database.yml</file>
-        <file>file:/C:/other/ror/aolscapp/app/views/courses/show.html.erb</file>
-        <file>file:/C:/other/ror/aolscapp/app/views/members/index.html.erb</file>
+        <file>file:/C:/other/ror/aolscapp/app/views/send_emails/index.html.erb</file>
+        <file>file:/C:/other/ror/aolscapp/app/views/send_emails/show.html.erb</file>
+        <file>file:/C:/other/ror/aolscapp/app/views/layouts/application.html.erb</file>
+        <file>file:/C:/other/ror/aolscapp/config/routes.rb</file>
+        <file>file:/C:/other/ror/aolscapp/app/controllers/members_controller.rb</file>
+        <file>file:/C:/other/ror/aolscapp/app/models/member_course.rb</file>
+        <file>file:/C:/other/ror/aolscapp/app/models/member.rb</file>
     </open-files>
 </project-private>
