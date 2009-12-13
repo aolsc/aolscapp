@@ -3,3 +3,4 @@ log\development.log
 config\database.yml
 config/environment.rb
 nbproject/private/rake-d.txt
+public/data/*.csv

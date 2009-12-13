@@ -1,9 +1,9 @@
 class UploadController < ApplicationController
   def index
-    render :file => 'app\views\upload\uploadfile.rhtml'
   end
-  def uploadFile
+
+  def upload_file
     post = DataFile.save(params[:upload])
-    render :text => "File has been uploaded successfully"
+    flash[:notice] = 'File has been uploaded successfully.'
   end
 end

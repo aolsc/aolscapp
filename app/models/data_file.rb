@@ -4,8 +4,6 @@ require 'csv'
 class DataFile < ActiveRecord::Base
 
 
- 
-
   def self.save( upload )
     name = upload['datafile'].original_path
     dirictory = 'public/data'
