@@ -1,7 +1,25 @@
 <h1>File Upload</h1>
+
+Please follow below guidelines for the file name format.
+<p>
+Format:&nbsp;<b>[CourseName]_[CourseDate]_[InstructorName].csv</b><br>
+CourseDate - MMDDYY<br>
+CourseName - one of the below
+<ul>
+  <li>part1</li>
+  <li>mbw</li>
+  <li>ag1</li>
+  <li>ag2</li>
+  <li>ag3</li>
+  <li>artexcel</li>
+  <li>social</li>
+  <li>knowledgeseries</li>
+</ul>
+<b>Example:&nbsp;</b>part1_120309_Ramesh.csv<br>
+</p>
 <%=form_tag({:action => 'upload_file'},
                         :multipart => true) %>
-<p><label for="upload_file">Select File</label> :
+<p><label for="upload_file"><font color="green"><b>Select File<b></font></label> :
 <%= file_field 'upload', 'datafile' %></p>
 <%= submit_tag "Upload" %>
 <%=  %>
