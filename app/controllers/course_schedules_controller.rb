@@ -1,6 +1,6 @@
 class CourseSchedulesController < ApplicationController
   add_crumb("Courses") { |instance| instance.send :courses_path }
-  add_crumb("Course Schedules") { |instance| instance.send :course_course_schedules_path }
+  add_crumb("Course Schedules") { |instance| instance.send :course_schedules_path }
 
   # GET /course_schedules
   # GET /course_schedules.xml

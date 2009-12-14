@@ -16,24 +16,27 @@ class MembersController < ApplicationController
   # GET /members/1
   # GET /members/1.xml
   def show
-    begin
-      if params["search_by_emailid"].nil? and params["search_by_name"].nil?
+    
+      if params["search_by_name"].empty? and params["search_by_email"].empty? then
         @members = Member.find(:all).paginate :page => params[:page], :per_page => 10
-      elsif params["search_by_name"].nil?
-        @members = Member.find(:all, :conditions => ['emailid like ?', "%"+params["search_by_emailid"]+"%"]).paginate :page => params[:page], :per_page => 10
       else
-        @members = Member.find(:all, :conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%"]).paginate :page => params[:page], :per_page => 10
+        unless params["search_by_name"].empty? and params["search_by_email"].empty?
+            @members = Member.find(:all, :conditions => ['(firstname like ? or lastname like ?) and emailid like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10
+       else
+         unless params["search_by_name"].empty?
+            @members = Member.find(:all, :conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_"]+"%"]).paginate :page => params[:page], :per_page => 10
+         else
+            @members = Member.find(:all, :conditions => ['emailid like ?', "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10
+          end
+        end
       end
-    rescue ActiveRecord::RecordNotFound
-      logger.error("Attempt to access invalid member")
-      flash[:notice] = "Member Not Found"
-      redirect_to :action => :index
-    else
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @member }
-      end
+     
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @member }
     end
+
   end
 
   # GET /members/new
@@ -61,9 +64,9 @@ class MembersController < ApplicationController
     if @validatemember.length == 0
       @validateemail = Member.find(:all, :conditions => ["emailid = ? ", @member.emailid])
       if @validateemail.length == 0
-      @member.save
-      flash[:notice] = 'Member was successfully created.'
-      redirect_to :action => "index"
+        @member.save
+        flash[:notice] = 'Member was successfully created.'
+        redirect_to :action => "index"
       else
         flash[:notice] = 'Member already Exists.'
         render :action => "new"
@@ -71,21 +74,21 @@ class MembersController < ApplicationController
     else
       flash[:notice] = 'Member already Exists.'
       render :action => "new"
-#      @member.save
-#      flash[:notice] = 'Member was successfully created.'
-#      redirect_to :action => "index"
+      #      @member.save
+      #      flash[:notice] = 'Member was successfully created.'
+      #      redirect_to :action => "index"
     end
 
-#    respond_to do |format|
-#      if @member.save
-#        flash[:notice] = 'Member was successfully created.'
-#        format.html { redirect_to(@member) }
-#        format.xml  { render :xml => @member, :status => :created, :location => @member }
-#      else
-#        format.html { render :action => "new" }
-#        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
-#      end
-#    end
+    #    respond_to do |format|
+    #      if @member.save
+    #        flash[:notice] = 'Member was successfully created.'
+    #        format.html { redirect_to(@member) }
+    #        format.xml  { render :xml => @member, :status => :created, :location => @member }
+    #      else
+    #        format.html { render :action => "new" }
+    #        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
+    #      end
+    #    end
   end
 
   # PUT /members/1
@@ -117,28 +120,28 @@ class MembersController < ApplicationController
     end
   end
 
-#   def memberselect
-#    begin
-#     @member = Member.new(params[:member])
-#     @members = Member.find(:all, :conditions => ["firstname = ? OR lastname = ? OR emailid = ?" ,@member.firstname, @member.lastname, @member.emailid])
-#     if @members.length == nil
-#       redirect_to  :controller => "users", :action => "memberselect"
-#     else
-#     end
-#   end
-#  end
+  #   def memberselect
+  #    begin
+  #     @member = Member.new(params[:member])
+  #     @members = Member.find(:all, :conditions => ["firstname = ? OR lastname = ? OR emailid = ?" ,@member.firstname, @member.lastname, @member.emailid])
+  #     if @members.length == nil
+  #       redirect_to  :controller => "users", :action => "memberselect"
+  #     else
+  #     end
+  #   end
+  #  end
 
 
   def insert_feedback
-     @feedback = MemberGeneralFeedback.new(params[:feedback])
-     @member_id = @feedback.member_id
+    @feedback = MemberGeneralFeedback.new(params[:feedback])
+    @member_id = @feedback.member_id
 
     if @feedback.save
       flash[:notice] = "Your feedback was successfully created"
     else
       flash[:notice] = "Failed to create Feedback"
     end
-     @feedbacks = MemberGeneralFeedback.find(:all, :conditions => ["member_id = ?", @member_id])
+    @feedbacks = MemberGeneralFeedback.find(:all, :conditions => ["member_id = ?", @member_id])
    
     puts "in insert_feedback"
     puts params[:feedback]
@@ -147,7 +150,7 @@ class MembersController < ApplicationController
   end
 
   def insert_course_interest
-#  puts params[:name]
+    #  puts params[:name]
 
     @course_interests = MemberCourseInterest.new(params[:membercourseinterest])
 

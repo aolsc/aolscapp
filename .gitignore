@@ -2,3 +2,6 @@ nbproject\private\private.xml
 log\development.log
 config\database.yml
 *.sqlite3
+config/environment.rb
+nbproject/private/rake-d.txt
+public/data/*.csv
