@@ -4,7 +4,9 @@ class SendEmailsController < ApplicationController
   def index
     @members = Member.paginate :page => params[:page], :per_page => 10
     @courses = Course.find(:all)
+    @cls = CourseSchedule.find(:all)
 
+     
     respond_to do |format|
       format.html
       format.xml  { render :xml => @members }
@@ -14,7 +16,28 @@ class SendEmailsController < ApplicationController
   def show
     @members = Member.paginate :page => params[:page], :per_page => 10
     @courses = Course.find(:all)
+    @cls = CourseSchedule.find(:all)
 
+    @id = params[:courseschedule][:id]
+    puts "********************************************************************"
+    puts @id
+
+    @member_courses = MemberCourse.find_all_by_course_schedule_id(@id)
+
+    @members = []
+    if @member_courses.length != 0
+       for member_course in @member_courses
+         @m = Member.find(:all, :conditions => ["id = ?", member_course.member_id ])
+         for m in @m
+           @members.push(m)
+         end
+      end
+    end
+
+     for m in @members
+       m.firstname
+     end
+    
     respond_to do |format|
       format.html
       format.xml  { render :xml => @members }

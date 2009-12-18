@@ -6,10 +6,13 @@
         <tr><td><b>Search members by</b></td></tr>
         <tr>
           <td>
-            <% form_tag '/send_emails/index', :method => 'get' do -%>
+            <% form_tag '/send_emails/show', :method => 'get' do -%>
     <label for ="coursename">Course Name</label>&nbsp;&nbsp;<%= collection_select(:course, :id, @courses, :id, :displayName, options ={:prompt => "Select a course"}) %>&nbsp;&nbsp;
+
+     <label for ="courseschedules"> Course Schedules </label> <%= collection_select(:courseschedule, :id, @cls, :id, :start_date, options ={:prompt => "Select a courseSchedule"}) %>&nbsp;&nbsp;
+
    <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= date_select('range', 'from_date', :order => [:month, :day, :year], :include_blank => true)%>
-   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= date_select('range', 'to_date', :order => [:month, :day, :year], :include_blank => true)%>&nbsp;&nbsp;<%= submit_tag 'Go' %>
+   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= date_select('range', 'to_date', :order => [:month, :day, :year], :include_blank => true)%>&nbsp;&nbsp;<%= submit_tag 'Go',:action => "show" %>
             <% end -%>
           </td>
         </tr>
