@@ -6,7 +6,8 @@ namespace :db do
 
     @genders = ["M","F"]
     @cities = ["Santa Clara", "Sunnyvale", "Milpitas", "Mountain View", "San Jose", "San Fransisco", "Palo Alto"]
-    @course_names = ["Part-1", "MBW", "AG-1", "AG-2", "AG-3","Art Excel"]
+    @course_names = ["part1", "mbw", "ag1", "ag2", "ag3","artexcel","social","knowledgeseries"]
+    @course_displayNames = ["Part-1", "MBW", "AG-1", "AG-2", "AG-3","Art Excel","Social","Knowledge Series"]
     @teachers = ["Uma", "Sridhar", "Ramesh", "Sudarshan"]
     @course_ids = []
     @feedbacks = ["The MBW was awesome!", "I feel so calm after the session", "The session was very good."]
@@ -14,9 +15,9 @@ namespace :db do
     [Course, Member, CourseSchedule, MemberCourse, MemberCourseInterest, MemberGeneralFeedback, User].each(&:delete_all)
 
     @i = 0
-    Course.populate 6 do |course|
+    Course.populate 8 do |course|
       course.name = @course_names[@i]
-      course.displayName = @course_names[@i]
+      course.displayName = @course_displayNames[@i]
 
       CourseSchedule.populate 100 do |courseschedule|
         courseschedule.course_id = course.id
