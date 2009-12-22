@@ -62,4 +62,15 @@ class SendEmailsController < ApplicationController
     redirect_to :action => "searchmembers"
   end
 
+  def update_course_schedules
+  
+    @courses = Course.find(params[:coursedd][:id])
+    @cls = @courses.course_schedules
+
+
+    render :update do |page|
+      page.replace_html 'courseschedules', :partial => 'courseschedules', :object => @cls
+    end
+  end
+
 end

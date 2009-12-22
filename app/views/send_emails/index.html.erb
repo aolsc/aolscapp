@@ -7,12 +7,17 @@
         <tr>
           <td>
             <% form_tag '/send_emails/show', :method => 'get' do -%>
-    <label for ="coursename">Course Name</label>&nbsp;&nbsp;<%= collection_select(:course, :id, @courses, :id, :displayName, options ={:prompt => "Select a course"}) %>&nbsp;&nbsp;
+    <label for ="coursename">Course Name</label>&nbsp;&nbsp;
+      <%= collection_select(:coursedd, :id, @courses, :id, :displayName,
+                            {:prompt => "Select a course"},
+                            {:onchange => "#{remote_function(:url  => {:action => "update_course_schedules"},
+                                                       :with => "Form.Element.serialize(this)")}"}) %>&nbsp;&nbsp;
 
-     <label for ="courseschedules"> Course Schedules </label> <%= collection_select(:courseschedule, :id, @cls, :id, :start_date, options ={:prompt => "Select a courseSchedule"}) %>&nbsp;&nbsp;
+     
 
    <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= date_select('range', 'from_date', :order => [:month, :day, :year], :include_blank => true)%>
    &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= date_select('range', 'to_date', :order => [:month, :day, :year], :include_blank => true)%>&nbsp;&nbsp;<%= submit_tag 'Go',:action => "show" %>
+   <br><br><label for ="courseschedules"> Course Schedules </label> <div id="courseschedules"><%= render :partial => 'courseschedules', :object => @cls %></div>
             <% end -%>
           </td>
         </tr>
