@@ -26,5 +26,5 @@ config.action_mailer.smtp_settings = {
     :domain => "gmail.com",
     :authentication => :plain,
     :user_name => "vkorimilli",
-    :password => "secret786"
+    :password => "ABCBCBC"
   }
