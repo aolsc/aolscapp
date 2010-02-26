@@ -1,0 +1,15 @@
+<br><br>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <% form_tag '/send_emails/completionstatus' do -%>
+      An email will be sent to the following members. Click Confirm to send emails or click Back to discontinue.<br><br>
+      <%=  @email_ids %>
+      <br><br>
+      <%=  hidden_field_tag 'cs_id', @cs_id %>
+      <%= submit_tag "Send Email" %>
+      <%= button_to "Back", '/send_emails/composemessage' %>
+      <% end -%>
+    </td>
+  </tr>
+</table>

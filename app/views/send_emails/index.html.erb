@@ -3,21 +3,16 @@
   <tr>
     <td>
       <table border="0" cellspacing="0" cellpadding="0" width="100%">
-        <tr><td><b>Search members by</b></td></tr>
+        <tr><td><b>Search course schedules</b></td></tr>
         <tr>
           <td>
             <% form_tag '/send_emails/show', :method => 'get' do -%>
     <label for ="coursename">Course Name</label>&nbsp;&nbsp;
       <%= collection_select(:coursedd, :id, @courses, :id, :displayName,
-                            {:prompt => "Select a course"},
-                            {:onchange => "#{remote_function(:url  => {:action => "update_course_schedules"},
-                                                       :with => "Form.Element.serialize(this)")}"}) %>&nbsp;&nbsp;
-
+                            {:prompt => "Select a course"})%>&nbsp;&nbsp;
      
-
    <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= date_select('range', 'from_date', :order => [:month, :day, :year], :include_blank => true)%>
-   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= date_select('range', 'to_date', :order => [:month, :day, :year], :include_blank => true)%>&nbsp;&nbsp;<%= submit_tag 'Go',:action => "show" %>
-   <br><br><label for ="courseschedules"> Course Schedules </label> <div id="courseschedules"><%= render :partial => 'courseschedules', :object => @cls %></div>
+   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= date_select('range', 'to_date', :order => [:month, :day, :year], :include_blank => true)%>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
             <% end -%>
           </td>
         </tr>
@@ -31,27 +26,25 @@
       <table border="1" cellspacing="0" cellpadding="5" width="100%">
   <tr bgcolor="#A9F5F2">
     <td width="40"><b> Select </b></td>
-    <td width="100"><b>Name</b></td>
-    <td width="100"><b>Email</b></td>
-    <td width="130"><b>Phone</b></td>
+    <td width="100"><b>Course Start Date</b></td>
+    <td width="100"><b>Course End Date</b></td>
   </tr>
 
-<% for member in @members -%>
+<% for courseschedule in @courseschedules -%>
   <tr>
-    <td><%= check_box_tag  "member_ids[]", member.id %></td>
-    <td><%= member.firstname %>&nbsp;<%= member.lastname %></td>
-    <td><%=h member.emailid %></td>
-    <td><%=h member.homephone %></td>
+    <td><%= radio_button_tag  "course_schedule_radio", courseschedule.id %></td>
+    <td><%= courseschedule.start_date %></td>
+    <td><%= courseschedule.end_date %></td>
   </tr>
 <% end %>
       </table>
-      <%= submit_tag "Compose Message" %>
+      <%= submit_tag "Send Email" %>
       <% end -%>
 </td>
   </tr>
    <tr>
    <td align="right"><br>
-    <%= will_paginate @members %>
+    <%= will_paginate @courseschedules %>
    </td>
  </tr>
 

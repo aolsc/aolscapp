@@ -1,4 +1,4 @@
 class MemberCourse < ActiveRecord::Base
   belongs_to :member
-  belongs_to :member_course_schedule
+  belongs_to :course_schedule
 end

@@ -1,4 +1,4 @@
-<% form_tag '/send_emails/completionstatus' do -%>
+<% form_tag '/send_emails/confirmmembers' do -%>
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tr><td><br><b>Subject</b>&nbsp;</td><td valign="bottom"><%= text_field_tag "subject" %></td></tr>
 <tr><td colspan="2"><br><b>Choose option to where to put Member Email Ids</b><br>
@@ -11,6 +11,7 @@
 <tr><td valign="top"><b>Content</b>&nbsp;</td><td valign="bottom"><%= text_area_tag 'email_content', nil, :size => "75x40" %></td></tr>
 </table>
 <br>
-<%= hidden_field_tag "member_ids[]", @member_ids  %>
+
+<%=  hidden_field_tag 'cs_id', @cs_id %>
 <%= submit_tag "Send" %>
 <% end -%>

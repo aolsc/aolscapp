@@ -1,7 +1,6 @@
 class MembersController < ApplicationController
   add_crumb("Members") { |instance| instance.send :members_path }
-
-  
+ 
   # GET /members
   # GET /members.xml
   def index
@@ -30,13 +29,11 @@ class MembersController < ApplicationController
           end
         end
       end
-     
-    
+         
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @member }
     end
-
   end
 
   # GET /members/new
