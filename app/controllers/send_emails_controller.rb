@@ -14,24 +14,33 @@ class SendEmailsController < ApplicationController
 
   def show
     @courses = Course.find(:all)
-    @report_start_date = build_date_from_params("from_date", params[:range])
-    @report_end_date = build_date_from_params("to_date", params[:range])
-    @courseschedules = CourseSchedule.find(:all, :conditions => ["start_date >= ? and end_date <= ? and course_id=?", @report_start_date, @report_end_date, params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
+      @report_start_date = build_date_from_params("from_date", params[:range])
+      @report_end_date = build_date_from_params("to_date", params[:range])
+      @coursedd = params[:coursedd]
+      @range = params[:range]
+      puts @range
+      if @report_start_date.nil? or @report_end_date.nil?
+        @courseschedules = CourseSchedule.find(:all, :conditions => ["course_id=?", params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
+      else
+        @courseschedules = CourseSchedule.find(:all, :conditions => ["start_date >= ? and end_date <= ? and course_id=?", @report_start_date, @report_end_date, params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
+    end
     @cs_id = -1
-
 
     respond_to do |format|
       format.html
       format.xml  { render :xml => @members }
     end
-
-
   end
 
   def build_date_from_params(field_name, params)
-  Date.new(params["#{field_name.to_s}(1i)"].to_i,
+    if params["#{field_name.to_s}(1i)"].empty?
+      return
+    else
+      puts "no"
+      Date.new(params["#{field_name.to_s}(1i)"].to_i,
        params["#{field_name.to_s}(2i)"].to_i,
        params["#{field_name.to_s}(3i)"].to_i)
+    end
   end
 
   def composemessage
@@ -82,4 +91,4 @@ class SendEmailsController < ApplicationController
       page.replace_html 'courseschedules', :partial => 'courseschedules', :object => @cls
     end
   end
-end
+ end
