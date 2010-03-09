@@ -1,6 +1,7 @@
-<% form_tag '/send_emails/confirmmembers' do -%>
+<% form_tag '/send_emails/completionstatus' do -%>
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tr><td><br><b>Subject</b>&nbsp;</td><td valign="bottom"><%= text_field_tag "subject" %></td></tr>
+<tr><td><br><b>To</b>&nbsp;</td><td valign="top"><%= text_area_tag "to", @email_ids, :size => "40x2" %></td></tr>
 <tr><td colspan="2"><br><b>Choose option to where to put Member Email Ids</b><br>
 &nbsp;&nbsp;&nbsp;To&nbsp;<%= radio_button_tag "emailid_option","To" %>
 &nbsp;&nbsp;&nbsp;Bcc&nbsp;<%= radio_button_tag "emailid_option","Bcc" %>

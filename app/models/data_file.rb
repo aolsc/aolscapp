@@ -19,16 +19,16 @@ class DataFile < ActiveRecord::Base
     courseDate = name.split('_')[1]
     instructorFirstName = name.split('_')[2]
 
-    if(!validateCourse(courseName))
-      return
+    if(validateCourse(courseName))
+      courseId = getCourseId(courseName)
+
+      # Create Course Schedule
+      courseScheduleId = createCourseSchedule( courseId,courseDate,instructorFirstName )
+      if courseScheduleId != -1
+        createMembers(path, courseScheduleId)
+      end
     end
 
-    courseId = getCourseId(courseName)
-
-    # Create Course Schedule
-    courseScheduleId = createCourseSchedule( courseId,courseDate,instructorFirstName )
-
-    createMembers(path, courseScheduleId)
 
 
 
@@ -132,17 +132,24 @@ class DataFile < ActiveRecord::Base
   ##
 
   def self.createCourseSchedule( courseId,courseDate,instructorFirstName )
-    t =  Hash[
-      'course_id',courseId,
-      'start_date',courseDate,
-      'teacher_name',instructorFirstName,
-    ];
-    @course_schedule = CourseSchedule.new(t)
+    @cs = CourseSchedule.find(:all, :conditions => ["start_date = ? and course_id=? and teacher_name=?", courseDate, courseId, instructorFirstName])
+    if @cs.nil?
+      puts "cs is nil"
+      t =  Hash[
+        'course_id',courseId,
+        'start_date',courseDate,
+        'teacher_name',instructorFirstName,
+      ];
+      @course_schedule = CourseSchedule.new(t)
 
-    @course_schedule.save
-    id = @course_schedule.id
-
-    return id
+      @course_schedule.save
+      id = @course_schedule.id
+      puts "created cs "
+      return id
+    else
+      puts "cs already exists"
+      return -1
+    end
   end
 
   

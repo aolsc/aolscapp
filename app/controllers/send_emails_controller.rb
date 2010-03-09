@@ -14,17 +14,19 @@ class SendEmailsController < ApplicationController
 
   def show
     @courses = Course.find(:all)
-      @report_start_date = build_date_from_params("from_date", params[:range])
-      @report_end_date = build_date_from_params("to_date", params[:range])
+      @report_start_date = Time.parse(params[:from_date_cal])
+      @report_end_date = Time.parse(params[:end_date_cal])
+      puts @report_start_date
+      puts @report_end_date
+
       @coursedd = params[:coursedd]
-      @range = params[:range]
-      puts @range
       if @report_start_date.nil? or @report_end_date.nil?
         @courseschedules = CourseSchedule.find(:all, :conditions => ["course_id=?", params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
       else
         @courseschedules = CourseSchedule.find(:all, :conditions => ["start_date >= ? and end_date <= ? and course_id=?", @report_start_date, @report_end_date, params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
     end
     @cs_id = -1
+    
 
     respond_to do |format|
       format.html
@@ -47,6 +49,12 @@ class SendEmailsController < ApplicationController
     
     puts params[:course_schedule_radio]
     @cs_id = params[:course_schedule_radio]
+
+    @member_courses = MemberCourse.find(:all, :conditions => ["course_schedule_id=?", @cs_id])
+    @email_ids = []
+    @member_courses.each do |member_course|
+      @email_ids << member_course.member.emailid + ","
+    end
     
     respond_to do |format|
       format.html
@@ -78,7 +86,7 @@ class SendEmailsController < ApplicationController
     end
 
     puts @email_ids
-    
+    MemberMailer.deliver_sendemail_for_members("vkorimilli@gmail.com", @email_ids, params[:subject], nil, params[:email_content])
     flash[:notice] = "Email(s) sent !"
     redirect_to :action => "index"
   end

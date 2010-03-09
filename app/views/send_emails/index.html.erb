@@ -10,9 +10,9 @@
     <label for ="coursename">Course Name</label>&nbsp;&nbsp;
       <%= collection_select(:coursedd, :id, @courses, :id, :displayName,
                             {:prompt => "Select a course"})%>&nbsp;&nbsp;
-     
-   <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= date_select('range', 'from_date', :order => [:month, :day, :year], :include_blank => true)%>
-   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= date_select('range', 'to_date', :order => [:month, :day, :year], :include_blank => true)%>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
+
+  <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @sel_from_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
+   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @sel_end_date, :year_range => 3.years.ago..0.years.ago, :time => true %>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
             <% end -%>
           </td>
         </tr>
@@ -38,7 +38,7 @@
   </tr>
 <% end %>
       </table>
-      <%= submit_tag "Send Email" %>
+      <%= submit_tag "Compose Message" %>
       <% end -%>
 </td>
   </tr>
