@@ -17,55 +17,84 @@ class DataFile < ActiveRecord::Base
     #parse file name
     courseName = name.split('_')[0]
     courseDate = name.split('_')[1]
-    instructorFirstName = name.split('_')[2]
+    instructorFirstName = name.split('_')[2].split('.')[0]
+
 
     if(validateCourse(courseName))
       courseId = getCourseId(courseName)
 
       # Create Course Schedule
       courseScheduleId = createCourseSchedule( courseId,courseDate,instructorFirstName )
-      if courseScheduleId != -1
-        createMembers(path, courseScheduleId)
-      end
+      puts courseName
+      createMembers(path, courseScheduleId, courseName)
+    else
+      raise CustomException::CourseNotFound
     end
-
-
-
-
   end
 
   ##
   # Function to create members and maping members to course schedules
   ##
-  def self.createMembers(path, courseScheduleId)
-    
+  def self.createMembers(path, courseScheduleId, courseName)
+    if courseName.eql?("mbw")
+      rowCount = 1
+      CSV.open( path , 'r', ',') do |row|
+        if rowCount > 2
+          if !row[0].nil? and !row[0].empty?
+            t =  Hash[
+              'firstname',row[0].split(' ')[0],
+              'lastname',row[0].split(' ')[1],
+              'address1',row[1],
+              'address2',row[2],
+              'city',row[3],
+              'state',row[4],
+              'zip',row[5],
+              'country',row[6],
+              'emailid',row[8],
+              'homephone',row[9],
+            ];
+            @member = Member.new(t)
 
-    rowCount = 1
-    CSV.open( path , 'r', ',') do |row|
-      if rowCount > 1
-        t =  Hash[
-          'firstname',row[0].split(' ')[0],
-          'lastname',row[0].split(' ')[1],
-          'address1',row[1],
-          'address2',row[2],
-          'city',row[3],
-          'state',row[4],
-          'zip',row[5],
-          'country',row[6],
-          'emailid',row[8],
-          'homephone',row[9],
-        ];
-        @member = Member.new(t)
-
-        if( isExistingMember( @member ) )
-          mapMemberToCourseSchedule(@member.id,courseScheduleId)
-        else
-          @member.save
-          mapMemberToCourseSchedule(@member.id,courseScheduleId)
+            if( isExistingMember( @member ) )
+              mapMemberToCourseSchedule(@member.id,courseScheduleId)
+            else
+              @member.save
+              mapMemberToCourseSchedule(@member.id,courseScheduleId)
+            end
+         end
         end
-
+        rowCount = rowCount +1
       end
-      rowCount = rowCount +1
+    else if courseName.eql?("part1")
+      rowCount = 1
+      CSV.open( path , 'r', ',') do |row|
+        if rowCount > 2
+          if !row[0].nil? and !row[0].empty?
+            t =  Hash[
+              'firstname',row[0].split(' ')[0],
+              'lastname',row[0].split(' ')[1],
+              'gender', row[1],
+              'address1',row[2],
+              'city',row[3],
+              'state',row[4],
+              'zip',row[5],
+              'emailid',row[6],
+              'homephone',row[23],
+              'cellphone',row[25],
+            ];
+            @member = Member.new(t)
+
+            if( isExistingMember( @member ) )
+              mapMemberToCourseSchedule(@member.id,courseScheduleId)
+            else
+              @member.save
+              mapMemberToCourseSchedule(@member.id,courseScheduleId)
+            end
+          end
+        end
+        rowCount = rowCount +1
+      end
+    end
     end
   end
 
@@ -98,8 +127,8 @@ class DataFile < ActiveRecord::Base
       'course_schedule_id',courseScheduleId,
     ];
     @member_course = MemberCourse.new(t)
-    @validatecoursescheduleid = MemberCourse.find(:all, :conditions => ["course_schedule_id = ?", @member_course.course_schedule_id] )
-    if @validatecoursescheduleid.length == 0
+    @validatecoursescheduleid = MemberCourse.find(:all, :conditions => ["member_id=? and course_schedule_id = ?", @member_course.member_id, @member_course.course_schedule_id] )
+    if @validatecoursescheduleid.length == 0 or @validatecoursescheduleid.empty?
       @member_course.save
     end
   end
@@ -133,8 +162,7 @@ class DataFile < ActiveRecord::Base
 
   def self.createCourseSchedule( courseId,courseDate,instructorFirstName )
     @cs = CourseSchedule.find(:all, :conditions => ["start_date = ? and course_id=? and teacher_name=?", courseDate, courseId, instructorFirstName])
-    if @cs.nil?
-      puts "cs is nil"
+    if @cs.empty?
       t =  Hash[
         'course_id',courseId,
         'start_date',courseDate,
@@ -147,12 +175,7 @@ class DataFile < ActiveRecord::Base
       puts "created cs "
       return id
     else
-      puts "cs already exists"
-      return -1
+      return @cs.object_id
     end
   end
-
-  
-
-
 end
