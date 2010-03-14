@@ -20,11 +20,10 @@ config.action_mailer.delivery_method = :smtp
 
 
 config.action_mailer.smtp_settings = {
-    :tls => true,
-    :address => "smtp.gmail.com",
+    :address => "mail.aolcms.org",
     :port => "587",
-    :domain => "gmail.com",
+    :domain => "aolcms.org",
     :authentication => :plain,
-    :user_name => "vkorimilli",
-    :password => "sec*wel*123"
+    :user_name => "vkorimilli@aolcms.org",
+    :password => "wel*come1"
   }

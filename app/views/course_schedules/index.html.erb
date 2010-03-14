@@ -19,6 +19,7 @@
     <th width="60">Start date</th>
     <th width="60">End date</th>
     <th width="60">Teacher name</th>
+    <th width="60">Assistant name</th>
   </tr>
 
   <% for course_schedule in @course_schedules -%>
@@ -30,6 +31,7 @@
     <td>&nbsp;</td>
     <% end%>
     <td><%=h course_schedule.teacher_name %></td>
+    <td><%=h course_schedule.volunteer_id %></td>
   </tr>
 <% end %>
 </table>

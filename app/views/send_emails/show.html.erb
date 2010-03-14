@@ -34,8 +34,12 @@
 <% for courseschedule in @courseschedules -%>
   <tr>
     <td><%= radio_button_tag  "course_schedule_radio", courseschedule.id %></td>
-    <td><%= courseschedule.start_date %></td>
-    <td><%= courseschedule.end_date %></td>
+    <td><%= courseschedule.start_date.strftime("%m-%d-%Y %I:%M %p") %></td>
+    <% if !courseschedule.end_date.nil? %>
+      <td><%= courseschedule.end_date.strftime("%m-%d-%Y %I:%M %p") %></td>
+    <% else %>
+      <td>&nbsp;</td>
+    <% end %>
   </tr>
 <% end %>
       </table>

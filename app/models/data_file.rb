@@ -17,14 +17,14 @@ class DataFile < ActiveRecord::Base
     #parse file name
     courseName = name.split('_')[0]
     courseDate = name.split('_')[1]
-    instructorFirstName = name.split('_')[2].split('.')[0]
-
+    instructorFirstName = name.split('_')[2]
+    assistantId = name.split('_')[3].split('.')[0]
 
     if(validateCourse(courseName))
       courseId = getCourseId(courseName)
 
       # Create Course Schedule
-      courseScheduleId = createCourseSchedule( courseId,courseDate,instructorFirstName )
+      courseScheduleId = createCourseSchedule( courseId,courseDate,instructorFirstName,assistantId )
       puts courseName
       createMembers(path, courseScheduleId, courseName)
     else
@@ -160,13 +160,14 @@ class DataFile < ActiveRecord::Base
   # Function to create Course scehdule
   ##
 
-  def self.createCourseSchedule( courseId,courseDate,instructorFirstName )
+  def self.createCourseSchedule( courseId,courseDate,instructorFirstName,assistantId )
     @cs = CourseSchedule.find(:all, :conditions => ["start_date = ? and course_id=? and teacher_name=?", courseDate, courseId, instructorFirstName])
     if @cs.empty?
       t =  Hash[
         'course_id',courseId,
         'start_date',courseDate,
         'teacher_name',instructorFirstName,
+        'volunteer_id',assistantId,
       ];
       @course_schedule = CourseSchedule.new(t)
 

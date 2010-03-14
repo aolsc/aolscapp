@@ -11,6 +11,5 @@
   <%=h @course_schedule.teacher_name %>
 </p>
 
-
 <%= link_to 'Edit', edit_course_schedule_path(@course_schedule) %> |
 <%= link_to 'Back', { :action => 'index', :controller => 'course_schedules', :course_id => @course_schedule.course_id} %>

@@ -26,3 +26,17 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+config.action_mailer.raise_delivery_errors = true
+
+config.action_mailer.delivery_method = :smtp
+
+
+config.action_mailer.smtp_settings = {
+    :address => "mail.aolcms.org",
+    :port => "587",
+    :domain => "aolcms.org",
+    :authentication => :plain,
+    :user_name => "vkorimilli@aolcms.org",
+    :password => "wel*come1"
+  }
