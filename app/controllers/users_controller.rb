@@ -49,7 +49,12 @@ end
   # GET /users/new.xml
   def new
     @mem = Member.find(params[:id])
+    puts "mem:"
+    puts params[:id]
+    puts @mem
     @user = User.new
+    @roles = Role.find(:all)
+    @mem_emailid = @mem.emailid
 
     respond_to do |format|
       format.html # new.html.erb
@@ -59,13 +64,17 @@ end
 
   # GET /users/1/edit
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
+    @roles = Role.find(:all)
+
+    
   end
 
   # POST /users
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    @user.roles = Role.find(params[:role_ids]) if params[:role_ids]
     if @user.save
        flash[:notice] = 'Registration successful.'
        redirect_to users_path
@@ -100,7 +109,9 @@ end
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = current_user
+    params[:user][:role_ids] ||= []
+    @user = User.find(params[:id])
+    # @user.roles = Role.find(params[:role_ids]) if params[:role_ids]
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -129,7 +140,15 @@ end
   def memberselect
     begin
      @member = Member.new(params[:member])
-     @members = Member.find(:all, :conditions => ["firstname = ? OR lastname = ? OR emailid = ?" ,@member.firstname, @member.lastname, @member.emailid])
+     @members_with_users = Member.all(:conditions => ["firstname = ? OR lastname = ? OR emailid = ?" ,@member.firstname, @member.lastname, @member.emailid], :joins => :user)
+     @members_all = Member.find(:all, :conditions => ["firstname = ? OR lastname = ? OR emailid = ?" ,@member.firstname, @member.lastname, @member.emailid])
+     @members = []
+     for m in @members_all
+       if !@members_with_users.include?(m)
+         @members << m
+       end
+     end
+
      
       rescue ActiveRecord::RecordNotFound
         logger.error("Attempt to access invalid user")

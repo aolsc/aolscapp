@@ -30,8 +30,8 @@
     <% else %>
     <td>&nbsp;</td>
     <% end%>
-    <td><%=h course_schedule.teacher_name %></td>
-    <td><%=h course_schedule.volunteer_id %></td>
+    <td><%=  course_schedule.teacher.firstname %></td>
+    <td><%=  course_schedule.assistant.firstname %></td>
   </tr>
 <% end %>
 </table>

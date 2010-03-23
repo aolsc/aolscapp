@@ -8,7 +8,6 @@ class CourseSchedulesController < ApplicationController
     @course = Course.find(params[:course_id])
     @course_schedules = @course.course_schedules.paginate :page => params[:page], :per_page => 10
 
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @course_schedules }
@@ -31,7 +30,18 @@ class CourseSchedulesController < ApplicationController
   def new
     @course = Course.find(params[:id])
     @course_schedule = CourseSchedule.new(params[:courseschedule])
-    
+        @teacherusers = Role.find_by_role_name("Teacher").users
+    @teachers = []
+    @teacherusers.each do |tu|
+       @teachers << tu.member
+    end
+
+    @assistantusers = Role.find_by_role_name("Volunteer").users
+    @assistants = []
+    @assistantusers.each do |tu|
+       @assistants << tu.member
+    end
+
   end
 
   # GET /course_schedules/1/edit
@@ -43,7 +53,19 @@ class CourseSchedulesController < ApplicationController
   # POST /course_schedules.xml
   def create
     @course = Course.find(params[:course_id])
-    @course_schedule = @course.course_schedules.build(params[:course_schedule])
+    #@course_schedule = @course.course_schedules.build(params[:course_schedule])
+    @course_schedule = CourseSchedule.new
+    @course_schedule.course_id = params[:course_id]
+    @course_schedule.start_date = params[:start_date]
+    @course_schedule.end_date = params[:end_date]
+    @teach = params[:teachers][:id]
+    @assis = params[:assistants][:id]
+    @course_schedule.teacher_id = @teach
+    @course_schedule.volunteer_id = @assis
+    puts "tc"
+    puts params[:start_date]
+    puts "end"
+
 
     respond_to do |format|
       if @course_schedule.save

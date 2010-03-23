@@ -1,22 +1,25 @@
 <h1>Course Schedule for Course '<%=  @course.displayName %>'</h1>
 
-<% form_for :course_schedule, @course_schedule, :url => {:action => 'create', :course_id => params[:id]} do |f| %>
+<% form_tag :action => 'create',:course_id => params[:id] do -%>
  <p>
     <label for ="start_date"> Start Date </label><br />
-    <%= f.datetime_select :start_date %>
+    <%= calendar_date_select_tag "start_date", @start_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
   </p>
   <p>
     <label for ="end_date"> End Date </label><br />
-    <%= f.datetime_select :end_date %>
+    <%= calendar_date_select_tag "end_date", @end_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
   </p>
   <p>
-    <label for ="teacher_name"> Teacher Name </label><br />
-    <%= f.text_field :teacher_name %>
+    <label for ="teacher_name">Teacher Name</label><br />
+    <%= collection_select(:teachers, :id, @teachers, :id, :firstname,
+                            {:prompt => "Select a course"})%>&nbsp;&nbsp;
   </p>
-
+    <label for ="coursename">Assistant</label>&nbsp;&nbsp;
+      <%= collection_select(:assistants, :id, @assistants, :id, :firstname,
+                            {:prompt => "Select a course"})%>&nbsp;&nbsp;
   <p>
     <%= submit_tag 'Submit' %>
   </p>
 
-<% end %>
+<% end -%>
 <%#= link_to 'Back', course_schedules_path %>

@@ -1,0 +1,57 @@
+<br><br>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr><td><b>Search course schedules</b></td></tr>
+        <tr>
+          <td>
+            <% form_tag '/member_report/show', :method => 'get' do -%>
+    <label for ="coursename">Course Name</label>&nbsp;&nbsp;
+      <%= collection_select(:coursedd, :id, @courses, :id, :displayName,
+                            {:prompt => "Select a course"})%>&nbsp;&nbsp;
+
+   <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @report_start_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
+   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @report_end_date, :year_range => 3.years.ago..0.years.ago, :time => true %>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
+   
+            <% end -%>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <% form_tag '/member_report/composemessage' do -%>
+      <table border="1" cellspacing="0" cellpadding="5" width="100%">
+  <tr bgcolor="#A9F5F2">
+    <td width="40"><b> Select </b></td>
+    <td width="100"><b>Course Start Date</b></td>
+    <td width="100"><b>Course End Date</b></td>
+  </tr>
+
+<% for courseschedule in @courseschedules -%>
+  <tr>
+    <td><%= radio_button_tag  "course_schedule_radio", courseschedule.id %></td>
+    <td><%= courseschedule.start_date.strftime("%m-%d-%Y %I:%M %p") %></td>
+    <% if !courseschedule.end_date.nil? %>
+      <td><%= courseschedule.end_date.strftime("%m-%d-%Y %I:%M %p") %></td>
+    <% else %>
+      <td>&nbsp;</td>
+    <% end %>
+  </tr>
+<% end %>
+      </table>
+      <%=  hidden_field_tag 'cs_id', @cs_id %>
+      <%= submit_tag "Compose Message" %>
+      <% end -%>
+</td>
+  </tr>
+   <tr>
+   <td align="right"><br>
+    <%= will_paginate @courseschedules %>
+   </td>
+ </tr>
+
+</table>

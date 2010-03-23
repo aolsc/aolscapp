@@ -7,7 +7,7 @@
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </p>
-  <%= hidden_field 'user', 'email', :value => @mem.emailid %>
+  <%= hidden_field 'user', 'email', :value => @mem_emailid %>
   <p>
     <%= f.label :password %><br />
     <%= f.password_field :password %>
@@ -16,6 +16,10 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+  <br>
+  <% for role in @roles %>
+    <input type="checkbox" id="<%=role.id%>" name="role_ids[]" value="<%= role.id %>"> <%= role.role_name %>
+  <% end %>
   <p>
     <%= f.submit 'Create' %>
   </p>
