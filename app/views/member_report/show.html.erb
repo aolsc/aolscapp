@@ -7,13 +7,18 @@
         <tr>
           <td>
             <% form_tag '/member_report/show', :method => 'get' do -%>
-    <label for ="coursename">Course Name</label>&nbsp;&nbsp;
+    <label for ="coursename">Course</label>&nbsp;&nbsp;
       <%= collection_select(:coursedd, :id, @courses, :id, :displayName,
                             {:prompt => "Select a course"})%>&nbsp;&nbsp;
+    <label for ="teachername">Teacher</label>&nbsp;&nbsp;
+      <%= collection_select(:teacherssel, :id, @teachers, :id, :fullname,
+                            {:prompt => "Select a course"})%>&nbsp;&nbsp;
+    <label for ="assistantname">Assistant</label>&nbsp;&nbsp;
+      <%= collection_select(:assistantssel, :id, @assistants, :id, :fullname,
+                            {:prompt => "Select a course"})%>&nbsp;&nbsp;
 
-   <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @report_start_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
-   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @report_end_date, :year_range => 3.years.ago..0.years.ago, :time => true %>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
-   
+  <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @report_start_date, :year_range => 3.years.ago..0.years.ago%>
+   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @report_end_date, :year_range => 3.years.ago..0.years.ago%>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
             <% end -%>
           </td>
         </tr>
@@ -43,7 +48,6 @@
   </tr>
 <% end %>
       </table>
-      <%=  hidden_field_tag 'cs_id', @cs_id %>
       <%= submit_tag "Compose Message" %>
       <% end -%>
 </td>

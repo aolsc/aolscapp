@@ -1,25 +1,31 @@
-<h1>File Upload</h1>
-
-Please follow below guidelines for the file name format.
-<p>
-Format:&nbsp;<b>[CourseName]_[CourseDate]_[InstructorName]_[AssistantId].csv</b><br>
-CourseDate - MMDDYY<br>
-CourseName - one of the below
-<ul>
-  <li>part1</li>
-  <li>mbw</li>
-  <li>ag1</li>
-  <li>ag2</li>
-  <li>ag3</li>
-  <li>artexcel</li>
-  <li>social</li>
-  <li>knowledgeseries</li>
-</ul>
-<b>Example:&nbsp;</b>part1_yymmdd_Ramesh_554.csv<br>
-</p>
+<h1>Import participants list</h1>
 <%=form_tag({:action => 'upload_file'},
                         :multipart => true) %>
-<p><label for="upload_file"><font color="green"><b>Select File<b></font></label> :
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>Course/Event</td>
+    <td>&nbsp;<%= collection_select(:coursesel, :id, @courses, :id, :displayName,
+                            {:prompt => "Select a course"})%></td>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+    <td>Start Date</td>
+    <td>&nbsp;<%= calendar_date_select_tag "start_date", @sel_from_date, :year_range => 3.years.ago..0.years.ago, :popup => "force", :time => true %></td>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+    <td>Teacher</td>
+    <td>&nbsp;<%= collection_select(:teacherssel, :id, @teachers, :id, :fullname,
+                            {:prompt => "Select"})%></td>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+    <td>Assistant</td>
+    <td>&nbsp;<%= collection_select(:assistantssel1, :id, @assistants, :id, :fullname,
+                            {:prompt => "Select"})%></td>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+</table>
+<p><label for="upload_file"><font color="green"><b>Upload a CSV File<b></font></label> :
 <%= file_field 'upload', 'datafile' %></p>
 <%= submit_tag "Upload" %>
-<%=  %>

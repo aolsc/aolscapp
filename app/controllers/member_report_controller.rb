@@ -8,13 +8,13 @@ class MemberReportController < ApplicationController
     @teacherusers = Role.find_by_role_name("Teacher").users
     @teachers = []
     @teacherusers.each do |tu|
-       @teachers << tu.member
+      @teachers << tu.member
     end
 
     @assistantusers = Role.find_by_role_name("Volunteer").users
     @assistants = []
     @assistantusers.each do |tu|
-       @assistants << tu.member
+      @assistants << tu.member
     end
 
     puts "tc"
@@ -27,21 +27,39 @@ class MemberReportController < ApplicationController
 
   def show
     @courses = Course.find(:all)
+
+    if !params[:from_date_cal].empty?
       @report_start_date = Time.parse(params[:from_date_cal])
-      @report_end_date = Time.parse(params[:end_date_cal])
-      puts @report_start_date
-      puts @report_end_date
-
-      @coursedd = params[:coursedd]
-      
-
-      if @report_start_date.nil? or @report_end_date.nil?
-        @courseschedules = CourseSchedule.find(:all, :conditions => ["course_id=?", params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
-      else
-        @courseschedules = CourseSchedule.find(:all, :conditions => ["start_date >= ? and end_date <= ? and course_id=?", @report_start_date, @report_end_date, params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
     end
-    @cs_id = -1
+    if !params[:end_date_cal].empty?
+      @report_end_date = Time.parse(params[:end_date_cal])
+    end
+
+
+    @coursedd = params[:coursedd] unless params[:coursedd][:id].empty?
     
+    @teacherusers = Role.find_by_role_name("Teacher").users
+    @teachers = []
+    @teacherusers.each do |tu|
+      @teachers << tu.member
+    end
+
+    @assistantusers = Role.find_by_role_name("Volunteer").users
+    @assistants = []
+    @assistantusers.each do |tu|
+      @assistants << tu.member
+    end
+
+    @teacherssel = params[:teacherssel] unless params[:teacherssel][:id].empty?
+    @assistantssel = params[:assistantssel] unless params[:assistantssel][:id].empty?
+
+    #if @report_start_date.nil? or @report_end_date.nil?
+     # @courseschedules = CourseSchedule.find(:all, :conditions => ["course_id=?", params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
+    #else
+#      @courseschedules = CourseSchedule.find(:all, :conditions => ["start_date >= ? and end_date <= ? and course_id=?", @report_start_date, @report_end_date, params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
+ #   end
+    @courseschedules ||= find_course_schedules.paginate :page => params[:page], :per_page => 10
+    @cs_id = -1
 
     respond_to do |format|
       format.html
@@ -55,8 +73,8 @@ class MemberReportController < ApplicationController
     else
       puts "no"
       Date.new(params["#{field_name.to_s}(1i)"].to_i,
-       params["#{field_name.to_s}(2i)"].to_i,
-       params["#{field_name.to_s}(3i)"].to_i)
+        params["#{field_name.to_s}(2i)"].to_i,
+        params["#{field_name.to_s}(3i)"].to_i)
     end
   end
 
@@ -92,16 +110,17 @@ class MemberReportController < ApplicationController
     end
   end
 
-  def completionstatus
+  def sendemail
     @cs_id = params[:cs_id]
     @member_courses = MemberCourse.find(:all, :conditions => ["course_schedule_id=?", @cs_id])
     @email_ids = []
     @member_courses.each do |member_course|
-      @email_ids << member_course.member.emailid
+      if !@email_ids.include?(member_course.member.emailid)
+        MemberMailer.deliver_sendemail_for_members("santaclara@us.artofliving.org", member_course.member.emailid, params[:subject], nil, params[:email_content].gsub('{NAME}', member_course.member.firstname))
+        @email_ids << member_course.member.emailid
+      end
     end
-
-    puts @email_ids
-    MemberMailer.deliver_sendemail_for_members("vkorimilli@gmail.com", @email_ids, params[:subject], nil, params[:email_content])
+    
     flash[:notice] = "Email(s) sent !"
     redirect_to :action => "index"
   end
@@ -114,4 +133,51 @@ class MemberReportController < ApplicationController
       page.replace_html 'courseschedules', :partial => 'courseschedules', :object => @cls
     end
   end
- end
+
+  private
+  def find_course_schedules
+    CourseSchedule.find(:all, :conditions => conditions)
+  end
+
+  def id_conditions
+    ["course_id = ?", params[:coursedd][:id]] unless params[:coursedd][:id].empty?
+  end
+
+  def teacher_conditions
+    ["teacher_id = ?", params[:teacherssel][:id]] unless params[:teacherssel][:id].empty?
+  end
+
+  def assistant_conditions
+    ["volunteer_id = ?", params[:assistantssel][:id]] unless params[:assistantssel][:id].empty?
+  end
+
+  def start_date_conditions
+    if !params[:from_date_cal].empty?
+      @report_start_date = Time.parse(params[:from_date_cal])
+      ["start_date >= ?", @report_start_date]
+    end
+  end
+
+  def end_date_conditions
+    if !params[:end_date_cal].empty?
+      @report_end_date = Time.parse(params[:end_date_cal])
+      ["end_date <= ? or end_date is null", @report_end_date]
+    end
+  end
+
+  def conditions
+    [conditions_clauses.join(' AND '), *conditions_options]
+  end
+
+  def conditions_clauses
+    conditions_parts.map { |condition| condition.first }
+  end
+
+  def conditions_options
+    conditions_parts.map { |condition| condition[1..-1] }.flatten
+  end
+
+  def conditions_parts
+    private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
+  end
+end

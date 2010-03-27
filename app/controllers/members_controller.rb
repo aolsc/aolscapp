@@ -96,8 +96,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       if @member.update_attributes(params[:member])
         flash[:notice] = 'Member was successfully updated.'
-        format.html { redirect_to(@member) }
-        format.xml  { head :ok }
+        redirect_to :action => "index"
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }

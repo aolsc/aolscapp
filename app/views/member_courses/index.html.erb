@@ -18,9 +18,9 @@
               <% else %>
                 <% for course_schedule in @course_schedules -%>
                   <tr>
-                    <td><%= course_schedule.course.name %></td>
+                    <td><%= course_schedule.course.displayName %></td>
                     <td><%= course_schedule.start_date %></td>
-                    <td><%= course_schedule.teacher_name %></td>
+                    <td><%= course_schedule.teacher.firstname.capitalize + " " + course_schedule.teacher.lastname.capitalize%></td>
                   </tr>
                 <% end %>
               <% end %>
