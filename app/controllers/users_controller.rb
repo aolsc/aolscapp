@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   add_crumb("Users") { |instance| instance.send :users_path }
+  filter_resource_access
 
   # GET /users
   # GET /users.xml
@@ -116,7 +117,11 @@ end
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'User was successfully updated.'
-        format.html { redirect_to(@user) }
+        if permitted_to? :index, User.new
+          format.html { redirect_to(@user) }
+        else
+          format.html { redirect_to(:root) }
+        end
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

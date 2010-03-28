@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
   add_crumb("Members") { |instance| instance.send :members_path }
+  filter_resource_access
  
   # GET /members
   # GET /members.xml
@@ -39,8 +40,6 @@ class MembersController < ApplicationController
   # GET /members/new
   # GET /members/new.xml
   def new
-    @member = Member.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @member }
@@ -49,13 +48,11 @@ class MembersController < ApplicationController
 
   # GET /members/1/edit
   def edit
-    @member = Member.find(params[:id])
   end
 
   # POST /members
   # POST /members.xml
   def create
-    @member = Member.new(params[:member])
     @validatemember = Member.find(:all, :conditions => ["firstname = ? AND lastname = ? AND emailid = ?", @member.firstname, @member.lastname, @member.emailid
       ])
     if @validatemember.length == 0
@@ -91,8 +88,6 @@ class MembersController < ApplicationController
   # PUT /members/1
   # PUT /members/1.xml
   def update
-    @member = Member.find(params[:id])
-
     respond_to do |format|
       if @member.update_attributes(params[:member])
         flash[:notice] = 'Member was successfully updated.'
@@ -107,7 +102,6 @@ class MembersController < ApplicationController
   # DELETE /members/1
   # DELETE /members/1.xml
   def destroy
-    @member = Member.find(params[:id])
     @member.destroy
 
     respond_to do |format|

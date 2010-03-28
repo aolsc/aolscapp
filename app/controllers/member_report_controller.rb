@@ -116,7 +116,7 @@ class MemberReportController < ApplicationController
     @email_ids = []
     @member_courses.each do |member_course|
       if !@email_ids.include?(member_course.member.emailid)
-        MemberMailer.deliver_sendemail_for_members("santaclara@us.artofliving.org", member_course.member.emailid, params[:subject], nil, params[:email_content].gsub('{NAME}', member_course.member.firstname))
+        MemberMailer.deliver_sendemail_for_members("santaclara@us.artofliving.org", member_course.member.emailid, params[:subject], nil, params[:email_content].gsub('{FIRSTNAME}', member_course.member.firstname))
         @email_ids << member_course.member.emailid
       end
     end

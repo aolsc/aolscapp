@@ -15,13 +15,18 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  before_filter { |c| Authorization.current_user = c.current_user }
+
   def ensure_login
     unless current_user
       redirect_to(login_path)
     end
   end
 
-  private
+def permission_denied
+  flash[:notice] = "Sorry, you are not allowed to access that page."
+  redirect_to root_url
+end
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

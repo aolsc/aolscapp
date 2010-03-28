@@ -1,16 +1,18 @@
 <% form_tag '/member_report/sendemail' do -%>
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
-<tr><td><br><b>Subject</b>&nbsp;</td><td valign="bottom"><%= text_field_tag "subject", "", :size => 70 %></td></tr>
-<tr><td colspan="2">&nbsp;</td></tr>
-<tr><td><br><b>To</b>&nbsp;</td><td valign="top"><%= text_area_tag "to", @email_ids, :size => "80x6", :disabled => :true %></td></tr>
+<tr><td><br><b>Subject</b>&nbsp;</td><td valign="bottom"><%= text_field_tag "subject", "", :size => 70 %></td><td>&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td><br><b>To</b>&nbsp;</td><td valign="top"><%= text_area_tag "to", @email_ids, :size => "80x6", :disabled => :true %></td><td>&nbsp;</td></tr>
 <!--<tr><td colspan="2"><br><b>Choose option to where to put Member Email Ids</b><br>
 &nbsp;&nbsp;&nbsp;To&nbsp;<%= radio_button_tag "emailid_option","To" %>
 &nbsp;&nbsp;&nbsp;Bcc&nbsp;<%= radio_button_tag "emailid_option","Bcc" %>
 &nbsp;&nbsp;&nbsp;Cc&nbsp;<%= radio_button_tag "emailid_option","Cc" %>
 </td>
 </tr>-->
-<tr><td colspan="2">&nbsp;</td></tr>
-<tr><td valign="top"><b>Content</b>&nbsp;</td><td valign="bottom"><%= text_area_tag 'email_content', nil, :size => "75x40" %></td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td>&nbsp;</td><td colspan="2">Variables:</td></tr>
+<tr><td>&nbsp;</td><td colspan="2">First name - {FIRSTNAME}</td></tr>
+<tr><td valign="top"><b>Content</b>&nbsp;</td><td valign="bottom"><%= text_area_tag 'email_content', nil, :size => "75x40" %></td><td>&nbsp;</td></tr>
 </table>
 <br>
 

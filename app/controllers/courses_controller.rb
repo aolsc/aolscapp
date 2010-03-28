@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   add_crumb("Courses") { |instance| instance.send :courses_path }
+  filter_resource_access
 
   # GET /courses
   # GET /courses.xml
