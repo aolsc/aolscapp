@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   add_crumb("Users") { |instance| instance.send :users_path }
-  # filter_resource_access
+ # filter_resource_access
 
   # GET /users
   # GET /users.xml
@@ -23,6 +23,12 @@ class UsersController < ApplicationController
     puts " worked fine"
   end
 end
+
+  def membersearch
+    respond_to do |format|
+      format.html # membersearch.html.erb
+    end
+  end
 
   # GET /users/1
   # GET /users/1.xml
