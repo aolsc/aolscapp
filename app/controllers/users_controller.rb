@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   add_crumb("Users") { |instance| instance.send :users_path }
-  filter_resource_access
+  # filter_resource_access
 
   # GET /users
   # GET /users.xml
