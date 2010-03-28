@@ -48,8 +48,8 @@ class UploadController < ApplicationController
       save(params[:upload], courseScheduleId, courseName)
       flash[:notice] = 'File has been uploaded successfully.'
     end
-  rescue CustomException::CourseNotFound
-    flash[:notice] = 'The course not found. Please verify file name.'
+  rescue CustomException::WrongFileFormat
+    flash[:notice] = 'The uploaded file does not belong to the Course chosen. Please verify.'
     redirect_to :action => "index"
   end
 
@@ -96,6 +96,10 @@ class UploadController < ApplicationController
     if courseName.eql?("mbw")
       rowCount = 1
       CSV.open( path , 'r', ',') do |row|
+        if rowCount == 1 and !row[1].equal?('Address1')
+          raise CustomException::WrongFileFormat
+        end
+
         if rowCount > 2
           if !row[0].nil? and !row[0].empty?
             t =  Hash[
@@ -125,6 +129,10 @@ class UploadController < ApplicationController
     else if courseName.eql?("part1")
       rowCount = 1
       CSV.open( path , 'r', ',') do |row|
+        if rowCount == 1 and !row[1].equal?('Gender')
+          raise CustomException::WrongFileFormat
+        end
+
         if rowCount > 2
           if !row[0].nil? and !row[0].empty?
             t =  Hash[

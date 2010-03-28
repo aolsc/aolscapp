@@ -19,7 +19,11 @@
   </tr>
 <% for course in @courses -%>
   <tr>
-    <td><%= link_to course.displayName, edit_course_path(course) %></td>
+    <% if permitted_to? :edit, course %>
+      <td><%= link_to course.displayName, edit_course_path(course) %></td>
+    <% else %>
+      <td><%= course.displayName %></td>
+    <% end %>
     <td><%= link_to 'Edit', course_course_schedules_path(course.id) %></td>
   </tr>
 <% end %>
