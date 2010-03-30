@@ -40,7 +40,7 @@ class UploadController < ApplicationController
       redirect_to params.merge!(:action => :index)
     else
       courseName = Course.find(params[:coursesel][:id]).name
-      courseScheduleId = mycoursesched( params[:coursesel][:id],Time.parse(params[:start_date]).utc,params[:teacherssel][:id],params[:assistantssel1][:id] )
+      courseScheduleId = getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).utc,params[:teacherssel][:id],params[:assistantssel1][:id] )
       puts "before "
       puts params[:start_date]
       puts "after "
@@ -53,7 +53,7 @@ class UploadController < ApplicationController
     redirect_to :action => "index"
   end
 
-    def mycoursesched ( courseId,courseDate,teacherId, assistantId)
+    def getOrCreateCourseSched ( courseId,courseDate,teacherId, assistantId)
     @cs = CourseSchedule.find(:all, :conditions => ["start_date = ? and course_id=? and teacher_id=?", courseDate, courseId, teacherId])
     if @cs.empty?
       t =  Hash[
@@ -94,9 +94,11 @@ class UploadController < ApplicationController
   ##
   def createMembers(path, courseScheduleId, courseName)
     if courseName.eql?("mbw")
-      rowCount = 1
+      rowCount = 0
       CSV.open( path , 'r', ',') do |row|
-        if rowCount == 1 and !row[1].equal?('Address1')
+        if rowCount == 1 and !row[1].eql?("Address1")
+          puts "row 1 "
+          puts row[1]
           raise CustomException::WrongFileFormat
         end
 
@@ -117,19 +119,20 @@ class UploadController < ApplicationController
             @member = Member.new(t)
 
             if isExistingMember( @member )
-              mapMemberToCourseSchedule(@member.id,courseScheduleId)
+              mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
             else
               @member.save
-              mapMemberToCourseSchedule(@member.id,courseScheduleId)
+              mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
             end
          end
         end
         rowCount = rowCount +1
       end
-    else if courseName.eql?("part1")
-      rowCount = 1
+    else if courseName.eql?('part1')
+      rowCount = 0
       CSV.open( path , 'r', ',') do |row|
-        if rowCount == 1 and !row[1].equal?('Gender')
+
+        if rowCount == 1 and !row[1].eql?('Gender')
           raise CustomException::WrongFileFormat
         end
 
@@ -150,10 +153,10 @@ class UploadController < ApplicationController
             @member = Member.new(t)
 
             if( isExistingMember( @member ) )
-              mapMemberToCourseSchedule(@member.id,courseScheduleId)
+              mapMemberToCourseSchedule(@member.id,courseScheduleId, row[30])
             else
               @member.save
-              mapMemberToCourseSchedule(@member.id,courseScheduleId)
+              mapMemberToCourseSchedule(@member.id,courseScheduleId, row[30])
             end
           end
         end
@@ -187,10 +190,11 @@ class UploadController < ApplicationController
   ##
   # Function to map members to course schedule.
   ##
-  def mapMemberToCourseSchedule(memberId,courseScheduleId)
+  def mapMemberToCourseSchedule(memberId,courseScheduleId,source)
     t =  Hash[
       'member_id',memberId,
       'course_schedule_id',courseScheduleId,
+      'referral_source',source
     ];
     @member_course = MemberCourse.new(t)
     @validatecoursescheduleid = MemberCourse.find(:all, :conditions => ["member_id=? and course_schedule_id = ?", @member_course.member_id, @member_course.course_schedule_id] )
