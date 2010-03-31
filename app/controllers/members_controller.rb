@@ -58,7 +58,6 @@ class MembersController < ApplicationController
     if @validatemember.length == 0
       @validateemail = Member.find(:all, :conditions => ["emailid = ? ", @member.emailid])
       if @validateemail.length == 0
-        @member.updateby = current_user
         @member.save
         flash[:notice] = 'Member was successfully created.'
         redirect_to :action => "index"
@@ -88,18 +87,17 @@ class MembersController < ApplicationController
 
   # PUT /members/1
   # PUT /members/1.xml
+
+
   def update
-    respond_to do |format|
-      @member = Member.new(params[:member])
-      
-      if @member.save
-        flash[:notice] = 'Member was successfully updated.'
-        redirect_to :action => "index"
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
+      @member.updateby = current_user
+      if @member.update_attributes(params[:member])
+         flash[:notice] = 'Member was successfully updated.'
+         redirect_to :action => "index"
+       else
+         flash[:notice] = 'An error occured updating the member information.'
+         redirect_to :action => "index"
       end
-    end
   end
 
   # DELETE /members/1
