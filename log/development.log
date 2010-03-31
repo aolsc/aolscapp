@@ -5723,3 +5723,366 @@ Processing MembersController#index (for 127.0.0.1 at 2010-03-30 23:23:16) [GET]
 Rendering template within layouts/application
 Rendering members/index
 Completed in 191ms (View: 14, DB: 27) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-30 23:25:50) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (4.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 114ms (View: 14, DB: 26) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#edit (for 127.0.0.1 at 2010-03-30 23:25:53) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mUser Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 7) [0m
+  [4;36;1mroles_users Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendering template within layouts/application
+Rendering members/edit
+Completed in 109ms (View: 11, DB: 34) | 200 OK [http://localhost/members/7/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#update (for 127.0.0.1 at 2010-03-30 23:25:56) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"j3STVVaqWKI/fxVdVz56gQBB0buaifs9YXuM9365GEU=", "member"=>{"city"=>"San Jose", "address1"=>"6889 Chantel ct.", "zip"=>"95129", "address2"=>"", "agetype"=>"", "homephone"=>"408-865-1378", "employer"=>"", "gender"=>"", "cellphone"=>"", "lastname"=>"Subbiah", "firstname"=>"Harini", "emailid"=>"vkorimilli@gmail.com", "profession"=>"", "state"=>"CA"}, "id"=>"7"}
+  [4;35;1mUser Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 7) [0m
+  [4;35;1mroles_users Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Update (1.0ms)[0m   [0mUPDATE `members` SET `agetype` = '', `gender` = '', `updateby` = 5, `address2` = '', `profession` = '', `employer` = '', `cellphone` = '', `updated_at` = '2010-03-31 06:25:56' WHERE `id` = 7[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 115ms (DB: 37) | 302 Found [http://localhost/members/7]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-30 23:25:57) [GET]
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 133ms (View: 14, DB: 29) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-30 23:37:54) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 199ms (View: 96, DB: 25) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#index (for 127.0.0.1 at 2010-03-31 00:13:04) [GET]
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM `courses` [0m
+  [4;36;1mRole Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Teacher') LIMIT 1[0m
+  [4;36;1mroles_users Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 5 ) [0m
+  [4;36;1mMember Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 4) [0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 6 ) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendering template within layouts/application
+Rendering upload/index
+  [4;36;1mCourse Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+Completed in 548ms (View: 398, DB: 53) | 200 OK [http://localhost/upload]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#upload_file (for 127.0.0.1 at 2010-03-31 00:14:21) [POST]
+  Parameters: {"start_date"=>"September 25, 2009", "assistantssel1"=>{"id"=>"5"}, "commit"=>"Upload", "teacherssel"=>{"id"=>"3"}, "authenticity_token"=>"j3STVVaqWKI/fxVdVz56gQBB0buaifs9YXuM9365GEU=", "upload"=>{"datafile"=>#<File:C:/Users/VKORIM~1/AppData/Local/Temp/RackMultipart.13216.0>}, "coursesel"=>{"id"=>"1"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (25.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourseSchedule Load (6.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (start_date = '2009-09-25 07:00:00' and course_id='1' and teacher_id='3') [0m
+  [4;36;1mCourseSchedule Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mCourseSchedule Create (0.0ms)[0m   [0;1mINSERT INTO `course_schedules` (`start_date`, `end_date`, `address1`, `city`, `address2`, `updated_at`, `displayname`, `country`, `volunteer_id`, `teacher_id`, `deleted`, `course_id`, `center_id`, `location_name`, `state`, `created_at`) VALUES('2009-09-25 07:00:00', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', NULL, NULL, 5, 3, NULL, 1, NULL, NULL, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Antra' AND lastname = 'Swati' AND emailid = 'antra.swati@gmail.com') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Create (1.0ms)[0m   [0mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1180 Lochinvar Avenue,', 'Sunnyvale', '2010-03-31 07:14:21', NULL, '94087', NULL, 5, NULL, '5613859732', NULL, 'Antra', 'Swati', 'antra.swati@gmail.com', 'F', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMemberCourse Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=39 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, '-', '2010-03-31 07:14:21', 11, 39, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Aparna' AND lastname = 'Gothoskar' AND emailid = 'aparnaga@yahoo.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1220 vicente drive, Apt B', 'Sunnyvale', '2010-03-31 07:14:21', NULL, '94086', NULL, 5, NULL, '6509647705', NULL, 'Aparna', 'Gothoskar', 'aparnaga@yahoo.com', 'F', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=40 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Through a friend.', '2010-03-31 07:14:21', 11, 40, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Arunachalam' AND lastname = 'Govindan' AND emailid = 'arunz@hotmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('2506 Hayward dr', 'Santa Clara', '2010-03-31 07:14:21', NULL, '95051', NULL, 5, NULL, '4084239298', NULL, 'Arunachalam', 'Govindan', 'arunz@hotmail.com', 'M', '4088328012', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=41 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Online', '2010-03-31 07:14:21', 11, 41, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Ashish' AND lastname = 'Sharma' AND emailid = 'asharma800@gmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1004 Oaktree Dr', 'San Jose', '2010-03-31 07:14:21', NULL, '95129', NULL, 5, NULL, '4089825317', NULL, 'Ashish', 'Sharma', 'asharma800@gmail.com', 'M', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=42 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'My wife took this course.', '2010-03-31 07:14:21', 11, 42, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Bharti' AND lastname = 'Aggarwal' AND emailid = 'bhartiaggarwal@hotmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('18345 Chelmsford drive', 'Cupertino', '2010-03-31 07:14:21', NULL, '95014', NULL, 5, NULL, '4089825770', NULL, 'Bharti', 'Aggarwal', 'bhartiaggarwal@hotmail.com', 'F', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=43 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'From a friend', '2010-03-31 07:14:21', 11, 43, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Gopala' AND lastname = 'Akella' AND emailid = 'gakella@gmail.com') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('38660 Lexington St #708', 'Fremont', '2010-03-31 07:14:21', NULL, '94536', NULL, 5, NULL, '6509193977', NULL, 'Gopala', 'Akella', 'gakella@gmail.com', 'M', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=44 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Through friends', '2010-03-31 07:14:21', 11, 44, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Gopinath' AND lastname = 'Venkatesan' AND emailid = 'gopi_tv@yahoo.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('2563 Gallup Drive', 'Santa Clara', '2010-03-31 07:14:21', NULL, '95051', NULL, 5, NULL, '4082167511', NULL, 'Gopinath', 'Venkatesan', 'gopi_tv@yahoo.com', 'M', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=45 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, '-', '2010-03-31 07:14:21', 11, 45, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Jignasha' AND lastname = 'Patel' AND emailid = 'pjignasha@hotmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1224 Vicente Dr Apt # B', 'Sunnyvale', '2010-03-31 07:14:21', NULL, '94086', NULL, 5, NULL, '6505679640', NULL, 'Jignasha', 'Patel', 'pjignasha@hotmail.com', 'F', '6502248281', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=46 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'From a friend', '2010-03-31 07:14:21', 11, 46, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Krishna' AND lastname = 'Devarapalli' AND emailid = 'kdevarapally@gmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1444 Cedarmeadow Ct', 'San Jose', '2010-03-31 07:14:21', NULL, '95131', NULL, 5, NULL, '4083686162', NULL, 'Krishna', 'Devarapalli', 'kdevarapally@gmail.com', 'F', '4083686162', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=47 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Art of Living, free course', '2010-03-31 07:14:21', 11, 47, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Nicole' AND lastname = 'Dresser' AND emailid = 'n_dresser@yahoo.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('416 Madera Ave #6', 'Sunnyvale', '2010-03-31 07:14:21', NULL, '94086', NULL, 5, NULL, '6506931075', NULL, 'Nicole', 'Dresser', 'n_dresser@yahoo.com', 'F', '7073306918', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=48 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (2.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'firned in NC tried it and referred me to deal with stress', '2010-03-31 07:14:21', 11, 48, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Rana' AND lastname = 'Yekta' AND emailid = 'rana_yekta@yahoo.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('600 Rainbow dr #169', 'Mountain View', '2010-03-31 07:14:21', NULL, '94041', NULL, 5, NULL, '4084256460', NULL, 'Rana', 'Yekta', 'rana_yekta@yahoo.com', 'F', '4084256460', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=49 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Kamala', '2010-03-31 07:14:21', 11, 49, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Sanjay' AND lastname = 'Gupta' AND emailid = 'gptsanjay@yahoo.com') [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('3415 Judi Ann Ct', 'San Jose', '2010-03-31 07:14:21', NULL, '95148', NULL, 5, NULL, '4082700695', NULL, 'Sanjay', 'Gupta', 'gptsanjay@yahoo.com', 'M', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=50 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-03-31 07:14:21', 11, 50, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Sapna' AND lastname = 'Shukla' AND emailid = 'sapna_shukla@yahoo.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('175 Calvert Dr #M101', 'Cupertino', '2010-03-31 07:14:21', NULL, '95014', NULL, 5, NULL, '4088739491', NULL, 'Sapna', 'Shukla', 'sapna_shukla@yahoo.com', 'F', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=51 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-03-31 07:14:21', 11, 51, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Snehal' AND lastname = 'Shah' AND emailid = 'snehal35@yahoo.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('2907 Helmsley Dr', 'San Jose', '2010-03-31 07:14:21', NULL, '95132', NULL, 5, NULL, '4084102550', NULL, 'Snehal', 'Shah', 'snehal35@yahoo.com', 'M', '4084102550', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=52 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Email', '2010-03-31 07:14:21', 11, 52, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Sonal' AND lastname = 'Bhagwat/kelkar' AND emailid = 'sonalshri@hotmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('870 E El Camino Real', 'Sunnyvale', '2010-03-31 07:14:21', NULL, '94087', NULL, 5, NULL, '4087358819', NULL, 'Sonal', 'Bhagwat/kelkar', 'sonalshri@hotmail.com', 'F', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=53 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Friends', '2010-03-31 07:14:21', 11, 53, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Sripriyasundara' AND lastname = 'Paramasivan' AND emailid = 'priyaruna@hotmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('2506 Hayward dr', 'Santa Clara', '2010-03-31 07:14:21', NULL, '95051', NULL, 5, NULL, '4084239298', NULL, 'Sripriyasundara', 'Paramasivan', 'priyaruna@hotmail.com', 'M', '4087818079', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=54 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Online', '2010-03-31 07:14:21', 11, 54, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Susan' AND lastname = 'Schwamkrug' AND emailid = 'sschwamkrug@comcast.net') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1618 Edmonton Ave', 'Sunnyvale', '2010-03-31 07:14:21', NULL, '94087', NULL, 5, NULL, '4083061441', NULL, 'Susan', 'Schwamkrug', 'sschwamkrug@comcast.net', 'F', '4083061441', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=55 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'email from local community college', '2010-03-31 07:14:21', 11, 55, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Swati' AND lastname = 'Kher' AND emailid = 'ameet_swati@hotmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('4960 Miramar', 'San Jose', '2010-03-31 07:14:21', NULL, '95129', NULL, 5, NULL, '4082442130', NULL, 'Swati', 'Kher', 'ameet_swati@hotmail.com', 'F', NULL, NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=56 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'BMM Ganesh Utsav', '2010-03-31 07:14:21', 11, 56, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Syamala' AND lastname = 'Maganti' AND emailid = 'syamala.maganti@gmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1901 Silva Pl', 'Santa Clara', '2010-03-31 07:14:21', NULL, '95054', NULL, 5, NULL, '4083863269', NULL, 'Syamala', 'Maganti', 'syamala.maganti@gmail.com', 'F', '4083863269', NULL, NULL, NULL, '2010-03-31 07:14:21', 'CA', NULL)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=57 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Through Friend', '2010-03-31 07:14:21', 11, 57, NULL, '2010-03-31 07:14:21')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Tuan' AND lastname = 'Chu' AND emailid = 'tuanvanchu@yahoo.com') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1694 Almond Blossom Ln.', 'San Jose', '2010-03-31 07:14:22', NULL, '95124', NULL, 5, NULL, '4082690567', NULL, 'Tuan', 'Chu', 'tuanvanchu@yahoo.com', 'M', NULL, NULL, NULL, NULL, '2010-03-31 07:14:22', 'CA', NULL)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=58 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (2.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Referred by Jane Duong', '2010-03-31 07:14:22', 11, 58, NULL, '2010-03-31 07:14:22')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Tushar' AND lastname = 'Dhayagude' AND emailid = 'tdhayagude@att.net') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1128 Pomeroy Ave', 'Santa Clara', '2010-03-31 07:14:22', NULL, '95051', NULL, 5, NULL, '4083159182', NULL, 'Tushar', 'Dhayagude', 'tdhayagude@att.net', 'M', '4083159182', NULL, NULL, NULL, '2010-03-31 07:14:22', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=59 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Manish Kulkarni', '2010-03-31 07:14:22', 11, 59, NULL, '2010-03-31 07:14:22')[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Veena' AND lastname = 'Pata' AND emailid = 'veena.pata@gmail.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (2.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('4544 Cheeney Street', 'Santa Clara', '2010-03-31 07:14:22', NULL, '95054', NULL, 5, NULL, '2152803445', NULL, 'Veena', 'Pata', 'veena.pata@gmail.com', 'F', NULL, NULL, NULL, NULL, '2010-03-31 07:14:22', 'CA', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=60 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Friends', '2010-03-31 07:14:22', 11, 60, NULL, '2010-03-31 07:14:22')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Yvonne' AND lastname = 'Duong' AND emailid = 'carpediemmylittleones@yahoo.com') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (1.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('1694 Almond Blossom Ln.', 'San Jose', '2010-03-31 07:14:22', NULL, '95124', NULL, 5, NULL, '4082690567', NULL, 'Yvonne', 'Duong', 'carpediemmylittleones@yahoo.com', 'F', NULL, NULL, NULL, NULL, '2010-03-31 07:14:22', 'CA', NULL)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=61 and course_schedule_id = 11) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'From a friend - Jane Duong', '2010-03-31 07:14:22', 11, 61, NULL, '2010-03-31 07:14:22')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering upload/upload_file
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 751ms (View: 30, DB: 201) | 200 OK [http://localhost/upload/upload_file]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-31 00:14:24) [GET]
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 107ms (View: 14, DB: 32) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-31 00:14:29) [GET]
+  Parameters: {"page"=>"6"}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 50, 10[0m
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 220ms (View: 15, DB: 33) | 200 OK [http://localhost/?page=6]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-31 00:14:33) [GET]
+  Parameters: {"page"=>"2"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (4.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 10, 10[0m
+  [4;35;1mMember Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 119ms (View: 15, DB: 34) | 200 OK [http://localhost/?page=2]
