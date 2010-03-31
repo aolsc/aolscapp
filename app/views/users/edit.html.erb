@@ -15,16 +15,17 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-  <br>
-  <% for role in Role.find(:all) %>
+  <% if permitted_to? :index, User.new %>
+    <% for role in Role.find(:all) %>
   <div>
     <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
     <%= role.role_name %>
   </div>
   <% end %>
+<% end %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
     <br>
 <% end %>
 
