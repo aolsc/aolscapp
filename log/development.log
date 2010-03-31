@@ -4354,3 +4354,450 @@ Rendering course_schedules/index
   [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
   [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
 Completed in 128ms (View: 47, DB: 30) | 200 OK [http://localhost/courses/1/course_schedules]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#index (for 127.0.0.1 at 2010-03-29 23:52:24) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Teacher') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 5 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (3.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 4) [0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 6 ) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendering template within layouts/application
+Rendering upload/index
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+Completed in 185ms (View: 19, DB: 34) | 200 OK [http://localhost/upload]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#upload_file (for 127.0.0.1 at 2010-03-29 23:52:37) [POST]
+  Parameters: {"start_date"=>"March 1, 2010", "assistantssel1"=>{"id"=>"2"}, "commit"=>"Upload", "teacherssel"=>{"id"=>"4"}, "authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "upload"=>{"datafile"=>#<File:C:/Users/VKORIM~1/AppData/Local/Temp/RackMultipart.10908.0>}, "coursesel"=>{"id"=>"2"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (start_date = '2010-03-01 08:00:00' and course_id='2' and teacher_id='4') [0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mCourseSchedule Create (0.0ms)[0m   [0;1mINSERT INTO `course_schedules` (`start_date`, `end_date`, `address1`, `city`, `address2`, `updated_at`, `displayname`, `country`, `volunteer_id`, `teacher_id`, `deleted`, `course_id`, `center_id`, `location_name`, `state`, `created_at`) VALUES('2010-03-01 08:00:00', NULL, NULL, NULL, NULL, '2010-03-30 06:52:37', NULL, NULL, 2, 4, NULL, 2, NULL, NULL, NULL, '2010-03-30 06:52:37')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Harini' AND lastname = 'Subbiah' AND emailid = 'vkorimilli@gmail.com') [0m
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=7 and course_schedule_id = 10) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (0.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'email notification', '2010-03-30 06:52:37', 10, 7, NULL, '2010-03-30 06:52:37')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Harshad' AND lastname = 'Chavan' AND emailid = 'vkorimilli@gmail.com') [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=8 and course_schedule_id = 10) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'friend', '2010-03-30 06:52:37', 10, 8, NULL, '2010-03-30 06:52:37')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Hiral' AND lastname = 'Shah' AND emailid = 'vkorimilli@gmail.com') [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=9 and course_schedule_id = 10) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (0.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'from meetup.com', '2010-03-30 06:52:37', 10, 9, NULL, '2010-03-30 06:52:37')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Puneet' AND lastname = 'Kumar' AND emailid = 'vkorimilli@gmail.com') [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=10 and course_schedule_id = 10) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-03-30 06:52:37', 10, 10, NULL, '2010-03-30 06:52:37')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Satish' AND lastname = 'Rane' AND emailid = 'vkorimilli@gmail.com') [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=11 and course_schedule_id = 10) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (1.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-03-30 06:52:37', 10, 11, NULL, '2010-03-30 06:52:37')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'VJ' AND lastname = 'Kor' AND emailid = 'vkorimilli@gmail.com') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Create (1.0ms)[0m   [0mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('522 Niles Common', 'Fremont', '2010-03-30 06:52:37', NULL, '94536', NULL, 5, 'USA', '510-795-1729', NULL, 'VJ', 'Kor', 'vkorimilli@gmail.com', NULL, NULL, NULL, NULL, NULL, '2010-03-30 06:52:37', 'CA', NULL)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=33 and course_schedule_id = 10) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (1.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'word of mouth', '2010-03-30 06:52:37', 10, 33, NULL, '2010-03-30 06:52:37')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Sridevi' AND lastname = 'Satyavarpu' AND emailid = 'vkorimilli@gmail.com') [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=13 and course_schedule_id = 10) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `created_at`) VALUES(NULL, NULL, 'local events in yahoo', '2010-03-30 06:52:37', 10, 13, NULL, '2010-03-30 06:52:37')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering upload/upload_file
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 204ms (View: 20, DB: 51) | 200 OK [http://localhost/upload/upload_file]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-29 23:55:07) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 89ms (View: 13, DB: 20) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#edit (for 127.0.0.1 at 2010-03-29 23:55:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mroles_users Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (5.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendering template within layouts/application
+Rendering members/edit
+Completed in 100ms (View: 17, DB: 23) | 200 OK [http://localhost/members/2/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#update (for 127.0.0.1 at 2010-03-29 23:55:18) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "member"=>{"city"=>"", "address1"=>"", "zip"=>"", "address2"=>"", "agetype"=>"", "homephone"=>"408-888-9999", "employer"=>"", "gender"=>"", "cellphone"=>"", "lastname"=>"kona", "firstname"=>"geeta", "emailid"=>"kgeetakalyani@gmail.com", "profession"=>"", "state"=>""}, "id"=>"2"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Update (0.0ms)[0m   [0;1mUPDATE `members` SET `updateby` = 5, `updated_at` = '2010-03-30 06:55:18', `homephone` = '408-888-9999' WHERE `id` = 2[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.call):
+  app/controllers/members_controller.rb:92:in `update'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#update (for 127.0.0.1 at 2010-03-29 23:57:20) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "member"=>{"city"=>"", "address1"=>"", "zip"=>"", "address2"=>"", "agetype"=>"", "homephone"=>"408-888-9999", "employer"=>"", "gender"=>"", "cellphone"=>"", "lastname"=>"kona", "firstname"=>"geeta", "emailid"=>"kgeetakalyani@gmail.com", "profession"=>"", "state"=>""}, "id"=>"2"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('', '', '2010-03-30 06:57:20', '', '', '', 5, NULL, '408-888-9999', NULL, 'geeta', 'kona', 'kgeetakalyani@gmail.com', '', '', '', NULL, NULL, '2010-03-30 06:57:20', '', '')[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.call):
+  app/controllers/members_controller.rb:92:in `update'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#update (for 127.0.0.1 at 2010-03-29 23:57:50) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "member"=>{"city"=>"", "address1"=>"", "zip"=>"", "address2"=>"", "agetype"=>"", "homephone"=>"408-888-9999", "employer"=>"", "gender"=>"", "cellphone"=>"", "lastname"=>"kona", "firstname"=>"geeta", "emailid"=>"kgeetakalyani@gmail.com", "profession"=>"", "state"=>""}, "id"=>"2"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('', '', '2010-03-30 06:57:50', '', '', '', NULL, NULL, '408-888-9999', NULL, 'geeta', 'kona', 'kgeetakalyani@gmail.com', '', '', '', NULL, NULL, '2010-03-30 06:57:50', '', '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.call):
+  app/controllers/members_controller.rb:92:in `update'
+
+Rendered rescues/_trace (117.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-29 23:58:05) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 90ms (View: 13, DB: 20) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-29 23:58:12) [POST]
+  Parameters: {"authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendering template within layouts/application
+Rendering members/new
+Completed in 90ms (View: 14, DB: 17) | 200 OK [http://localhost/members/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#create (for 127.0.0.1 at 2010-03-29 23:58:30) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "member"=>{"city"=>"", "address1"=>"", "zip"=>"", "address2"=>"", "agetype"=>"", "homephone"=>"", "employer"=>"", "gender"=>"", "cellphone"=>"", "lastname"=>"test", "firstname"=>"abc", "emailid"=>"abc@test.com", "profession"=>"", "state"=>""}}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'abc' AND lastname = 'test' AND emailid = 'abc@test.com') [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (emailid = 'abc@test.com' ) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Create (1.0ms)[0m   [0mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('', '', '2010-03-30 06:58:30', '', '', '', 5, NULL, '', NULL, 'abc', 'test', 'abc@test.com', '', '', '', NULL, NULL, '2010-03-30 06:58:30', '', '')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 149ms (DB: 22) | 302 Found [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-29 23:58:31) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 92ms (View: 14, DB: 21) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-29 23:59:20) [POST]
+  Parameters: {"authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "search_by_email"=>"", "search_by_name"=>"abc"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  
+
+Rendered rescues/_trace (51.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-29 23:59:24) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 91ms (View: 15, DB: 19) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-29 23:59:29) [POST]
+  Parameters: {"authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "search_by_email"=>"", "search_by_name"=>"abc"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-29 23:59:42) [POST]
+  Parameters: {"authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "search_by_email"=>"abc@abc.com", "search_by_name"=>""}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-29 23:59:45) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 89ms (View: 13, DB: 20) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-29 23:59:53) [POST]
+  Parameters: {"authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "search_by_email"=>"", "search_by_name"=>"geeta"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  
+
+Rendered rescues/_trace (118.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#edit (for 127.0.0.1 at 2010-03-30 00:00:00) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 4) [0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendering template within layouts/application
+Rendering members/edit
+Completed in 87ms (View: 9, DB: 20) | 200 OK [http://localhost/members/4/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#update (for 127.0.0.1 at 2010-03-30 00:00:05) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"OPeIQoneQla/V60SJTCEypRA79jFJcEMgoDeh/nYRVg=", "member"=>{"city"=>"", "address1"=>"", "zip"=>"", "address2"=>"", "agetype"=>"", "homephone"=>"", "employer"=>"", "gender"=>"", "cellphone"=>"", "lastname"=>"kadari", "firstname"=>"sudarshan", "emailid"=>"sudarshan@test.com", "profession"=>"", "state"=>""}, "id"=>"4"}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 4) [0m
+  [4;36;1mroles_users Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.0ms)[0m   [0;1mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('', '', '2010-03-30 07:00:05', '', '', '', 5, NULL, '', NULL, 'sudarshan', 'kadari', 'sudarshan@test.com', '', '', '', NULL, NULL, '2010-03-30 07:00:05', '', '')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.call):
+  app/controllers/members_controller.rb:92:in `update'
+
+Rendered rescues/_trace (132.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-30 20:39:56) [GET]
+  [4;36;1mUser Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 416ms (DB: 11) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-30 20:39:57) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 53ms (View: 20, DB: 5) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-30 20:42:41) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"admin", "password"=>"admin"}, "authenticity_token"=>"j3STVVaqWKI/fxVdVz56gQBB0buaifs9YXuM9365GEU="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 314ms (View: 6, DB: 7) | 200 OK [http://localhost/user_sessions]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-30 20:42:48) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"admin", "password"=>"welcome"}, "authenticity_token"=>"j3STVVaqWKI/fxVdVz56gQBB0buaifs9YXuM9365GEU="}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 36ms (DB: 6) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-30 20:42:49) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '5') LIMIT 1[0m
+  [4;36;1mroles_users Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (4.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 5 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (3.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 194ms (View: 33, DB: 31) | 200 OK [http://localhost/]

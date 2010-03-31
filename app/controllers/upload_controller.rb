@@ -115,6 +115,7 @@ class UploadController < ApplicationController
               'country',row[6],
               'emailid',row[8],
               'homephone',row[9],
+              'updateby',current_user,
             ];
             @member = Member.new(t)
 
@@ -149,6 +150,7 @@ class UploadController < ApplicationController
               'emailid',row[6],
               'homephone',row[23],
               'cellphone',row[25],
+              'updateby',current_user,
             ];
             @member = Member.new(t)
 
