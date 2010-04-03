@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20100329112010) do
     t.string   "deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "teacher_id"
     t.integer  "volunteer_id"
+    t.integer  "teacher_id"
   end
 
   create_table "courses", :force => true do |t|
