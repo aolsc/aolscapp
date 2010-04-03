@@ -1,6 +1,8 @@
 class MemberCourseInterestsController < ApplicationController
   # GET /member_course_interests
   # GET /member_course_interests.xml
+  filter_access_to :all
+  
   def index
     @member = Member.find(params[:member_id])
     @member_course_interests = @member.member_course_interests

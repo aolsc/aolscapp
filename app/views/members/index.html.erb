@@ -10,7 +10,7 @@
         <tr><td><b>Search By</b></td></tr>
         <tr>
           <td>
-            <% form_tag '/members/show' do -%>
+            <% form_tag '/members/show', :method => 'get' do -%>
             <table border="0" cellspacing="1" cellpadding="0" width="100%">
               <tr><td>Name&nbsp;&nbsp;<%= text_field_tag  :search_by_name,params[:search_by_name], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= text_field_tag :search_by_email,params[:search_by_email], :size => 15 %>&nbsp;&nbsp;<%= button_to 'Go', :action => "show" %></td></tr>
             </table>

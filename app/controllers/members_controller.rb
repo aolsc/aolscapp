@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   add_crumb("Members") { |instance| instance.send :members_path }
-  filter_resource_access
- 
+  filter_access_to :all
+
   # GET /members
   # GET /members.xml
   def index
@@ -13,9 +13,8 @@ class MembersController < ApplicationController
     end
   end
 
-  # GET /members/1
-  # GET /members/1.xml
   def show
+    begin
     
       if params["search_by_name"].empty? and params["search_by_email"].empty? then
         @members = Member.find(:all).paginate :page => params[:page], :per_page => 10
@@ -34,6 +33,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @member }
+    end
     end
   end
 

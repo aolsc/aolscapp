@@ -1,6 +1,8 @@
 class MemberGeneralFeedbacksController < ApplicationController
   # GET /member_general_feedbacks
   # GET /member_general_feedbacks.xml
+  filter_access_to :all
+  
   def index
     @member = Member.find(params[:member_id])
     @member_general_feedbacks = @member.member_general_feedbacks
