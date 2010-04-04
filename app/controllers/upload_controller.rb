@@ -1,6 +1,8 @@
-require 'csv'
+  require 'csv'
 
 class UploadController < ApplicationController
+  attr_reader :mc, :mu
+
   def index
   @courses = Course.find(:all)
 
@@ -40,28 +42,29 @@ class UploadController < ApplicationController
       redirect_to params.merge!(:action => :index)
     else
       courseName = Course.find(params[:coursesel][:id]).name
-      courseScheduleId = getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).utc,params[:teacherssel][:id],params[:assistantssel1][:id] )
-      puts "before "
-      puts params[:start_date]
-      puts "after "
-      puts Time.parse(params[:start_date]).utc
+      courseScheduleId = getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).to_time.utc,params[:teacherssel][:id],params[:assistantssel1][:id] )
+      @mc = 0
+      @mu = 0
       save(params[:upload], courseScheduleId, courseName)
-      flash[:notice] = 'File has been uploaded successfully.'
+      flash.now[:notice] = "File has been uploaded successfully.<br><br>Number of new members created - " + @mc.to_s + "<br>Number of existing members updated - " + @mu.to_s
     end
   rescue CustomException::WrongFileFormat
     flash[:notice] = 'The uploaded file does not belong to the Course chosen. Please verify.'
+    CourseSchedule.delete(courseScheduleId)
     redirect_to :action => "index"
   end
 
-    def getOrCreateCourseSched ( courseId,courseDate,teacherId, assistantId)
-    @cs = CourseSchedule.find(:all, :conditions => ["start_date = ? and course_id=? and teacher_id=?", courseDate, courseId, teacherId])
-    if @cs.empty?
+ def getOrCreateCourseSched ( courseId,courseDate,teacherId, assistantId)
+    @cs = CourseSchedule.find(:first, :conditions => ["start_date = ? and course_id=? and teacher_id=?", courseDate, courseId, teacherId])
+    if @cs.nil?
       t =  Hash[
         'course_id',courseId,
         'start_date',courseDate,
         'teacher_id',teacherId,
         'volunteer_id',assistantId,
+        'last_updated_by',current_user[:id],
       ];
+
       @course_schedule = CourseSchedule.new(t)
 
       @course_schedule.save
@@ -69,8 +72,9 @@ class UploadController < ApplicationController
       puts "created cs "
       return id
     else
-      puts "returning " + @cs[0].id.to_s
-      return @cs[0].id
+      @cs.last_updated_by = current_user[:id]
+      @cs.save
+      return @cs.id
     end
   end
 
@@ -115,14 +119,18 @@ class UploadController < ApplicationController
               'country',row[6],
               'emailid',row[8],
               'homephone',row[9],
-              'updateby',current_user,
+              'updateby',current_user[:id],
             ];
             @member = Member.new(t)
 
+
+
             if isExistingMember( @member )
+              @mu += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
             else
               @member.save
+              @mc += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
             end
          end
@@ -150,14 +158,16 @@ class UploadController < ApplicationController
               'emailid',row[6],
               'homephone',row[23],
               'cellphone',row[25],
-              'updateby',current_user,
+              'updateby',current_user[:id],
             ];
             @member = Member.new(t)
 
             if( isExistingMember( @member ) )
+              @mu += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[30])
             else
               @member.save
+              @mc += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[30])
             end
           end
@@ -196,7 +206,8 @@ class UploadController < ApplicationController
     t =  Hash[
       'member_id',memberId,
       'course_schedule_id',courseScheduleId,
-      'referral_source',source
+      'referral_source',source,
+      'last_updated_by', current_user[:id],
     ];
     @member_course = MemberCourse.new(t)
     @validatecoursescheduleid = MemberCourse.find(:all, :conditions => ["member_id=? and course_schedule_id = ?", @member_course.member_id, @member_course.course_schedule_id] )

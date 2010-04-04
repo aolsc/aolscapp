@@ -1,6 +1,5 @@
 class MemberCoursesController < ApplicationController
   add_crumb("Members") { |instance| instance.send :members_path }
-  filter_resource_access
   
   # GET /member_courses
   # GET /member_courses.xml

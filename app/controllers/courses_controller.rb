@@ -44,7 +44,7 @@ class CoursesController < ApplicationController
   # POST /courses.xml
   def create
     @course = Course.new(params[:course])
-
+    
     respond_to do |format|
       if @course.save
         flash[:notice] = 'Course was successfully created.'

@@ -153,15 +153,15 @@ class MemberReportController < ApplicationController
 
   def start_date_conditions
     if !params[:from_date_cal].empty?
-      @report_start_date = Time.parse(params[:from_date_cal])
+      @report_start_date = Date.parse(params[:from_date_cal])
       ["start_date >= ?", @report_start_date]
     end
   end
 
   def end_date_conditions
     if !params[:end_date_cal].empty?
-      @report_end_date = Time.parse(params[:end_date_cal])
-      ["end_date <= ? or end_date is null", @report_end_date]
+      @report_end_date = Date.parse(params[:end_date_cal])
+      ["start_date <= ?", @report_end_date]
     end
   end
 

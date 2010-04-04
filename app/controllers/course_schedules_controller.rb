@@ -58,34 +58,35 @@ class CourseSchedulesController < ApplicationController
     #@course_schedule = @course.course_schedules.build(params[:course_schedule])
     @course_schedule = CourseSchedule.new
     @course_schedule.course_id = params[:course_id]
-    @course_schedule.start_date = params[:start_date]
-    @course_schedule.end_date = params[:end_date]
+    @course_schedule.start_date = Time.parse(params[:start_date])
+    if !params[:end_date].empty?
+      @course_schedule.end_date = Time.parse(params[:end_date])
+    end
     @teach = params[:teachers][:id]
     @assis = params[:assistants][:id]
     @course_schedule.teacher_id = @teach
     @course_schedule.volunteer_id = @assis
-    puts "tc"
-    puts params[:start_date]
-    puts "end"
 
-
-    respond_to do |format|
-      if @course_schedule.save
+      
+    @course_schedule.last_updated_by = current_user[:id]
+      @cs = CourseSchedule.find(:all, :conditions => ["start_date = ? and course_id=? and teacher_id=?", Time.parse(params[:start_date]).to_time.utc, @course.id, @teach])
+      if !@cs.empty?
+        flash[:notice] = 'Could not create course schedule. A course schedule with the same start date, teacher for this course already exists.'
+        redirect_to(course_course_schedules_path(@course.id))        
+      elsif @course_schedule.save
         flash[:notice] = 'CourseSchedule was successfully created.'
-        format.html { redirect_to(course_course_schedules_path(@course.id))}
-        format.xml  { head :ok }
+        redirect_to(course_course_schedules_path(@course.id))        
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @course_schedule.errors, :status => :unprocessable_entity }
+        flash[:notice] = 'Could not create course schedule due to system errors.'
+        redirect_to course_course_schedules_path(@course.id)
       end
-    end
   end
 
   # PUT /course_schedules/1
   # PUT /course_schedules/1.xml
   def update
     @course_schedule = CourseSchedule.find(params[:id])
-
+    @course_schedule.last_updated_by = current_user[:id]
     respond_to do |format|
       if @course_schedule.update_attributes(params[:course_schedule])
         flash[:notice] = 'CourseSchedule was successfully updated.'
