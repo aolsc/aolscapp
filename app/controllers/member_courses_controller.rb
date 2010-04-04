@@ -8,17 +8,6 @@ class MemberCoursesController < ApplicationController
     @course_schedules = []
     @member = Member.find(params[:member_id])
     @member_courses = MemberCourse.find(:all, :conditions => ["member_id = ?", params[:member_id]])
-
-
-    if @member_courses.length == 0
-    else
-      for member_course in @member_courses
-        @c_s = CourseSchedule.find(:all, :conditions => ["id = ? ", member_course.course_schedule_id])
-        for cs in @c_s
-          @course_schedules.push(cs)
-        end
-      end
-    end
   end
 
   # GET /member_courses/1
@@ -100,10 +89,11 @@ class MemberCoursesController < ApplicationController
   def destroy
     add_crumb("Member Courses") { |instance| instance.send :member_member_courses_path }
     @member_course = MemberCourse.find(params[:id])
+    @memb_id = @member_course.member_id
     @member_course.destroy
 
     respond_to do |format|
-      format.html { redirect_to(member_courses_url) }
+      format.html { redirect_to(member_member_courses_url(@memb_id)) }
       format.xml  { head :ok }
     end
   end

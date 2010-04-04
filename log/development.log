@@ -18444,3 +18444,1012 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-04 01:36:52) [GE
 Rendering template within layouts/user_sessions
 Rendering user_sessions/new
 Completed in 39ms (View: 7, DB: 4) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-04 01:50:00) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"admin", "password"=>"welcome"}, "authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE="}
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 148ms (View: 8, DB: 7) | 200 OK [http://localhost/user_sessions]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-04 01:50:05) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"geeta", "password"=>"welcome"}, "authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE="}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'geeta') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 38ms (DB: 7) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 01:50:06) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (3.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 110ms (View: 16, DB: 26) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-04 01:50:11) [GET]
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+Completed in 106ms (View: 29, DB: 21) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 01:50:14) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (4.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 101ms (View: 15, DB: 24) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 01:50:16) [GET]
+  Parameters: {"member_id"=>"2"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mMemberCourse Load (3.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '2') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 111ms (View: 25, DB: 27) | 200 OK [http://localhost/members/2/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 01:50:18) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (2.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 251ms (View: 131, DB: 44) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#course_schedule_search (for 127.0.0.1 at 2010-04-04 01:52:07) [POST]
+  Parameters: {"member_id"=>"69", "authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE="}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` [0m
+  [4;36;1mCourse Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (course_id = 1) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (course_id = 2) [0m
+Rendering template within layouts/application
+Rendering member_courses/course_schedule_search
+  [4;35;1mroles_users Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 119ms (View: 29, DB: 24) | 200 OK [http://localhost/member_courses/course_schedule_search?member_id=69]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#course_schedule_select (for 127.0.0.1 at 2010-04-04 01:52:13) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "member_id"=>"69", "range"=>{"to_date(3i)"=>"10", "from_date(1i)"=>"2010", "from_date(2i)"=>"4", "from_date(3i)"=>"4", "to_date(1i)"=>"2010", "to_date(2i)"=>"4"}, "course"=>{"id"=>"1"}}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mCourse Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 1 AND (start_date > '2010-04-04' AND start_date < '2010-04-10' )) [0m
+Rendering template within layouts/application
+Rendering member_courses/course_schedule_select
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 143ms (View: 46, DB: 36) | 200 OK [http://localhost/member_courses/course_schedule_select]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 01:57:58) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 416ms (View: 192, DB: 46) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 01:58:40) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (6.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 169ms (View: 52, DB: 47) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 01:59:08) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (9.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 255ms (View: 53, DB: 55) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 01:59:28) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (4.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (4.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 194ms (View: 63, DB: 50) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 01:59:52) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 256ms (View: 52, DB: 42) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:01:03) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 173ms (View: 58, DB: 37) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:05:41) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (3.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+
+ActionView::TemplateError (undefined method `member_course' for #<CourseSchedule:0x54b7fd0>) on line #25 of app/views/member_courses/index.html.erb:
+22:                     <td><%= course_schedule.course.displayName %></td>
+23:                     <td><%= course_schedule.start_date.strftime('%m-%d-%Y') %></td>
+24:                     <td><%= course_schedule.teacher.fullname%></td>
+25:                     <td><%= link_to "Delete", {:controller=>"member_courses", :action=>"destroy", :id => course_schedule.member_course.id} %></td>
+26:                   </tr>
+27:                 <% end %>
+28:               <% end %>
+
+    app/views/member_courses/index.html.erb:25
+    app/views/member_courses/index.html.erb:20:in `each'
+    app/views/member_courses/index.html.erb:20
+
+Rendered rescues/_trace (75.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:07:14) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;35;1mMemberCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourse Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+
+ActionView::TemplateError (undefined method `member_course' for #<CourseSchedule:0x50da174>) on line #25 of app/views/member_courses/index.html.erb:
+22:                     <td><%= course_schedule.course.displayName %></td>
+23:                     <td><%= course_schedule.start_date.strftime('%m-%d-%Y') %></td>
+24:                     <td><%= course_schedule.teacher.fullname%></td>
+25:                     <td><%= link_to "Delete", {:controller=>"member_courses", :action=>"destroy", :id => course_schedule.member_course.id} %></td>
+26:                   </tr>
+27:                 <% end %>
+28:               <% end %>
+
+    app/views/member_courses/index.html.erb:25
+    app/views/member_courses/index.html.erb:20:in `each'
+    app/views/member_courses/index.html.erb:20
+
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:07:32) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mCourseSchedule Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourse Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 204ms (View: 64, DB: 57) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:08:58) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (3.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mroles_users Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 129ms (View: 31, DB: 22) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:10:51) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mMemberCourse Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 202ms (View: 84, DB: 53) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#show (for 127.0.0.1 at 2010-04-04 02:11:29) [GET]
+  Parameters: {"member_id"=>"69", "id"=>"96"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/show
+  [4;36;1mCourseSchedule Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+
+ActionView::TemplateError (undefined local variable or method `member' for #<ActionView::Base:0x514945c>) on line #7 of app/views/member_courses/show.html.erb:
+4:     <td>
+5:       <table border="0" cellspacing="0" cellpadding="0" width="80%">
+6:         <tr>
+7:           <td><%= button_to 'Add New Course Attended',{:action => "course_schedule_index", :member_id => member.id}  %></td>
+8:         </tr>
+9:         <tr><td>&nbsp;</td></tr>
+10:       </table>
+
+    app/views/member_courses/show.html.erb:7
+
+Rendered rescues/_trace (66.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:13:20) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 187ms (View: 68, DB: 49) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:15:04) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (14.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mMemberCourse Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 190ms (View: 70, DB: 56) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#show (for 127.0.0.1 at 2010-04-04 02:15:07) [GET]
+  Parameters: {"member_id"=>"69", "id"=>"96"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (2.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/show
+  [4;36;1mCourseSchedule Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+
+ActionView::TemplateError (undefined local variable or method `member' for #<ActionView::Base:0x5208488>) on line #7 of app/views/member_courses/show.html.erb:
+4:     <td>
+5:       <table border="0" cellspacing="0" cellpadding="0" width="80%">
+6:         <tr>
+7:           <td><%= button_to 'Add New Course Attended',{:action => "course_schedule_index", :member_id => member.id}  %></td>
+8:         </tr>
+9:         <tr><td>&nbsp;</td></tr>
+10:       </table>
+
+    app/views/member_courses/show.html.erb:7
+
+Rendered rescues/_trace (167.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:17:02) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 207ms (View: 83, DB: 55) | 200 OK [http://localhost/members/69/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#show (for 127.0.0.1 at 2010-04-04 02:17:06) [GET]
+  Parameters: {"member_id"=>"69", "id"=>"96", "method"=>"delete"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+  [4;36;1mMemberCourse Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (id = 58 ) [0m
+Rendering template within layouts/application
+Rendering member_courses/show
+  [4;36;1mCourseSchedule Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+
+ActionView::TemplateError (undefined local variable or method `member' for #<ActionView::Base:0x51614bc>) on line #7 of app/views/member_courses/show.html.erb:
+4:     <td>
+5:       <table border="0" cellspacing="0" cellpadding="0" width="80%">
+6:         <tr>
+7:           <td><%= button_to 'Add New Course Attended',{:action => "course_schedule_index", :member_id => member.id}  %></td>
+8:         </tr>
+9:         <tr><td>&nbsp;</td></tr>
+10:       </table>
+
+    app/views/member_courses/show.html.erb:7
+
+Rendered rescues/_trace (72.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 02:17:13) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 111ms (View: 16, DB: 31) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-04 02:17:17) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering courses/index
+  [4;36;1mCourse Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+Completed in 106ms (View: 12, DB: 29) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-04 02:17:19) [GET]
+  [4;35;1mUser Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mMember Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+Completed in 130ms (View: 36, DB: 36) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:18:23) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMember Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (4.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;36;1mMemberCourse Load (3.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mMemberCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mCourseSchedule Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourseSchedule Load (4.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;36;1mCourse Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mroles_users Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (5.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 197ms (View: 67, DB: 65) | 200 OK [http://localhost/members/69/member_courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#destroy (for 127.0.0.1 at 2010-04-04 02:18:29) [DELETE]
+  Parameters: {"authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "id"=>"96"}
+  [4;36;1mUser Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMemberCourse Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (`member_courses`.`id` = 96) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Destroy (0.0ms)[0m   [0mDELETE FROM `member_courses` WHERE `id` = 96[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members//member_courses
+Completed in 75ms (DB: 22) | 302 Found [http://localhost/member_courses/96]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-04 02:18:30) [GET]
+
+ActionController::RoutingError (No route matches "/members//member_courses" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 02:18:41) [GET]
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Completed in 122ms (View: 18, DB: 32) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:18:44) [GET]
+  Parameters: {"member_id"=>"69"}
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMember Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 69) [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '69') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mroles_users Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 128ms (View: 31, DB: 30) | 200 OK [http://localhost/members/69/member_courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:19:44) [GET]
+  Parameters: {"member_id"=>"70"}
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMember Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 70) [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '70') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mMemberCourse Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mCourseSchedule Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;36;1mCourse Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mroles_users Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 276ms (View: 160, DB: 55) | 200 OK [http://localhost/members/70/member_courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#destroy (for 127.0.0.1 at 2010-04-04 02:19:49) [DELETE]
+  Parameters: {"authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "id"=>"97"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMemberCourse Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (`member_courses`.`id` = 97) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Destroy (0.0ms)[0m   [0mDELETE FROM `member_courses` WHERE `id` = 97[0m
+  [4;36;1mSQL (12.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members//member_courses
+Completed in 79ms (DB: 23) | 302 Found [http://localhost/member_courses/97]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-04 02:19:50) [GET]
+
+ActionController::RoutingError (No route matches "/members//member_courses" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-04 02:21:57) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering courses/index
+  [4;35;1mCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+Completed in 101ms (View: 10, DB: 23) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 02:21:58) [GET]
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 221ms (View: 16, DB: 25) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:22:02) [GET]
+  Parameters: {"member_id"=>"72"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 72) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '72') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (2.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 59) [0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 178ms (View: 63, DB: 46) | 200 OK [http://localhost/members/72/member_courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#destroy (for 127.0.0.1 at 2010-04-04 02:22:06) [DELETE]
+  Parameters: {"authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "id"=>"99"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMemberCourse Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (`member_courses`.`id` = 99) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Destroy (0.0ms)[0m   [0mDELETE FROM `member_courses` WHERE `id` = 99[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members/72/member_courses
+Completed in 64ms (DB: 15) | 302 Found [http://localhost/member_courses/99]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:22:07) [GET]
+  Parameters: {"member_id"=>"72"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 72) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '72') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 59) [0m
+  [4;35;1mCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 225ms (View: 55, DB: 42) | 200 OK [http://localhost/members/72/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#destroy (for 127.0.0.1 at 2010-04-04 02:22:14) [DELETE]
+  Parameters: {"authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "id"=>"100"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMemberCourse Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (`member_courses`.`id` = 100) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Destroy (0.0ms)[0m   [0;1mDELETE FROM `member_courses` WHERE `id` = 100[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/members/72/member_courses
+Completed in 73ms (DB: 22) | 302 Found [http://localhost/member_courses/100]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:22:14) [GET]
+  Parameters: {"member_id"=>"72"}
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 72) [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '72') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 104ms (View: 26, DB: 25) | 200 OK [http://localhost/members/72/member_courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#course_schedule_search (for 127.0.0.1 at 2010-04-04 02:22:24) [POST]
+  Parameters: {"member_id"=>"72", "authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE="}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourse Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (course_id = 1) [0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (course_id = 2) [0m
+Rendering template within layouts/application
+Rendering member_courses/course_schedule_search
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 102ms (View: 24, DB: 27) | 200 OK [http://localhost/member_courses/course_schedule_search?member_id=72]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#course_schedule_select (for 127.0.0.1 at 2010-04-04 02:22:27) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "member_id"=>"72", "range"=>{"to_date(3i)"=>"4", "from_date(1i)"=>"2010", "from_date(2i)"=>"4", "from_date(3i)"=>"4", "to_date(1i)"=>"2010", "to_date(2i)"=>"4"}, "course"=>{"id"=>"2"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2 AND (start_date > '2010-04-04' AND start_date < '2010-04-04' )) [0m
+Rendering template within layouts/application
+Rendering member_courses/course_schedule_select
+  [4;36;1mroles_users Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 96ms (View: 20, DB: 23) | 200 OK [http://localhost/member_courses/course_schedule_select]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#course_schedule_select (for 127.0.0.1 at 2010-04-04 02:22:33) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "member_id"=>"72", "range"=>{"to_date(3i)"=>"13", "from_date(1i)"=>"2010", "from_date(2i)"=>"4", "from_date(3i)"=>"4", "to_date(1i)"=>"2010", "to_date(2i)"=>"4"}, "course"=>{"id"=>"1"}}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 1 AND (start_date > '2010-04-04' AND start_date < '2010-04-13' )) [0m
+Rendering template within layouts/application
+Rendering member_courses/course_schedule_select
+  [4;36;1mCourseSchedule Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 131ms (View: 42, DB: 37) | 200 OK [http://localhost/member_courses/course_schedule_select]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#course_schedule_insert (for 127.0.0.1 at 2010-04-04 02:22:36) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "member_id"=>"72", "id"=>"59"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMemberCourse Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 72) [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (course_schedule_id = 59) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (0.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, NULL, '2010-04-04 09:22:36', 59, 72, NULL, NULL, '2010-04-04 09:22:36')[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members/72/member_courses
+Completed in 79ms (DB: 20) | 302 Found [http://localhost/member_courses/course_schedule_insert]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:22:37) [GET]
+  Parameters: {"member_id"=>"72"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 72) [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id = '72') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mCourseSchedule Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 59) [0m
+  [4;35;1mCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 146ms (View: 53, DB: 46) | 200 OK [http://localhost/members/72/member_courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#destroy (for 127.0.0.1 at 2010-04-04 02:22:44) [DELETE]
+  Parameters: {"authenticity_token"=>"3ELxLAgVlOxHMErWnHTnxh+XtF+mmS1rQDbF69sPcHE=", "id"=>"101"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mMemberCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mMemberCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (`member_courses`.`id` = 101) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Destroy (0.0ms)[0m   [0;1mDELETE FROM `member_courses` WHERE `id` = 101[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/members/72/member_courses
+Completed in 142ms (DB: 16) | 302 Found [http://localhost/member_courses/101]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberCoursesController#index (for 127.0.0.1 at 2010-04-04 02:22:44) [GET]
+  Parameters: {"member_id"=>"72"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 72) [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id = '72') [0m
+Rendering template within layouts/application
+Rendering member_courses/index
+  [4;35;1mroles_users Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 99ms (View: 24, DB: 23) | 200 OK [http://localhost/members/72/member_courses]
