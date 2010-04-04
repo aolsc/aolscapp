@@ -121,7 +121,8 @@ class MemberReportController < ApplicationController
       end
     end
     
-    flash[:notice] = "Email(s) sent !"
+    # flash[:notice] = "Email(s) sent !"
+    flash.now[:notice] = "Email feature is currently disabled."
     redirect_to :action => "index"
   end
 
