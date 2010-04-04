@@ -1,6 +1,6 @@
 class MemberReportController < ApplicationController
   add_crumb("Member Report") { |instance| instance.send :memberreport_path }
-  filter_access_to :all
+  
   def index
     @courses = Course.find(:all)
     @courseschedules = CourseSchedule.paginate :page => params[:page], :per_page => 10

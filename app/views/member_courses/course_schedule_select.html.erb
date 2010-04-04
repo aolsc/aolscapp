@@ -14,7 +14,7 @@
       <% for course_schedule in @course_schedules %>
         <tr>
           <td><%=h course_schedule.start_date %></td>
-          <td><%=h course_schedule.teacher_name %></td>
+          <td><%=h course_schedule.teacher.fullname %></td>
           <td><%= radio_button_tag  'id',course_schedule.id %> </td>
           <%= hidden_field_tag   'member_id',   params[:member_id] %>
         </tr>
