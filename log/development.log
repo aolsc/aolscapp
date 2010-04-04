@@ -19453,3 +19453,369 @@ Rendering member_courses/index
   [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
   [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
 Completed in 99ms (View: 24, DB: 23) | 200 OK [http://localhost/members/72/member_courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 09:51:37) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 416ms (DB: 5) | 302 Found [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-04 09:51:39) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 46ms (View: 17, DB: 5) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-04 09:51:48) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"geeta", "password"=>"welcome"}, "authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'geeta') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 338ms (DB: 5) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 09:51:49) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Completed in 120ms (View: 33, DB: 23) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-04-04 09:51:52) [POST]
+  Parameters: {"authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA="}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendering template within layouts/application
+Rendering members/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/members/new.html.erb:
+1: <h1>New member</h1>
+2: 
+3: <% form_for(@member) do |f| %>
+4:   <%= f.error_messages %>
+5:   <p>
+6:     Email Id<br />
+
+    app/views/members/new.html.erb:3
+    app/controllers/members_controller.rb:43:in `new'
+
+Rendered rescues/_trace (68.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-04-04 09:56:46) [POST]
+  Parameters: {"authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Completed in 87ms (View: 12, DB: 21) | 200 OK [http://localhost/members/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#create (for 127.0.0.1 at 2010-04-04 09:56:55) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA=", "member"=>{"city"=>"", "address1"=>"", "zip"=>"", "address2"=>"", "agetype"=>"", "homephone"=>"", "employer"=>"", "gender"=>"", "cellphone"=>"", "lastname"=>"test", "firstname"=>"venkat", "emailid"=>"venkat@test.com", "profession"=>"", "state"=>""}}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'venkat' AND lastname = 'test' AND emailid = 'venkat@test.com') [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (emailid = 'venkat@test.com' ) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Create (0.0ms)[0m   [0mINSERT INTO `members` (`address1`, `city`, `updated_at`, `address2`, `zip`, `agetype`, `updateby`, `country`, `homephone`, `centerid`, `firstname`, `lastname`, `emailid`, `gender`, `cellphone`, `employer`, `emailsubscribe`, `deleted`, `created_at`, `state`, `profession`) VALUES('', '', '2010-04-04 16:56:55', '', '', '', NULL, NULL, '', NULL, 'venkat', 'test', 'venkat@test.com', '', '', '', NULL, NULL, '2010-04-04 16:56:55', '', '')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 91ms (DB: 24) | 302 Found [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 09:56:56) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 92ms (View: 12, DB: 20) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-04 09:57:03) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+Completed in 175ms (View: 108, DB: 18) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#membersearch (for 127.0.0.1 at 2010-04-04 09:57:04) [POST]
+  Parameters: {"authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendering template within layouts/application
+Rendering users/membersearch
+Completed in 72ms (View: 12, DB: 15) | 200 OK [http://localhost/users/membersearch]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#memberselect (for 127.0.0.1 at 2010-04-04 09:57:07) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA=", "member"=>{"lastname"=>"", "firstname"=>"", "emailid"=>"venkat@test.com"}}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Permission denied: No matching rules found for memberselect for #<User id: 2, memberid: 2, username: "geeta", email: "admin@admin.com", crypted_password: "0f2a2f939c133e005ef75db45459c478d86a27eb42d04615256...", password_salt: "ySHVkWtgQZRVaP5hGWgp", persistence_token: "826e51ca146c74e2d79cfbfd3aacccef50146cbdc245dfc5c65...", updateby: nil, updatedate: nil, deleted: nil, created_at: "2009-10-24 05:26:56", updated_at: "2010-04-04 07:45:04", member_id: 2> (roles [:admin, :volunteer], privileges [:memberselect], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 61ms (DB: 19) | 302 Found [http://localhost/users/memberselect]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 09:57:07) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 95ms (View: 12, DB: 23) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#memberselect (for 127.0.0.1 at 2010-04-04 10:05:28) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA=", "member"=>{"lastname"=>"", "firstname"=>"", "emailid"=>"venkat@test.com"}}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `users` ON users.member_id = members.id WHERE (firstname = '' OR lastname = '' OR emailid = 'venkat@test.com') [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = '' OR lastname = '' OR emailid = 'venkat@test.com') [0m
+Rendering template within layouts/application
+Rendering users/memberselect
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 93ms (View: 25, DB: 21) | 200 OK [http://localhost/users/memberselect]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-04 10:05:33) [POST]
+  Parameters: {"commit"=>"Next", "authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA=", "id"=>"73"}
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` [0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+Completed in 101ms (View: 19, DB: 25) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-04 10:05:47) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"welcome", "username"=>"venkat", "member_id"=>"73", "password"=>"welcome", "email"=>"venkat@test.com"}, "commit"=>"Create", "authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA=", "role_ids"=>["6"]}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 6) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'venkat@test.com') LIMIT 1[0m
+  [4;36;1mUser Exists (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'venkat') LIMIT 1[0m
+  [4;35;1mUser Exists (1.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '3364df7f49ef2cb06aeec7e14403fce1a5bab00f6031c287c247b229553687159683a815cca5e130664cbe79ee911785747dd3a42888790712e61a7b0fe66c7e') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO `users` (`updatedate`, `updated_at`, `crypted_password`, `memberid`, `username`, `password_salt`, `updateby`, `member_id`, `persistence_token`, `deleted`, `email`, `created_at`) VALUES(NULL, '2010-04-04 17:05:47', '62412b9b63b2f007615781d7b30c31616957fe68cd373368a365606704572d425628146358e2514953df16287cb55e76de85b56aeb7e814088efc92b9d3e26c7', NULL, 'venkat', 'cJVXgIzwpd_X4E2DppF5', NULL, 73, '3364df7f49ef2cb06aeec7e14403fce1a5bab00f6031c287c247b229553687159683a815cca5e130664cbe79ee911785747dd3a42888790712e61a7b0fe66c7e', NULL, 'venkat@test.com', '2010-04-04 17:05:47')[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO `roles_users` (`updated_at`, `role_id`, `user_id`, `created_at`) VALUES (NULL, 6, 4, NULL)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 75ms (DB: 20) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-04 10:05:48) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 94ms (View: 42, DB: 22) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-04 10:05:52) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 37ms (DB: 5) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 10:05:52) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 28ms (DB: 4) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-04 10:05:52) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 35ms (View: 6, DB: 7) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-04 10:05:58) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"venkat", "password"=>"welcome"}, "authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'venkat') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 36ms (DB: 4) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 10:05:58) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '4') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 4 ) [0m
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 90ms (View: 13, DB: 20) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-04 10:08:59) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '4') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '4') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 37ms (DB: 5) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 10:09:00) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 27ms (DB: 4) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-04 10:09:01) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 34ms (View: 6, DB: 4) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-04 10:09:06) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"venkat", "password"=>"welcome"}, "authenticity_token"=>"XPOzr5XIIH3ldqYzqGZpoWuPuIgojsIl0pVJ7Yd/dJA="}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'venkat') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 37ms (DB: 6) | 302 Found [http://localhost/user_sessions]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-04 10:09:07) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '4') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 4 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 89ms (View: 13, DB: 20) | 200 OK [http://localhost/]
