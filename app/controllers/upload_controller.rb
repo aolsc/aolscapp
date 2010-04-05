@@ -106,7 +106,7 @@ class UploadController < ApplicationController
           raise CustomException::WrongFileFormat
         end
 
-        if rowCount > 2
+        if rowCount > 1
           if !row[0].nil? and !row[0].empty?
             t =  Hash[
               'firstname',row[0].split(' ')[0],
@@ -145,7 +145,7 @@ class UploadController < ApplicationController
           raise CustomException::WrongFileFormat
         end
 
-        if rowCount > 2
+        if rowCount > 1
           if !row[0].nil? and !row[0].empty?
             t =  Hash[
               'firstname',row[0].split(' ')[0],
