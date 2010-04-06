@@ -17,8 +17,7 @@ class MemberReportController < ApplicationController
       @assistants << tu.member
     end
 
-    puts "tc"
-    puts @teacherusers.size
+
     respond_to do |format|
       format.html
       format.xml  { render :xml => @members }

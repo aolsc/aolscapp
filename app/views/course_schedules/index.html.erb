@@ -14,10 +14,11 @@
   </tr>
   <tr>
     <td>
-<table border="1" cellspacing="0" cellpadding="5" width="70%">
+<table border="1" cellspacing="0" cellpadding="5" width="80%">
   <tr bgcolor="#A9F5F2">
-    <th width="60">Start date</th>
-    <th width="60">End date</th>
+    <th width="60">Edit</th>
+    <th width="80">Start date</th>
+    <th width="80">End date</th>
     <th width="60">Teacher</th>
     <th width="60">Assistant 1</th>
     <th width="60">Assistant 2</th>
@@ -25,6 +26,7 @@
 
   <% for course_schedule in @course_schedules -%>
   <tr>
+    <td align="center"><%= link_to "Edit", edit_course_schedule_path(course_schedule.id)  %></td>
     <td><%=h course_schedule.start_date.strftime('%m-%d-%Y %I:%M %p') %></td>
     <% if !course_schedule.end_date.nil? %>
     <td><%=h course_schedule.end_date.strftime('%m-%d-%Y %I:%M %p') %></td>

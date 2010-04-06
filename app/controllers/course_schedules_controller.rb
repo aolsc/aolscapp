@@ -2,8 +2,7 @@ class CourseSchedulesController < ApplicationController
   add_crumb("Courses") { |instance| instance.send :courses_path }
   add_crumb("Course Schedules") { |instance| instance.send :course_schedules_path }
 
-  filter_access_to :all
-  
+ 
   # GET /course_schedules
   # GET /course_schedules.xml
   def index
@@ -49,6 +48,28 @@ class CourseSchedulesController < ApplicationController
   # GET /course_schedules/1/edit
   def edit
     @course_schedule = CourseSchedule.find(params[:id])
+    @course = @course_schedule.course
+
+    @teacher_sel = @course_schedule.teacher
+    @assistant_sel = @course_schedule.assistant
+    @assistant2_sel = @course_schedule.assistant2
+    
+    @teacherusers = Role.find_by_role_name("Teacher").users
+    @teachers = []
+    @teacherusers.each do |tu|
+       @teachers << tu.member
+    end
+
+    @assistantusers = Role.find_by_role_name("Volunteer").users
+    @assistants = []
+    @assistantusers.each do |tu|
+       @assistants << tu.member
+    end
+
+    @start_date = @course_schedule.start_date
+    @end_date = @course_schedule.end_date
+
+
   end
 
   # POST /course_schedules
@@ -89,16 +110,32 @@ class CourseSchedulesController < ApplicationController
   def update
     @course_schedule = CourseSchedule.find(params[:id])
     @course_schedule.last_updated_by = current_user[:id]
-    respond_to do |format|
-      if @course_schedule.update_attributes(params[:course_schedule])
-        flash[:notice] = 'CourseSchedule was successfully updated.'
-        format.html { redirect_to(@course_schedule) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @course_schedule.errors, :status => :unprocessable_entity }
-      end
+
+    @course_schedule.start_date = Time.parse(params[:start_date])
+    if !params[:end_date].empty?
+      @course_schedule.end_date = Time.parse(params[:end_date])
     end
+    @teach = params[:teacher_sel][:id]
+    @assis = params[:assistant_sel][:id]
+    @assis2 = params[:assistant2_sel][:id]
+    @course_schedule.teacher_id = @teach
+    @course_schedule.volunteer_id = @assis
+    @course_schedule.volunteer_id2 = @assis2
+
+    @course = @course_schedule.course
+      @cs = CourseSchedule.find(:first, :conditions => ["start_date = ? and course_id=? and teacher_id=?", Time.parse(params[:start_date]).to_time.utc, @course.id, @teach])
+      puts "hello ->>>"
+      if !@cs.nil? and @cs.id != @course_schedule.id
+        flash[:notice] = 'Could not create course schedule. A course schedule with the same start date, teacher for this course already exists.'
+        redirect_to(course_course_schedules_path(@course.id))
+      elsif @course_schedule.save
+        flash[:notice] = 'CourseSchedule was successfully created.'
+        redirect_to(course_course_schedules_path(@course.id))
+      else
+        flash[:notice] = 'Could not create course schedule due to system errors.'
+        redirect_to course_course_schedules_path(@course.id)
+      end
+
   end
 
   # DELETE /course_schedules/1
