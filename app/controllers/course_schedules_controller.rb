@@ -64,8 +64,10 @@ class CourseSchedulesController < ApplicationController
     end
     @teach = params[:teachers][:id]
     @assis = params[:assistants][:id]
+    @assis2 = params[:assistants2][:id]
     @course_schedule.teacher_id = @teach
     @course_schedule.volunteer_id = @assis
+    @course_schedule.volunteer_id2 = @assis2
 
       
     @course_schedule.last_updated_by = current_user[:id]

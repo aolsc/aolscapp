@@ -18,8 +18,9 @@
   <tr bgcolor="#A9F5F2">
     <th width="60">Start date</th>
     <th width="60">End date</th>
-    <th width="60">Teacher name</th>
-    <th width="60">Assistant name</th>
+    <th width="60">Teacher</th>
+    <th width="60">Assistant 1</th>
+    <th width="60">Assistant 2</th>
   </tr>
 
   <% for course_schedule in @course_schedules -%>
@@ -30,8 +31,9 @@
     <% else %>
     <td>&nbsp;</td>
     <% end%>
-    <td><%=  course_schedule.teacher.firstname %></td>
-    <td><%=  course_schedule.assistant.firstname %></td>
+    <td><%=  course_schedule.teacher.fullname %></td>
+    <td><%=  course_schedule.assistant.fullname unless course_schedule.assistant.nil? %></td>
+    <td><%=  course_schedule.assistant2.fullname unless course_schedule.assistant2.nil? %></td>
   </tr>
 <% end %>
 </table>

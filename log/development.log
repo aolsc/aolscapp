@@ -19819,3 +19819,1014 @@ Processing MembersController#index (for 127.0.0.1 at 2010-04-04 10:09:07) [GET]
 Rendering template within layouts/application
 Rendering members/index
 Completed in 89ms (View: 13, DB: 20) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMembers (20090801063205)
+Migrating to CreateCourses (20090801201050)
+Migrating to CreateCourseSchedules (20090801225903)
+Migrating to CreateMemberCourses (20090801230228)
+Migrating to CreateMemberCourseInterests (20090801230410)
+Migrating to CreateMemberGeneralFeedbacks (20090801230650)
+Migrating to CreateMemberPersonalInfos (20090801230938)
+Migrating to CreateUsers (20090811234302)
+Migrating to AddMemberIdToUser (20090812055803)
+Migrating to ChangeColumnCourseId (20091010072500)
+Migrating to DropMemberPersonalInfo (20091012081922)
+Migrating to AddColumnsToMember (20091012082033)
+Migrating to AlterZipToString (20091014073629)
+Migrating to CreateDataFiles (20091108211133)
+Migrating to AddColumnToCourseSchedule (20100309104702)
+Migrating to CreateRoles (20100315091122)
+Migrating to CreateRolesUsers (20100316093311)
+Migrating to ModifyCourseSchedules (20100320092000)
+Migrating to CourseSchedulesVolunteerid (20100320101605)
+Migrating to MemberCoursesSource (20100329112010)
+Migrating to AddUpdatedbyToMemberCourses (20100403041110)
+Migrating to AddUpdatedbyToCourseSchedules (20100403041410)
+Migrating to AddVolunteerid2ToCourseSchedules (20100405074699)
+  [4;36;1mSQL (10.0ms)[0m   [0;1mALTER TABLE `course_schedules` ADD `volunteer_id2` int[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100405074699')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `course_schedules`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `course_schedules`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `courses`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `courses`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW FIELDS FROM `data_files`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `data_files`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `data_files`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `member_course_interests`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mdescribe `member_course_interests`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `member_course_interests`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `member_courses`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `member_courses`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `member_general_feedbacks`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `member_general_feedbacks`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `member_general_feedbacks`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `members`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `members`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mdescribe `roles`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `roles`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `roles_users`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `roles_users`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-05 19:54:33) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 422ms (DB: 4) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-05 19:54:34) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 47ms (View: 18, DB: 5) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-05 19:54:41) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"geeta", "password"=>"welcome"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'geeta') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 313ms (DB: 5) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-05 19:54:43) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 122ms (View: 32, DB: 20) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-05 19:54:47) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering courses/index
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+Completed in 91ms (View: 18, DB: 20) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:54:50) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+
+ActionView::TemplateError (undefined method `assistant2' for #<CourseSchedule:0x5310808>) on line #36 of app/views/course_schedules/index.html.erb:
+33:     <% end%>
+34:     <td><%=  course_schedule.teacher.fullname %></td>
+35:     <td><%=  course_schedule.assistant.fullname %></td>
+36:     <td><%=  course_schedule.assistant2.fullname %></td>
+37:   </tr>
+38: <% end %>
+39: </table>
+
+    app/views/course_schedules/index.html.erb:36
+    app/views/course_schedules/index.html.erb:26:in `each'
+    app/views/course_schedules/index.html.erb:26
+    app/controllers/course_schedules_controller.rb:13:in `index'
+
+Rendered rescues/_trace (137.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:55:13) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.fullname) on line #36 of app/views/course_schedules/index.html.erb:
+33:     <% end%>
+34:     <td><%=  course_schedule.teacher.fullname %></td>
+35:     <td><%=  course_schedule.assistant.fullname %></td>
+36:     <td><%=  course_schedule.assistant2.fullname %></td>
+37:   </tr>
+38: <% end %>
+39: </table>
+
+    app/views/course_schedules/index.html.erb:36
+    app/views/course_schedules/index.html.erb:26:in `each'
+    app/views/course_schedules/index.html.erb:26
+    app/controllers/course_schedules_controller.rb:13:in `index'
+
+Rendered rescues/_trace (141.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:55:58) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.fullname?) on line #36 of app/views/course_schedules/index.html.erb:
+33:     <% end%>
+34:     <td><%=  course_schedule.teacher.fullname %></td>
+35:     <td><%=  course_schedule.assistant.fullname %></td>
+36:     <td><%=  course_schedule.assistant2.fullname unless course_schedule.assistant2.fullname?nil? %></td>
+37:   </tr>
+38: <% end %>
+39: </table>
+
+    app/views/course_schedules/index.html.erb:36
+    app/views/course_schedules/index.html.erb:26:in `each'
+    app/views/course_schedules/index.html.erb:26
+    app/controllers/course_schedules_controller.rb:13:in `index'
+
+Rendered rescues/_trace (69.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:56:14) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.fullname?) on line #36 of app/views/course_schedules/index.html.erb:
+33:     <% end%>
+34:     <td><%=  course_schedule.teacher.fullname %></td>
+35:     <td><%=  course_schedule.assistant.fullname %></td>
+36:     <td><%=  course_schedule.assistant2.fullname unles course_schedule.assistant2.fullname?nil? %></td>
+37:   </tr>
+38: <% end %>
+39: </table>
+
+    app/views/course_schedules/index.html.erb:36
+    app/views/course_schedules/index.html.erb:26:in `each'
+    app/views/course_schedules/index.html.erb:26
+    app/controllers/course_schedules_controller.rb:13:in `index'
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:57:08) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.fullname) on line #35 of app/views/course_schedules/index.html.erb:
+32:     <td>&nbsp;</td>
+33:     <% end%>
+34:     <td><%=  course_schedule.teacher.fullname %></td>
+35:     <td><%=  course_schedule.assistant.fullname unless course_schedule.assistant2.fullname.nil? %></td>
+36:     <td><%=  course_schedule.assistant2.fullname unless course_schedule.assistant2.fullname.nil? %></td>
+37:   </tr>
+38: <% end %>
+
+    app/views/course_schedules/index.html.erb:35
+    app/views/course_schedules/index.html.erb:26:in `each'
+    app/views/course_schedules/index.html.erb:26
+    app/controllers/course_schedules_controller.rb:13:in `index'
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:57:37) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+Completed in 209ms (View: 43, DB: 28) | 200 OK [http://localhost/courses/2/course_schedules]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#new (for 127.0.0.1 at 2010-04-05 19:57:46) [POST]
+  Parameters: {"authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "id"=>"2"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Teacher') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 5 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 6 ) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Rendering template within layouts/application
+Rendering course_schedules/new
+Completed in 142ms (View: 23, DB: 35) | 200 OK [http://localhost/course_schedules/new/2]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#create (for 127.0.0.1 at 2010-04-05 19:58:16) [POST]
+  Parameters: {"start_date"=>"April 8, 2010", "end_date"=>"April 17, 2010", "commit"=>"Submit", "assistants"=>{"id"=>"2"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "teachers"=>{"id"=>"3"}, "assistants2"=>{"id"=>"73"}, "course_id"=>"2"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (start_date = '2010-04-08 07:00:00' and course_id=2 and teacher_id='3') [0m
+Redirected to http://localhost:3000/courses/2/course_schedules
+Completed in 97ms (DB: 26) | 302 Found [http://localhost/courses/2/course_schedules]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:58:17) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;36;1mCourseSchedule Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+Completed in 135ms (View: 37, DB: 33) | 200 OK [http://localhost/courses/2/course_schedules]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#create (for 127.0.0.1 at 2010-04-05 19:58:30) [POST]
+  Parameters: {"start_date"=>"April 22, 2010", "end_date"=>"April 17, 2010", "commit"=>"Submit", "assistants"=>{"id"=>"2"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "teachers"=>{"id"=>"3"}, "assistants2"=>{"id"=>"73"}, "course_id"=>"2"}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (start_date = '2010-04-22 07:00:00' and course_id=2 and teacher_id='3') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mCourseSchedule Create (1.0ms)[0m   [0;1mINSERT INTO `course_schedules` (`start_date`, `end_date`, `address1`, `city`, `address2`, `updated_at`, `displayname`, `country`, `volunteer_id`, `teacher_id`, `volunteer_id2`, `deleted`, `last_updated_by`, `course_id`, `center_id`, `location_name`, `state`, `created_at`) VALUES('2010-04-22 07:00:00', '2010-04-17 07:00:00', NULL, NULL, NULL, '2010-04-06 02:58:30', NULL, NULL, 2, 3, NULL, NULL, 2, 2, NULL, NULL, NULL, '2010-04-06 02:58:30')[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/courses/2/course_schedules
+Completed in 109ms (DB: 33) | 302 Found [http://localhost/courses/2/course_schedules]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:58:31) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;36;1mCourseSchedule Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+Completed in 207ms (View: 36, DB: 34) | 200 OK [http://localhost/courses/2/course_schedules]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#new (for 127.0.0.1 at 2010-04-05 19:59:44) [POST]
+  Parameters: {"authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "id"=>"2"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Teacher') LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 5 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 6 ) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Rendering template within layouts/application
+Rendering course_schedules/new
+Completed in 138ms (View: 15, DB: 37) | 200 OK [http://localhost/course_schedules/new/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#create (for 127.0.0.1 at 2010-04-05 19:59:54) [POST]
+  Parameters: {"start_date"=>"April 1, 2010", "end_date"=>"April 9, 2010", "commit"=>"Submit", "assistants"=>{"id"=>"2"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "teachers"=>{"id"=>"3"}, "assistants2"=>{"id"=>"73"}, "course_id"=>"2"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (start_date = '2010-04-01 07:00:00' and course_id=2 and teacher_id='3') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCourseSchedule Create (0.0ms)[0m   [0mINSERT INTO `course_schedules` (`start_date`, `end_date`, `address1`, `city`, `address2`, `updated_at`, `displayname`, `country`, `volunteer_id`, `teacher_id`, `volunteer_id2`, `deleted`, `last_updated_by`, `course_id`, `center_id`, `location_name`, `state`, `created_at`) VALUES('2010-04-01 07:00:00', '2010-04-09 07:00:00', NULL, NULL, NULL, '2010-04-06 02:59:54', NULL, NULL, 2, 3, 73, NULL, 2, 2, NULL, NULL, NULL, '2010-04-06 02:59:54')[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/2/course_schedules
+Completed in 174ms (DB: 28) | 302 Found [http://localhost/courses/2/course_schedules]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 19:59:55) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Completed in 135ms (View: 39, DB: 30) | 200 OK [http://localhost/courses/2/course_schedules]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-05 20:02:33) [GET]
+
+SyntaxError (C:/other/ror/aolscapp/app/controllers/upload_controller.rb:45: syntax error, unexpected ','
+...params[:assistantssel1][:id],,params[:assistantssel2][:id] )
+                              ^
+C:/other/ror/aolscapp/app/controllers/upload_controller.rb:45: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#index (for 127.0.0.1 at 2010-04-05 20:03:05) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Teacher') LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 5 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (3.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 6 ) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Rendering template within layouts/application
+Rendering upload/index
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+Completed in 123ms (View: 25, DB: 35) | 200 OK [http://localhost/upload]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#index (for 127.0.0.1 at 2010-04-05 20:03:42) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Teacher') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 5 ) [0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 6 ) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Rendering template within layouts/application
+Rendering upload/index
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mroles_users Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+Completed in 131ms (View: 28, DB: 33) | 200 OK [http://localhost/upload]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#upload_file (for 127.0.0.1 at 2010-04-05 20:04:12) [POST]
+  Parameters: {"start_date"=>"April 21, 2010", "assistantssel1"=>{"id"=>"2"}, "commit"=>"Upload", "teacherssel"=>{"id"=>"3"}, "assistantssel2"=>{"id"=>"73"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "upload"=>{"datafile"=>#<File:C:/Users/VKORIM~1/AppData/Local/Temp/RackMultipart.5376.1>}, "coursesel"=>{"id"=>"2"}}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (start_date = '2010-04-21 07:00:00' and course_id='2' and teacher_id='3') LIMIT 1[0m
+  [4;35;1mCourseSchedule Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCourseSchedule Create (0.0ms)[0m   [0mINSERT INTO `course_schedules` (`start_date`, `end_date`, `address1`, `city`, `address2`, `updated_at`, `displayname`, `country`, `volunteer_id`, `teacher_id`, `volunteer_id2`, `deleted`, `last_updated_by`, `course_id`, `center_id`, `location_name`, `state`, `created_at`) VALUES('2010-04-21 07:00:00', NULL, NULL, NULL, NULL, '2010-04-06 03:04:12', NULL, NULL, 2, 3, 73, NULL, 2, 2, NULL, NULL, NULL, '2010-04-06 03:04:12')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Aparna' AND lastname = 'Gothoskar' AND emailid = 'aparnaga@yahoo.com') [0m
+  [4;35;1mMemberCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mMemberCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=82 and course_schedule_id = 67) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-04-06 03:04:12', 67, 82, NULL, 2, '2010-04-06 03:04:12')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Harini' AND lastname = 'Subbiah' AND emailid = 'harini_s@yahoo.com') [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=66 and course_schedule_id = 67) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (0.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'email notification', '2010-04-06 03:04:12', 67, 66, NULL, 2, '2010-04-06 03:04:12')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Harshad' AND lastname = 'Chavan' AND emailid = 'harshadchavan@yahoo.com') [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=67 and course_schedule_id = 67) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'friend', '2010-04-06 03:04:12', 67, 67, NULL, 2, '2010-04-06 03:04:12')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Hiral' AND lastname = 'Shah' AND emailid = 'hiral4all@gmail.com') [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=68 and course_schedule_id = 67) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (0.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'from meetup.com', '2010-04-06 03:04:12', 67, 68, NULL, 2, '2010-04-06 03:04:12')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Puneet' AND lastname = 'Kumar' AND emailid = 'callpuneet2000@yahoo.com') [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=69 and course_schedule_id = 67) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-04-06 03:04:12', 67, 69, NULL, 2, '2010-04-06 03:04:12')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Satish' AND lastname = 'Rane' AND emailid = 's2_rane@hotmail.com') [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=70 and course_schedule_id = 67) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (1.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-04-06 03:04:12', 67, 70, NULL, 2, '2010-04-06 03:04:12')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Sonali' AND lastname = 'Valia' AND emailid = 'sonali.valia@gmail.com') [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=71 and course_schedule_id = 67) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'word of mouth', '2010-04-06 03:04:12', 67, 71, NULL, 2, '2010-04-06 03:04:12')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Sridevi' AND lastname = 'Satyavarpu' AND emailid = 'srinisri@yahoo.com') [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=72 and course_schedule_id = 67) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (1.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'local events in yahoo', '2010-04-06 03:04:12', 67, 72, NULL, 2, '2010-04-06 03:04:12')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering upload/upload_file
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (4.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 294ms (View: 23, DB: 57) | 200 OK [http://localhost/upload/upload_file]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-04-05 20:04:18) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` LIMIT 0, 10[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 91ms (View: 13, DB: 19) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-05 20:04:22) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering courses/index
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+Completed in 79ms (View: 9, DB: 19) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 20:04:25) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Completed in 139ms (View: 43, DB: 30) | 200 OK [http://localhost/courses/2/course_schedules]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#upload_file (for 127.0.0.1 at 2010-04-05 20:04:55) [POST]
+  Parameters: {"start_date"=>"April 21, 2010", "assistantssel1"=>{"id"=>"73"}, "commit"=>"Upload", "teacherssel"=>{"id"=>"3"}, "assistantssel2"=>{"id"=>"2"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "upload"=>{"datafile"=>#<File:C:/Users/VKORIM~1/AppData/Local/Temp/RackMultipart.5376.2>}, "coursesel"=>{"id"=>"2"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (start_date = '2010-04-21 07:00:00' and course_id='2' and teacher_id='3') LIMIT 1[0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Aparna' AND lastname = 'Gothoskar' AND emailid = 'aparnaga@yahoo.com') [0m
+  [4;35;1mMemberCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `member_courses`[0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=82 and course_schedule_id = 67) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Harini' AND lastname = 'Subbiah' AND emailid = 'harini_s@yahoo.com') [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=66 and course_schedule_id = 67) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Harshad' AND lastname = 'Chavan' AND emailid = 'harshadchavan@yahoo.com') [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=67 and course_schedule_id = 67) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Hiral' AND lastname = 'Shah' AND emailid = 'hiral4all@gmail.com') [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=68 and course_schedule_id = 67) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Puneet' AND lastname = 'Kumar' AND emailid = 'callpuneet2000@yahoo.com') [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=69 and course_schedule_id = 67) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Satish' AND lastname = 'Rane' AND emailid = 's2_rane@hotmail.com') [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=70 and course_schedule_id = 67) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Sonali' AND lastname = 'Valia' AND emailid = 'sonali.valia@gmail.com') [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=71 and course_schedule_id = 67) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Sridevi' AND lastname = 'Satyavarpu' AND emailid = 'srinisri@yahoo.com') [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=72 and course_schedule_id = 67) [0m
+Rendering template within layouts/application
+Rendering upload/upload_file
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Completed in 173ms (View: 19, DB: 42) | 200 OK [http://localhost/upload/upload_file]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-05 20:04:59) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering courses/index
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+Completed in 157ms (View: 11, DB: 17) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 20:05:01) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Completed in 137ms (View: 41, DB: 30) | 200 OK [http://localhost/courses/2/course_schedules]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#upload_file (for 127.0.0.1 at 2010-04-05 20:05:20) [POST]
+  Parameters: {"start_date"=>"April 15, 2010", "assistantssel1"=>{"id"=>"73"}, "commit"=>"Upload", "teacherssel"=>{"id"=>"3"}, "assistantssel2"=>{"id"=>"2"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "coursesel"=>{"id"=>"2"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+Redirected to http://localhost:3000/upload?assistantssel1%5Bid%5D=73&assistantssel2%5Bid%5D=2&authenticity_token=PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M%3D&commit=Upload&coursesel%5Bid%5D=2&start_date=April+15%2C+2010&teacherssel%5Bid%5D=3
+Completed in 35ms (DB: 5) | 302 Found [http://localhost/upload/upload_file]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#index (for 127.0.0.1 at 2010-04-05 20:05:22) [GET]
+  Parameters: {"start_date"=>"April 15, 2010", "assistantssel1"=>{"id"=>"73"}, "commit"=>"Upload", "assistantssel2"=>{"id"=>"2"}, "teacherssel"=>{"id"=>"3"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "coursesel"=>{"id"=>"2"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Teacher') LIMIT 1[0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 5 ) [0m
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 6 ) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Rendering template within layouts/application
+Rendering upload/index
+  [4;36;1mCourse Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+Completed in 196ms (View: 19, DB: 36) | 200 OK [http://localhost/upload?assistantssel1%5Bid%5D=73&assistantssel2%5Bid%5D=2&authenticity_token=PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M%3D&commit=Upload&coursesel%5Bid%5D=2&start_date=April+15%2C+2010&teacherssel%5Bid%5D=3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#upload_file (for 127.0.0.1 at 2010-04-05 20:05:44) [POST]
+  Parameters: {"start_date"=>"April 17, 2009", "assistantssel1"=>{"id"=>"73"}, "commit"=>"Upload", "teacherssel"=>{"id"=>"3"}, "assistantssel2"=>{"id"=>"2"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "upload"=>{"datafile"=>#<File:C:/Users/VKORIM~1/AppData/Local/Temp/RackMultipart.5376.2>}, "coursesel"=>{"id"=>"1"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (start_date = '2009-04-17 07:00:00' and course_id='1' and teacher_id='3') LIMIT 1[0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mCourseSchedule Create (0.0ms)[0m   [0;1mINSERT INTO `course_schedules` (`start_date`, `end_date`, `address1`, `city`, `address2`, `updated_at`, `displayname`, `country`, `volunteer_id`, `teacher_id`, `volunteer_id2`, `deleted`, `last_updated_by`, `course_id`, `center_id`, `location_name`, `state`, `created_at`) VALUES('2009-04-17 07:00:00', NULL, NULL, NULL, NULL, '2010-04-06 03:05:44', NULL, NULL, 73, 3, 2, NULL, 2, 1, NULL, NULL, NULL, '2010-04-06 03:05:44')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCourseSchedule Delete all (1.0ms)[0m   [0;1mDELETE FROM `course_schedules` WHERE (`id` IN (68)) [0m
+Redirected to http://localhost:3000/upload
+Completed in 88ms (DB: 19) | 302 Found [http://localhost/upload/upload_file]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#index (for 127.0.0.1 at 2010-04-05 20:05:45) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Teacher') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 5 ) [0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 6 ) [0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+Rendering template within layouts/application
+Rendering upload/index
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+Completed in 118ms (View: 19, DB: 34) | 200 OK [http://localhost/upload]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UploadController#upload_file (for 127.0.0.1 at 2010-04-05 20:06:03) [POST]
+  Parameters: {"start_date"=>"April 3, 2008", "assistantssel1"=>{"id"=>"73"}, "commit"=>"Upload", "teacherssel"=>{"id"=>"3"}, "assistantssel2"=>{"id"=>"2"}, "authenticity_token"=>"PTurjrYtBbvfBbG7QG9FrYthlY8n3CBFq89vWpLCq5M=", "upload"=>{"datafile"=>#<File:C:/Users/VKORIM~1/AppData/Local/Temp/RackMultipart.5376.0>}, "coursesel"=>{"id"=>"2"}}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Load (0.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (start_date = '2008-04-03 07:00:00' and course_id='2' and teacher_id='3') LIMIT 1[0m
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mCourseSchedule Create (0.0ms)[0m   [0;1mINSERT INTO `course_schedules` (`start_date`, `end_date`, `address1`, `city`, `address2`, `updated_at`, `displayname`, `country`, `volunteer_id`, `teacher_id`, `volunteer_id2`, `deleted`, `last_updated_by`, `course_id`, `center_id`, `location_name`, `state`, `created_at`) VALUES('2008-04-03 07:00:00', NULL, NULL, NULL, NULL, '2010-04-06 03:06:03', NULL, NULL, 73, 3, 2, NULL, 2, 2, NULL, NULL, NULL, '2010-04-06 03:06:03')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Aparna' AND lastname = 'Gothoskar' AND emailid = 'aparnaga@yahoo.com') [0m
+  [4;36;1mMemberCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_courses`[0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=82 and course_schedule_id = 69) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (0.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-04-06 03:06:03', 69, 82, NULL, 2, '2010-04-06 03:06:03')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Harini' AND lastname = 'Subbiah' AND emailid = 'harini_s@yahoo.com') [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=66 and course_schedule_id = 69) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'email notification', '2010-04-06 03:06:03', 69, 66, NULL, 2, '2010-04-06 03:06:03')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Harshad' AND lastname = 'Chavan' AND emailid = 'harshadchavan@yahoo.com') [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=67 and course_schedule_id = 69) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (1.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'friend', '2010-04-06 03:06:03', 69, 67, NULL, 2, '2010-04-06 03:06:03')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Hiral' AND lastname = 'Shah' AND emailid = 'hiral4all@gmail.com') [0m
+  [4;36;1mMemberCourse Load (2.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=68 and course_schedule_id = 69) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (0.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'from meetup.com', '2010-04-06 03:06:03', 69, 68, NULL, 2, '2010-04-06 03:06:03')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Puneet' AND lastname = 'Kumar' AND emailid = 'callpuneet2000@yahoo.com') [0m
+  [4;35;1mMemberCourse Load (0.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=69 and course_schedule_id = 69) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (0.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-04-06 03:06:03', 69, 69, NULL, 2, '2010-04-06 03:06:03')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Satish' AND lastname = 'Rane' AND emailid = 's2_rane@hotmail.com') [0m
+  [4;36;1mMemberCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=70 and course_schedule_id = 69) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'Friend', '2010-04-06 03:06:03', 69, 70, NULL, 2, '2010-04-06 03:06:03')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (firstname = 'Sonali' AND lastname = 'Valia' AND emailid = 'sonali.valia@gmail.com') [0m
+  [4;35;1mMemberCourse Load (1.0ms)[0m   [0mSELECT * FROM `member_courses` WHERE (member_id=71 and course_schedule_id = 69) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMemberCourse Create (1.0ms)[0m   [0mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'word of mouth', '2010-04-06 03:06:03', 69, 71, NULL, 2, '2010-04-06 03:06:03')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (firstname = 'Sridevi' AND lastname = 'Satyavarpu' AND emailid = 'srinisri@yahoo.com') [0m
+  [4;36;1mMemberCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `member_courses` WHERE (member_id=72 and course_schedule_id = 69) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMemberCourse Create (1.0ms)[0m   [0;1mINSERT INTO `member_courses` (`start_date`, `end_date`, `referral_source`, `updated_at`, `course_schedule_id`, `member_id`, `deleted`, `last_updated_by`, `created_at`) VALUES(NULL, NULL, 'local events in yahoo', '2010-04-06 03:06:03', 69, 72, NULL, 2, '2010-04-06 03:06:03')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering upload/upload_file
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Completed in 226ms (View: 22, DB: 59) | 200 OK [http://localhost/upload/upload_file]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-05 20:06:05) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;35;1mRole Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering courses/index
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+Completed in 81ms (View: 8, DB: 19) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CourseSchedulesController#index (for 127.0.0.1 at 2010-04-05 20:06:08) [GET]
+  Parameters: {"course_id"=>"2"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mCourseSchedule Load (1.0ms)[0m   [0mSELECT * FROM `course_schedules` WHERE (`course_schedules`.course_id = 2) LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering course_schedules/index
+  [4;36;1mCourseSchedule Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `course_schedules`[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 73) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+Completed in 213ms (View: 43, DB: 31) | 200 OK [http://localhost/courses/2/course_schedules]

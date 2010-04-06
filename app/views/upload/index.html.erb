@@ -20,8 +20,14 @@
   </tr>
   <tr><td colspan="2">&nbsp;</td></tr>
   <tr>
-    <td>Assistant</td>
+    <td>Assistant 1</td>
     <td>&nbsp;<%= collection_select(:assistantssel1, :id, @assistants, :id, :fullname,
+                            {:prompt => "Select"})%></td>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+    <td>Assistant 2</td>
+    <td>&nbsp;<%= collection_select(:assistantssel2, :id, @assistants, :id, :fullname,
                             {:prompt => "Select"})%></td>
   </tr>
   <tr><td colspan="2">&nbsp;</td></tr>

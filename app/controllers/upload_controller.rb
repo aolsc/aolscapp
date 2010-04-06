@@ -42,7 +42,7 @@ class UploadController < ApplicationController
       redirect_to params.merge!(:action => :index)
     else
       courseName = Course.find(params[:coursesel][:id]).name
-      courseScheduleId = getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).to_time.utc,params[:teacherssel][:id],params[:assistantssel1][:id] )
+      courseScheduleId = getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).to_time.utc,params[:teacherssel][:id],params[:assistantssel1][:id],params[:assistantssel2][:id] )
       @mc = 0
       @mu = 0
       save(params[:upload], courseScheduleId, courseName)
@@ -54,7 +54,7 @@ class UploadController < ApplicationController
     redirect_to :action => "index"
   end
 
- def getOrCreateCourseSched ( courseId,courseDate,teacherId, assistantId)
+ def getOrCreateCourseSched ( courseId,courseDate,teacherId, assistantId, assistantId2)
     @cs = CourseSchedule.find(:first, :conditions => ["start_date = ? and course_id=? and teacher_id=?", courseDate, courseId, teacherId])
     if @cs.nil?
       t =  Hash[
@@ -63,6 +63,7 @@ class UploadController < ApplicationController
         'teacher_id',teacherId,
         'volunteer_id',assistantId,
         'last_updated_by',current_user[:id],
+        'volunteer_id2',assistantId2,
       ];
 
       @course_schedule = CourseSchedule.new(t)
