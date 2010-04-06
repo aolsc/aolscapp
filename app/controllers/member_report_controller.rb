@@ -149,7 +149,7 @@ class MemberReportController < ApplicationController
   end
 
   def assistant_conditions
-    ["volunteer_id = ?", params[:assistantssel][:id]] unless params[:assistantssel][:id].empty?
+    ["volunteer_id = ? or volunteer_id2 = ?", params[:assistantssel][:id], params[:assistantssel][:id]] unless params[:assistantssel][:id].empty?
   end
 
   def start_date_conditions
