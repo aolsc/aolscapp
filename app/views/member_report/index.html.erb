@@ -36,7 +36,8 @@
     <td width="100"><b>Course Start Date</b></td>
     <td width="100"><b>Course End Date</b></td>
     <td width="100"><b>Teacher</b></td>
-    <td width="100"><b>Assistant</b></td>
+    <td width="100"><b>Assistant 1</b></td>
+    <td width="100"><b>Assistant 2</b></td>
   </tr>
 
   <% for courseschedule in @courseschedules -%>
@@ -51,6 +52,7 @@
     <% end %>
     <td><%= courseschedule.teacher.fullname %> </td>
     <td><%= courseschedule.assistant.fullname %> </td>
+    <td><%= courseschedule.assistant2.fullname unless courseschedule.assistant2.nil? %> </td>
   </tr>
 <% end %>
       </table>
