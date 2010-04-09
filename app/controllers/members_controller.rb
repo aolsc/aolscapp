@@ -5,7 +5,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   def index
-    @members = Member.paginate :page => params[:page], :per_page => 10
+    @members = Member.paginate :page => params[:page], :per_page => 10, :order => 'firstname'
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,15 +17,15 @@ class MembersController < ApplicationController
     begin
     
       if params["search_by_name"].empty? and params["search_by_email"].empty? then
-        @members = Member.find(:all).paginate :page => params[:page], :per_page => 10
+        @members = Member.find(:all).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
       else
         unless params["search_by_name"].empty? and params["search_by_email"].empty?
-            @members = Member.find(:all, :conditions => ['(firstname like ? or lastname like ?) and emailid like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10
+            @members = Member.find(:all, :conditions => ['(firstname like ? or lastname like ?) and emailid like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
        else
          unless params["search_by_name"].empty?
-            @members = Member.find(:all, :conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_"]+"%"]).paginate :page => params[:page], :per_page => 10
+            @members = Member.find(:all, :conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_"]+"%"]).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
          else
-            @members = Member.find(:all, :conditions => ['emailid like ?', "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10
+            @members = Member.find(:all, :conditions => ['emailid like ?', "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
           end
         end
       end
