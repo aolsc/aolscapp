@@ -1,5 +1,3 @@
-<h1>New member</h1>
-
 <% form_for(@member) do |f| %>
   <%= f.error_messages %>
   <p>
@@ -23,40 +21,9 @@
     <%= f.text_field :cellphone %>
   </p>
   <p>
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
-  </p>
-  <p>
-    <%= f.label :agetype %><br />
-    <%= f.text_field :agetype %>
-  </p>
-  <p>
-    <%= f.label :address1 %><br />
-    <%= f.text_field :address1 %>
-  </p>
-  <p>
-    <%= f.label :address2 %><br />
-    <%= f.text_field :address2 %>
-  </p>
-  <p>
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </p>
-  <p>
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
-  </p>
-  <p>
-    <%= f.label :employer %><br />
-    <%= f.text_field :employer %>
-  </p>
-  <p>
-    <%= f.label :profession %><br />
-    <%= f.text_field :profession %>
+Gender<br>
+&nbsp;Male<%= radio_button_tag :gender,"M" %>
+&nbsp;Female&nbsp;<%= radio_button_tag :gender,"F" %>
   </p>
   <p>
     <%= f.submit 'Create' %>

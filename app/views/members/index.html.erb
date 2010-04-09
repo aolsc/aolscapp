@@ -25,7 +25,6 @@
     <td>
       <table border="1" cellspacing="0" cellpadding="5" width="100%">
   <tr bgcolor="#A9F5F2">
-    <td width="50"><b>Id</b></td>
     <td width="100"><b>Name</b></td>
     <td width="100"><b>Email</b></td>
     <td width="130"><b>Phone</b></td>
@@ -35,8 +34,7 @@
   </tr>
 <% for member in @members -%>
   <tr>
-    <td><%= link_to member.id, edit_member_path(member.id) %></td>
-    <td><%= member.firstname %>&nbsp;<%= member.lastname %></td>
+    <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
     <td><%=h member.emailid %></td>
     <td><%=h member.homephone %></td>
    <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>

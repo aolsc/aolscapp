@@ -60,15 +60,10 @@ class MembersController < ApplicationController
     @validatemember = Member.find(:all, :conditions => ["firstname = ? AND lastname = ? AND emailid = ?", @member.firstname, @member.lastname, @member.emailid
       ])
     if @validatemember.length == 0
-      @validateemail = Member.find(:all, :conditions => ["emailid = ? ", @member.emailid])
-      if @validateemail.length == 0
+      @member.gender = params[:gender]
         @member.save
         flash[:notice] = 'Member was successfully created.'
         redirect_to :action => "index"
-      else
-        flash[:notice] = 'Member already Exists.'
-        render :action => "new"
-      end
     else
       flash[:notice] = 'Member already Exists.'
       render :action => "new"
@@ -96,6 +91,7 @@ class MembersController < ApplicationController
   def update
      @member = Member.find(params[:id])
       @member.updateby = current_user
+      @member.gender = params[:gender]
       if @member.update_attributes(params[:member])
          flash[:notice] = 'Member was successfully updated.'
          redirect_to :action => "index"
