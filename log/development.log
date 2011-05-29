@@ -45444,3 +45444,74 @@ Rendering member_report/composemessage
   [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
   [4;35;1mRole Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
 Completed in 277ms (View: 52, DB: 46) | 200 OK [http://localhost/member_report/composemessage]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2011-05-29 01:35:08) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mroles_users Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Load (2.0ms)[0m   [0mSELECT * FROM `members` ORDER BY firstname LIMIT 0, 10[0m
+  [4;36;1mMember Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 139ms (View: 28, DB: 28) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-05-29 01:35:23) [GET]
+  [4;36;1mUser Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mMemberAttendance Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `member_attendances`[0m
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM `courses` [0m
+  [4;36;1mRole Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;36;1mroles_users Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;36;1mMember Columns (13.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 2) [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 43) [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 44) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 75) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+  [4;36;1mCourse Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/aolscapp/app/views/member_attendances/new.html.erb:13)
+Completed in 440ms (View: 61, DB: 77) | 200 OK [http://localhost/member_attendances/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2011-05-29 01:35:30) [GET]
+  Parameters: {"mode"=>"signin"}
+  [4;35;1mUser Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mroles_users Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/signup
+Rendering members/new
+Completed in 483ms (View: 66, DB: 54) | 200 OK [http://localhost/members/new?mode=signin]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2011-05-29 01:35:42) [GET]
+  [4;35;1mUser Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mroles_users Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load (2.0ms)[0m   [0;1mSELECT * FROM `members` ORDER BY firstname LIMIT 0, 10[0m
+  [4;35;1mMember Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `members` [0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 363ms (View: 90, DB: 48) | 200 OK [http://localhost/members]
