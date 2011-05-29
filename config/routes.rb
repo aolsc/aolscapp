@@ -17,6 +17,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users
 
+  map.resources :member_attendances
+
   map.resources :members, :has_many => :member_general_feedbacks
   map.resources :members, :has_many => :member_courses
   map.resources :members, :has_many => :member_course_interests

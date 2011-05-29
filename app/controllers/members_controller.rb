@@ -9,9 +9,11 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @members }
+      format.xml { render :xml => @members }
     end
   end
+
+
 
   def show
     begin
@@ -41,10 +43,10 @@ class MembersController < ApplicationController
   # GET /members/new.xml
   def new
     @member = Member.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @member }
+    @mode = params[:mode]
+    @csid = params[:csid]
+    unless @mode.nil?
+      render :layout => 'signup'
     end
   end
 
@@ -63,7 +65,13 @@ class MembersController < ApplicationController
       @member.gender = params[:gender]
         @member.save
         flash[:notice] = 'Member was successfully created.'
-        redirect_to :action => "index"
+        @mode = params[:mode]
+        if @mode.nil?
+          redirect_to :action => "index"
+        else
+          @csid = params[:csid]
+          redirect_to :controller=>"member_attendances", :action=>"new", :csid => @csid
+        end
     else
       flash[:notice] = 'Member already Exists.'
       render :action => "new"

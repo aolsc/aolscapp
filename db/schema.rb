@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100405074699) do
+ActiveRecord::Schema.define(:version => 20110522091388) do
 
   create_table "course_schedules", :force => true do |t|
     t.integer  "course_id"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20100405074699) do
     t.string   "deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "teacher_id"
     t.integer  "volunteer_id"
+    t.integer  "teacher_id"
     t.integer  "last_updated_by"
     t.integer  "volunteer_id2"
   end
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(:version => 20100405074699) do
   create_table "data_files", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "member_attendances", :force => true do |t|
+    t.integer  "member_id"
+    t.date     "checkin_date"
+    t.integer  "volunteer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "course_schedule_id"
   end
 
   create_table "member_course_interests", :force => true do |t|

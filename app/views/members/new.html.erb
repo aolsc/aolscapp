@@ -26,6 +26,8 @@ Gender<br>
 &nbsp;Female&nbsp;<%= radio_button_tag :gender,"F" %>
   </p>
   <p>
+    <%=  hidden_field_tag 'mode', @mode %>
+    <%=  hidden_field_tag 'csid', @csid%>
     <%= f.submit 'Create' %>
   </p>
 <% end %>

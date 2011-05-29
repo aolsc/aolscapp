@@ -13,36 +13,20 @@
 <%= @page_title || "&nbsp;" %>
   <div align="right" style="font-size:medium;">
     <% if current_user %>
-      <%= link_to "Member Sign Up","/member_attendances/new" %> |
-      <%= link_to "Edit Profile", edit_user_path(current_user) %> |
-      <%= link_to "Logout", logout_path  %>&nbsp;&nbsp;
+    <font color="black"><b></b></font>&nbsp;&nbsp;<%= link_to "Manage Members","/members" %> |&nbsp;&nbsp;<%= link_to "Logout", logout_path  %>&nbsp;&nbsp;
     <% else %>
       <%= link_to "Register", new_user_path  %> |
       <%= link_to "Login", login_path  %>
     <% end %>
   </div>
 </div>
-<div id="columns">
-<div id="side">
-  <font color="white"><%= session[:volunteer_name] %> </font><br /><br />
-	<a href="/members">Members</a><br /><br />
-	<a href="/courses">Courses</a><br /><br />
-        <% if permitted_to? :index, User.new %>
-          <a href="/users">Users</a><br /><br />
-        <% end %>
-        <a href="/upload">Import Participant List</a><br />
-        <br/><br/>
-        <a href="/memberreport">Member Report</a><br /><br />
-</div>
-<div id="main">
-  
+<div id="signup_main">
 	<% if flash[:notice] -%>
 	<div id="notice"><%= flash[:notice] %></div>
 	<% end -%>
-        <%= render_crumbs %>
+
 	<%= yield :layout %>
         
-</div>
 </div>
  
 </body>

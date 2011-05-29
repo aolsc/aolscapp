@@ -1,0 +1,34 @@
+<h1>Attended Courses by Member '<%= @member.lastname %>'</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Add an attended Course', {:controller => "member_courses", :action => "course_schedule_search", :member_id => params[:member_id] } %> </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+
+        <tr><td> <table border="1" cellspacing="0" cellpadding="5" width="100%">
+              <tr bgcolor="#A9F5F2">
+                <td width="60"><b>Name</b></td>
+                <td width="150"><b>Date Attended</b></td>
+                <td width="180"><b>Teacher</b></td>
+                <td>&nbsp;</td>
+              </tr>
+              <% if @member_courses.nil? %>
+              <% else %>
+                <% for member_course in @member_courses -%>
+                  <tr>
+                    <td><%= member_course.course_schedule.course.displayName %></td>
+                    <td><%= member_course.course_schedule.start_date.strftime('%m-%d-%Y') %></td>
+                    <td><%= member_course.course_schedule.teacher.fullname%></td>
+                    <td><%= link_to 'Delete', member_course, :confirm => 'Are you sure?', :method => :delete, :member_id => params[:member_id] %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </table>
+          </td></tr>
+      </table>
+    </td>
+  </tr>
+</table>

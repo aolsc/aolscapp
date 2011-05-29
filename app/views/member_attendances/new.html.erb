@@ -1,0 +1,21 @@
+<h1>Sign In</h1>
+
+<% form_for :member_attendance, @member_attendance, :url => {:action => 'create'} do |f| %>
+  <%= f.error_messages %>
+<p>
+  Course/Event
+  <%= collection_select(:coursesel, :id, @courses, :id, :displayName,
+                            {:prompt => true, :selected => @sel_course})%>&nbsp;&nbsp;&nbsp;&nbsp;Start Date&nbsp;<%= calendar_date_select_tag "start_date", @sel_from_date, :year_range => 1.years.ago..0.years.ago, :popup => "force", :time => "true"%>
+</p>
+
+<p>
+  <%= f.label :email_id %>
+  <%= text_field_with_auto_complete :member, :email_id, { :size => 15 }, { :url => formatted_member_attendances_path(:js), :method => :get, :param_name => 'search' } %>
+</p>
+<p>
+    <%= f.submit 'Sign In' %>
+</p>
+<p>
+New members&nbsp;&nbsp;<%= link_to 'click here', {:controller=>"members", :action=>"new", :mode=>"signin", :csid=>@csid} %>
+</p>
+<% end %>
