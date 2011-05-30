@@ -17,8 +17,8 @@
       <%= collection_select(:assistantssel, :id, @assistants, :id, :fullname,
                             {:prompt => "Select an Assistant"})%>&nbsp;&nbsp;
 
-  <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @report_start_date, :year_range => 3.years.ago..0.years.ago%>
-   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @report_end_date, :year_range => 3.years.ago..0.years.ago%>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
+  <br><br><label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @sel_from_date, :year_range => 3.years.ago..0.years.ago%>
+   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @sel_end_date, :year_range => 3.years.ago..0.years.ago%>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
             <% end -%>
           </td>
         </tr>
@@ -34,24 +34,20 @@
     <td width="40"><b> Select </b></td>
     <td width="100"><b>Course</b></td>
     <td width="100"><b>Course Start Date</b></td>
-    <td width="100"><b>Course End Date</b></td>
+    <td width="100"><b>Attended</b></td>
     <td width="100"><b>Teacher</b></td>
     <td width="100"><b>Assistant 1</b></td>
     <td width="100"><b>Assistant 2</b></td>
   </tr>
 
-<% for courseschedule in @courseschedules -%>
+  <% for courseschedule in @courseschedules -%>
   <tr>
     <td><%= radio_button_tag  "course_schedule_radio", courseschedule.id %></td>
     <td><%= courseschedule.course.displayName %> </td>
     <td><%= courseschedule.start_date.strftime("%m-%d-%Y") %></td>
-    <% if !courseschedule.end_date.nil? %>
-      <td><%= courseschedule.end_date.strftime("%m-%d-%Y") %></td>
-    <% else %>
-      <td>&nbsp;</td>
-    <% end %>
-    <td><%= courseschedule.teacher.fullname %> </td>
-    <td><%= courseschedule.assistant.fullname %> </td>
+     <td><%= link_to courseschedule.member_attendances.count(), {:controller=>"member_attendances", :action=>"index", :csid=>courseschedule.id} %> </td>
+    <td><%= courseschedule.teacher.fullname unless courseschedule.teacher.nil? %> </td>
+    <td><%= courseschedule.assistant.fullname unless courseschedule.assistant.nil? %> </td>
     <td><%= courseschedule.assistant2.fullname unless courseschedule.assistant2.nil? %> </td>
   </tr>
 <% end %>

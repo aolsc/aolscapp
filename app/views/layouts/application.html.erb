@@ -13,6 +13,7 @@
 <%= @page_title || "&nbsp;" %>
   <div align="right" style="font-size:medium;">
     <% if current_user %>
+    <font color="black"><b><%= current_user.member.fullname %></b></font> |
       <%= link_to "Member Sign Up","/member_attendances/new" %> |
       <%= link_to "Edit Profile", edit_user_path(current_user) %> |
       <%= link_to "Logout", logout_path  %>&nbsp;&nbsp;
@@ -24,7 +25,6 @@
 </div>
 <div id="columns">
 <div id="side">
-  <font color="white"><%= session[:volunteer_name] %> </font><br /><br />
 	<a href="/members">Members</a><br /><br />
 	<a href="/courses">Courses</a><br /><br />
         <% if permitted_to? :index, User.new %>

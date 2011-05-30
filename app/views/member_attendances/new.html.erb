@@ -3,14 +3,19 @@
 <% form_for :member_attendance, @member_attendance, :url => {:action => 'create'} do |f| %>
   <%= f.error_messages %>
 <p>
-  Course/Event
-  <%= collection_select(:coursesel, :id, @courses, :id, :displayName,
-                            {:prompt => true, :selected => @sel_course})%>&nbsp;&nbsp;&nbsp;&nbsp;Start Date&nbsp;<%= calendar_date_select_tag "start_date", @sel_from_date, :year_range => 1.years.ago..0.years.ago, :popup => "force", :time => "true"%>
+  <%  if params[:csid].nil? %>
+      Course/Event
+      <%= collection_select(:coursesel, :id, @courses, :id, :displayName,
+                            {:prompt => true})%>&nbsp;&nbsp;&nbsp;&nbsp;Start Date&nbsp;<%= calendar_date_select_tag "start_date", @sel_from_date, :year_range => 1.years.ago..0.years.ago, :popup => "force", :time => "true"%>
+  <% else %>
+      <b>Course/Event:</b>&nbsp;<%=  @sel_course.displayName %>&nbsp;&nbsp;&nbsp;&nbsp;<b>Date:&nbsp;</b><%=  @sel_from_date.strftime('%m-%d-%Y %I:%M %p') %>
+      <%=  hidden_field_tag 'csid', @csid %>
+  <% end %>
 </p>
 
 <p>
   <%= f.label :email_id %>
-  <%= text_field_with_auto_complete :member, :email_id, { :size => 15 }, { :url => formatted_member_attendances_path(:js), :method => :get, :param_name => 'search' } %>
+  <%= text_field_with_auto_complete :member, :email_id, { :size => 30 }, { :url => formatted_member_attendances_path(:js), :method => :get, :param_name => 'search' } %>
 </p>
 <p>
     <%= f.submit 'Sign In' %>

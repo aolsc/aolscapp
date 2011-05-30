@@ -1,7 +1,20 @@
 class MemberAttendancesController < ApplicationController
   #add_crumb("Members") { |instance| instance.send :members_path }
   def index
-    @members = Member.find(:all, :conditions => ['emailid LIKE ?', "%#{params[:search]}%"])
+    if params["csid"].nil?
+      @members = Member.find(:all, :conditions => ['emailid LIKE ?', "%#{params[:search]}%"])
+    else
+      @member_attendances = MemberAttendance.find(:all, :conditions => ['course_schedule_id = ?', params[:csid]])
+      @members = []
+      @member_attendances.each do |ma|
+         @members << ma.member
+      end
+      @csid = params["csid"]
+      @cs = CourseSchedule.find(@csid)
+      @course = @cs.course
+
+    end
+
   end
 
   # GET /member_attendances/new
@@ -16,7 +29,7 @@ class MemberAttendancesController < ApplicationController
     unless @csidstr.blank?
       @csid  = @csidstr.to_i
       @course_schedule = CourseSchedule.find(@csid)
-      @sel_course=@course_schedule.course.id
+      @sel_course=@course_schedule.course
       @sel_from_date = @course_schedule.start_date
     end
     
@@ -38,7 +51,14 @@ render :layout => 'signup'
     
     logger.debug "email id " + params[:member][:email_id]
     @member_attendance.member = Member.find_by_emailid(params[:member][:email_id]) unless params[:member][:email_id].blank?
-    @member_attendance.course_schedule= getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).to_time.utc)
+    @csidstr = params[:csid]
+    if @csidstr.blank?
+      @member_attendance.course_schedule= getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).to_time.utc)
+    else
+      @csid  = @csidstr.to_i
+      @member_attendance.course_schedule = CourseSchedule.find(@csid)
+    end
+    
 
     respond_to do |format|
       if @member_attendance.save

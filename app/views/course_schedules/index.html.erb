@@ -33,7 +33,7 @@
     <% else %>
     <td>&nbsp;</td>
     <% end%>
-    <td><%=  course_schedule.teacher.fullname %></td>
+    <td><%=  course_schedule.teacher.fullname unless course_schedule.teacher.nil? %></td>
     <td><%=  course_schedule.assistant.fullname unless course_schedule.assistant.nil? %></td>
     <td><%=  course_schedule.assistant2.fullname unless course_schedule.assistant2.nil? %></td>
   </tr>

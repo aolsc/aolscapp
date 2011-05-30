@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :member_general_feedbacks
 
-  map.root :controller => "members"
+  map.root :controller => "member_attendances", :action => "new"
   
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
