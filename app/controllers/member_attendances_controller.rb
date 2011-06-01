@@ -2,7 +2,7 @@ class MemberAttendancesController < ApplicationController
   #add_crumb("Members") { |instance| instance.send :members_path }
   def index
     if params["csid"].nil?
-      @members = Member.find(:all, :conditions => ['emailid LIKE ?', "%#{params[:search]}%"])
+      @members = Member.find(:all, :conditions => ['emailid LIKE ?', "#{params[:search]}%"])
     else
       @member_attendances = MemberAttendance.find(:all, :conditions => ['course_schedule_id = ?', params[:csid]])
       @members = []
@@ -20,9 +20,6 @@ class MemberAttendancesController < ApplicationController
   # GET /member_attendances/new
   # GET /member_attendances/new.xml
   def new
-    
-    
-    @member_attendance = MemberAttendance.new
     @courses = Course.find(:all)
     
     @csidstr = params[:csid]
@@ -46,11 +43,16 @@ render :layout => 'signup'
   # POST /member_courses.xml
   def create
 
-    @member_attendance = MemberAttendance.new(params[:memberattendance])
+    @member_attendance = MemberAttendance.new
     logger.debug "******"
-    
-    logger.debug "email id " + params[:member][:email_id]
-    @member_attendance.member = Member.find_by_emailid(params[:member][:email_id]) unless params[:member][:email_id].blank?
+
+    @emailid = params[:emailid]
+    if @emailid.blank?
+      @emailid = params[:member][:email_id]
+    end
+
+    @member_attendance.member = Member.find_by_emailid(@emailid) unless @emailid.blank?
+
     @csidstr = params[:csid]
     if @csidstr.blank?
       @member_attendance.course_schedule= getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).to_time.utc)
@@ -62,7 +64,7 @@ render :layout => 'signup'
 
     respond_to do |format|
       if @member_attendance.save
-        flash[:notice] = 'Member ' + @member_attendance.member.firstname + " checked in"
+        flash[:notice] = 'Welcome ' + @member_attendance.member.fullname + "!\nThank you for signing in. "
         format.html { redirect_to :action => "new", :csid => @member_attendance.course_schedule.id}
         format.xml  { render :xml => @member_attendance, :status => :created, :location => @member_attendance }
       else

@@ -64,13 +64,20 @@ class MembersController < ApplicationController
     if @validatemember.length == 0
       @member.gender = params[:gender]
         @member.save
-        flash[:notice] = 'Member was successfully created.'
+        
         @mode = params[:mode]
         if @mode.nil?
+          flash[:notice] = 'Member was successfully created.'
           redirect_to :action => "index"
         else
           @csid = params[:csid]
-          redirect_to :controller=>"member_attendances", :action=>"new", :csid => @csid
+          @member_attendance = MemberAttendance.new
+          @member_attendance.member = @member
+          @member_attendance.course_schedule = CourseSchedule.find(@csid)
+          if @member_attendance.save
+            flash[:notice] = 'Welcome ' + @member_attendance.member.fullname + "!\nThank you for signing in. "
+          end
+          redirect_to :controller=>"member_attendances", :action=>"new", :csid => @csid, :emailid => @member.emailid
         end
     else
       flash[:notice] = 'Member already Exists.'
