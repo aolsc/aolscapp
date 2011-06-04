@@ -3,7 +3,7 @@
 <% form_for :member_attendance, @member_attendance, :url => {:action => 'create'} do |f| %>
   <%= f.error_messages %>
 <p>
-  <%  if params[:csid].nil? %>
+  <%  if params[:csid].blank? %>
       Course/Event
       <%= collection_select(:coursesel, :id, @courses, :id, :displayName,
                             {:prompt => true})%>&nbsp;&nbsp;&nbsp;&nbsp;Start Date&nbsp;<%= calendar_date_select_tag "start_date", @sel_from_date, :year_range => 1.years.ago..0.years.ago, :popup => "force", :time => "true"%>
@@ -19,8 +19,5 @@
 </p>
 <p>
     <%= f.submit 'Sign In' %>
-</p>
-<p>
-New members&nbsp;&nbsp;<%= link_to 'click here', {:controller=>"members", :action=>"new", :mode=>"signin", :csid=>@csid} %>
 </p>
 <% end %>

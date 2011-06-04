@@ -7,7 +7,7 @@ class MemberAttendancesController < ApplicationController
       @member_attendances = MemberAttendance.find(:all, :conditions => ['course_schedule_id = ?', params[:csid]])
       @members = []
       @member_attendances.each do |ma|
-         @members << ma.member
+        @members << ma.member
       end
       @csid = params["csid"]
       @cs = CourseSchedule.find(@csid)
@@ -23,7 +23,7 @@ class MemberAttendancesController < ApplicationController
     @courses = Course.find(:all)
     
     @csidstr = params[:csid]
-    unless @csidstr.blank?
+    unless @csidstr.blank? 
       @csid  = @csidstr.to_i
       @course_schedule = CourseSchedule.find(@csid)
       @sel_course=@course_schedule.course
@@ -33,16 +33,16 @@ class MemberAttendancesController < ApplicationController
     @assistantusers = Role.find_by_role_name("Volunteer").users
     @assistants = []
     @assistantusers.each do |tu|
-       @assistants << tu.member
+      @assistants << tu.member
     end
 
-render :layout => 'signup'
+    render :layout => 'signup'
   end
 
   # POST /member_courses
   # POST /member_courses.xml
   def create
-
+    @courses = Course.find(:all)
     @member_attendance = MemberAttendance.new
     logger.debug "******"
 
@@ -51,8 +51,10 @@ render :layout => 'signup'
       @emailid = params[:member][:email_id]
     end
 
-    @member_attendance.member = Member.find_by_emailid(@emailid) unless @emailid.blank?
-
+    unless @emailid.blank?
+      @member_attendance.member = Member.find_by_emailid(@emailid)
+    end
+     
     @csidstr = params[:csid]
     if @csidstr.blank?
       @member_attendance.course_schedule= getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).to_time.utc)
@@ -60,22 +62,34 @@ render :layout => 'signup'
       @csid  = @csidstr.to_i
       @member_attendance.course_schedule = CourseSchedule.find(@csid)
     end
-    
-
+     
     respond_to do |format|
-      if @member_attendance.save
-        flash[:notice] = 'Welcome ' + @member_attendance.member.fullname + "!\nThank you for signing in. "
-        format.html { redirect_to :action => "new", :csid => @member_attendance.course_schedule.id}
-        format.xml  { render :xml => @member_attendance, :status => :created, :location => @member_attendance }
+      unless @member_attendance.course_schedule.nil?
+        @csid = @member_attendance.course_schedule.id
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @member_attendance.errors, :status => :unprocessable_entity }
+        @csid = ''
+      end
+
+      if @member_attendance.member.nil?
+        flash[:notice] = 'Email could not be found. Please enter your details.'
+        format.html { redirect_to :controller => "members", :action => "new", :csid => @csid, :mode => "signup" }
+      elsif @member_attendance.course_schedule.nil?
+        flash[:notice] = 'Please choose a course and date'
+        format.html { redirect_to :action => "new", :csid => @csid}
+      else
+        if @member_attendance.save
+          flash[:notice] = 'Welcome ' + @member_attendance.member.fullname + "!\nThank you for signing in. "
+          format.html { redirect_to :action => "new", :csid => @member_attendance.course_schedule.id}
+        else
+          flash[:notice] = 'An error occured. Please enter details again.'
+          format.html { redirect_to :action => "new", :csid => @member_attendance.course_schedule.id}
+        end
       end
     end
   end
 
-   def getOrCreateCourseSched ( courseId,courseDate)
-     logger.debug "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  def getOrCreateCourseSched ( courseId,courseDate)
+    logger.debug "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     @cs = CourseSchedule.find(:first, :conditions => ["start_date = ? and course_id=?", courseDate, courseId])
     
     if @cs.nil?
