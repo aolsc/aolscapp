@@ -8,7 +8,7 @@
       <%= collection_select(:coursesel, :id, @courses, :id, :displayName,
                             {:prompt => true})%>&nbsp;&nbsp;&nbsp;&nbsp;Start Date&nbsp;<%= calendar_date_select_tag "start_date", @sel_from_date, :year_range => 1.years.ago..0.years.ago, :popup => "force", :time => "true"%>
   <% else %>
-      <b>Course/Event:</b>&nbsp;<%=  @sel_course.displayName %>&nbsp;&nbsp;&nbsp;&nbsp;<b>Date:&nbsp;</b><%=  @sel_from_date.strftime('%m-%d-%Y %I:%M %p') %>
+      <b>Course/Event:</b>&nbsp;<%=  @sel_course.displayName %>&nbsp;&nbsp;&nbsp;&nbsp;<b>Date:&nbsp;</b><%=  @sel_from_date.strftime('%m-%d-%Y') %>
       <%=  hidden_field_tag 'csid', @csid %>
   <% end %>
 </p>
