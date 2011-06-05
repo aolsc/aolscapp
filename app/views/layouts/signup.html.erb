@@ -9,12 +9,11 @@
 </head>
 <body id="store">
 <div id="banner">
-<%= image_tag("aol.jpg") %>
+<%= link_to image_tag ("aol.jpg", :border =>0) , root_path %>
 <%= @page_title || "&nbsp;" %>
   <div align="right" style="font-size:medium;">
     <% if current_user %>
-    <font color="black"><b><%= current_user.member.fullname %></b></font> |
-    <%= link_to "Start New Signup",root_path %> |&nbsp;&nbsp;<%= link_to "Logout", logout_path  %>&nbsp;&nbsp;
+    <font color="black"><b><%= current_user.member.fullname %></b></font> | &nbsp;&nbsp;<%= link_to "Logout", logout_path  %>&nbsp;&nbsp;
     <% else %>
       <%= link_to "Register", new_user_path  %> |
       <%= link_to "Login", login_path  %>

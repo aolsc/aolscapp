@@ -1,0 +1,35 @@
+<% form_tag :action => 'create',:course_id => params[:id] do -%>
+<p>
+  Course/Event<br/>
+  <%= collection_select(:coursesel, :id, @courses, :id, :displayName,
+                                {:prompt => true})%>
+</p>
+ <p>
+    <label for ="start_date"> Start Date </label><br />
+    <%= calendar_date_select_tag "start_date", @start_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
+  </p>
+  <p>
+    <label for ="end_date"> End Date </label><br />
+    <%= calendar_date_select_tag "end_date", @end_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
+  </p>
+  <p>
+    <label for ="teacher_name">Teacher Name</label><br />
+    <%= collection_select(:teachers, :id, @teachers, :id, :fullname,
+                            {:prompt => "Select a course"})%>&nbsp;&nbsp;
+  </p>
+  <p>
+    <label for ="assistantname">Assistant 1</label>&nbsp;&nbsp;
+      <%= collection_select(:assistants, :id, @assistants, :id, :fullname,
+                            {:prompt => "Select Assistant 1"})%>&nbsp;&nbsp;
+  </p>
+  <p>
+    <label for ="assistantname2">Assistant 2</label>&nbsp;&nbsp;
+      <%= collection_select(:assistants2, :id, @assistants, :id, :fullname,
+                            {:prompt => "Select Assistant 1"})%>&nbsp;&nbsp;
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+
+<% end -%>
+<%#= link_to 'Back', course_schedules_path %>

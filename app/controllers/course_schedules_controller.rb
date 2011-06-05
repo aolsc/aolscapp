@@ -149,4 +149,8 @@ class CourseSchedulesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def newschedule
+
+  end
 end

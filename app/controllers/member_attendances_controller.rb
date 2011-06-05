@@ -14,7 +14,14 @@ class MemberAttendancesController < ApplicationController
       @course = @cs.course
 
     end
+    unless params["mode"].nil?
+      render :layout => "signup"
+    end
+  end
 
+  def schedules
+    @cs = CourseSchedule.find(:all, :conditions => ["DATE(start_date) = ?", Time.now.utc.strftime("%Y-%m-%d")], :order => "start_date desc")
+    render :layout => 'signup'
   end
 
   # GET /member_attendances/new
@@ -28,6 +35,19 @@ class MemberAttendancesController < ApplicationController
       @course_schedule = CourseSchedule.find(@csid)
       @sel_course=@course_schedule.course
       @sel_from_date = @course_schedule.start_date
+    else
+      @current_cs = CourseSchedule.find(:all, :conditions => ["start_date between ? and ?", Time.now.utc - 45.minutes, Time.now.utc + 45.minutes])
+      if !@current_cs.empty?
+        if @current_cs.size < 2
+          @current_cs.each do | cs |
+            @csid = cs.id
+            @sel_course=cs.course
+            @sel_from_date = cs.start_date
+          end
+        end
+      else
+        @nocs = true
+      end
     end
     
     @assistantusers = Role.find_by_role_name("Volunteer").users
@@ -42,7 +62,7 @@ class MemberAttendancesController < ApplicationController
   # POST /member_courses
   # POST /member_courses.xml
   def create
-    @courses = Course.find(:all)
+    
     @member_attendance = MemberAttendance.new
     logger.debug "******"
 
@@ -85,6 +105,7 @@ class MemberAttendancesController < ApplicationController
           format.html { redirect_to :action => "new", :csid => @member_attendance.course_schedule.id}
         end
       end
+    
     end
   end
 
@@ -113,5 +134,12 @@ class MemberAttendancesController < ApplicationController
       logger.debug "saved cs "
       return @cs
     end
+  end
+
+  def newschedule
+    respond_to do |format|
+      format.html 
+    end
+    render :layout => 'signup'
   end
 end

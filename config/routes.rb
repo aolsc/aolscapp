@@ -4,7 +4,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :member_general_feedbacks
 
-  map.root :controller => "member_attendances", :action => "new"
+  map.root :controller => "member_attendances", :action => "schedules"
+  
   
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
@@ -12,12 +13,12 @@ ActionController::Routing::Routes.draw do |map|
   map.memberreport "memberreport", :controller => "member_report"
   
   map.resources :user_sessions
-
+  map.resources :crs_schedules
   map.resources :course_schedules, :has_many => :member_courses
   
   map.resources :users
 
-  map.resources :member_attendances
+  map.resources :member_attendances, :action => "newschedule"
 
   map.resources :members, :has_many => :member_general_feedbacks
   map.resources :members, :has_many => :member_courses

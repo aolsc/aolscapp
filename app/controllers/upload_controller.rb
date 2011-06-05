@@ -21,7 +21,10 @@ class UploadController < ApplicationController
     @assistantusers.each do |tu|
        @assistants << tu.member
     end
-
+  unless params[:mode].nil?
+    @mode = params[:mode]
+    render :layout => "signup"
+  end
   end
 
   def upload_file
@@ -85,15 +88,52 @@ class UploadController < ApplicationController
     # create the file path
     path = File.join( dirictory, name )
     data = upload['datafile'].read;
-    puts '************************************************'
+    puts 'NAME ********' + name
     #puts data;
-    puts '************************************************'
+    puts '***'
     File.open(path, "wb") { |f| f.write( data ) }
 
-    createMembers(path, courseScheduleId, courseName)
-
+    if name.eql?("attended.csv")
+      createAttendedMembers(path, courseScheduleId)
+    else
+      createMembers(path, courseScheduleId, courseName)
     end
+    
   end
+
+  def createAttendedMembers(path, courseScheduleId)
+      CSV.open( path , 'r', ',') do |row|
+          if !row[0].nil? and !row[0].empty?
+            t =  Hash[
+              'firstname',row[0].split(' ')[0],
+              'lastname',row[0].split(' ')[1],
+              'emailid',row[1],
+              'homephone',row[2],
+              'updateby',current_user[:id]
+            ];
+            @member = Member.new(t)
+
+            if( isExistingMember( @member ) )
+              @mu += 1
+              mapMemberToCourseSchedule(@member.id,courseScheduleId, '')
+            else
+              @member.save
+              @mc += 1
+              mapMemberToCourseSchedule(@member.id,courseScheduleId, '')
+            end
+            a =  Hash[
+              'course_schedule_id',courseScheduleId,
+              'member_id',@member.id,
+            ];
+            @member_attendance = MemberAttendance.new(a)
+            @ma_check = MemberAttendance.find(:all, :conditions => ["member_id = ? AND course_schedule_id = ?", @member.id, courseScheduleId])
+            if @ma_check.length == 0
+              @member_attendance.save
+            end
+          end
+        end
+  end
+
 
   # Function to create members and maping members to course schedules
   ##
@@ -124,8 +164,6 @@ class UploadController < ApplicationController
             ];
             @member = Member.new(t)
 
-
-
             if isExistingMember( @member )
               @mu += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
@@ -134,6 +172,7 @@ class UploadController < ApplicationController
               @mc += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
             end
+
          end
         end
         rowCount = rowCount +1
@@ -176,7 +215,7 @@ class UploadController < ApplicationController
         rowCount = rowCount +1
       end
     end
-    end
+  end
   end
   
 
@@ -217,7 +256,7 @@ class UploadController < ApplicationController
     end
   end
 
-  ##
-  # Function to create Course scehdule
-  ##
 
+
+
+end

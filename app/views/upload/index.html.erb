@@ -34,4 +34,5 @@
 </table>
 <p><label for="upload_file"><font color="green"><b>Upload a CSV File<b></font></label> :
 <%= file_field 'upload', 'datafile' %></p>
+<%=  hidden_field_tag 'mode', @mode %>
 <%= submit_tag "Upload" %>
