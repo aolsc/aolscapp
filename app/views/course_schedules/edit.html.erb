@@ -3,11 +3,11 @@
 <% form_tag(course_schedule_path, :method=>'put') do -%>
  <p>
     <label for ="start_date"> Start Date </label><br />
-    <%= calendar_date_select_tag "start_date", @start_date, :year_range => 3.years.ago..0.years.ago %>
+    <%= calendar_date_select_tag "start_date", @start_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
   </p>
   <p>
     <label for ="end_date"> End Date </label><br />
-    <%= calendar_date_select_tag "end_date", @end_date, :year_range => 3.years.ago..0.years.ago %>
+    <%= calendar_date_select_tag "end_date", @end_date, :year_range => 3.years.ago..0.years.ago, :time => true %>
   </p>
   <p>
     <label for ="teacher_name">Teacher Name</label><br />
