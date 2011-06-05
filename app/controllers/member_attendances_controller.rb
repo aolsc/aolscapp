@@ -20,7 +20,7 @@ class MemberAttendancesController < ApplicationController
   end
 
   def schedules
-    @cs = CourseSchedule.find(:all, :conditions => ["DATE(start_date) = ?", Time.now.utc.strftime("%Y-%m-%d")], :order => "start_date desc")
+    @cs = CourseSchedule.find(:all, :conditions => ["DATE(CONVERT_TZ(start_date,'+00:00','-08:00')) = ?", Time.now.utc.strftime("%Y-%m-%d")], :order => "start_date desc")
     render :layout => 'signup'
   end
 
