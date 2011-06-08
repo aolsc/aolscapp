@@ -75,9 +75,8 @@ class MembersController < ApplicationController
           @member_attendance.member = @member
           @member_attendance.course_schedule = CourseSchedule.find(@csid)
           if @member_attendance.save
-            flash[:notice] = 'Welcome ' + @member_attendance.member.fullname + "!\nThank you for signing in. "
           end
-          redirect_to :controller=>"member_attendances", :action=>"new", :csid => @csid, :emailid => @member.emailid
+          redirect_to :controller=>"member_attendances", :action=>"show", :csid => @csid, :emailid => @member.emailid, :name => @member.fullname
         end
     else
       flash[:notice] = 'Member already Exists.'
