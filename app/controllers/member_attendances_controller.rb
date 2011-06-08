@@ -20,8 +20,8 @@ class MemberAttendancesController < ApplicationController
   end
 
   def schedules
-    @cs = CourseSchedule.find(:all, :conditions => ["DATE(CONVERT_TZ(start_date,'+00:00','-08:00')) = ?", Time.now.utc.strftime("%Y-%m-%d")], :order => "start_date desc")
-    render :layout => 'signup'
+    @cs = CourseSchedule.find(:all, :limit => 5, :order => "start_date desc")
+    render :layout => 'signup_schedules'
   end
 
   # GET /member_attendances/new
@@ -98,8 +98,7 @@ class MemberAttendancesController < ApplicationController
         format.html { redirect_to :action => "new", :csid => @csid}
       else
         if @member_attendance.save
-          flash[:notice] = 'Welcome ' + @member_attendance.member.fullname + "!\nThank you for signing in. "
-          format.html { redirect_to :action => "new", :csid => @member_attendance.course_schedule.id}
+          format.html { redirect_to :action => "show", :csid => @member_attendance.course_schedule.id, :name => @member_attendance.member.fullname}
         else
           flash[:notice] = 'An error occured. Please enter details again.'
           format.html { redirect_to :action => "new", :csid => @member_attendance.course_schedule.id}
@@ -107,6 +106,12 @@ class MemberAttendancesController < ApplicationController
       end
     
     end
+  end
+
+  def show
+    @csid = params[:csid]
+    @name = params[:name]
+    render :layout => 'redirect'
   end
 
   def getOrCreateCourseSched ( courseId,courseDate)

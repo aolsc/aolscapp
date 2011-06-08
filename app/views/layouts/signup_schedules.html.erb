@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Center Management System</title>
+<%= stylesheet_link_tag "default", :media => "all" %>
+<%= javascript_include_tag :defaults %>
+<%= calendar_date_select_includes "silver" %>
+</head>
+<body id="store">
+<div id="banner">
+<%= link_to image_tag ("aol.jpg", :border =>0) , root_path %>
+<%= @page_title || "&nbsp;" %>
+  <div align="right" style="font-size:medium;">
+    <% if current_user %>
+    <font color="black"><b><%= current_user.member.fullname %></b></font> &nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to "Home", root_path  %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to "Logout", logout_path  %>&nbsp;&nbsp;
+    <% else %>
+      <%= link_to "Register", new_user_path  %> |
+      <%= link_to "Login", login_path  %>
+    <% end %>
+  </div>
+</div>
+<div id="signup_schedules">
+	<% if flash[:notice] -%>
+	<div id="notice"><%= flash[:notice] %></div>
+	<% end -%>
+
+	<%= yield :layout %>
+
+</div>
+
+</body>
+</html>

@@ -3,28 +3,24 @@
   <tr>
     <td>
       <table border="0" cellspacing="0" cellpadding="0" width="80%">
-        <tr><td><b>Courses/Events scheduled today</b></td></tr>
+        <tr><td><b><font color="#461B7E">Current and recent course/event schedules</font></b></td></tr>
         <tr><td>&nbsp;</td></tr>
       </table>
     </td>
   </tr>
   <tr>
-          <td><%= link_to 'Add a New Course Schedule',  :controller => "crs_schedules", :action => "new" %>&nbsp;&nbsp;<a href="/upload?mode=signup">Import a Participant List</a><br />          </td>
-    </tr>
-    <tr><td>&nbsp;</td></tr>
-  <tr>
     <td>
       <table border="1" cellspacing="0" cellpadding="5" width="100%">
   <tr bgcolor="#A9F5F2">
     <td width="100"><b>Name</b></td>
-    <td width="100"><b>Time</b></td>
+    <td width="150"><b>Time</b></td>
     <td width="130"><b>Attendance</b></td>
     <td width="130"><b>Go to Sign In</b></td>
   </tr>
 <% for cs in @cs -%>
   <tr>
     <td><%=h cs.course.displayName %></td>
-    <td><%=h cs.start_date.strftime('%I:%M %p') %></td>
+    <td><%=h cs.start_date.strftime('%B %d, %Y %I:%M %p') %></td>
    <td><%= link_to cs.member_attendances.count(), {:controller=>"member_attendances", :action=>"index", :csid=>cs.id, :mode => "signin"} %> </td>
    <td><%= link_to 'Click Here', :action => "new", :csid => cs.id %></td>
   </tr>
@@ -32,10 +28,11 @@
       </table>
 </td>
   </tr>
-   <tr>
-   <td align="right"><br>
-
-   </td>
+     <tr>
+   <td align="right">&nbsp;</td>
+        <tr>
+        <td align="right"><font size="4"><%= link_to 'Add a New Course Schedule',  :controller => "crs_schedules", :action => "new" %></font>&nbsp;&nbsp;<font size="4"><a href="/upload?mode=signup">Import a Participant List</a><br /></font></td>
+  </tr>
  </tr>
 
 </table>
