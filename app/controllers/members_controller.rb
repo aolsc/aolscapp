@@ -13,29 +13,26 @@ class MembersController < ApplicationController
     end
   end
 
-
-
   def show
     begin
-    
       if params["search_by_name"].empty? and params["search_by_email"].empty? then
         @members = Member.find(:all).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
       else
         unless params["search_by_name"].empty? and params["search_by_email"].empty?
-            @members = Member.find(:all, :conditions => ['(firstname like ? or lastname like ?) and emailid like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
-       else
-         unless params["search_by_name"].empty?
+          @members = Member.find(:all, :conditions => ['(firstname like ? or lastname like ?) and emailid like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
+        else
+          unless params["search_by_name"].empty?
             @members = Member.find(:all, :conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_"]+"%"]).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
-         else
+          else
             @members = Member.find(:all, :conditions => ['emailid like ?', "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10, :order => 'firstname'
           end
         end
       end
          
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @member }
-    end
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @member }
+      end
     end
   end
 
@@ -63,12 +60,12 @@ class MembersController < ApplicationController
       ])
     if @validatemember.length == 0
       @member.gender = params[:gender]
-        @member.save
-        
+
+      if @member.save
         @mode = params[:mode]
         if @mode.nil?
           flash[:notice] = 'Member was successfully created.'
-          redirect_to :action => "index"
+          redirect_to params.merge!(:action => "index")
         else
           @csid = params[:csid]
           @member_attendance = MemberAttendance.new
@@ -76,26 +73,20 @@ class MembersController < ApplicationController
           @member_attendance.course_schedule = CourseSchedule.find(@csid)
           if @member_attendance.save
           end
-          redirect_to :controller=>"member_attendances", :action=>"show", :csid => @csid, :emailid => @member.emailid, :name => @member.fullname
+          redirect_to params.merge!(:controller=>"member_attendances", :action=>"show", :csid => @csid, :emailid => @member.emailid, :name => @member.fullname)
         end
+      else
+        if params[:mode].nil?
+          render :action => "new", :csid => @csid, :mode => params[:mode]
+        else
+          render :action => "new", :csid => @csid, :mode => params[:mode], :layout => 'signup'
+        end
+      end
     else
       flash[:notice] = 'Member already Exists.'
-      render :action => "new"
-      #      @member.save
-      #      flash[:notice] = 'Member was successfully created.'
-      #      redirect_to :action => "index"
+      redirect_to params.merge!(:action => "new")
     end
 
-    #    respond_to do |format|
-    #      if @member.save
-    #        flash[:notice] = 'Member was successfully created.'
-    #        format.html { redirect_to(@member) }
-    #        format.xml  { render :xml => @member, :status => :created, :location => @member }
-    #      else
-    #        format.html { render :action => "new" }
-    #        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
-    #      end
-    #    end
   end
 
   # PUT /members/1
@@ -103,16 +94,16 @@ class MembersController < ApplicationController
 
 
   def update
-     @member = Member.find(params[:id])
-      @member.updateby = current_user
-      @member.gender = params[:gender]
-      if @member.update_attributes(params[:member])
-         flash[:notice] = 'Member was successfully updated.'
-         redirect_to :action => "index"
-       else
-         flash[:notice] = 'An error occured updating the member information.'
-         redirect_to :action => "index"
-      end
+    @member = Member.find(params[:id])
+    @member.updateby = current_user
+    @member.gender = params[:gender]
+    if @member.update_attributes(params[:member])
+      flash[:notice] = 'Member was successfully updated.'
+      redirect_to :action => "index"
+    else
+      flash[:notice] = 'An error occured updating the member information.'
+      redirect_to :action => "index"
+    end
   end
 
   # DELETE /members/1
@@ -171,14 +162,6 @@ class MembersController < ApplicationController
         @course_interests.save
       end
     end
-    
-
-  end
-
-  def member_course_interest
-
-    @courses = Course.find(:all)
-
   end
 end
  

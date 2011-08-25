@@ -1,12 +1,19 @@
-<h1>Editing member_general_feedback</h1>
-
-<% form_for(@member_general_feedback) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<h1>Interests for <%=  @member.fullname %></h1>
+<% form_for :member_course_interest, @member_course_interests, :url => {:action => 'create', :member_id => @member.id} do |f| %>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="1" cellspacing="0" cellpadding="3">
+  <% for course in @courses -%>
+  <tr>
+    <input type="checkbox" id="<%=course.id%>" name="crs_ids[]" value="<%= course.id %>"> <%= course.displayName %>&nbsp;&nbsp;
+  </tr>
+  <% end %>
+</table>
+</td>
+  </tr>
+</table>
+<br></br>
+<%= f.submit 'Submit'%>
+<%= link_to 'Back', member_course_interests_path %>
 <% end %>
-
-<%= link_to 'Show', @member_general_feedback %> |
-<%= link_to 'Back', member_general_feedbacks_path %>

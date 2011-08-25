@@ -1,34 +1,20 @@
-<h1>Courses interested by the member '<%=  @member.lastname %>'</h1>
+<h1>Interests for <%=  @member.fullname %></h1>
+<% form_for :member_course_interest, @member_course_interests, :url => {:action => 'create', :member_id => @member.id} do |f| %>
 <table border="0" cellspacing="0" cellpadding="0" width="80%">
   <tr>
     <td>
-      <table border="0" cellspacing="0" cellpadding="0" width="80%">
-        <tr>
-          <td><%= button_to 'Add New Course Interest',{:action => 'new', :controller => 'member_course_interests', :id => @member.id}  %></td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <table border="1" cellspacing="0" cellpadding="3">
-  <tr bgcolor="#A9F5F2">
-    <td width="200"><b>Course</b></td>
-    <td width="200"><b>Date interested on</b></th>
-  </tr>
-
-  <% for interest in @member_course_interests -%>
+  <% for course in @courses %>
   <tr>
-    <td width="200"><%=h interest.course.name %></td>
-    <td width="200"><%=h interest.interest_date %></td>
+    <input type="checkbox" id="<%=course.id%>" name="crs_ids[]" value="<%= course.id %>" <% if @selected_interests.include?(course.id) %>checked<% end %>/>  <%= course.displayName %>
+
   </tr>
-<% end %>
+  <% end %>
 </table>
 </td>
   </tr>
 </table>
-<br>
-<br>
-
+<br></br>
+<%= f.submit 'Submit'%>
 <%= link_to 'Back', member_course_interests_path %>
+<% end %>

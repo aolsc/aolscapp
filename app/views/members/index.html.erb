@@ -1,4 +1,5 @@
 <br><br>
+
 <table border="0" cellspacing="0" cellpadding="0" width="80%">
   <tr>
     <td>
@@ -23,26 +24,24 @@
   </tr>
   <tr>
     <td>
-      <table border="1" cellspacing="0" cellpadding="5" width="100%">
+      <table id="member_data" border="1" cellspacing="0" cellpadding="5" width="100%">
   <tr bgcolor="#A9F5F2">
     <td width="100"><b>Name</b></td>
     <td width="100"><b>Email</b></td>
     <td width="130"><b>Phone</b></td>
     <td width="100"><b> Courses Attended </b></td>
     <td width="100"><b> Interests </b></td>
-     <td width="100"><b> Feedback </b></td>
   </tr>
 <% for member in @members -%>
   <tr>
     <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
     <td><%=h member.emailid %></td>
-    <td><%=h member.homephone %></td>
-   <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>
-   <td><%= link_to 'Edit', member_member_course_interests_path(member.id) %>   </td>
-   <td><%= link_to 'Edit', member_member_general_feedbacks_path(member.id) %></td>
+    <td><%=h member.memberphone %></td>
+    <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>
+    <td class="interest"><a href="#">Edit</a></td>
   </tr>
 <% end %>
-      </table>
+        </table>
 </td>
   </tr>
    <tr>

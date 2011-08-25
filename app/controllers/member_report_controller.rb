@@ -3,7 +3,7 @@ class MemberReportController < ApplicationController
   
   def index
     @courses = Course.find(:all)
-    @courseschedules = CourseSchedule.paginate :page => params[:page], :per_page => 10
+    @courseschedules = CourseSchedule.paginate :page => params[:page], :per_page => 10, :order => "start_date desc"
     @cs_id = -1
     @teacherusers = Role.find_by_role_name("Teacher").users
     @teachers = []
@@ -53,10 +53,10 @@ class MemberReportController < ApplicationController
     @assistantssel = params[:assistantssel] unless params[:assistantssel][:id].empty?
 
     #if @report_start_date.nil? or @report_end_date.nil?
-     # @courseschedules = CourseSchedule.find(:all, :conditions => ["course_id=?", params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
+    # @courseschedules = CourseSchedule.find(:all, :conditions => ["course_id=?", params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
     #else
-#      @courseschedules = CourseSchedule.find(:all, :conditions => ["start_date >= ? and end_date <= ? and course_id=?", @report_start_date, @report_end_date, params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
- #   end
+    #      @courseschedules = CourseSchedule.find(:all, :conditions => ["start_date >= ? and end_date <= ? and course_id=?", @report_start_date, @report_end_date, params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
+    #   end
     @courseschedules ||= find_course_schedules.paginate :page => params[:page], :per_page => 10
     @cs_id = -1
 
@@ -78,14 +78,23 @@ class MemberReportController < ApplicationController
   end
 
   def composemessage
-    
     puts params[:course_schedule_radio]
     @cs_id = params[:course_schedule_radio]
 
-    @member_courses = MemberCourse.find(:all, :conditions => ["course_schedule_id=?", @cs_id])
+    @cs = CourseSchedule.find(@cs_id)
+    @member_attendances = @cs.member_attendances
     @email_ids = []
-    @member_courses.each do |member_course|
-      @email_ids << member_course.member.emailid + ","
+    @member_attendances.each_with_index do |att, i|
+      unless att.member.nil?
+        @eid = att.member.emailid
+        unless @email_ids.include?(@eid + ",")
+          if i == @member_attendances.size - 1
+            @email_ids << @eid
+          else
+            @email_ids << @eid + ","
+          end
+        end
+      end
     end
     
     respond_to do |format|
