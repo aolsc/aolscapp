@@ -92,7 +92,7 @@ class MemberAttendancesController < ApplicationController
 
       if @member_attendance.member.nil?
         flash[:notice] = 'Email could not be found. Please enter your details.'
-        format.html { redirect_to :controller => "members", :action => "new", :csid => @csid, :mode => "signup" }
+        format.html { redirect_to :controller => "members", :action => "new", :csid => @csid, :mode => "signup", :emailid => @emailid }
       elsif @member_attendance.course_schedule.nil?
         flash[:notice] = 'Please choose a course and date'
         format.html { redirect_to :action => "new", :csid => @csid}

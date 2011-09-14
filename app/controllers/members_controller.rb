@@ -40,8 +40,13 @@ class MembersController < ApplicationController
   # GET /members/new.xml
   def new
     @member = Member.new
+
     @mode = params[:mode]
     @csid = params[:csid]
+    @emailid = params[:emailid]
+    unless @emailid.nil?
+      @member.emailid = @emailid
+    end
     unless @mode.nil?
       render :layout => 'signup'
     end
