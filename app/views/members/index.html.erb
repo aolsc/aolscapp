@@ -1,6 +1,33 @@
 <br><br>
 
-<table border="0" cellspacing="0" cellpadding="0" width="80%">
+<script language="javascript">
+
+  jQuery(document).ready(function() {
+    jQuery("#member_data .interest a #edit").toggle(true);
+    jQuery("#member_data .interest a #save").toggle(false);
+  
+    jQuery("#member_data").each(function() {
+      jQuery(".interest a").bind("click",function () {
+        jQuery(this).children("#edit").toggle();
+        jQuery(this).children("#save").toggle();
+        if(jQuery(this).children("#save").is(":visible")) {
+          jQuery(this).parent().children("#mytags").show();
+          jQuery(this).parent().children("#mytags").tagit({
+            availableTags: ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby", "python", "c", "scala", "groovy", "haskell", "perl"]
+          });
+        } else {
+          alert(jQuery(this).parent().children("#mytags").children("#unique").val());
+
+          jQuery(this).parent().children("#mytags").hide();
+        }
+        stopPropagation();
+      });
+    });
+
+
+  });
+</script>
+<table id="members" border="0" cellspacing="0" cellpadding="0" width="80%">
   <tr>
     <td>
       <table border="0" cellspacing="0" cellpadding="0" width="80%">
@@ -12,9 +39,9 @@
         <tr>
           <td>
             <% form_tag '/members/show', :method => 'get' do -%>
-            <table border="0" cellspacing="1" cellpadding="0" width="100%">
-              <tr><td>Name&nbsp;&nbsp;<%= text_field_tag  :search_by_name,params[:search_by_name], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= text_field_tag :search_by_email,params[:search_by_email], :size => 15 %>&nbsp;&nbsp;<%= button_to 'Go', :action => "show" %></td></tr>
-            </table>
+              <table border="0" cellspacing="1" cellpadding="0" width="100%">
+                <tr><td>Name&nbsp;&nbsp;<%= text_field_tag  :search_by_name,params[:search_by_name], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= text_field_tag :search_by_email,params[:search_by_email], :size => 15 %>&nbsp;&nbsp;<%= button_to 'Go', :action => "show" %></td></tr>
+              </table>
             <% end -%>
           </td>
         </tr>
@@ -24,30 +51,36 @@
   </tr>
   <tr>
     <td>
-      <table id="member_data" border="1" cellspacing="0" cellpadding="5" width="100%">
-  <tr bgcolor="#A9F5F2">
-    <td width="100"><b>Name</b></td>
-    <td width="100"><b>Email</b></td>
-    <td width="130"><b>Phone</b></td>
-    <td width="100"><b> Courses Attended </b></td>
-    <td width="100"><b> Interests </b></td>
-  </tr>
-<% for member in @members -%>
-  <tr>
-    <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
-    <td><%=h member.emailid %></td>
-    <td><%=h member.memberphone %></td>
-    <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>
-    <td class="interest"><a href="#">Edit</a></td>
-  </tr>
-<% end %>
+      <div id="anim">
+        <table id="member_data" border="1" cellspacing="0" cellpadding="5" width="100%">
+          <thead>
+            <tr bgcolor="#A9F5F2">
+              <td width="100"><b>Name</b></td>
+              <td width="100"><b>Email</b></td>
+              <td width="130"><b>Phone</b></td>
+              <td width="100"><b> Courses Attended </b></td>
+              <td width="220"><b> Tags </b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% for member in @members -%>
+              <tr>
+                <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
+                <td><%=h member.emailid %></td>
+                <td><%=h member.memberphone %></td>
+                <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>
+                <td class="interest"><a href="javascript:void(0);" mem_id="<%= member.id %>"><span id="edit">Edit</span><span id="save">Save</span></a><ul id="mytags"></ul></td>
+              </tr>
+            <% end %>
+          </tbody>
         </table>
-</td>
+      </div>
+    </td>
   </tr>
-   <tr>
-   <td align="right"><br>
-    <%= will_paginate @members %>
-   </td>
- </tr>
+  <tr>
+    <td align="right"><br>
+      <%= will_paginate @members %>
+    </td>
+  </tr>
 
 </table>

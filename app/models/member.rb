@@ -4,6 +4,7 @@ class Member < ActiveRecord::Base
   has_many :member_course_interests
   has_one :user
   validates_presence_of :firstname, :lastname, :emailid, :gender
+  acts_as_taggable_on :tags
 
   def fullname
     (firstname ? firstname.capitalize : "") + " " + (lastname ? lastname.capitalize : "")

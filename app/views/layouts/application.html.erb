@@ -4,8 +4,10 @@
 <head>
 <title>Center Management System</title>
 <%= stylesheet_link_tag "default", :media => "all" %>
-<%= javascript_include_tag ['jquery-1.6.2.js', 'prototype', 'application', 'calendar_date_select'] %>
+<%= javascript_include_tag ['jquery-1.6.2.js', 'jquery-ui-1.8.core-and-interactions.min.js', 'jquery-ui-1.8.autocomplete.min.js','tag-it.js','prototype', 'application', 'calendar_date_select'] %>
 <%= calendar_date_select_includes "silver" %>
+<%= stylesheet_link_tag "jquery.ui.autocomplete.custom", :media => "all" %>
+
 </head>
 <body id="store">
 <div id="banner">
