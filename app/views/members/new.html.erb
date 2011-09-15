@@ -21,10 +21,12 @@
     <%= f.text_field :cellphone %>
   </p>
   <p>
-Gender<br>
-&nbsp;Male<%= radio_button_tag :gender,"M" %>
-&nbsp;Female&nbsp;<%= radio_button_tag :gender,"F" %>
+Gender: &nbsp;Male<%= radio_button_tag :gender,"M" %>&nbsp;Female&nbsp;<%= radio_button_tag :gender,"F" %>
   </p>
+<p>
+Have you taken the Art of Living Course?&nbsp;Yes<%= f.radio_button :taken_course,"true" %>&nbsp;No&nbsp;<%= f.radio_button :taken_course,"false" %>
+  </p>
+
   <p>
     <%=  hidden_field_tag :mode, params[:mode] %>
     <%=  hidden_field_tag :csid, params[:csid] %>

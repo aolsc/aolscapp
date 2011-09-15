@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110910075309) do
+ActiveRecord::Schema.define(:version => 20110913082033) do
 
   create_table "course_schedules", :force => true do |t|
     t.integer  "course_id"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20110910075309) do
     t.string   "cellphone"
     t.string   "employer"
     t.string   "profession"
+    t.boolean  "taken_course"
   end
 
   add_index "members", ["emailid"], :name => "emailid"
