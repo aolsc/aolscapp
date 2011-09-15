@@ -6,4 +6,4 @@ config/environment.rb
 nbproject/private/rake-d.txt
 public/data/*.csv
 public/data/*.xls
-log/development.log
+log\development.log
