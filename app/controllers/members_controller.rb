@@ -6,7 +6,14 @@ class MembersController < ApplicationController
   # GET /members.xml
   def index
     @members = Member.paginate :page => params[:page], :per_page => 10, :order => 'firstname'
-
+    @tags = Tag.find(:all)
+    @tag_names = []
+    @tags.each do |tg|
+       @tag_names << tg.name
+    end
+    @tg = @tag_names.map {|element|
+        "'#{element}'"
+      }.join(',');
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @members }
@@ -94,8 +101,29 @@ class MembersController < ApplicationController
 
   end
 
+  def save_tags
+    puts params[:sel_tags]
+    puts params[:mem_id]
+    @member = Member.find(params[:mem_id])
+    @member.member_taggings.destroy_all
+    @sel_tags =params[:sel_tags].split(",")
+    @sel_tags.each do |sel_tag|
+      @member_tag = MemberTagging.new
+      @member_tag.member = @member
+      @tag = Tag.find_by_name(sel_tag)
+      @member_tag.tag = @tag
+      @member_tag.save
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to members_path }
+      format.js
+    end
+  end
   # PUT /members/1
   # PUT /members/1.xml
+
+
 
 
   def update

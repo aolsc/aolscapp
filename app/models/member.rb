@@ -1,10 +1,8 @@
 class Member < ActiveRecord::Base
-  has_many :member_general_feedbacks
   has_many :member_courses
-  has_many :member_course_interests
+  has_many :member_taggings
   has_one :user
-  validates_presence_of :firstname, :lastname, :emailid, :gender
-  acts_as_taggable_on :tags
+  validates_presence_of :firstname, :lastname, :emailid
 
   def fullname
     (firstname ? firstname.capitalize : "") + " " + (lastname ? lastname.capitalize : "")
@@ -18,6 +16,14 @@ class Member < ActiveRecord::Base
     unless homephone.nil? or homephone.blank?
       return homephone + " (h)"
     end
+  end
+
+  def tags_list
+    tags = []
+    member_taggings.each do |mt|
+      tags << mt.tag.name
+    end
+    return tags
   end
 
 end

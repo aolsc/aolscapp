@@ -2,31 +2,60 @@
 
 <script language="javascript">
 
+jQuery.ajaxSetup({
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})
+
+jQuery.fn.submitWithAjax = function() {
+    this.submit(function() {
+      jQuery.post(this.action, jQuery(this).serialize(), null, "script");
+      return false;
+    })
+  return this;
+};
+
   jQuery(document).ready(function() {
+    jQuery("form#tags_submit").submitWithAjax();
     jQuery("#member_data .interest a #edit").toggle(true);
     jQuery("#member_data .interest a #save").toggle(false);
+    jQuery("#member_data .interest #member_tags").toggle(false);
   
     jQuery("#member_data").each(function() {
       jQuery(".interest a").bind("click",function () {
-        jQuery(this).children("#edit").toggle();
-        jQuery(this).children("#save").toggle();
-        if(jQuery(this).children("#save").is(":visible")) {
-          jQuery(this).parent().children("#mytags").show();
-          jQuery(this).parent().children("#mytags").tagit({
-            availableTags: ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby", "python", "c", "scala", "groovy", "haskell", "perl"]
-          });
+        var mem_id = jQuery(this).parent().attr("mem_id");
+        var member_tags = jQuery(this).parent().children("#member_tags").val().split(",");
+        if(jQuery(this).children("#edit").is(":visible")) {
+          jQuery(this).children("#edit").toggle(false);
+          jQuery(this).children("#save").toggle(true);
+          jQuery(this).children("#updatestatus").toggle(false);
+          jQuery(this).parent().children("#member_tags").toggle(true);
+          jQuery(this).parent().children("#current_tags").toggle(false);
+          jQuery(this).parent().children("#member_tags").superblyTagField({
+                allowNewTags: false,
+                showTagsNumber: 10,
+                preset: member_tags,
+                tags: [<%= @tg %>]
+            });
         } else {
-          alert(jQuery(this).parent().children("#mytags").children("#unique").val());
-
-          jQuery(this).parent().children("#mytags").hide();
+          var sel_tags = jQuery(this).parent().children("#member_tags").val();
+          jQuery("#tags_submit #selected_tags").val(sel_tags);
+          jQuery("#tags_submit #mem_id").val(mem_id);
+          jQuery(this).children("#updatestatus").toggle(true);
+          jQuery("form#tags_submit").submit();
         }
-        stopPropagation();
       });
-    });
+      });
+    
 
 
   });
 </script>
+
+  <% form_for :member, :url => {:action => 'save_tags'}, :html => {:id => 'tags_submit' } do |f| %>
+          <input type="hidden" name="sel_tags" id="selected_tags" value=""></input>
+          <input type="hidden" name="mem_id" id="mem_id" value=""></input>
+  <% end %>
+
 <table id="members" border="0" cellspacing="0" cellpadding="0" width="80%">
   <tr>
     <td>
@@ -57,9 +86,8 @@
             <tr bgcolor="#A9F5F2">
               <td width="100"><b>Name</b></td>
               <td width="100"><b>Email</b></td>
-              <td width="130"><b>Phone</b></td>
-              <td width="100"><b> Courses Attended </b></td>
-              <td width="220"><b> Tags </b></td>
+              <td width="100"><b>Phone</b></td>
+              <td width=620"><b> Tags </b></td>
             </tr>
           </thead>
           <tbody>
@@ -67,9 +95,8 @@
               <tr>
                 <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
                 <td><%=h member.emailid %></td>
-                <td><%=h member.memberphone %></td>
-                <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>
-                <td class="interest"><a href="javascript:void(0);" mem_id="<%= member.id %>"><span id="edit">Edit</span><span id="save">Save</span></a><ul id="mytags"></ul></td>
+                <td><%=h member.homephone %></td>
+                <td class="interest" mem_id="<%= member.id %>"><a href="javascript:void(0);"><span id="edit">Edit</span><span id="save">Save</span></a>&nbsp;&nbsp;<span id="updatestatus"></span><br><span id="current_tags"><%= member.tags_list.join(", ") %></span><input type="text" id="member_tags" value="<%= member.tags_list.join(",")%>"/></td>
               </tr>
             <% end %>
           </tbody>
@@ -77,6 +104,7 @@
       </div>
     </td>
   </tr>
+  
   <tr>
     <td align="right"><br>
       <%= will_paginate @members %>

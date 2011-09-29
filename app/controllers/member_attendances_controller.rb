@@ -4,10 +4,21 @@ class MemberAttendancesController < ApplicationController
     if params["csid"].nil?
       @members = Member.find(:all, :conditions => ['emailid LIKE ?', "#{params[:search]}%"])
     else
+          @tags = Tag.find(:all)
+    @tag_names = []
+    @tags.each do |tg|
+       @tag_names << tg.name
+    end
+    @tg = @tag_names.map {|element|
+        "'#{element}'"
+      }.join(',');
+
       @member_attendances = MemberAttendance.find(:all, :conditions => ['course_schedule_id = ?', params[:csid]])
       @members = []
       @member_attendances.each do |ma|
-        @members << ma.member
+        unless ma.member.nil?
+          @members << ma.member
+        end
       end
       @csid = params["csid"]
       @cs = CourseSchedule.find(@csid)

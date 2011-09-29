@@ -1,7 +1,7 @@
   require 'csv'
 
 class UploadController < ApplicationController
-  attr_reader :mc, :mu
+  attr_reader :mc, :mu, :me
 
   def index
   @courses = Course.find(:all)
@@ -48,8 +48,9 @@ class UploadController < ApplicationController
       courseScheduleId = getOrCreateCourseSched( params[:coursesel][:id],Time.parse(params[:start_date]).to_time.utc,params[:teacherssel][:id],params[:assistantssel1][:id],params[:assistantssel2][:id] )
       @mc = 0
       @mu = 0
+      @me = 0
       save(params[:upload], courseScheduleId, courseName)
-      flash.now[:notice] = "File has been uploaded successfully.<br><br>Number of new members created - " + @mc.to_s + "<br>Number of existing members updated - " + @mu.to_s
+      flash.now[:notice] = "File has been uploaded.<br><br>Number of new members created - " + @mc.to_s + "<br>Number of existing members updated - " + @mu.to_s+ "<br>Number of new members could not be uploaded due to errors - " + @me.to_s
     end
   rescue CustomException::WrongFileFormat
     flash[:notice] = 'The uploaded file does not belong to the Course chosen. Please verify.'
@@ -168,8 +169,11 @@ class UploadController < ApplicationController
               @mu += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
             else
-              @member.save
-              @mc += 1
+              if @member.save
+                @mc += 1
+              else
+                @me += 1
+              end
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
             end
 
@@ -206,8 +210,11 @@ class UploadController < ApplicationController
               @mu += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[30])
             else
-              @member.save
-              @mc += 1
+              if @member.save
+                @mc += 1
+              else
+                @me += 1
+              end
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[30])
             end
           end

@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "member_attendances", :action => "schedules"
   
   
+  
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
@@ -19,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
 
   map.resources :member_attendances, :action => "success"
-  
+  map.resources :members, :action => "save_tags"
 
   map.resources :members, :has_many => :member_general_feedbacks
   map.resources :members, :has_many => :member_courses
@@ -30,6 +31,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :login
 
   map.resources :courses, :has_many => :course_schedules
+  map.resources :tags
 
   # The priority is based upon order of creation: first created -> highest priority.
 

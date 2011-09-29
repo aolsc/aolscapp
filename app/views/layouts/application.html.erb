@@ -4,9 +4,9 @@
 <head>
 <title>Center Management System</title>
 <%= stylesheet_link_tag "default", :media => "all" %>
-<%= javascript_include_tag ['jquery-1.6.2.js', 'jquery-ui-1.8.core-and-interactions.min.js', 'jquery-ui-1.8.autocomplete.min.js','tag-it.js','prototype', 'application', 'calendar_date_select'] %>
-<%= calendar_date_select_includes "silver" %>
-<%= stylesheet_link_tag "jquery.ui.autocomplete.custom", :media => "all" %>
+<%= javascript_include_tag ['jquery.min.js', 'superbly-tagfield.min.js', 'application'] %>
+
+<%= stylesheet_link_tag "superbly-tagfield", :media => "all" %>
 
 </head>
 <body id="store">
@@ -29,6 +29,7 @@
 <div id="side">
 	<a href="/members">Members</a><br /><br />
 	<a href="/courses">Courses</a><br /><br />
+        <a href="/tags">Tags</a><br /><br />
         <% if permitted_to? :index, User.new %>
           <a href="/users">Users</a><br /><br />
         <% end %>

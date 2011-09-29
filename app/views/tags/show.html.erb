@@ -1,0 +1,33 @@
+<h1>Tags</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Add Tag', :action => "new" %></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table border="1" cellspacing="0" cellpadding="3" width="60%">
+  <tr bgcolor="#A9F5F2">
+    <td width="200"><b>Name</b></td>
+  </tr>
+<% for tag in @tags -%>
+  <tr>
+    <td><%= link_to tag.name, edit_tag_path(tag) %></td>
+  </tr>
+<% end %>
+      </table>
+</td>
+ </tr>
+ <tr>
+   <td colspan="2" align="center">
+    <%= will_paginate @tags %>
+   </td>
+ </tr>
+</table>
+

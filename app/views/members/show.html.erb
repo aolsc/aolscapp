@@ -1,5 +1,62 @@
 <br><br>
-<table border="0" cellspacing="0" cellpadding="0" width="80%">
+
+<script language="javascript">
+
+jQuery.ajaxSetup({
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})
+
+jQuery.fn.submitWithAjax = function() {
+    this.submit(function() {
+      jQuery.post(this.action, jQuery(this).serialize(), null, "script");
+      return false;
+    })
+  return this;
+};
+
+  jQuery(document).ready(function() {
+    jQuery("form#tags_submit").submitWithAjax();
+    jQuery("#member_data .interest a #edit").toggle(true);
+    jQuery("#member_data .interest a #save").toggle(false);
+    jQuery("#member_data .interest #member_tags").toggle(false);
+
+    jQuery("#member_data").each(function() {
+      jQuery(".interest a").bind("click",function () {
+        var mem_id = jQuery(this).parent().attr("mem_id");
+        var member_tags = jQuery(this).parent().children("#member_tags").val().split(",");
+        if(jQuery(this).children("#edit").is(":visible")) {
+          jQuery(this).children("#edit").toggle(false);
+          jQuery(this).children("#save").toggle(true);
+          jQuery(this).children("#updatestatus").toggle(false);
+          jQuery(this).parent().children("#member_tags").toggle(true);
+          jQuery(this).parent().children("#current_tags").toggle(false);
+          jQuery(this).parent().children("#member_tags").superblyTagField({
+                allowNewTags: false,
+                showTagsNumber: 10,
+                preset: member_tags,
+                tags: [<%= @tg %>]
+            });
+        } else {
+          var sel_tags = jQuery(this).parent().children("#member_tags").val();
+          jQuery("#tags_submit #selected_tags").val(sel_tags);
+          jQuery("#tags_submit #mem_id").val(mem_id);
+          jQuery(this).children("#updatestatus").toggle(true);
+          jQuery("form#tags_submit").submit();
+        }
+      });
+      });
+
+
+
+  });
+</script>
+
+  <% form_for :member, :url => {:action => 'save_tags'}, :html => {:id => 'tags_submit' } do |f| %>
+          <input type="hidden" name="sel_tags" id="selected_tags" value=""></input>
+          <input type="hidden" name="mem_id" id="mem_id" value=""></input>
+  <% end %>
+
+<table id="members" border="0" cellspacing="0" cellpadding="0" width="80%">
   <tr>
     <td>
       <table border="0" cellspacing="0" cellpadding="0" width="80%">
@@ -11,9 +68,9 @@
         <tr>
           <td>
             <% form_tag '/members/show', :method => 'get' do -%>
-            <table border="0" cellspacing="1" cellpadding="0" width="100%">
-              <tr><td>Name&nbsp;&nbsp;<%= text_field_tag  :search_by_name,params[:search_by_name], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= text_field_tag :search_by_email,params[:search_by_email], :size => 15 %>&nbsp;&nbsp;<%= button_to 'Go', :action => "show" %></td></tr>
-            </table>
+              <table border="0" cellspacing="1" cellpadding="0" width="100%">
+                <tr><td>Name&nbsp;&nbsp;<%= text_field_tag  :search_by_name,params[:search_by_name], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= text_field_tag :search_by_email,params[:search_by_email], :size => 15 %>&nbsp;&nbsp;<%= button_to 'Go', :action => "show" %></td></tr>
+              </table>
             <% end -%>
           </td>
         </tr>
@@ -23,32 +80,35 @@
   </tr>
   <tr>
     <td>
-      <table border="1" cellspacing="0" cellpadding="5" width="100%">
-  <tr bgcolor="#A9F5F2">
-    <td width="100"><b>Name</b></td>
-    <td width="100"><b>Email</b></td>
-    <td width="130"><b>Phone</b></td>
-    <td width="100"><b> Courses Attended </b></td>
-    <td width="100"><b> Interests </b></td>
-     <td width="100"><b> Feedback </b></td>
+      <div id="anim">
+        <table id="member_data" border="1" cellspacing="0" cellpadding="5" width="100%">
+          <thead>
+            <tr bgcolor="#A9F5F2">
+              <td width="100"><b>Name</b></td>
+              <td width="100"><b>Email</b></td>
+              <td width="100"><b>Phone</b></td>
+              <td width=620"><b> Tags </b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% for member in @members -%>
+              <tr>
+                <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
+                <td><%=h member.emailid %></td>
+                <td><%=h member.homephone %></td>
+                <td class="interest" mem_id="<%= member.id %>"><a href="javascript:void(0);"><span id="edit">Edit</span><span id="save">Save</span></a>&nbsp;&nbsp;<span id="updatestatus"></span><br><span id="current_tags"><%= member.tags_list.join(", ") %></span><input type="text" id="member_tags" value="<%= member.tags_list.join(",")%>"/></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </td>
   </tr>
-<% for member in @members -%>
+
   <tr>
-    <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
-    <td><%=h member.emailid %></td>
-    <td><%=h member.homephone %></td>
-   <td><%= link_to 'Edit', member_member_courses_path(member.id)%>   </td>
-   <td><%= link_to 'Edit', member_member_course_interests_path(member.id) %>   </td>
-   <td><%= link_to 'Edit', member_member_general_feedbacks_path(member.id) %></td>
+    <td align="right"><br>
+      <%= will_paginate @members %>
+    </td>
   </tr>
-<% end %>
-      </table>
-</td>
-  </tr>
-   <tr>
-   <td align="right"><br>
-    <%= will_paginate @members %>
-   </td>
- </tr>
 
 </table>
