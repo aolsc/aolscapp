@@ -3,6 +3,7 @@ class Member < ActiveRecord::Base
   has_many :member_taggings
   has_one :user
   validates_presence_of :firstname, :lastname, :emailid
+  validates_presence_of :taken_course, :message => " - Please select if you have taken Art of Living Course"
 
   def fullname
     (firstname ? firstname.capitalize : "") + " " + (lastname ? lastname.capitalize : "")

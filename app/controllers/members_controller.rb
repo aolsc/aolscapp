@@ -85,7 +85,6 @@ class MembersController < ApplicationController
       ])
     if @validatemember.length == 0
       @member.gender = params[:gender]
-      @member.tag_list ="part-1, ag-1"
       if @member.save
         @mode = params[:mode]
         if @mode.nil?
