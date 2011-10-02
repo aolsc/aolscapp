@@ -36,7 +36,7 @@ class MembersController < ApplicationController
       else
             unless params["search_by_name"].empty?
               puts "4"
-              @members = Member.find(:all,:order => 'firstname',:conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", "%"+params["search_by_"]+"%"]).paginate :page => params[:page], :per_page => 10
+              @members = Member.find(:all,:order => 'firstname',:conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%"]).paginate :page => params[:page], :per_page => 10
             end
             unless params["search_by_tags"].empty?
               puts "5"
