@@ -1,7 +1,7 @@
 <br><br>
 
 <script language="javascript">
-
+jQuery.noConflict();
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
@@ -73,6 +73,7 @@ jQuery.fn.submitWithAjax = function() {
               <td width="100"><b>Email</b></td>
               <td width="100"><b>Phone</b></td>
               <td width=620"><b> Tags </b></td>
+              <td width=620"><b> Taken Course?</b></td>
             </tr>
           </thead>
           <tbody>
@@ -82,6 +83,7 @@ jQuery.fn.submitWithAjax = function() {
                 <td><%=h member.emailid %></td>
                 <td><%=h member.homephone %></td>
                 <td class="interest" mem_id="<%= member.id %>"><a href="javascript:void(0);"><span id="edit">Edit</span><span id="save">Save</span></a>&nbsp;&nbsp;<span id="updatestatus"></span><br><span id="current_tags"><%= member.tags_list.join(", ") %></span><input type="text" id="member_tags" value="<%= member.tags_list.join(",")%>"/></td>
+                <td><%=h member.has_taken %></td>
               </tr>
             <% end %>
           </tbody>

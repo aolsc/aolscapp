@@ -3,7 +3,7 @@ class Member < ActiveRecord::Base
   has_many :member_taggings
   has_one :user
   validates_presence_of :firstname, :lastname, :emailid
-  validates_presence_of :taken_course, :message => " - Please select if you have taken Art of Living Course"
+  validates_inclusion_of :taken_course, :in => [true, false], :message => " - Please select if you have taken Art of Living Course"
 
   def fullname
     (firstname ? firstname.capitalize : "") + " " + (lastname ? lastname.capitalize : "")
@@ -16,6 +16,15 @@ class Member < ActiveRecord::Base
     end
     unless homephone.nil? or homephone.blank?
       return homephone + " (h)"
+    end
+  end
+
+  def has_taken
+    unless taken_course.nil?
+      if taken_course?
+        return "Yes"
+      end
+        return "No"
     end
   end
 

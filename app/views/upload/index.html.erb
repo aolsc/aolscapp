@@ -1,3 +1,5 @@
+<%= javascript_include_tag :defaults %>
+<%= calendar_date_select_includes "silver" %>
 <h1>Import participants list</h1>
 <%=form_tag({:action => 'upload_file'},
                         :multipart => true) %>
