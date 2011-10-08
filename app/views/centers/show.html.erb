@@ -1,0 +1,33 @@
+<h1>Centers</h1>
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="80%">
+        <tr>
+          <td><%= button_to 'Add Center', :action => "new" %></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table border="1" cellspacing="0" cellpadding="3" width="60%">
+  <tr bgcolor="#A9F5F2">
+    <td width="200"><b>City</b></td>
+  </tr>
+<% for center in @centers -%>
+  <tr>
+    <td><%= link_to center.location, edit_center_path(center) %></td>
+  </tr>
+<% end %>
+      </table>
+</td>
+ </tr>
+ <tr>
+   <td colspan="2" align="center">
+    <%= will_paginate @centers %>
+   </td>
+ </tr>
+</table>
+

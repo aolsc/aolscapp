@@ -16,6 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
   map.resources :crs_schedules
   map.resources :course_schedules, :has_many => :member_courses
+  map.resources :centers
   
   map.resources :users
 

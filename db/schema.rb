@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110920100901) do
+ActiveRecord::Schema.define(:version => 20111001115000) do
+
+  create_table "centers", :force => true do |t|
+    t.string "city"
+    t.string "state"
+    t.string "country"
+  end
 
   create_table "course_schedules", :force => true do |t|
     t.integer  "course_id"
@@ -51,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20110920100901) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "course_schedule_id"
+    t.integer  "center_id"
   end
 
   create_table "member_course_interests", :force => true do |t|
@@ -93,7 +100,6 @@ ActiveRecord::Schema.define(:version => 20110920100901) do
   add_index "member_taggings", ["tag_id"], :name => "index_member_taggings_on_tag_id"
 
   create_table "members", :force => true do |t|
-    t.integer  "centerid"
     t.string   "firstname"
     t.string   "lastname"
     t.string   "emailid"
@@ -115,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20110920100901) do
     t.string   "employer"
     t.string   "profession"
     t.boolean  "taken_course"
+    t.integer  "center_id"
   end
 
   add_index "members", ["emailid"], :name => "emailid"
