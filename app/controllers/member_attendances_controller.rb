@@ -5,12 +5,12 @@ class MemberAttendancesController < ApplicationController
     if params["csid"].nil?
       @members = Member.find(:all, :conditions => ['emailid LIKE ?', "#{params[:search]}%"])
     else
-          @tags = Tag.find(:all)
-    @tag_names = []
-    @tags.each do |tg|
-       @tag_names << tg.name
-    end
-    @tg = @tag_names.map {|element|
+      @tags = Tag.find(:all)
+      @tag_names = []
+      @tags.each do |tg|
+        @tag_names << tg.name
+      end
+      @tg = @tag_names.map {|element|
         "'#{element}'"
       }.join(',');
 
@@ -32,7 +32,7 @@ class MemberAttendancesController < ApplicationController
   end
 
   def schedules
-    @cs = CourseSchedule.find(:all, :limit => 5, :order => "start_date desc")
+    @cs = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :limit => 5, :order => "start_date desc")
     render :layout => 'signup_schedules'
   end
 

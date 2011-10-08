@@ -9,4 +9,34 @@ class User < ActiveRecord::Base
       (self.roles || []).map {|r| r.role_name.downcase.to_sym}
    end
 
+   def highest_role
+     @prev_id = 0
+     roles.each do |role|
+       if role.id > @prev_id
+         @prev_id = role.id
+         @max_role = role
+        end
+      end
+      return @max_role.role_name.camelize
+   end
+   def highest_role_id
+     @prev_id = 0
+     roles.each do |role|
+       if role.id > @prev_id
+         @prev_id = role.id
+        end
+      end
+      return @prev_id
+   end
+
+   def is_super_admin
+     @max_role_id = Role.maximum(:id)
+
+     roles.each do |role|
+       if role.id == @max_role_id
+         return true
+        end
+      end
+      return false
+   end
 end

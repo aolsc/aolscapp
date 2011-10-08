@@ -2,11 +2,17 @@ class Member < ActiveRecord::Base
   has_many :member_courses
   has_many :member_taggings
   has_one :user
-  validates_presence_of :firstname, :lastname, :emailid
+  belongs_to :center
+  validates_presence_of :firstname, :lastname, :emailid, :center_id
   validates_inclusion_of :taken_course, :in => [true, false], :message => " - Please select if you have taken Art of Living Course"
 
   def fullname
     (firstname ? firstname.capitalize : "") + " " + (lastname ? lastname.capitalize : "")
+    #firstname.nil? firstname.capitalize  + " " + lastname.capitalize unless lastname.nil?
+  end
+
+  def fullname_with_role
+    (firstname ? firstname.capitalize : "") + " " + (lastname ? lastname.capitalize : "") + " (" + user.highest_role + ") - " +  center.city
     #firstname.nil? firstname.capitalize  + " " + lastname.capitalize unless lastname.nil?
   end
 

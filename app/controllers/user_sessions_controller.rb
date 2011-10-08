@@ -11,17 +11,17 @@ class UserSessionsController < ApplicationController
   
   def create
     @user_session = UserSession.new(params[:user_session])
-    if params[:center][:city].blank?
-      flash[:notice]  = 'Please enter a center'
-      render :action => 'new'
+    if @user_session.save
+      @user = User.find_by_username(@user_session.username)
+      @member = Member.find_by_id(@user.member_id)
+      session[:center_id] = @member.center.id.to_s
+      session[:user_full_name] = @member.fullname_with_role
+      session[:highest_role_id] = @user.highest_role_id
+      session[:user] = @user
+      session[:current_user_super_admin] = @user.is_super_admin
+      redirect_to root_url
     else
-      @center = Center.find_by_city(params[:center][:city])
-      session[:center_id] = @center.id
-      if @user_session.save
-        redirect_to root_url
-      else
-        render :action => 'new'
-      end
+      render :action => 'new'
     end
   end
   

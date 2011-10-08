@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.all
+    if session[:current_user_super_admin]
+      @users = User.find(:all,:order => 'username')
+    else
+      @users = User.find(:all,:order => 'username', :joins => :member, :conditions => ['members.center_id = ?', session[:center_id]]).paginate :page => params[:page], :per_page => 10
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -36,9 +40,17 @@ end
   
     begin
       if params["search_by_username"].nil?
-        @users = User.find(:all)
+        if session[:current_user_super_admin]
+          @users = User.find(:all,:order => 'username')
+        else
+          @users = User.find(:all,:order => 'username', :joins => :member, :conditions => ['members.center_id = ?', session[:center_id]]).paginate :page => params[:page], :per_page => 10
+        end
       else
-        @users = User.find(:all, :conditions => ['username like ?', "%"+params["search_by_username"]+"%"])
+        if session[:current_user_super_admin]
+          @users = User.find(:all, :conditions => ['username like ?', "%"+params["search_by_username"]+"%"])
+        else
+          @users = User.find(:all,:order => 'username', :joins => :member, :conditions => ['members.center_id = ? and username like ?', session[:center_id], "%"+params["search_by_username"]+"%"]).paginate :page => params[:page], :per_page => 10
+        end
       end
       rescue ActiveRecord::RecordNotFound
         logger.error("Attempt to access invalid user")
@@ -56,11 +68,12 @@ end
   # GET /users/new.xml
   def new
     @mem = Member.find(params[:id])
-    puts "mem:"
-    puts params[:id]
-    puts @mem
     @user = User.new
-    @roles = Role.find(:all)
+    if session[:current_user_super_admin]
+      @roles = Role.find(:all)
+    else
+      @roles = Role.find(:all, :conditions => ["id <> 4"])
+    end
     @mem_emailid = @mem.emailid
 
     respond_to do |format|
@@ -72,7 +85,12 @@ end
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    @roles = Role.find(:all)
+    @session_user = session[:user]
+    if @session_user.is_super_admin
+      @roles = Role.find(:all)
+    else
+      @roles = Role.find(:all, :conditions => ["id <> 4"])
+    end
 
     
   end
@@ -81,11 +99,14 @@ end
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    @user.memberid = params[:user][:member_id]
     @user.roles = Role.find(params[:role_ids]) if params[:role_ids]
+
     if @user.save
        flash[:notice] = 'Registration successful.'
        redirect_to users_path
     else
+      @roles = Role.find(:all)
       render :action => "new"
      end
 #
@@ -151,8 +172,8 @@ end
   def memberselect
     begin
      @member = Member.new(params[:member])
-     @members_with_users = Member.all(:conditions => ["firstname = ? OR lastname = ? OR emailid = ?" ,@member.firstname, @member.lastname, @member.emailid], :joins => :user)
-     @members_all = Member.find(:all, :conditions => ["firstname = ? OR lastname = ? OR emailid = ?" ,@member.firstname, @member.lastname, @member.emailid])
+     @members_with_users = Member.all(:conditions => ["(firstname = ? OR lastname = ? OR emailid = ?) and center_id = ?" ,@member.firstname, @member.lastname, @member.emailid, session[:center_id].to_s], :joins => :user)
+     @members_all = Member.find(:all, :conditions => ["(firstname = ? OR lastname = ? OR emailid = ?) and center_id = ?" ,@member.firstname, @member.lastname, @member.emailid, session[:center_id].to_s])
      @members = []
      for m in @members_all
        if !@members_with_users.include?(m)

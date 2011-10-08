@@ -15,7 +15,7 @@
 <%= @page_title || "&nbsp;" %>
   <div align="right" style="font-size:medium;">
     <% if current_user %>
-    <font color="black"><b><%= current_user.member.fullname %></b></font> |
+    <font color="black"><b><%= session[:user_full_name] %></b></font> |
       <%= link_to "Member Sign Up","/" %> |
       <%= link_to "Edit Profile", edit_user_path(current_user) %> |
       <%= link_to "Logout", logout_path  %>&nbsp;&nbsp;

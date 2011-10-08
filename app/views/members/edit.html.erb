@@ -26,6 +26,10 @@ Gender<br>
 &nbsp;Female&nbsp;<%= radio_button_tag :gender,"F", checked?('F')%>
   </p>
   <p>
+    Center<br>
+    <%= @member.center.location %>
+  </p>
+  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>

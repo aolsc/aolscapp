@@ -5,7 +5,11 @@ class TagsController < ApplicationController
   # GET /courses
   # GET /courses.xml
   def index
-    @tags = Tag.paginate :page => params[:page], :per_page => 10
+    if session[:current_user_super_admin]
+      @tags = Tag.find(:all,:order => 'name').paginate :page => params[:page], :per_page => 10
+    else
+      @tags = Tag.find(:all,:order => 'name', :conditions => ["center_id=?", session[:center_id]]).paginate :page => params[:page], :per_page => 10
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +48,7 @@ class TagsController < ApplicationController
   # POST /courses.xml
   def create
     @tag = Tag.new(params[:tag])
-    
+    @tag.center_id = session[:center_id]
     respond_to do |format|
       if @tag.save
         flash[:notice] = 'Tag was successfully created.'

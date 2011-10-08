@@ -96,7 +96,11 @@ jQuery.fn.submitWithAjax = function() {
                 <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
                 <td><%=h member.emailid %></td>
                 <td><%=h member.homephone %></td>
-                <td class="interest" mem_id="<%= member.id %>"><a href="javascript:void(0);"><span id="edit">Edit</span><span id="save">Save</span></a>&nbsp;&nbsp;<span id="updatestatus"></span><br><span id="current_tags"><%= member.tags_list.join(", ") %></span><input type="text" id="member_tags" value="<%= member.tags_list.join(",")%>"/></td>
+                <td class="interest" mem_id="<%= member.id %>">
+                  <% if session[:user].member.center_id == member.center_id %>
+                    <a href="javascript:void(0);"><span id="edit">Edit</span><span id="save">Save</span></a>
+                   <% end %>
+                  &nbsp;&nbsp;<span id="updatestatus"></span><br><span id="current_tags"><%= member.tags_list.join(", ") %></span><input type="text" id="member_tags" value="<%= member.tags_list.join(",")%>"/></td>
               </tr>
             <% end %>
           </tbody>

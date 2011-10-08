@@ -1,16 +1,11 @@
 class CentersController < ApplicationController
-  before_filter :ensure_login, :only => :destroy
   add_crumb("Centers") { |instance| instance.send :centers_path }
   filter_access_to :all
 
   # GET /courses
   # GET /courses.xml
   def index
-    unless params[:search].blank?
-      @centers = Center.find(:all, :conditions => ['city LIKE ?', "#{params[:search]}%"])
-    else
       @centers = Center.paginate :page => params[:page], :per_page => 10
-    end
   end
 
   # GET /courses/1

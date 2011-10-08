@@ -1,4 +1,9 @@
 authorization do
+  role :superadmin do
+    has_permission_on [:user_sessions, :centers, :tags, :courses, :users, :member_courses, :course_schedules, :member_report], :to => [:index, :show, :new, :create, :edit, :update, :destroy, :membersearch]
+    has_permission_on [:members], :to => [:index, :show, :new, :create, :edit, :update, :destroy, :membersearch, :save_tags]
+  end
+
   role :admin do
     has_permission_on [:user_sessions, :centers, :tags, :courses, :users, :member_courses, :course_schedules, :member_report], :to => [:index, :show, :new, :create, :edit, :update, :destroy, :membersearch]
     has_permission_on [:members], :to => [:index, :show, :new, :create, :edit, :update, :destroy, :membersearch, :save_tags]
