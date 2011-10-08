@@ -5,6 +5,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   def index
+    puts "*** center id ** " + session[:center_id].to_s
     @members = Member.find(:all, :order => 'firstname').paginate :page => params[:page], :per_page => 10
     @tags = Tag.find(:all)
     @tag_names = []

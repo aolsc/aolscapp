@@ -20,5 +20,6 @@ authorization do
 
   role :guest do
     has_permission_on :members, :to => [:index, :show]
+    has_permission_on :centers, :to => [:index, :show]
   end
 end
