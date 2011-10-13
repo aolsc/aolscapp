@@ -31,7 +31,7 @@ class CourseSchedulesController < ApplicationController
   def new
     @course = Course.find(params[:id])
     @course_schedule = CourseSchedule.new(params[:courseschedule])
-        @teacherusers = Role.find_by_role_name("Teacher").users
+    @teacherusers = Role.find_by_role_name("Teacher").users
     @teachers = []
     @teacherusers.each do |tu|
        @teachers << tu.member
@@ -90,7 +90,7 @@ class CourseSchedulesController < ApplicationController
     @course_schedule.volunteer_id = @assis
     @course_schedule.volunteer_id2 = @assis2
 
-      
+    @course_schedule.center_id = session[:center_id]
     @course_schedule.last_updated_by = current_user[:id]
       @cs = CourseSchedule.find(:all, :conditions => ["start_date = ? and course_id=? and teacher_id=?", Time.parse(params[:start_date]).to_time.utc, @course.id, @teach])
       if !@cs.empty?

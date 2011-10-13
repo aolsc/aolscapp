@@ -115,6 +115,7 @@ class MembersController < ApplicationController
           @csid = params[:csid]
           @member_attendance = MemberAttendance.new
           @member_attendance.member = @member
+          @member_attendance.center_id = session[:center_id]
           @member_attendance.course_schedule = CourseSchedule.find(@csid)
           if @member_attendance.save
           end

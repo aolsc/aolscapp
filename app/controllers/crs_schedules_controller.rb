@@ -93,6 +93,7 @@ class CrsSchedulesController < ApplicationController
 
       
     @course_schedule.last_updated_by = current_user[:id]
+    @course_schedule.center_id = session[:center_id]
       @cs = CourseSchedule.find(:all, :conditions => ["start_date = ? and course_id=? and teacher_id=?", Time.parse(params[:start_date]).to_time.utc, @course.id, @teach])
       if !@cs.empty?
         flash[:notice] = 'Could not create course schedule. A course schedule with the same start date, teacher for this course already exists.'

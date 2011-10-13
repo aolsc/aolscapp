@@ -5,11 +5,7 @@ class TagsController < ApplicationController
   # GET /courses
   # GET /courses.xml
   def index
-    if session[:current_user_super_admin]
-      @tags = Tag.find(:all,:order => 'name').paginate :page => params[:page], :per_page => 10
-    else
       @tags = Tag.find(:all,:order => 'name', :conditions => ["center_id=?", session[:center_id]]).paginate :page => params[:page], :per_page => 10
-    end
 
     respond_to do |format|
       format.html # index.html.erb
