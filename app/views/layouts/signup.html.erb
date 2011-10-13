@@ -13,8 +13,7 @@ $.noConflict();
 </script>
 
 </head>
-<body id="store">
-<div id="banner">
+<body id="signup_top">
 <%= link_to image_tag ("aol.jpg", :border =>0) , root_path %>
 <%= @page_title || "&nbsp;" %>
   <div align="right" style="font-size:medium;">
@@ -25,7 +24,6 @@ $.noConflict();
       <%= link_to "Login", login_path  %>
     <% end %>
   </div>
-</div>
 <div id="signup_main">
 	<% if flash[:notice] -%>
 	<div id="notice"><%= flash[:notice] %></div>

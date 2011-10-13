@@ -48,12 +48,32 @@ dottedline {
 }
 
 #signup_main {
-  margin-left: 15em;
-  padding-top: 3ex;
+  margin-left: 7em;
   padding-left: 2em;
   background: white;
-  font-size: 20px;
+  font-size: 26px;
+
 }
+
+#signup_main #signup_panel {
+    margin-right: 30%;
+    padding: 10px;
+    background-color: #F7F7F3;
+}
+
+#signup_main input{
+margin-top: 2px;
+font-size:20px
+}
+
+#signup_main input[type="submit"]{
+   border: 1px outset blue;
+   background-color: #A0CE87;
+margin-top: 2px;
+font-size:24px;
+}
+
+
 
 #signup_schedules {
   margin-left: 1em;
