@@ -44502,3 +44502,379 @@ Processing MembersController#new (for 127.0.0.1 at 2011-10-13 00:08:46) [GET]
 Rendering template within layouts/signup
 Rendering members/new
 Completed in 153ms (View: 15, DB: 16) | 200 OK [http://localhost/members/new?csid=54&mode=signin]
+DEPRECATION WARNING: Kernel#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at C:/other/remoteaol/aolscapp/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2011-10-13 19:25:57) [GET]
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 61ms (DB: 7) | 302 Found [http://localhost/members]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-10-13 19:25:57) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 6430ms (View: 6399, DB: 4) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-10-13 19:26:11) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"vijay", "password"=>"vijay"}, "authenticity_token"=>"OOQ9upF2eh2MhNZmuAXfxf8fXr2Ly8igMv/Pai0suO4="}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'vijay') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 242ms (DB: 4) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#schedules (for 127.0.0.1 at 2011-10-13 19:26:11) [GET]
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` ORDER BY start_date desc LIMIT 5[0m
+Rendering template within layouts/signup_schedules
+Rendering member_attendances/schedules
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourse Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;36;1mMemberAttendance Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `member_attendances`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `member_attendances` WHERE (`member_attendances`.course_schedule_id = 57) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `member_attendances` WHERE (`member_attendances`.course_schedule_id = 58) [0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 6) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `member_attendances` WHERE (`member_attendances`.course_schedule_id = 56) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 6) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `member_attendances` WHERE (`member_attendances`.course_schedule_id = 54) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 6) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `member_attendances` WHERE (`member_attendances`.course_schedule_id = 55) [0m
+  [4;36;1mMember Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+Completed in 153ms (View: 95, DB: 23) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:26:14) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 220ms (View: 33, DB: 27) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:30:43) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 176ms (View: 21, DB: 26) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:31:14) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 200ms (View: 20, DB: 35) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:31:50) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 120ms (View: 18, DB: 30) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:32:09) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 145ms (View: 19, DB: 28) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:32:15) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 117ms (View: 16, DB: 26) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:32:39) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 260ms (View: 40, DB: 29) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:32:48) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (0.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 353ms (View: 75, DB: 32) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MemberAttendancesController#new (for 127.0.0.1 at 2011-10-13 19:33:19) [GET]
+  Parameters: {"csid"=>"58"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` [0m
+  [4;35;1mCourseSchedule Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `course_schedules`[0m
+  [4;36;1mCourseSchedule Load (1.0ms)[0m   [0;1mSELECT * FROM `course_schedules` WHERE (`course_schedules`.`id` = 58) [0m
+  [4;35;1mCourse Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mRole Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`role_name` = 'Volunteer') LIMIT 1[0m
+  [4;35;1mroles_users Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` INNER JOIN `roles_users` ON `users`.id = `roles_users`.user_id WHERE (`roles_users`.role_id = 2 ) [0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 42) [0m
+  [4;35;1mMember Load (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 315) [0m
+Rendering template within layouts/signup
+Rendering member_attendances/new
+DEPRECATION WARNING: formatted_member_attendances_path() has been deprecated. Please pass format to the standard member_attendances_path method instead. (called from _run_erb_app47views47member_attendances47new46html46erb at C:/other/remoteaol/aolscapp/app/views/member_attendances/new.html.erb:22)
+Completed in 306ms (View: 88, DB: 31) | 200 OK [http://localhost/member_attendances/new?csid=58]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2011-10-13 19:34:03) [GET]
+  Parameters: {"csid"=>"58", "mode"=>"signin"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/signup
+Rendering members/new
+Completed in 89ms (View: 17, DB: 18) | 200 OK [http://localhost/members/new?csid=58&mode=signin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2011-10-13 19:35:09) [GET]
+  Parameters: {"csid"=>"58", "mode"=>"signin"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/signup
+Rendering members/new
+Completed in 99ms (View: 20, DB: 15) | 200 OK [http://localhost/members/new?csid=58&mode=signin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2011-10-13 19:35:34) [GET]
+  Parameters: {"csid"=>"58", "mode"=>"signin"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/signup
+Rendering members/new
+Completed in 91ms (View: 15, DB: 16) | 200 OK [http://localhost/members/new?csid=58&mode=signin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2011-10-13 19:36:02) [GET]
+  Parameters: {"csid"=>"58", "mode"=>"signin"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mroles_users Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/signup
+Rendering members/new
+Completed in 107ms (View: 10, DB: 21) | 200 OK [http://localhost/members/new?csid=58&mode=signin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2011-10-13 19:36:36) [GET]
+  Parameters: {"csid"=>"58", "mode"=>"signin"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/signup
+Rendering members/new
+Completed in 77ms (View: 10, DB: 19) | 200 OK [http://localhost/members/new?csid=58&mode=signin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2011-10-13 19:37:26) [GET]
+  Parameters: {"csid"=>"58", "mode"=>"signin"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/signup
+Rendering members/new
+Completed in 118ms (View: 12, DB: 18) | 200 OK [http://localhost/members/new?csid=58&mode=signin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2011-10-13 19:38:21) [GET]
+  Parameters: {"csid"=>"58", "mode"=>"signin"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;36;1mroles_users Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mMember Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/signup
+Rendering members/new
+Completed in 103ms (View: 21, DB: 17) | 200 OK [http://localhost/members/new?csid=58&mode=signin]
