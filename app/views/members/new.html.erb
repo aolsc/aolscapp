@@ -1,3 +1,4 @@
+<div id="signup_panel">
 <% form_for(@member) do |f| %>
   <%= f.error_messages %>
   <p>
@@ -5,23 +6,14 @@
     <%= f.text_field :emailid %>
   </p>
   <p>
-    First Name<br />
-    <%= f.text_field :firstname %>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr><td width="350">First Name</td><td width="150">Last Name</td></tr>
+    <tr><td><%= f.text_field :firstname %></td><td><%= f.text_field :lastname %></td></tr>
+  </table>
   </p>
   <p>
-    Last Name<br />
-    <%= f.text_field :lastname %>
-  </p>
-  <p>
-    Home Phone&nbsp;(Format: xxx-xxx-xxxx)<br />
+    Phone&nbsp;(Format: xxx-xxx-xxxx)<br />
     <%= f.text_field :homephone %>
-  </p>
-  <p>
-    Cell Phone&nbsp;(Format: xxx-xxx-xxxx)<br />
-    <%= f.text_field :cellphone %>
-  </p>
-  <p>
-Gender: &nbsp;Male<%= radio_button_tag :gender,"M" %>&nbsp;Female&nbsp;<%= radio_button_tag :gender,"F" %>
   </p>
 <p>
 Have you taken the Art of Living Course?&nbsp;Yes<%= f.radio_button :taken_course,"true" %>&nbsp;No&nbsp;<%= f.radio_button :taken_course,"false" %>
@@ -30,7 +22,8 @@ Have you taken the Art of Living Course?&nbsp;Yes<%= f.radio_button :taken_cours
   <p>
     <%=  hidden_field_tag :mode, params[:mode] %>
     <%=  hidden_field_tag :csid, params[:csid] %>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Submit' %>
   </p>
 <% end %>
 
+</div>

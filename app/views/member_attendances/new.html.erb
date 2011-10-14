@@ -1,7 +1,6 @@
 <%= javascript_include_tag :defaults %>
 <%= calendar_date_select_includes "silver" %>
-<h1>Sign In</h1>
-
+<div id="signup_panel">
 <% form_for :member_attendance, @member_attendance, :url => {:action => 'create'} do |f| %>
   <%= f.error_messages %>
 <p>
@@ -9,22 +8,23 @@
     No courses scheduled for the current time. Please <%= link_to 'Click Here', {:controller => "crs_schedules", :action=>"new"} %> to create a course schedule.
 <% else %>
       <% if @csid.nil? %>
-          Course/Event
+          Event
           <%= collection_select(:coursesel, :id, @courses, :id, :displayName,
                                 {:prompt => true})%>&nbsp;&nbsp;&nbsp;&nbsp;Start Date&nbsp;<%= calendar_date_select_tag "start_date", @sel_from_date, :year_range => 1.years.ago..0.years.ago, :popup => "force", :time => "true"%>
       <% else %>
-          <b>Course/Event:</b>&nbsp;<%=  @sel_course.displayName %>&nbsp;&nbsp;&nbsp;&nbsp;<b>Date:&nbsp;</b><%=  @sel_from_date.strftime('%m-%d-%Y %I:%M %p') %>
+          <b>Event:</b>&nbsp;<%=  @sel_course.displayName %>&nbsp;&nbsp;&nbsp;&nbsp;<b>Date:&nbsp;</b><%=  @sel_from_date.strftime('%b %d, %Y') %>
           <%=  hidden_field_tag 'csid', @csid %>
       <% end %>  
 </p>
 
 <p>
-  To Sign In, please type your Email Id and click Submit&nbsp;<br/><br/>
-  Email Id&nbsp;&nbsp;<%= text_field_with_auto_complete :member, :email_id, { :size => 30 }, { :url => formatted_member_attendances_path(:js), :method => :get, :param_name => 'search' } %>
-  <%= f.submit 'Submit'%>
+  Please enter your Email&nbsp;<br/>
+ <%= text_field_with_auto_complete :member, :email_id, { :size => 30 }, { :url => formatted_member_attendances_path(:js), :method => :get, :param_name => 'search' } %>
+  <input class="el08" type="submit" value="Sign In"/>
 </p>
 <p>
  New members&nbsp;&nbsp;<%= link_to 'click here', {:controller=>"members", :action=>"new", :mode=>"signin", :csid=>@csid} %>
 </p>
 <% end %>
 <% end %>
+</div>
