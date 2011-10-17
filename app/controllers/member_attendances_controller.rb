@@ -3,7 +3,7 @@ class MemberAttendancesController < ApplicationController
   #add_crumb("Members") { |instance| instance.send :members_path }
   def index
     if params["csid"].nil?
-      @members = Member.find(:all, :conditions => ['emailid LIKE ? and center_id=?', "#{params[:search]}%",session[:center_id]])
+      @members = Member.find(:all, :conditions => ['emailid LIKE ?', "#{params[:search]}%"])
     else
       @tags = Tag.find(:all, :conditions => ["center_id = ?", session[:center_id]])
       @tag_names = []
@@ -70,7 +70,7 @@ class MemberAttendancesController < ApplicationController
     end
 
     unless @emailid.blank?
-      @member_attendance.member = Member.find_by_emailid(@emailid, :conditions => ["center_id = ?", session[:center_id]])
+      @member_attendance.member = Member.find_by_emailid(@emailid)
     end
      
     @csidstr = params[:csid]
@@ -95,6 +95,21 @@ class MemberAttendancesController < ApplicationController
       else
         @member_attendance.center_id = session[:center_id]
         if @member_attendance.save
+          @memberscenter = @member_attendance.member.center.id.to_s
+          unless @memberscenter == session[:center_id].to_s
+            @recent_attendances = MemberAttendance.find(:all, :limit=>2,:order=>"created_at desc")
+            if @recent_attendances.size > 0
+              @attending_this_center_more_often = true
+              @recent_attendances.each do |ra|
+                unless ra.center.id.to_s == session[:center_id].to_s
+                  @attending_this_center_more_often = false
+                end
+              end
+              if @attending_this_center_more_often
+                format.html { redirect_to :action => "choosecenter", :csid => @csid, :prev_center_id => @memberscenter, :curr_center_id => session[:center_id].to_s, :mem_id => @member_attendance.member.id}
+              end
+            end
+          end
           format.html { redirect_to :action => "show", :csid => @member_attendance.course_schedule.id, :name => @member_attendance.member.fullname}
         else
           flash[:notice] = 'An error occured. Please enter details again.'
@@ -105,10 +120,29 @@ class MemberAttendancesController < ApplicationController
     end
   end
 
+  def choosecenter
+    @prev_center = Center.find(params[:prev_center_id])
+    @curr_center = Center.find(params[:curr_center_id])
+    @csid = params[:csid]
+    @mem_id = params[:mem_id]
+    render :layout => 'signup'
+  end
+
   def show
     @csid = params[:csid]
     @name = params[:name]
     render :layout => 'redirect'
+  end
+
+  def submitcenterchoice
+    @member = Member.find(params[:mem_id])
+    puts "CS " + params[:change_center]
+    if params[:change_center]
+      @member.center_id = params[:new_center_id]
+      puts "Saving " + params[:new_center_id]
+      @member.save
+    end
+    redirect_to :action => "show", :csid => params[:csid], :name => @member.fullname
   end
 
   def newschedule

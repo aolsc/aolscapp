@@ -32,16 +32,20 @@ class CrsSchedulesController < ApplicationController
     @courses = Course.find(:all)
 
     @course_schedule = CourseSchedule.new(params[:courseschedule])
-        @teacherusers = Role.find_by_role_name("Teacher").users
+    @teacherusers = Role.find_by_role_name("Teacher").users
     @teachers = []
     @teacherusers.each do |tu|
+      if tu.member.center.id.to_s == session[:center_id]
        @teachers << tu.member
+      end
     end
 
     @assistantusers = Role.find_by_role_name("Volunteer").users
     @assistants = []
     @assistantusers.each do |tu|
+      if tu.member.center.id.to_s == session[:center_id]
        @assistants << tu.member
+      end
     end
     render :layout => 'signup'
   end

@@ -18,7 +18,13 @@
 <p>
 Have you taken the Art of Living Course?&nbsp;Yes<%= f.radio_button :taken_course,"true" %>&nbsp;No&nbsp;<%= f.radio_button :taken_course,"false" %>
   </p>
-
+  <% if session[:current_user_super_admin] and @mode.blank? %>
+  <p>
+    Center&nbsp;<br />
+    <%= collection_select(:centersel, :id, @centers, :id, :location,
+                            {:prompt => "Select a center"})%>
+  </p>
+  <% end  %>
   <p>
     <%=  hidden_field_tag :mode, params[:mode] %>
     <%=  hidden_field_tag :csid, params[:csid] %>

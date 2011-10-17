@@ -5,6 +5,7 @@ class Member < ActiveRecord::Base
   belongs_to :center
   validates_presence_of :firstname, :lastname, :emailid, :center_id
   validates_inclusion_of :taken_course, :in => [true, false], :message => " - Please select if you have taken Art of Living Course"
+  validates_uniqueness_of :emailid
 
   def fullname
     (firstname ? firstname.capitalize : "") + " " + (lastname ? lastname.capitalize : "")

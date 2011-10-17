@@ -34,12 +34,14 @@
     <td width="100"><b>Delete</b></td>
   </tr>
 <% for user in @users -%>
+  <% if user.is_super_admin and session[:current_user_super_admin] or !user.is_super_admin %>
   <tr>
     <td><%= link_to user.username, edit_user_path(user.id) %></td>
     <td><%=h user.member.firstname %>&nbsp;<%=h user.member.lastname %></td>
     <td><%=h user.member.emailid %></td>
     <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+  <% end %>
 <% end %>
       </table>
 </td>

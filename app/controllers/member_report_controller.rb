@@ -3,18 +3,22 @@ class MemberReportController < ApplicationController
   
   def index
     @courses = Course.find(:all)
-    @courseschedules = CourseSchedule.paginate :page => params[:page], :per_page => 10, :order => "start_date desc"
+    @courseschedules = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :order => "start_date desc").paginate :page => params[:page], :per_page => 10
     @cs_id = -1
     @teacherusers = Role.find_by_role_name("Teacher").users
     @teachers = []
     @teacherusers.each do |tu|
-      @teachers << tu.member
+      if tu.member.center.id.to_s == session[:center_id]
+        @teachers << tu.member
+      end
     end
 
     @assistantusers = Role.find_by_role_name("Volunteer").users
     @assistants = []
     @assistantusers.each do |tu|
-      @assistants << tu.member
+      if tu.member.center.id.to_s == session[:center_id]
+        @assistants << tu.member
+      end
     end
 
 
@@ -40,13 +44,17 @@ class MemberReportController < ApplicationController
     @teacherusers = Role.find_by_role_name("Teacher").users
     @teachers = []
     @teacherusers.each do |tu|
+      if tu.member.center.id.to_s == session[:center_id]
       @teachers << tu.member
+      end
     end
 
     @assistantusers = Role.find_by_role_name("Volunteer").users
     @assistants = []
     @assistantusers.each do |tu|
+      if tu.member.center.id.to_s == session[:center_id]
       @assistants << tu.member
+      end
     end
 
     @teacherssel = params[:teacherssel] unless params[:teacherssel][:id].empty?

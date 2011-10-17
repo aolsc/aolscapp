@@ -13,13 +13,17 @@ class UploadController < ApplicationController
   @teacherusers = Role.find_by_role_name("Teacher").users
     @teachers = []
     @teacherusers.each do |tu|
+       if tu.member.center.id.to_s == session[:center_id]
        @teachers << tu.member
+      end
     end
 
     @assistantusers = Role.find_by_role_name("Volunteer").users
     @assistants = []
     @assistantusers.each do |tu|
+       if tu.member.center.id.to_s == session[:center_id]
        @assistants << tu.member
+      end
     end
   unless params[:mode].nil?
     @mode = params[:mode]
@@ -68,6 +72,7 @@ class UploadController < ApplicationController
         'volunteer_id',assistantId,
         'last_updated_by',current_user[:id],
         'volunteer_id2',assistantId2,
+        'center_id',session[:center_id]
       ];
 
       @course_schedule = CourseSchedule.new(t)
@@ -78,6 +83,7 @@ class UploadController < ApplicationController
       return id
     else
       @cs.last_updated_by = current_user[:id]
+      @cs.center_id = session[:center_id]
       @cs.save
       return @cs.id
     end
@@ -110,7 +116,9 @@ class UploadController < ApplicationController
               'lastname',row[0].split(' ')[1],
               'emailid',row[1],
               'homephone',row[2],
-              'updateby',current_user[:id]
+              'updateby',current_user[:id],
+               'center_id',session[:center_id],
+              'taken_course',0
             ];
             @member = Member.new(t)
 
@@ -118,6 +126,7 @@ class UploadController < ApplicationController
               @mu += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, '')
             else
+              @member.center_id = session[:center_id]
               @member.save
               @mc += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, '')
@@ -129,6 +138,7 @@ class UploadController < ApplicationController
             @member_attendance = MemberAttendance.new(a)
             @ma_check = MemberAttendance.find(:all, :conditions => ["member_id = ? AND course_schedule_id = ?", @member.id, courseScheduleId])
             if @ma_check.length == 0
+              @member_attendance.center_id = session[:center_id]
               @member_attendance.save
             end
           end
@@ -162,6 +172,8 @@ class UploadController < ApplicationController
               'emailid',row[8],
               'homephone',row[9],
               'updateby',current_user[:id],
+              'center_id',session[:center_id],
+              'taken_course',0
             ];
             @member = Member.new(t)
 
@@ -169,6 +181,7 @@ class UploadController < ApplicationController
               @mu += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[7])
             else
+               @member.center_id = session[:center_id]
               if @member.save
                 @mc += 1
               else
@@ -203,6 +216,8 @@ class UploadController < ApplicationController
               'homephone',row[23],
               'cellphone',row[25],
               'updateby',current_user[:id],
+              'center_id',session[:center_id],
+              'taken_course',0
             ];
             @member = Member.new(t)
 
@@ -210,6 +225,7 @@ class UploadController < ApplicationController
               @mu += 1
               mapMemberToCourseSchedule(@member.id,courseScheduleId, row[30])
             else
+               @member.center_id = session[:center_id]
               if @member.save
                 @mc += 1
               else

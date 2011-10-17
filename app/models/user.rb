@@ -30,10 +30,10 @@ class User < ActiveRecord::Base
    end
 
    def is_super_admin
-     @max_role_id = Role.maximum(:id)
+     @min_role_id = Role.minimum(:id)
 
      roles.each do |role|
-       if role.id == @max_role_id
+       if role.id == @min_role_id
          return true
         end
       end

@@ -3,10 +3,8 @@ ActionController::Routing::Routes.draw do |map|
 
 
   map.resources :member_general_feedbacks
-
+  
   map.root :controller => "member_attendances", :action => "schedules"
-  
-  
   
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
@@ -19,8 +17,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :centers
   
   map.resources :users
-
+  map.connect "member_attendances/choosecenter", :controller => "member_attendances", :action => "choosecenter"
+  map.connect "member_attendances/submitcenterchoice", :controller => "member_attendances", :action => "submitcenterchoice"
   map.resources :member_attendances, :action => "success"
+  
   map.resources :members, :action => "save_tags"
 
   map.resources :members, :has_many => :member_general_feedbacks

@@ -1,6 +1,7 @@
 class MemberAttendance < ActiveRecord::Base
   belongs_to :member
   belongs_to :course_schedule
+  belongs_to :center
   
   def email_id
     member.emailid if member

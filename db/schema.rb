@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20111001115000) do
 
   create_table "member_attendances", :force => true do |t|
     t.integer  "member_id"
+    t.date     "checkin_date"
     t.integer  "volunteer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -123,8 +124,6 @@ ActiveRecord::Schema.define(:version => 20111001115000) do
     t.boolean  "taken_course"
     t.integer  "center_id"
   end
-
-  add_index "members", ["emailid"], :name => "emailid"
 
   create_table "roles", :force => true do |t|
     t.string   "role_name"

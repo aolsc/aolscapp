@@ -7,7 +7,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: aolscapp_development
+  database: multicenter_test
   pool: 5
   username: root
   password: root

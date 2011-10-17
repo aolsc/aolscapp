@@ -1,0 +1,15 @@
+<div id="signup_panel">
+<% form_for :member_attendance, @member_attendance, :url => {:action => 'submitcenterchoice'} do |f| %>
+  <%= f.error_messages %>
+<p>
+  You are currently associated with the Art of Living center located at <b><%= @prev_center.location %></b>.<br></br>
+  Since you are attending the <b><%= @curr_center.location %></b> center more often, would you like to receive future
+  communications about upcoming courses/events happening at the <%= @curr_center.city %> center instead? <br></br>
+  Yes<%= radio_button_tag :change_center,"true" %>&nbsp;No&nbsp;<%= radio_button_tag :change_center,"false" %>
+</p>
+<%=  hidden_field_tag :mem_id, params[:mem_id] %>
+<%=  hidden_field_tag :csid, params[:csid] %>
+<%=  hidden_field_tag :new_center_id, @curr_center.id %>
+<%= f.submit 'Submit' %>
+<% end %>
+</div>

@@ -80,6 +80,7 @@ class MembersController < ApplicationController
   # GET /members/new.xml
   def new
     @member = Member.new
+    @centers = Center.find(:all)
 
     @mode = params[:mode]
     @csid = params[:csid]
@@ -101,13 +102,17 @@ class MembersController < ApplicationController
   # POST /members.xml
   def create
     @member = Member.new(params[:member])
-    @validatemember = Member.find(:all, :conditions => ["firstname = ? AND lastname = ? AND emailid = ?", @member.firstname, @member.lastname, @member.emailid
-      ])
+    @validatemember = Member.find(:all, :conditions => ["emailid = ?", @member.emailid])
     if @validatemember.length == 0
-      @member.center_id = session[:center_id]
+      @mode = params[:mode]
+      if session[:current_user_super_admin] and @mode.blank?
+        @member.center_id = params[:centersel][:id]
+      else
+        @member.center_id = session[:center_id]
+      end
       @member.gender = params[:gender]
       if @member.save
-        @mode = params[:mode]
+        
         if @mode.blank?
           flash[:notice] = 'Member was successfully created.'
           redirect_to params.merge!(:action => "index")

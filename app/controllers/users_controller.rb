@@ -72,7 +72,7 @@ end
     if session[:current_user_super_admin]
       @roles = Role.find(:all)
     else
-      @roles = Role.find(:all, :conditions => ["id <> 4"])
+      @roles = Role.find(:all, :conditions => ["id <> 1"])
     end
     @mem_emailid = @mem.emailid
 
@@ -89,7 +89,7 @@ end
     if @session_user.is_super_admin
       @roles = Role.find(:all)
     else
-      @roles = Role.find(:all, :conditions => ["id <> 4"])
+      @roles = Role.find(:all, :conditions => ["id <> 1"])
     end
 
     

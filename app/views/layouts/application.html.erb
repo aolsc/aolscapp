@@ -28,7 +28,9 @@
 <div id="columns">
 <div id="side">
 	<a href="/members">Members</a><br /><br />
+        <% if permitted_to? :index, Course.new %>
 	<a href="/courses">Courses</a><br /><br />
+        <% end %>
         <a href="/tags">Tags</a><br /><br />
         <% if permitted_to? :index, Center.new %>
         <a href="/centers">Centers</a><br /><br />
