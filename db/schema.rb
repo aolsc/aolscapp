@@ -9,12 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111001115000) do
+ActiveRecord::Schema.define(:version => 20111017103300) do
 
   create_table "centers", :force => true do |t|
     t.string "city"
     t.string "state"
     t.string "country"
+  end
+
+  create_table "communication_subscriptions", :force => true do |t|
+    t.string "center_id"
+    t.string "member_id"
   end
 
   create_table "course_schedules", :force => true do |t|

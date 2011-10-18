@@ -9,7 +9,7 @@ class MembersController < ApplicationController
     if session[:current_user_super_admin]
       @members = Member.find(:all, :order => 'firstname').paginate :page => params[:page], :per_page => 10
     else
-      @members = Member.find(:all, :order => 'firstname', :conditions => ['center_id=?', session[:center_id].to_s]).paginate :page => params[:page], :per_page => 10
+      @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:conditions => ['id = ?', '33']}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
     end
     @tags = Tag.find(:all,:conditions => ["center_id=?", session[:center_id]])
     @tag_names = []
@@ -40,14 +40,14 @@ class MembersController < ApplicationController
         if session[:current_user_super_admin]
           @members = Member.find(:all,:order => 'firstname').paginate :page => params[:page], :per_page => 10
         else
-          @members = Member.find(:all,:order => 'firstname',:conditions => ['center_id = ?', session[:center_id]]).paginate :page => params[:page], :per_page => 10
+          @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:joins => :communication_subscriptions, :conditions => ['center_id=?', session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
         end
       else
             unless params["search_by_name"].empty?
               if session[:current_user_super_admin]
                 @members = Member.find(:all,:order => 'firstname',:conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%"]).paginate :page => params[:page], :per_page => 10
               else
-                @members = Member.find(:all,:order => 'firstname',:conditions => ['(firstname like ? or lastname like ?) and center_id=?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", session[:center_id]]).paginate :page => params[:page], :per_page => 10
+                @members = Member.union([{:conditions => ['(firstname like ? or lastname like ?) and center_id = ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", session[:center_id]]}, {:joins => :communication_subscriptions, :conditions => ['(firstname like ? or lastname like ?) and communication_subscriptions.center_id=?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
               end
             end
             unless params["search_by_tags"].empty?
@@ -56,16 +56,15 @@ class MembersController < ApplicationController
                 @members = Member.find(:all,:order => 'firstname', :joins => :member_taggings, :conditions => ['member_taggings.tag_id = ?', @tag.id]).paginate :page => params[:page], :per_page => 10
               else
                 @tag = Tag.find_by_name(params["search_by_tags"])
-                @members = Member.find(:all,:order => 'firstname', :joins => :member_taggings, :conditions => ['member_taggings.tag_id = ? and center_id=?', @tag.id, session[:center_id]]).paginate :page => params[:page], :per_page => 10
+                @members = Member.union([{:joins => :member_taggings, :conditions => ['member_taggings.tag_id = ? and center_id=?', @tag.id, session[:center_id]]}, {:joins => [:member_taggings,:communication_subscriptions], :conditions => ['member_taggings.tag_id = ? and communication_subscriptions.center_id=?', @tag.id, session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
               end
             end
             unless params["search_by_email"].empty?
               if session[:current_user_super_admin]
                 @members = Member.find(:all,:order => 'firstname', :conditions => ['emailid like ?', "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10
               else
-                @members = Member.find(:all,:order => 'firstname', :conditions => ['emailid like ? and center_id=?', "%"+params["search_by_email"]+"%", session[:center_id]]).paginate :page => params[:page], :per_page => 10
+                 @members = Member.union([{:conditions => ['emailid like ? and center_id=?', "%"+params["search_by_email"]+"%", session[:center_id]]}, {:joins => :communication_subscriptions, :conditions => ['emailid like ? and communication_subscriptions.center_id=?', "%"+params["search_by_email"]+"%", session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
               end
-
             end
       end
          
