@@ -3,7 +3,7 @@
   <%= f.error_messages %>
 <p>
   You are currently associated with the Art of Living center located at <b><%= @prev_center.location %></b>.<br></br>
-  Since you are attending the <b><%= @curr_center.location %></b> center more often, would you like to receive future
+  But you seem to be attending the <b><%= @curr_center.location %></b> center more often. Would you like to receive future
   communications about upcoming courses/events happening at the <%= @curr_center.city %> center instead? <br></br>
   Yes<%= radio_button_tag :change_center,"true" %>&nbsp;No&nbsp;<%= radio_button_tag :change_center,"false" %>
 </p>

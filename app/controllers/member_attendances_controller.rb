@@ -136,10 +136,8 @@ class MemberAttendancesController < ApplicationController
 
   def submitcenterchoice
     @member = Member.find(params[:mem_id])
-    puts "CS " + params[:change_center]
-    if params[:change_center]
+    if params[:change_center].to_s == "true"
       @member.center_id = params[:new_center_id]
-      puts "Saving " + params[:new_center_id]
       @member.save
     end
     redirect_to :action => "show", :csid => params[:csid], :name => @member.fullname

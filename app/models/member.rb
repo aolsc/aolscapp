@@ -1,6 +1,7 @@
 class Member < ActiveRecord::Base
   has_many :member_courses
   has_many :member_taggings
+  has_many :communication_subscriptions
   has_one :user
   belongs_to :center
   validates_presence_of :firstname, :lastname, :emailid, :center_id
