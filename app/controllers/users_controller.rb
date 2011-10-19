@@ -172,8 +172,13 @@ end
   def memberselect
     begin
      @member = Member.new(params[:member])
-     @members_with_users = Member.all(:conditions => ["(firstname = ? OR lastname = ? OR emailid = ?) and center_id = ?" ,@member.firstname, @member.lastname, @member.emailid, session[:center_id].to_s], :joins => :user)
-     @members_all = Member.find(:all, :conditions => ["(firstname = ? OR lastname = ? OR emailid = ?) and center_id = ?" ,@member.firstname, @member.lastname, @member.emailid, session[:center_id].to_s])
+     if session[:current_user_super_admin]
+       @members_with_users = Member.all(:conditions => ["(firstname = ? OR lastname = ? OR emailid = ?)" ,@member.firstname, @member.lastname, @member.emailid], :joins => :user)
+       @members_all = Member.find(:all, :conditions => ["(firstname = ? OR lastname = ? OR emailid = ?)" ,@member.firstname, @member.lastname, @member.emailid])
+     else
+       @members_with_users = Member.all(:conditions => ["(firstname = ? OR lastname = ? OR emailid = ?) and center_id = ?" ,@member.firstname, @member.lastname, @member.emailid, session[:center_id].to_s], :joins => :user)
+       @members_all = Member.find(:all, :conditions => ["(firstname = ? OR lastname = ? OR emailid = ?) and center_id = ?" ,@member.firstname, @member.lastname, @member.emailid, session[:center_id].to_s])
+     end
      @members = []
      for m in @members_all
        if !@members_with_users.include?(m)
