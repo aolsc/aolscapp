@@ -40,7 +40,7 @@ class MembersController < ApplicationController
         if session[:current_user_super_admin]
           @members = Member.find(:all,:order => 'firstname').paginate :page => params[:page], :per_page => 10
         else
-          @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:joins => :communication_subscriptions, :conditions => ['center_id=?', session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
+          @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:joins => :communication_subscriptions, :conditions => ['communication_subscriptions.center_id=?', session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
         end
       else
             unless params["search_by_name"].empty?
