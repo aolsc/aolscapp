@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   add_crumb("Users") { |instance| instance.send :users_path }
  # filter_resource_access
 
+  filter_access_to :all
+
+
   # GET /users
   # GET /users.xml
   def index
@@ -140,7 +143,12 @@ end
     params[:user][:role_ids] ||= []
     @user = User.find(params[:id])
     # @user.roles = Role.find(params[:role_ids]) if params[:role_ids]
-
+    @session_user = session[:user]
+    if @session_user.is_super_admin
+      @roles = Role.find(:all)
+    else
+      @roles = Role.find(:all, :conditions => ["id <> 1"])
+    end
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'User was successfully updated.'

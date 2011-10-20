@@ -10,24 +10,18 @@ class User < ActiveRecord::Base
    end
 
    def highest_role
-     @prev_id = 0
+     @min_role_id = Role.maximum(:id)
+     puts "----- " + @min_role_id.to_s
      roles.each do |role|
-       if role.id > @prev_id
-         @prev_id = role.id
+       puts "^^^^----- " + role.id.to_s
+       if role.id <= @min_role_id
+         @min_role_id = role.id
          @max_role = role
         end
       end
       return @max_role.role_name.camelize
    end
-   def highest_role_id
-     @prev_id = 0
-     roles.each do |role|
-       if role.id > @prev_id
-         @prev_id = role.id
-        end
-      end
-      return @prev_id
-   end
+
 
    def is_super_admin
      @min_role_id = Role.minimum(:id)

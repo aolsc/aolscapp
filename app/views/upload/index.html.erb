@@ -4,6 +4,7 @@
 <%=form_tag({:action => 'upload_file'},
                         :multipart => true) %>
 <table border="0" cellspacing="0" cellpadding="0">
+  <p><b>Note:</b>&nbsp;&nbsp;Before you upload, please make sure the file has been exported from secure site and then saved as a CSV format using Mircosoft Excel.<br><br>
   <tr>
     <td>Course/Event</td>
     <td>&nbsp;<%= collection_select(:coursesel, :id, @courses, :id, :displayName,
@@ -34,7 +35,6 @@
   </tr>
   <tr><td colspan="2">&nbsp;</td></tr>
 </table>
-<p><b>Note:</b>&nbsp;&nbsp;Before you upload, please make sure the file has been exported from secure site and then saved as a CSV format using Mircosoft Excel.<br><br>
 <label for="upload_file"><font color="green"><b>CSV File<b></font></label> :
 <%= file_field 'upload', 'datafile' %></p>
 <%=  hidden_field_tag 'mode', @mode %>

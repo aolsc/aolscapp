@@ -16,7 +16,6 @@ class UserSessionsController < ApplicationController
       @member = Member.find_by_id(@user.member_id)
       session[:center_id] = @member.center.id.to_s
       session[:user_full_name] = @member.fullname_with_role
-      session[:highest_role_id] = @user.highest_role_id
       session[:user] = @user
       session[:current_user_super_admin] = @user.is_super_admin
       redirect_to root_url
