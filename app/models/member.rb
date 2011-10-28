@@ -2,6 +2,8 @@ class Member < ActiveRecord::Base
   has_many :member_courses
   has_many :member_taggings
   has_many :communication_subscriptions
+  has_many :member_notes, :order => "created_at DESC"
+
   has_one :user
   belongs_to :center
   validates_presence_of :firstname, :lastname, :emailid, :center_id
@@ -25,6 +27,19 @@ class Member < ActiveRecord::Base
     unless homephone.nil? or homephone.blank?
       return homephone + " (h)"
     end
+  end
+
+
+  def contact_html
+    @contact =""
+    unless cellphone.nil? or cellphone.blank?
+      @contact = "<b>(c)</b> " + cellphone
+    end
+    unless homephone.nil? or homephone.blank?
+      @contact = @contact + "<br><b>(h)</b> " + homephone
+    end
+    @contact = @contact + "<br>" + emailid
+    return @contact
   end
 
   def has_taken

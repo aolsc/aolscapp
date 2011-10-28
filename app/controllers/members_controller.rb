@@ -158,6 +158,20 @@ class MembersController < ApplicationController
       format.js
     end
   end
+
+  def save_notes
+    @member = Member.find(params[:mem_id])
+    @member_note = MemberNote.new
+    @member_note.member = @member
+    @member_note.author = session[:user]
+    @member_note.note = params[:addednote]
+    @member_note.save
+
+    respond_to do |format|
+      format.html { redirect_to members_path }
+      format.js
+    end
+  end
   # PUT /members/1
   # PUT /members/1.xml
 

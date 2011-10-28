@@ -1,0 +1,1 @@
+jQuery("#member_data tbody>tr[mem_id='<%= @member.id %>'] .tb > tr:first").after('<tr><td><font color="gray"><%=  @member_note.created_at.strftime("%b #{@member_note.created_at.day.ordinalize}") %> [<%= @member_note.author.member.fullname %>]</font>&nbsp;&nbsp;<%= @member_note.note %></td></tr>');

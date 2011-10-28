@@ -22,6 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :member_attendances, :action => "success"
   
   map.resources :members, :action => "save_tags"
+  map.resources :members, :action => "save_notes"
 
   map.resources :members, :has_many => :member_general_feedbacks
   map.resources :members, :has_many => :member_courses

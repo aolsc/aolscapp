@@ -1,7 +1,7 @@
 <br><br>
 
 <script language="javascript">
-jQuery.noConflict();
+
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
@@ -16,9 +16,13 @@ jQuery.fn.submitWithAjax = function() {
 
   jQuery(document).ready(function() {
     jQuery("form#tags_submit").submitWithAjax();
+    jQuery("form#notes_submit").submitWithAjax();
     jQuery("#member_data .interest a #edit").toggle(true);
     jQuery("#member_data .interest a #save").toggle(false);
     jQuery("#member_data .interest #member_tags").toggle(false);
+    jQuery("#member_data .noteslist a #addnote").toggle(true);
+    jQuery("#member_data .noteslist a #savenote").toggle(false);
+    jQuery("#member_data .noteslist #addnotearea").toggle(false);
 
     jQuery("#member_data").each(function() {
       jQuery(".interest a").bind("click",function () {
@@ -44,7 +48,24 @@ jQuery.fn.submitWithAjax = function() {
           jQuery("form#tags_submit").submit();
         }
       });
+
+      jQuery(".noteslist #addhref").bind("click",function () {
+        var mem_id = jQuery(this).attr("mem_id");
+        if(jQuery(this).children("#addnote").is(":visible")) {
+          jQuery(this).children("#addnote").toggle(false);
+          jQuery(this).children("#savenote").toggle(true);
+          jQuery("#member_data tbody>tr[mem_id='" + mem_id + "'] #addnotearea").toggle(true);
+        } else {
+          var addednote = jQuery("#member_data tbody>tr[mem_id='" + mem_id + "'] #mynote").val();
+          jQuery("#notes_submit #addednote").val(addednote);
+          jQuery("#notes_submit #mem_id").val(mem_id);
+          jQuery("#member_data tbody>tr[mem_id='" + mem_id + "'] #addnotearea").toggle(false);
+          jQuery(this).children("#addnote").toggle(true);
+          jQuery(this).children("#savenote").toggle(false);
+          jQuery("form#notes_submit").submit();
+        }
       });
+   });
 
 
 
@@ -56,7 +77,13 @@ jQuery.fn.submitWithAjax = function() {
           <input type="hidden" name="mem_id" id="mem_id" value=""></input>
   <% end %>
 
-<table id="members" border="0" cellspacing="0" cellpadding="0" width="80%">
+  <% form_for :member, :url => {:action => 'save_notes', :controller => 'members'}, :html => {:id => 'notes_submit' } do |f| %>
+          <input type="hidden" name="addednote" id="addednote" value=""></input>
+          <input type="hidden" name="mem_id" id="mem_id" value=""></input>
+  <% end %>
+
+
+<table id="members" border="0" cellspacing="0" cellpadding="0" width="95%">
   <tr>
     <td>Participants who attended  <b><%=  @course.displayName  %></b> on <%= @cs.start_date.strftime('%m-%d-%Y') %> </td>
   </tr>
@@ -65,30 +92,44 @@ jQuery.fn.submitWithAjax = function() {
   </tr>
   <tr>
     <td>
-      <div id="anim">
         <table id="member_data" border="1" cellspacing="0" cellpadding="5" width="100%">
           <thead>
             <tr bgcolor="#A9F5F2">
-              <td width="100"><b>Name</b></td>
-              <td width="100"><b>Email</b></td>
-              <td width="100"><b>Phone</b></td>
-              <td width=620"><b> Tags </b></td>
-              <td width=620"><b> Taken Course?</b></td>
+              <td width="150"><b>Name</b></td>
+              <td width="200"><b>Contact</b></td>
+              <td width=170"><b>Tags</b></td>
+              <td width=520"><b>Notes</b></td>
             </tr>
           </thead>
           <tbody>
-            <% for member in @members -%>
-              <tr>
+            <% for member in @members %>
+              <tr mem_id="<%= member.id %>">
                 <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
-                <td><%=h member.emailid %></td>
-                <td><%=h member.homephone %></td>
-                <td class="interest" mem_id="<%= member.id %>"><a href="javascript:void(0);"><span id="edit">Edit</span><span id="save">Save</span></a>&nbsp;&nbsp;<span id="updatestatus"></span><br><span id="current_tags"><%= member.tags_list.join(", ") %></span><input type="text" id="member_tags" value="<%= member.tags_list.join(",")%>"/></td>
-                <td><%=h member.has_taken %></td>
+                <td><%= member.contact_html %></td>
+                <td class="interest" mem_id="<%= member.id %>">
+                  <% if session[:user].member.center_id == member.center_id %>
+                    <a href="javascript:void(0);"><span id="edit">Edit Tags</span><span id="save">Save</span></a>
+                   <% end %>
+                  &nbsp;&nbsp;<span id="updatestatus"></span><br><span id="current_tags"><%= member.tags_list.join(", ") %></span><input type="text" id="member_tags" value="<%= member.tags_list.join(",")%>"/></td>
+
+                <td class="noteslist">
+                  <table id="notestable" border="0" cellspacing="0" cellpadding="0">
+                    <tbody class="tb">
+                    <tr><td>
+                        <% if session[:user].member.center_id == member.center_id %>
+                        <a href="javascript:void(0)" id="addhref"  mem_id="<%= member.id %>"><span id="addnote">Add Note</span><span id="savenote">Save</span></a></td></tr>
+                      <%end %>
+                    <% for note in member.member_notes -%>
+                      <tr><td><font color="gray"><%=  note.created_at.strftime("%b #{note.created_at.day.ordinalize}") %> [<%= note.author.member.fullname %>]</font>&nbsp;&nbsp;<%= note.note %></td></tr>
+                    <% end %>
+                    <tr><td><span id="addnotearea"><textarea id="mynote" cols="30" rows="2"></textarea></span></td></tr>
+                    </tbody>
+                  </table>
+                </td>
               </tr>
             <% end %>
           </tbody>
         </table>
-      </div>
     </td>
   </tr>
 
