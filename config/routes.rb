@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
   map.resources :crs_schedules
   map.resources :course_schedules, :has_many => :member_courses
+  map.resources :recurring_events
   map.resources :centers
   
   map.resources :users
@@ -33,6 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :login
 
   map.resources :courses, :has_many => :course_schedules
+  map.resources :courses, :has_many => :recurring_events
   map.resources :tags
 
   # The priority is based upon order of creation: first created -> highest priority.

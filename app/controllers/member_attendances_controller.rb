@@ -1,3 +1,6 @@
+require "rubygems"
+require "recurrence"
+
 class MemberAttendancesController < ApplicationController
   
   #add_crumb("Members") { |instance| instance.send :members_path }
@@ -32,6 +35,25 @@ class MemberAttendancesController < ApplicationController
   end
 
   def schedules
+    @recurring_events = RecurringEvent.find(:all, :conditions => ["center_id = ?", session[:center_id]])
+
+    @recurring_events.each do |re|
+      if Date.today >= re.start_date.utc.day
+        @todaysday = Date.today.strftime('%w')
+        if @todaysday == re.start_date.strftime('%w')
+          @dt =DateTime.strptime(Time.now.strftime('%d-%m-%Y') +" "+ re.start_date.strftime('%I:%M:%S %p %z'),"%d-%m-%Y %I:%M:%S %p %z")
+          @todaysschedules = CourseSchedule.find(:all, :conditions => ["center_id = ? and start_date=?", session[:center_id], @dt.utc])
+          if @todaysschedules.empty?
+            @newcs = CourseSchedule.new
+            @newcs.course_id = re.course_id
+            @newcs.center_id = re.center_id
+            @newcs.start_date = @dt
+            @newcs.save
+          end
+        end
+      end
+    end
+
     @cs = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :limit => 5, :order => "start_date desc")
     render :layout => 'signup_schedules'
   end
@@ -106,7 +128,7 @@ class MemberAttendancesController < ApplicationController
               end
             end
             unless @subscribed
-                  format.html { redirect_to :action => "choosecenter", :csid => @csid, :prev_center_id => @memberscenter, :curr_center_id => session[:center_id].to_s, :mem_id => @member_attendance.member.id}
+              format.html { redirect_to :action => "choosecenter", :csid => @csid, :prev_center_id => @memberscenter, :curr_center_id => session[:center_id].to_s, :mem_id => @member_attendance.member.id}
             end
           end
           format.html { redirect_to :action => "show", :csid => @member_attendance.course_schedule.id, :name => @member_attendance.member.fullname}

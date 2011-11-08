@@ -15,7 +15,7 @@
       <table border="1" cellspacing="0" cellpadding="3" width="60%">
   <tr bgcolor="#A9F5F2">
     <td width="100"><b>Name</b></td>
-    <!-- <td width="200"><b>Manage Schedules</b></td> -->
+    <td width="200"><b>Manage Weekly Recurring Events</b></td>
   </tr>
 <% for course in @courses -%>
   <tr>
@@ -24,6 +24,10 @@
     <% else %>
       <td><%= course.displayName %></td>
     <% end %>
+    
+      <td><%= link_to 'Edit', course_recurring_events_path(course) %></td>
+    
+
     <!--<td><%= link_to 'Edit', course_course_schedules_path(course.id) %></td>-->
   </tr>
 <% end %>
