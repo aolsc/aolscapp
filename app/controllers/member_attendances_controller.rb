@@ -1,6 +1,3 @@
-require "rubygems"
-require "recurrence"
-
 class MemberAttendancesController < ApplicationController
   
   #add_crumb("Members") { |instance| instance.send :members_path }
