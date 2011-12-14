@@ -1,6 +1,6 @@
 class MemberReportController < ApplicationController
   add_crumb("Member Report") { |instance| instance.send :memberreport_path }
-  
+
   def index
     @courses = Course.find(:all)
     @courseschedules = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :order => "start_date desc").paginate :page => params[:page], :per_page => 10
@@ -40,7 +40,7 @@ class MemberReportController < ApplicationController
 
 
     @coursedd = params[:coursedd] unless params[:coursedd][:id].empty?
-    
+
     @teacherusers = Role.find_by_role_name("Teacher").users
     @teachers = []
     @teacherusers.each do |tu|
@@ -104,7 +104,7 @@ class MemberReportController < ApplicationController
         end
       end
     end
-    
+
     respond_to do |format|
       format.html
     end
@@ -136,7 +136,7 @@ class MemberReportController < ApplicationController
         @email_ids << member_course.member.emailid
       end
     end
-    
+
     # flash[:notice] = "Email(s) sent !"
     flash[:notice] = "Email feature is currently disabled."
     redirect_to :action => "index"
@@ -153,12 +153,16 @@ class MemberReportController < ApplicationController
 
   private
   def find_course_schedules
-    CourseSchedule.find(:all, :conditions => conditions)
+    CourseSchedule.find(:all, :conditions => conditions, :order => "start_date desc")
   end
 
   def id_conditions
     ["course_id = ?", params[:coursedd][:id]] unless params[:coursedd][:id].empty?
   end
+
+ def center_conditions
+    ["center_id = ?", session[:center_id]]
+ end
 
   def teacher_conditions
     ["teacher_id = ?", params[:teacherssel][:id]] unless params[:teacherssel][:id].empty?
