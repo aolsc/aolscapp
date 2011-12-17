@@ -3,7 +3,7 @@ class MemberAttendancesController < ApplicationController
   #add_crumb("Members") { |instance| instance.send :members_path }
   def index
     if params["csid"].nil?
-      @members = Member.find(:all, :conditions => ['emailid LIKE ? and center_id =?', "#{params[:search]}%", session[:center_id]])
+      @members = Member.find(:all, :conditions => ['firstname LIKE ? or lastname like ?', "#{params[:search]}%", "#{params[:search]}%"])
     else
       @tags = Tag.find(:all, :conditions => ["center_id = ?", session[:center_id]])
       @tag_names = []
@@ -89,7 +89,11 @@ class MemberAttendancesController < ApplicationController
     end
 
     unless @emailid.blank?
-      @member_attendance.member = Member.find_by_emailid(@emailid)
+      @names = @emailid.split(' ')
+      @membersmatching = Member.find(:all, :conditions => ["firstname = ? and lastname = ?", @names[0], @names[1]])
+      if @membersmatching.length > 0
+        @member_attendance.member = @membersmatching[0]
+      end
     end
 
     @csidstr = params[:csid]
