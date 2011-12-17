@@ -1,5 +1,5 @@
 class MemberAttendancesController < ApplicationController
-  
+
   #add_crumb("Members") { |instance| instance.send :members_path }
   def index
     if params["csid"].nil?
@@ -59,15 +59,15 @@ class MemberAttendancesController < ApplicationController
   # GET /member_attendances/new.xml
   def new
     @courses = Course.find(:all)
-    
+
     @csidstr = params[:csid]
-    unless @csidstr.blank? 
+    unless @csidstr.blank?
       @csid  = @csidstr.to_i
       @course_schedule = CourseSchedule.find(@csid)
       @sel_course=@course_schedule.course
       @sel_from_date = @course_schedule.start_date
     end
-    
+
     @assistantusers = Role.find_by_role_name("Volunteer").users
     @assistants = []
     @assistantusers.each do |tu|
@@ -95,13 +95,13 @@ class MemberAttendancesController < ApplicationController
         @member_attendance.member = @membersmatching[0]
       end
     end
-     
+
     @csidstr = params[:csid]
     unless @csidstr.blank?
       @csid  = @csidstr.to_i
       @member_attendance.course_schedule = CourseSchedule.find(@csid)
     end
-     
+
     respond_to do |format|
       unless @member_attendance.course_schedule.nil?
         @csid = @member_attendance.course_schedule.id
@@ -138,7 +138,7 @@ class MemberAttendancesController < ApplicationController
           format.html { redirect_to :action => "new", :csid => @member_attendance.course_schedule.id}
         end
       end
-    
+
     end
   end
 
@@ -169,7 +169,7 @@ class MemberAttendancesController < ApplicationController
 
   def newschedule
     respond_to do |format|
-      format.html 
+      format.html
     end
     render :layout => 'signup'
   end
