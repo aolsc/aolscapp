@@ -3,7 +3,7 @@ class MemberAttendancesController < ApplicationController
   #add_crumb("Members") { |instance| instance.send :members_path }
   def index
     if params["csid"].nil?
-      @members = Member.find(:all, :conditions => ['emailid LIKE ?', "#{params[:search]}%"])
+      @members = Member.find(:all, :conditions => ['emailid LIKE ? and center_id =?', "#{params[:search]}%", session[:center_id]])
     else
       @tags = Tag.find(:all, :conditions => ["center_id = ?", session[:center_id]])
       @tag_names = []
