@@ -1,6 +1,10 @@
 class MembersController < ApplicationController
   add_crumb("Members") { |instance| instance.send :members_path }
-  filter_access_to :all
+  
+  #filter_access_to :all
+  autocomplete_for :member, :emailid, :query => "%%{field} LIKE(%%{query}) AND deleted_at IS NULL", :mask => '%%{value}%%' do |items|
+    items.map{|item| "#{item.firstname} #{item.lastname};#{item.emailid}"}.join("\n")
+  end
 
   # GET /members
   # GET /members.xml

@@ -1,5 +1,23 @@
-<%= javascript_include_tag :defaults %>
-<%= calendar_date_select_includes "silver" %>
+<script language="javascript">
+  
+jQuery(document).ready(function() {
+    jQuery('input.autocomplete').each(function(){
+    var data = jQuery(this).attr('data-autocomplete-url');
+    jQuery(this).autocomplete(data,{
+      formatItem: function(rowdata) {
+          var details = rowdata[0].split(";");
+          return details[0];
+      },
+      formatResult: function (rowdata) {
+          var details = rowdata[0].split(";");
+          jQuery('#emailid').val(details[1]);
+          return details[1];
+      }
+    });
+    });
+});
+
+</script>
 <div id="signup_panel">
 <% form_for :member_attendance, @member_attendance, :url => {:action => 'create'} do |f| %>
   <%= f.error_messages %>
@@ -18,8 +36,9 @@
 </p>
 
 <p>
-  Please enter your Email&nbsp;<br/>
- <%= text_field_with_auto_complete :member, :email_id, { :size => 30 }, { :url => formatted_member_attendances_path(:js), :method => :get, :param_name => 'search' } %>
+  Please type your email below&nbsp;<br/>
+ <%= f.text_field :auto_member_emailid, :class => 'autocomplete', 'data-autocomplete-url'=>autocomplete_for_member_emailid_members_path %>
+ <%= hidden_field_tag(:emailid,"")  %>
   <input class="el08" type="submit" value="Sign In"/>
 </p>
 <p>

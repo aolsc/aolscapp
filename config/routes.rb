@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :member_course_interests
 
+  map.resources :members, :collection => { :autocomplete_for_member_emailid => :get}
 
   map.resources :member_general_feedbacks
   
@@ -36,6 +37,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :courses, :has_many => :course_schedules
   map.resources :courses, :has_many => :recurring_events
   map.resources :tags
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
 
