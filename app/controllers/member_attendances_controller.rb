@@ -83,7 +83,7 @@ class MemberAttendancesController < ApplicationController
   def create
     @member_attendance = MemberAttendance.new
 
-    @emailid = params[:emailid]
+    @emailid = params[:member_attendance][:emailid]
     # could come from new member page
     if @emailid.blank?
       @emailid = params[:member][:email_id]

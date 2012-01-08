@@ -10,7 +10,6 @@ jQuery(document).ready(function() {
       },
       formatResult: function (rowdata) {
           var details = rowdata[0].split(";");
-          jQuery('#emailid').val(details[1]);
           return details[1];
       }
     });
@@ -37,8 +36,7 @@ jQuery(document).ready(function() {
 
 <p>
   Please type your email below&nbsp;<br/>
- <%= f.text_field :auto_member_emailid, :class => 'autocomplete', 'data-autocomplete-url'=>autocomplete_for_member_emailid_members_path %>
- <%= hidden_field_tag(:emailid,"")  %>
+ <%= f.text_field :emailid, :class => 'autocomplete', 'data-autocomplete-url'=>autocomplete_for_member_emailid_members_path %>
   <input class="el08" type="submit" value="Sign In"/>
 </p>
 <p>
