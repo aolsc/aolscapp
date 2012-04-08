@@ -137,8 +137,19 @@ class MembersController < ApplicationController
         end
       end
     else
-      flash[:notice] = 'Member already Exists.'
-      redirect_to params.merge!(:action => "new")
+      if params[:mode].nil?
+        flash[:notice] = 'Member already Exists.'
+        redirect_to params.merge!(:action => "new")
+      else
+          @csid = params[:csid]
+          @member_attendance = MemberAttendance.new
+          @member_attendance.member = @member
+          @member_attendance.center_id = session[:center_id]
+          @member_attendance.course_schedule = CourseSchedule.find(@csid)
+          if @member_attendance.save
+          end
+          redirect_to params.merge!(:controller=>"member_attendances", :action=>"show", :csid => @csid, :emailid => @member.emailid, :name => @member.fullname)
+      end
     end
 
   end

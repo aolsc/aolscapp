@@ -60,6 +60,7 @@ class MemberAttendancesController < ApplicationController
   # GET /member_attendances/new.xml
   def new
     @courses = Course.find(:all)
+    @member = Member.new
 
     @csidstr = params[:csid]
     unless @csidstr.blank?
@@ -86,7 +87,9 @@ class MemberAttendancesController < ApplicationController
     @emailid = params[:member_attendance][:emailid]
     # could come from new member page
     if @emailid.blank?
-      @emailid = params[:member][:email_id]
+      unless params[:member].nil?
+        @emailid = params[:member][:email_id]
+      end
     end
 
     unless @emailid.blank?
@@ -106,9 +109,9 @@ class MemberAttendancesController < ApplicationController
         @csid = ''
       end
 
-      if @member_attendance.member.nil?
-        flash[:notice] = 'Email could not be found. Please enter your details.'
-        format.html { redirect_to :controller => "members", :action => "new", :csid => @csid, :mode => "signup", :emailid => @emailid }
+      if @member_attendance.member.nil? or @member_attendance.member.nil?
+        flash[:notice] = 'Email could not be found. Please enter a valid email or enroll as a New Member.'
+        format.html { redirect_to :controller => "member_attendances", :action => "new", :csid => @csid, :mode => "signup" }
       elsif @member_attendance.course_schedule.nil?
         flash[:notice] = 'Please choose a course and date'
         format.html { redirect_to :action => "new", :csid => @csid}

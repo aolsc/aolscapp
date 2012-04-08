@@ -1,3 +1,12 @@
+
+.autocomplete {
+ font-size: 20px;
+ margin-top: 3px;
+      -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+
+}
 .ac_results {
 	padding: 0px;
 	border: 1px solid black;

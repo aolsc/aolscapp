@@ -1,6 +1,8 @@
-<script language="javascript">
-  
+  <script language="javascript">
+
+
 jQuery(document).ready(function() {
+  jQuery('#member_attendance_emailid').focus();
     jQuery('input.autocomplete').each(function(){
     var data = jQuery(this).attr('data-autocomplete-url');
     jQuery(this).autocomplete(data,{
@@ -14,34 +16,112 @@ jQuery(document).ready(function() {
       }
     });
     });
+
+jQuery('#clickhere').click(function() {
+
+    jQuery("#box1").animate({
+        left: '-50%'
+    }, 1000, function() {
+        jQuery("#box1").css('left', '150%');
+        jQuery("#box1").appendTo('#container');
+    });
+
+    jQuery("#box1").next().animate({
+        left: '50%'
+    }, 1000);
+
+    
+
+    return false;
+});
+
+jQuery('#emailnext').click(function() {
+  if(jQuery("#email_id_fld").val() == '') {
+    jQuery("#flds_box1_validate").html("Please enter a valid email");
+  } else if(jQuery("#firstname_fld").val() == '') {
+    jQuery("#flds_box1_validate").html("Please enter a valid first name");
+  } else if(jQuery("#lastname_fld").val() == '') {
+    jQuery("#flds_box1_validate").html("Please enter a valid last name");
+  } else {
+  jQuery("#new_member #member_emailid").val(jQuery("#email_id_fld").val());
+  jQuery("#new_member #member_firstname").val(jQuery("#firstname_fld").val());
+  jQuery("#new_member #member_lastname").val(jQuery("#lastname_fld").val());
+
+
+    jQuery("#box2").animate({
+        left: '-50%'
+    }, 1000, function() {
+        jQuery("#box2").css('left', '150%');
+        jQuery("#box2").appendTo('#container');
+    });
+
+    jQuery("#box2").next().animate({
+        left: '50%'
+    }, 1000);
+
+    return false;
+  }
+});
+
+jQuery('input#register').click(function() {
+  if(jQuery("#homephone_fld").val() == '') {
+    jQuery("#flds_box2_validate").html("Please enter a valid phone number");
+  } else if(!jQuery("input[@name='taken_course_fld']:checked").val()) {
+    jQuery("#flds_box2_validate").html("Please select if you have taken Art of Living Course");
+  } else {
+    jQuery("#new_member #member_homephone").val(jQuery("#homephone_fld").val());
+    jQuery("#new_member #member_taken_course").val(jQuery("input[@name='taken_course_fld']:checked").val());
+  jQuery('#new_member').submit();
+  }
+});
 });
 
 </script>
-<div id="signup_panel">
-<% form_for :member_attendance, @member_attendance, :url => {:action => 'create'} do |f| %>
-  <%= f.error_messages %>
-<p>
-<%  unless @nocs.nil? %>
-    No courses scheduled for the current time. Please <%= link_to 'Click Here', {:controller => "crs_schedules", :action=>"new"} %> to create a course schedule.
-<% else %>
-      <% if @csid.nil? %>
-          Event
-          <%= collection_select(:coursesel, :id, @courses, :id, :displayName,
-                                {:prompt => true})%>&nbsp;&nbsp;&nbsp;&nbsp;Start Date&nbsp;<%= calendar_date_select_tag "start_date", @sel_from_date, :year_range => 1.years.ago..0.years.ago, :popup => "force", :time => "true"%>
-      <% else %>
-          <b>Event:</b>&nbsp;<%=  @sel_course.displayName %>&nbsp;&nbsp;&nbsp;&nbsp;<b>Date:&nbsp;</b><%=  @sel_from_date.strftime('%b %d, %Y') %>
-          <%=  hidden_field_tag 'csid', @csid %>
-      <% end %>
+<div id="container">
+    <div id="box1" class="box">
+      <% form_for :member_attendance, @member_attendance, :url => {:action => 'create'} do |f| %>
+      <b>Welcome to <%=  @sel_course.displayName %></b>
+	<% if flash[:notice] -%>
+	<div id="signupnotice"><%= flash[:notice] %></div>
+	<% end -%>
+  <p>Please type your email below<br/>
+    <%= f.text_field :emailid, :class => 'autocomplete', 'data-autocomplete-url'=>autocomplete_for_member_emailid_members_path %>
+<input type="submit" value="Sign In"/><br/><br/>New Members&nbsp;&nbsp;<%= link_to 'Click Here', {:controller=>"members", :action=>"new", :mode=>"signin", :csid=>@csid}, :id => "clickhere"%>
 </p>
+<%=  hidden_field_tag 'csid', @csid %>
+<%=  hidden_field_tag :mode, 'signin' %>
+<% end %>
+    </div>
+    <div id="box2" class="box">
+<p>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr><td width="30">&nbsp;</td><td width="250" colspan="2">Email Id&nbsp;&nbsp;<span id="flds_box1_validate" class="signupnoticebottom">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="flds_box1_validate" class="signupnoticebottom"/></td></tr>
+    <tr><td>&nbsp;</td><td colspan="2"><%= text_field_tag :email_id_fld , '', :class=>'signuptextinput'%>&nbsp;&nbsp;</td></tr>
+    <tr><td>&nbsp;</td><td width="250">First Name&nbsp<span id="flds_box1_validate" class="signupnoticebottom">*</span></td><td>Last Name&nbsp;<span id="flds_box1_validate" class="signupnoticebottom">*</span></td><td>&nbsp;</td></tr>
+    <tr><td>&nbsp;</td><td><%= text_field_tag :firstname_fld , '', :class=>'signuptextinput'%></td><td><%= text_field_tag :lastname_fld , '', :class=>'signuptextinput'%></td></tr>
+    <tr><td>&nbsp;</td><td colspan="2"><input id="emailnext" type="button" value="Next"/>&nbsp;</td></tr>
+  </table>
+  </p>
+    </div>
+  <div id="box3" class="box">
+      <table border="0" cellspacing="0" cellpadding="0">
+    <tr><td width="30">&nbsp;</td><td width="250" colspan="2">Phone&nbsp;<span id="flds_box1_validate" class="signupnoticebottom">*</span>&nbsp;<%= text_field_tag :homephone_fld, '', :class=>'signuptextinput', :size => 9 %></td></tr>
+    <tr><td colspan="3">&nbsp;</td></tr>
+    <tr><td>&nbsp;</td><td colspan="2">Have you taken the Art of Living Course?&nbsp;<span id="flds_box1_validate" class="signupnoticebottom">*</span>&nbsp;Yes<%= radio_button_tag :taken_course_fld,"true" %>&nbsp;No&nbsp;<%= radio_button_tag :taken_course_fld,"false" %></td></tr>
+     <tr><td colspan="3">&nbsp;</td></tr>
+    <tr><td>&nbsp;</td><td colspan="2"><%= submit_tag 'Submit',:id=>"register" %></td>&nbsp;&nbsp;&nbsp;<span id="flds_box2_validate" class="signupnoticebottom"/></tr>
+  </table>
 
-<p>
-  Please type your email below&nbsp;<br/>
- <%= f.text_field :emailid, :class => 'autocomplete', 'data-autocomplete-url'=>autocomplete_for_member_emailid_members_path %>
-  <input class="el08" type="submit" value="Sign In"/>
-</p>
-<p>
- New members&nbsp;&nbsp;<%= link_to 'click here', {:controller=>"members", :action=>"new", :mode=>"signin", :csid=>@csid} %>
-</p>
-<% end %>
-<% end %>
+  </div>
+
+  <% form_for :member, @member, :url => {:controller => 'members', :action => 'create'}, :html => {:id => 'new_member'} do |f| %>
+  <%=  f.hidden_field :emailid, {:value => ''}   %>
+  <%=  f.hidden_field :homephone, {:value => ''} %>
+  <%=  f.hidden_field :taken_course, {:value => ''} %>
+  <%=  f.hidden_field :firstname, {:value => ''} %>
+  <%=  f.hidden_field :lastname, {:value => ''} %>
+
+    <%=  hidden_field_tag :mode, 'signin' %>
+    <%=  hidden_field_tag :csid, params[:csid] %>
+  <% end %>
 </div>

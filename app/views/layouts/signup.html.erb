@@ -4,9 +4,10 @@
 <head>
 
 <title>Center Management System</title>
-<%= stylesheet_link_tag "default", :media => "all" %>
-<%= javascript_include_tag 'jquery-1.6.4.min.js', 'jquery.autocomplete.js', 'superbly-tagfield.min.js','application' %>
-<%= stylesheet_link_tag "jquery.autocomplete","superbly-tagfield", :media => "all" %>
+<%= javascript_include_tag 'jquery-1.6.4.min.js', 'jquery.autocomplete.js', 'superbly-tagfield.min.js','jquery.templating', 'jquery.ui.autocomplete.ext', 'jquery.ui.autocomplete','application', :cache => 'jquery' %>
+<%= stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.16.custom', "signup", "jquery.autocomplete","superbly-tagfield",'jquery.ui.autocomplete', :media => "all" %>
+
+
 
  <script language="javascript">
 $.noConflict();
@@ -17,9 +18,6 @@ $.noConflict();
 <%= link_to image_tag ("aol.jpg", :border =>0) , root_path %>
 <%= @page_title || "&nbsp;" %>
 <div id="signup_main">
-	<% if flash[:notice] -%>
-	<div id="notice"><%= flash[:notice] %></div>
-	<% end -%>
 
 	<%= yield :layout %>
         
