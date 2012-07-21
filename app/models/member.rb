@@ -1,7 +1,9 @@
 class Member < ActiveRecord::Base
   has_many :member_courses
   has_many :member_taggings
+  has_many :member_attendances
   has_many :communication_subscriptions
+  has_many :member_connections
   has_many :member_notes, :order => "created_at DESC"
 
   has_one :user

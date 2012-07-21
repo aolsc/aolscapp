@@ -1,87 +1,3 @@
-<br><br>
-
-<script language="javascript">
-
-jQuery.ajaxSetup({
-  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
-})
-
-jQuery.fn.submitWithAjax = function() {
-    this.submit(function() {
-      jQuery.post(this.action, jQuery(this).serialize(), null, "script");
-      return false;
-    })
-  return this;
-};
-
-  jQuery(document).ready(function() {
-    jQuery("form#tags_submit").submitWithAjax();
-    jQuery("form#notes_submit").submitWithAjax();
-    jQuery("#member_data .interest a #edit").toggle(true);
-    jQuery("#member_data .interest a #save").toggle(false);
-    jQuery("#member_data .interest #member_tags").toggle(false);
-    jQuery("#member_data .noteslist a #addnote").toggle(true);
-    jQuery("#member_data .noteslist a #savenote").toggle(false);
-    jQuery("#member_data .noteslist #addnotearea").toggle(false);
-  
-    jQuery("#member_data").each(function() {
-      jQuery(".interest a").bind("click",function () {
-        var mem_id = jQuery(this).parent().attr("mem_id");
-        var member_tags = jQuery(this).parent().children("#member_tags").val().split(",");
-        if(jQuery(this).children("#edit").is(":visible")) {
-          jQuery(this).children("#edit").toggle(false);
-          jQuery(this).children("#save").toggle(true);
-          jQuery(this).children("#updatestatus").toggle(false);
-          jQuery(this).parent().children("#member_tags").toggle(true);
-          jQuery(this).parent().children("#current_tags").toggle(false);
-          jQuery(this).parent().children("#member_tags").superblyTagField({
-                allowNewTags: false,
-                showTagsNumber: 10,
-                preset: member_tags,
-                tags: [<%= @tg %>]
-            });
-        } else {
-          var sel_tags = jQuery(this).parent().children("#member_tags").val();
-          jQuery("#tags_submit #selected_tags").val(sel_tags);
-          jQuery("#tags_submit #mem_id").val(mem_id);
-          jQuery(this).children("#updatestatus").toggle(true);
-          jQuery("form#tags_submit").submit();
-        }
-      });
-
-      jQuery(".noteslist #addhref").bind("click",function () {
-        var mem_id = jQuery(this).attr("mem_id");
-        if(jQuery(this).children("#addnote").is(":visible")) {
-          jQuery(this).children("#addnote").toggle(false);
-          jQuery(this).children("#savenote").toggle(true);
-          jQuery("#member_data tbody>tr[mem_id='" + mem_id + "'] #addnotearea").toggle(true);
-        } else {
-          var addednote = jQuery("#member_data tbody>tr[mem_id='" + mem_id + "'] #mynote").val();
-          jQuery("#notes_submit #addednote").val(addednote);
-          jQuery("#notes_submit #mem_id").val(mem_id);
-          jQuery("#member_data tbody>tr[mem_id='" + mem_id + "'] #addnotearea").toggle(false);
-          jQuery(this).children("#addnote").toggle(true);
-          jQuery(this).children("#savenote").toggle(false);
-          jQuery("form#notes_submit").submit();
-        }
-      });
-   });
-    
-
-
-  });
-</script>
-
-  <% form_for :member, :url => {:action => 'save_tags'}, :html => {:id => 'tags_submit' } do |f| %>
-          <input type="hidden" name="sel_tags" id="selected_tags" value=""></input>
-          <input type="hidden" name="mem_id" id="mem_id" value=""></input>
-  <% end %>
-
-  <% form_for :member, :url => {:action => 'save_notes'}, :html => {:id => 'notes_submit' } do |f| %>
-          <input type="hidden" name="addednote" id="addednote" value=""></input>
-          <input type="hidden" name="mem_id" id="mem_id" value=""></input>
-  <% end %>
-
 <table id="members" border="0" cellspacing="0" cellpadding="0" width="95%">
   <tr>
     <td>
@@ -90,66 +6,30 @@ jQuery.fn.submitWithAjax = function() {
           <td><%= button_to 'Create New Member', :action => "new" %></td>
         </tr>
         <tr><td>&nbsp;</td></tr>
-        <tr><td><b>Search By</b></td></tr>
         <tr>
           <td>
-            <% form_tag '/members/show', :method => 'get' do -%>
+            <% form_for @search do |f| %>
               <table border="0" cellspacing="1" cellpadding="0" width="100%">
-                <tr><td>Name&nbsp;&nbsp;<%= text_field_tag  :search_by_name,params[:search_by_name], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= text_field_tag :search_by_email,params[:search_by_email], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Tags&nbsp;&nbsp;<%= text_field_tag :search_by_tags,params[:search_by_tags], :size => 15 %>&nbsp;&nbsp;<%= button_to 'Go', :action => "show" %></td></tr>
+                <tr><td>Name&nbsp;&nbsp;<%= f.text_field  :lastname_or_firstname_like, :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= f.text_field  :emailid_like, :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Tags&nbsp;&nbsp;<%= text_field_tag :search_by_tags,params[:search_by_tags], :size => 15 %></td></tr>
               </table>
-            <% end -%>
+
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td><b>Attended</b>&nbsp;</td></tr>
+        <tr>
+          <td>
+
+            <label for ="coursename">Course</label>&nbsp;&nbsp;
+      &nbsp;&nbsp;
+    <label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @sel_from_date, :year_range => 3.years.ago..0.years.ago%>
+   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @sel_end_date, :year_range => 3.years.ago..0.years.ago%>&nbsp;&nbsp;<%= f.submit "Search" %>
+            <% end %>
           </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
       </table>
     </td>
   </tr>
-  <tr>
-    <td>
-      <div id="anim">
-        <table id="member_data" border="1" cellspacing="0" cellpadding="5" width="100%">
-          <thead>
-            <tr bgcolor="#A9F5F2">
-              <td width="150"><b>Name</b></td>
-              <td width="200"><b>Contact</b></td>
-              <td width=170"><b>Tags</b></td>
-              <td width=520"><b>Notes</b></td>
-            </tr>
-          </thead>
-          <tbody>
-            <% for member in @members %>
-              <tr mem_id="<%= member.id %>">
-                <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
-                <td><%= member.contact_html %></td>
-                <td class="interest" mem_id="<%= member.id %>">
-                  <% if session[:user].member.center_id == member.center_id %>
-                    <a href="javascript:void(0);"><span id="edit">Edit Tags</span><span id="save">Save</span></a>
-                   <% end %>
-                  &nbsp;&nbsp;<span id="updatestatus"></span><br><span id="current_tags"><%= member.tags_list.join(", ") %></span><input type="text" id="member_tags" value="<%= member.tags_list.join(",")%>"/></td>
-
-                <td class="noteslist">
-                  <table id="notestable" border="0" cellspacing="0" cellpadding="0">
-                    <tbody class="tb">
-                    <tr><td><a href="javascript:void(0)" id="addhref"  mem_id="<%= member.id %>"><span id="addnote">Add Note</span><span id="savenote">Save</span></a></td></tr>
-                    <% for note in member.member_notes -%>
-                      <tr><td><font color="gray"><%=  note.created_at.strftime("%b #{note.created_at.day.ordinalize}") %> [<%= note.author.member.fullname %>]</font>&nbsp;&nbsp;<%= note.note %></td></tr>
-                    <% end %>
-                    <tr><td><span id="addnotearea"><textarea id="mynote" cols="30" rows="2"></textarea></span></td></tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="right"><br/>
-      <%= will_paginate @members %>
-    </td>
-  </tr>
-
 </table>
+<%= render "members" %>

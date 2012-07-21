@@ -90,13 +90,25 @@ jQuery.fn.submitWithAjax = function() {
           <td><%= button_to 'Create New Member', :action => "new" %></td>
         </tr>
         <tr><td>&nbsp;</td></tr>
-        <tr><td><b>Search By</b></td></tr>
         <tr>
           <td>
             <% form_tag '/members/show', :method => 'get' do -%>
               <table border="0" cellspacing="1" cellpadding="0" width="100%">
-                <tr><td>Name&nbsp;&nbsp;<%= text_field_tag  :search_by_name,params[:search_by_name], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= text_field_tag :search_by_email,params[:search_by_email], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Tags&nbsp;&nbsp;<%= text_field_tag :search_by_tags,params[:search_by_tags], :size => 15 %>&nbsp;&nbsp;<%= button_to 'Go', :action => "show" %></td></tr>
+                <tr><td>Name&nbsp;&nbsp;<%= text_field_tag  :search_by_name,params[:search_by_name], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;<%= text_field_tag :search_by_email,params[:search_by_email], :size => 15 %>&nbsp;&nbsp;&nbsp;&nbsp;Tags&nbsp;&nbsp;<%= text_field_tag :search_by_tags,params[:search_by_tags], :size => 15 %></td></tr>
               </table>
+
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td><b>Attended</b>&nbsp;</td></tr>
+        <tr>
+          <td>
+
+            <label for ="coursename">Course</label>&nbsp;&nbsp;
+      <%= collection_select(:coursedd, :id, @courses, :id, :displayName,
+                            {:prompt => "Select a Course"})%>&nbsp;&nbsp;
+    <label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @sel_from_date, :year_range => 3.years.ago..0.years.ago%>
+   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @sel_end_date, :year_range => 3.years.ago..0.years.ago%>&nbsp;&nbsp;<%= submit_tag 'Search',:action => "show" %>
             <% end -%>
           </td>
         </tr>

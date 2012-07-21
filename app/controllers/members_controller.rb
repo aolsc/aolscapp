@@ -9,12 +9,53 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   def index
-    @center_id = session[:center_id]+""
-    if session[:current_user_super_admin]
-      @members = Member.find(:all, :order => 'firstname').paginate :page => params[:page], :per_page => 10
-    else
-      @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:conditions => ['id = ?', '33']}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
+      @session_member_id = session[:user].member.id
+      @conn_ids = []
+      @session_member = Member.find(@session_member_id)
+      @mcs = @session_member.member_connections
+      unless @mcs.empty?
+        @mcs.each do |mc|
+           @conn_ids << mc.connected_member_id
+        end
+      end
+
+      @search = Member.search(params[:search])
+      unless params[:search_by_tags].blank?
+        @searchtags = Tag.name_like(params[:search_by_tags])
+        @searchtags_ids = []
+        @searchtags.each do |tg|
+           @searchtags_ids << tg.id
+        end
+        @search.member_taggings_tag_id_eq_any(@searchtags_ids)
+      end
+
+
+    if !params[:from_date_cal].blank?
+      @report_start_date = Time.parse(params[:from_date_cal])
+      @search.member_attendances_created_at_greater_than(@report_start_date)
     end
+
+    if !params[:end_date_cal].blank?
+      @report_end_date = Time.parse(params[:end_date_cal])
+      @search.member_attendances_created_at_less_than(@report_end_date)
+    end
+
+    unless params[:coursedd].blank?
+      @coursedd = params[:coursedd][:id]
+      sql = CourseSchedule.send(:construct_finder_sql, :select => 'id', :conditions => ["course_id = ?",@coursedd])
+      @cids = CourseSchedule.connection.select_values(sql)
+      @search.member_attendances_course_schedule_id_eq_any(@cids)
+    end
+
+    @members = @search.all.paginate :page => params[:page], :per_page => 10
+
+
+      @center_id = session[:center_id]+""
+    #if session[:current_user_super_admin]
+     # @members = Member.find(:all, :order => 'firstname').paginate :page => params[:page], :per_page => 10
+    #else
+#      @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:conditions => ['id = ?', '33']}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
+ #   end
     @tags = Tag.find(:all,:conditions => ["center_id=?", session[:center_id]])
     @tag_names = []
     @tags.each do |tg|
@@ -23,6 +64,11 @@ class MembersController < ApplicationController
     @tg = @tag_names.map {|element|
         "'#{element}'"
       }.join(',');
+
+    @courses = Course.find(:all)
+    @courseschedules = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :order => "start_date desc").paginate :page => params[:page], :per_page => 10
+    @cs_id = -1
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @members }
@@ -39,38 +85,13 @@ class MembersController < ApplicationController
         "'#{element}'"
       }.join(',');
 
+        @courses = Course.find(:all)
+    @courseschedules = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :order => "start_date desc").paginate :page => params[:page], :per_page => 10
+    @cs_id = -1
+
     begin
-      if params["search_by_name"].empty? and params["search_by_email"].empty? and params["search_by_tags"].empty? then
-        if session[:current_user_super_admin]
-          @members = Member.find(:all,:order => 'firstname').paginate :page => params[:page], :per_page => 10
-        else
-          @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:joins => :communication_subscriptions, :conditions => ['communication_subscriptions.center_id=?', session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
-        end
-      else
-            unless params["search_by_name"].empty?
-              if session[:current_user_super_admin]
-                @members = Member.find(:all,:order => 'firstname',:conditions => ['firstname like ? or lastname like ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%"]).paginate :page => params[:page], :per_page => 10
-              else
-                @members = Member.union([{:conditions => ['(firstname like ? or lastname like ?) and center_id = ?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", session[:center_id]]}, {:joins => :communication_subscriptions, :conditions => ['(firstname like ? or lastname like ?) and communication_subscriptions.center_id=?', "%"+params["search_by_name"]+"%", "%"+params["search_by_name"]+"%", session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
-              end
-            end
-            unless params["search_by_tags"].empty?
-              if session[:current_user_super_admin]
-                @tag = Tag.find_by_name(params["search_by_tags"])
-                @members = Member.find(:all,:order => 'firstname', :joins => :member_taggings, :conditions => ['member_taggings.tag_id = ?', @tag.id]).paginate :page => params[:page], :per_page => 10
-              else
-                @tag = Tag.find_by_name(params["search_by_tags"])
-                @members = Member.union([{:joins => :member_taggings, :conditions => ['member_taggings.tag_id = ? and center_id=?', @tag.id, session[:center_id]]}, {:joins => [:member_taggings,:communication_subscriptions], :conditions => ['member_taggings.tag_id = ? and communication_subscriptions.center_id=?', @tag.id, session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
-              end
-            end
-            unless params["search_by_email"].empty?
-              if session[:current_user_super_admin]
-                @members = Member.find(:all,:order => 'firstname', :conditions => ['emailid like ?', "%"+params["search_by_email"]+"%"]).paginate :page => params[:page], :per_page => 10
-              else
-                 @members = Member.union([{:conditions => ['emailid like ? and center_id=?', "%"+params["search_by_email"]+"%", session[:center_id]]}, {:joins => :communication_subscriptions, :conditions => ['emailid like ? and communication_subscriptions.center_id=?', "%"+params["search_by_email"]+"%", session[:center_id]]}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
-              end
-            end
-      end
+      @search = Member.search(params[:search])
+      @members = @search.all.center_id_eq(session[:center_id]).ascend_by_firstname.paginate :page => params[:page], :per_page => 10
          
       respond_to do |format|
         format.html # show.html.erb
@@ -190,7 +211,70 @@ class MembersController < ApplicationController
   # PUT /members/1
   # PUT /members/1.xml
 
+def save_fdate
+    @member = Member.find(params[:mem_id])
+    @member.followupdate = Time.parse(params[:fdate])
+    @member.save
 
+    respond_to do |format|
+      format.html { redirect_to members_path }
+      format.js
+    end
+  end
+
+  def add_connection
+    @member = Member.find(params[:mem_id])
+    @session_member_id = session[:user].member.id
+      @conn_ids = []
+      @session_member = Member.find(@session_member_id)
+      @mcs = @session_member.member_connections
+      unless @mcs.empty?
+        @mcs.each do |mc|
+           @conn_ids << mc.connected_member_id.to_s
+        end
+    end
+    
+    unless @conn_ids.empty?
+      unless @conn_ids.include?(params[:mem_id])
+        @member_connection = MemberConnection.new
+        @member_connection.member_id = @session_member.id
+        @member_connection.connected_member_id = @member.id
+        @member_connection.save
+      end
+    else
+      @member_connection = MemberConnection.new
+      @member_connection.member_id = @session_member.id
+      @member_connection.connected_member_id = @member.id
+      @member_connection.save
+    end
+
+    respond_to do |format|
+      format.html { redirect_to members_path }
+      format.js
+    end
+  end
+
+
+  def remove_connection
+    @member = Member.find(params[:mem_id])
+    @session_member_id = session[:user].member.id
+    @conn_ids = []
+    @session_member = Member.find(@session_member_id)
+    @mcs = @session_member.member_connections
+    unless @mcs.empty?
+        @mcs.each do |mc|
+           @conn_ids << mc.connected_member_id.to_s
+          if mc.member_id = @member.id
+            mc.delete
+          end
+        end
+    end
+
+    respond_to do |format|
+      format.html { redirect_to members_path }
+      format.js
+    end
+  end
 
 
   def update
@@ -262,6 +346,74 @@ class MembersController < ApplicationController
         @course_interests.save
       end
     end
+  end
+
+  def myconnections
+      @session_member_id = session[:user].member.id
+      @conn_ids = []
+      @session_member = Member.find(@session_member_id)
+      @mcs = @session_member.member_connections
+      unless @mcs.empty?
+        @mcs.each do |mc|
+           @conn_ids << mc.connected_member_id
+        end
+      end
+
+      @search = Member.search(params[:search])
+      unless params[:search_by_tags].blank?
+        @searchtags = Tag.name_like(params[:search_by_tags])
+        @searchtags_ids = []
+        @searchtags.each do |tg|
+           @searchtags_ids << tg.id
+        end
+        @search.member_taggings_tag_id_eq_any(@searchtags_ids)
+      end
+
+
+    if !params[:from_date_cal].blank?
+      @report_start_date = Time.parse(params[:from_date_cal])
+      @search.member_attendances_created_at_greater_than(@report_start_date)
+    end
+
+    if !params[:end_date_cal].blank?
+      @report_end_date = Time.parse(params[:end_date_cal])
+      @search.member_attendances_created_at_less_than(@report_end_date)
+    end
+
+    unless params[:coursedd].blank?
+      @coursedd = params[:coursedd][:id]
+      sql = CourseSchedule.send(:construct_finder_sql, :select => 'id', :conditions => ["course_id = ?",@coursedd])
+      @cids = CourseSchedule.connection.select_values(sql)
+      @search.member_attendances_course_schedule_id_eq_any(@cids)
+    end
+
+    @members = @search.all.paginate :page => params[:page], :per_page => 10
+
+
+      @center_id = session[:center_id]+""
+    #if session[:current_user_super_admin]
+     # @members = Member.find(:all, :order => 'firstname').paginate :page => params[:page], :per_page => 10
+    #else
+#      @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:conditions => ['id = ?', '33']}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
+ #   end
+    @tags = Tag.find(:all,:conditions => ["center_id=?", session[:center_id]])
+    @tag_names = []
+    @tags.each do |tg|
+       @tag_names << tg.name
+    end
+    @tg = @tag_names.map {|element|
+        "'#{element}'"
+      }.join(',');
+
+    @courses = Course.find(:all)
+    @courseschedules = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :order => "start_date desc").paginate :page => params[:page], :per_page => 10
+    @cs_id = -1
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml { render :xml => @members }
+    end
+    
   end
 end
  

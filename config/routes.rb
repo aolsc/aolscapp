@@ -25,12 +25,15 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :members, :action => "save_tags"
   map.resources :members, :action => "save_notes"
+  map.resources :members, :action => "save_fdate"
+  map.resources :members, :action => "add_connection"
 
   map.resources :members, :has_many => :member_general_feedbacks
   map.resources :members, :has_many => :member_courses
   map.resources :members, :has_many => :member_course_interests
 
   map.resources :member_courses
+  map.connections "myconnections", :controller => "members", :action => "myconnections"
   
   map.resources :login
 

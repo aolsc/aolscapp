@@ -8,6 +8,8 @@ class MemberCoursesController < ApplicationController
     @course_schedules = []
     @member = Member.find(params[:member_id])
     @member_courses = MemberCourse.find(:all, :conditions => ["member_id = ?", params[:member_id]])
+
+
   end
 
   # GET /member_courses/1
