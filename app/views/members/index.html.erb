@@ -3,7 +3,12 @@
     <td>
       <table border="0" cellspacing="0" cellpadding="0" width="95%">
         <tr>
-          <td><%= button_to 'Create New Member', :action => "new" %></td>
+          <td>
+            <% if @myconn.blank? %>
+              <%= button_to 'Create New Member', :action => "new" %></td>
+            <% else %>
+              <%= button_to 'Create New Connection', :action => "new", :myconn => @myconn %></td>
+            <% end %>
         </tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
@@ -20,10 +25,12 @@
         <tr>
           <td>
 
-            <label for ="coursename">Course</label>&nbsp;&nbsp;
+            <label for ="coursename">Course</label>&nbsp;&nbsp;<%= collection_select(:coursedd, :id, @courses, :id, :displayName,
+                            {:prompt => "Select a Course"})%>
       &nbsp;&nbsp;
-    <label for ="startdate">From Date</label>&nbsp;&nbsp;<%= calendar_date_select_tag "from_date_cal", @sel_from_date, :year_range => 3.years.ago..0.years.ago%>
-   &nbsp;&nbsp;<label for ="enddate"> To Date </label>&nbsp;&nbsp;<%= calendar_date_select_tag "end_date_cal", @sel_end_date, :year_range => 3.years.ago..0.years.ago%>&nbsp;&nbsp;<%= f.submit "Search" %>
+
+   <input type="hidden" name="myconn" id="myconn" value="<%= @myconn %>"></input>
+<%= f.submit "Search" %>
             <% end %>
           </td>
         </tr>

@@ -21,7 +21,7 @@
   <tr>
     <td><%=h cs.course.displayName %></td>
     <td><%=h cs.start_date.strftime('%B %d, %Y %I:%M %p') %></td>
-   <td><%= link_to cs.member_attendances.count(), {:controller=>"member_attendances", :action=>"index", :csid=>cs.id, :mode => "signin"} %> </td>
+   <td><%= link_to cs.member_attendances.count(), {:controller=>"members", :action=>"index", :csid=>cs.id, :mode => "signin"} %> </td>
    <td><%= link_to 'Click Here', :action => "new", :csid => cs.id %></td>
   </tr>
 <% end %>

@@ -28,6 +28,7 @@ Have you taken the Art of Living Course?&nbsp;Yes<%= f.radio_button :taken_cours
   <p>
     <%=  hidden_field_tag :mode, params[:mode] %>
     <%=  hidden_field_tag :csid, params[:csid] %>
+    <input type="hidden" name="myconn" id="myconn" value="<%= @myconn %>"></input>
     <%= f.submit 'Submit' %>
   </p>
 <% end %>

@@ -1,12 +1,15 @@
 <% form_for @user_session do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :username %><br />
+    <b><%= f.label :username %></b><br />
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :password %><br />
+    <b><%= f.label :password %></b><br />
     <%= f.password_field :password %>
+  </p>
+  <p>
+  <b>Take me to Member Signup:</b>&nbsp;&nbsp;&nbsp;Yes<%= radio_button_tag :member_signup,"true",:checked=>true %>&nbsp;No&nbsp;<%= radio_button_tag :member_signup,"false" %>
   </p>
   <p><%= f.submit "Submit" %></p>
 <% end %>

@@ -18,7 +18,11 @@ class UserSessionsController < ApplicationController
       session[:user_full_name] = @member.fullname_with_role
       session[:user] = @user
       session[:current_user_super_admin] = @user.is_super_admin
-      redirect_to root_url
+      if params[:member_signup] == "true"
+        redirect_to root_url
+      else
+        redirect_to connections_path
+      end
     else
       render :action => 'new'
     end

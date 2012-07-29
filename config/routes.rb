@@ -33,7 +33,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :members, :has_many => :member_course_interests
 
   map.resources :member_courses
-  map.connections "myconnections", :controller => "members", :action => "myconnections"
+  map.connections "myconnections", :controller => "members", :action => "index", :myconn => "myconnections"
   
   map.resources :login
 

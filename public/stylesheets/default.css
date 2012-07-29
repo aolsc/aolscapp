@@ -41,7 +41,7 @@ dottedline {
 }
 
 #main {
-  margin-left: 13em;
+  margin-left: 10em;
   padding-top: 4ex;
   padding-left: 2em;
   background: white;
@@ -97,10 +97,10 @@ font-size:24px;
 #login {
   border: 1px solid green;
   margin-left: 26em;
-  margin-right: 33em;
+  margin-right: 30em;
   margin-top: 3em;
   padding-top: 4ex;
-  padding-left: 2em;
+  padding-left: 3em;
   background: #CCFFFF;
 
 }
@@ -110,7 +110,7 @@ font-size:24px;
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
-  width: 10em;
+  width: 8em;
   background: #141;
   
 }

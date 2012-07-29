@@ -4,14 +4,15 @@
 <head>
 <title>Center Management System</title>
 <%= stylesheet_link_tag "default", :media => "all" %>
-<%= javascript_include_tag 'jquery-1.6.4.min.js', 'superbly-tagfield.min.js','application' %>
+<%= javascript_include_tag  'jquery-1.6.4.min.js', 'superbly-tagfield.min.js','application' %>
 <%= stylesheet_link_tag "superbly-tagfield", :media => "all" %>
+
 
 
 </head>
 <body id="store">
 <div id="banner">
-
+<%= link_to image_tag ("aol.jpg", :border =>0) , root_path %>
 <%= @page_title || "&nbsp;" %>
   <div align="right" style="font-size:medium;">
     <% if current_user %>
@@ -27,8 +28,8 @@
 </div>
 <div id="columns">
 <div id="side">
-	<a href="/members">Members</a><br /><br />
         <a href="/myconnections">My Connections</a><br /><br />
+        <a href="/members">Members</a><br /><br />
         <% if permitted_to? :index, Course.new %>
 	<a href="/courses">Courses</a><br /><br />
         <% end %>
@@ -38,7 +39,7 @@
         <% if permitted_to? :index, User.new %>
           <a href="/users">Users</a><br /><br />
         <% end %>
-        <a href="/memberreport">Course Attendance</a><br /><br/>
+        <a href="/memberreport">Attendance</a><br /><br/>
 </div>
 <div id="main">
   

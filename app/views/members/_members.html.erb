@@ -1,7 +1,5 @@
-<%= javascript_include_tag :defaults %>
-<%= calendar_date_select_includes "silver" %>
 <script language="javascript">
-
+jQuery.noConflict();
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
@@ -78,16 +76,14 @@ jQuery.fn.submitWithAjax = function() {
       });
 
       jQuery(".connectionslist #addconn").bind("click",function () {
-        var mem_id = jQuery(this).attr("mem_id");
-        jQuery("#addconn_submit #mem_id").val(mem_id);
+        var membersel_id = jQuery(this).attr("mem_id");
+        var memfrom_id = jQuery(this).parent().children("#membersel_id").val();
+        jQuery("#addconn_submit #membersel_id").val(membersel_id);
+        jQuery("#addconn_submit #memfrom_id").val(memfrom_id);
         jQuery("form#addconn_submit").submit();
       });
 
-      jQuery(".connectionslist #removeconn").bind("click",function () {
-        var mem_id = jQuery(this).attr("mem_id");
-        jQuery("#removeconn_submit #mem_id").val(mem_id);
-        jQuery("form#removeconn_submit").submit();
-      });
+     
    });
 
 
@@ -111,7 +107,9 @@ jQuery.fn.submitWithAjax = function() {
   <% end %>
 
  <% form_for :member, :url => {:action => 'add_connection'}, :html => {:id => 'addconn_submit' } do |f| %>
-          <input type="hidden" name="mem_id" id="mem_id" value=""></input>
+          <input type="hidden" name="membersel_id" id="membersel_id" value=""></input>
+          <input type="hidden" name="memfrom_id" id="memfrom_id" value=""></input>
+          <input type="hidden" name="oldconn_id" id="oldconn_id" value=""></input>
   <% end %>
 
  <% form_for :member, :url => {:action => 'remove_connection'}, :html => {:id => 'removeconn_submit' } do |f| %>
@@ -128,7 +126,7 @@ jQuery.fn.submitWithAjax = function() {
               <td width="150"><b>Contact</b></td>
               <td width=120"><b>Tags</b></td>
               <td width="300"><b>Notes</b></td>
-              <td width="250"><b>Connections to this member</b></td>
+              <td width="250"><b>Volunteer connection</b></td>
             </tr>
           </thead>
           <tbody>
@@ -156,24 +154,20 @@ jQuery.fn.submitWithAjax = function() {
                   <% end %>
                 </td>
                 <td class="connectionslist">
-                  <% if session[:user].member.center_id == member.center_id %>
+                  <% if session[:user].member.center_id == member.center_id and member.is_a_user %>
                   <table id="connectiontable" border="0" cellspacing="0" cellpadding="0">
                     <tbody class="tb">
-                    <% unless session[:user].member.id == member.id %>
-                      <%  unless @conn_ids.include?(member.id) %>
-                        <tr><td><a href="javascript:void(0);" id="addconn"  mem_id="<%= member.id %>"><span id="add">Add to your connections</span></a>&nbsp;<span id="connectstatus"></span></td></tr>
-                      <% end %>
-                    <% end %>
                     <% unless MemberConnection.connected_member_id_eq(member.id).blank? %>
                       <% MemberConnection.connected_member_id_eq(member.id).each do | mc | %>
                           <% unless mc.member.id == session[:user].member.id %>
-                            <tr><td>-&nbsp<%= mc.member.fullname %></td></tr>
+                            <tr><td><b><%= mc.member.fullname %></td></b></tr>
                           <% else %>
-                            <tr><td>-&nbspYou&nbsp;&nbsp;<a href="javascript:void(0);" id="removeconn" mem_id="<%= member.id %>"><span id="remove">Remove from your connections</span></a>&nbsp;<span id="removestatus"></span></td></tr>
+                            <tr><td><b>You&nbsp;&nbsp;</b></td></tr>
                          <%  end %>
                       <%  end %>
                     <% end  %>
-
+                     <tr><td>Change to&nbsp;<%= collection_select(:membersel, :id, @usermembers, :id, :fullname,
+                            {:prompt => "Select"})%>&nbsp;<a href="javascript:void(0);" id="addconn"  mem_id="<%= member.id %>"><span id="add">Save</span></a>&nbsp;<span id="connectstatus"></span></td></tr>
                     </tbody>
                   </table>
                   <% end  %>

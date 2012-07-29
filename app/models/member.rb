@@ -61,4 +61,8 @@ class Member < ActiveRecord::Base
     return tags
   end
 
+   def is_a_user
+    return user.nil?
+  end
+
 end

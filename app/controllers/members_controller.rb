@@ -19,7 +19,13 @@ class MembersController < ApplicationController
         end
       end
 
-      @search = Member.search(params[:search])
+      unless params["myconn"].blank?
+        @myconn = params["myconn"]
+        @search = Member.id_eq_any(@conn_ids).search(params[:search])
+      else
+        @search = Member.descend_by_created_at.search(params[:search])
+      end
+
       unless params[:search_by_tags].blank?
         @searchtags = Tag.name_like(params[:search_by_tags])
         @searchtags_ids = []
@@ -29,6 +35,7 @@ class MembersController < ApplicationController
         @search.member_taggings_tag_id_eq_any(@searchtags_ids)
       end
 
+    
 
     if !params[:from_date_cal].blank?
       @report_start_date = Time.parse(params[:from_date_cal])
@@ -40,6 +47,8 @@ class MembersController < ApplicationController
       @search.member_attendances_created_at_less_than(@report_end_date)
     end
 
+    
+
     unless params[:coursedd].blank?
       @coursedd = params[:coursedd][:id]
       sql = CourseSchedule.send(:construct_finder_sql, :select => 'id', :conditions => ["course_id = ?",@coursedd])
@@ -47,10 +56,28 @@ class MembersController < ApplicationController
       @search.member_attendances_course_schedule_id_eq_any(@cids)
     end
 
+    @csid = params["csid"]
+    unless @csid.blank?
+          @cs = CourseSchedule.find(@csid)
+          @course = @cs.course
+      @search.member_attendances_course_schedule_id_eq_any(@csid)
+    end
+
+    @center_id = session[:center_id]+""
+    @search.center_id_eq(@center_id)
+    
     @members = @search.all.paginate :page => params[:page], :per_page => 10
 
+    @assistantusers = User.find(:all,:order => 'username', :joins => :member, :conditions => ['members.center_id = ?', session[:center_id]])
+    @usermembers = []
+    @assistantusers.each do |tu|
+       if tu.member.center.id.to_s == session[:center_id]
+       @usermembers << tu.member
+      end
+    end
 
-      @center_id = session[:center_id]+""
+
+      
     #if session[:current_user_super_admin]
      # @members = Member.find(:all, :order => 'firstname').paginate :page => params[:page], :per_page => 10
     #else
@@ -68,10 +95,11 @@ class MembersController < ApplicationController
     @courses = Course.find(:all)
     @courseschedules = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :order => "start_date desc").paginate :page => params[:page], :per_page => 10
     @cs_id = -1
+    
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml { render :xml => @members }
+
+    unless params["mode"].blank?
+      render :layout => "signup", :template => "member_attendances/index"
     end
   end
 
@@ -109,10 +137,11 @@ class MembersController < ApplicationController
     @mode = params[:mode]
     @csid = params[:csid]
     @emailid = params[:emailid]
+    @myconn = params[:myconn]
     unless @emailid.nil?
       @member.emailid = @emailid
     end
-    unless @mode.nil?
+    unless @mode.blank?
       render :layout => 'signup'
     end
   end
@@ -126,9 +155,11 @@ class MembersController < ApplicationController
   # POST /members.xml
   def create
     @member = Member.new(params[:member])
+    @session_member_id = session[:user].member.id
     @validatemember = Member.find(:all, :conditions => ["emailid = ?", @member.emailid])
     if @validatemember.length == 0
       @mode = params[:mode]
+      @myconn = params[:myconn]
       if session[:current_user_super_admin] and @mode.blank?
         @member.center_id = params[:centersel][:id]
       else
@@ -138,8 +169,17 @@ class MembersController < ApplicationController
       if @member.save
         
         if @mode.blank?
-          flash[:notice] = 'Member was successfully created.'
-          redirect_to params.merge!(:action => "index")
+          if @myconn.blank?
+            flash[:notice] = 'Member was successfully created.'
+            redirect_to params.merge!(:action => "index")
+          else
+            @member_connection = MemberConnection.new
+            @member_connection.member_id = @session_member_id
+            @member_connection.connected_member_id = @member.id
+            @member_connection.save
+            flash[:notice] = 'Member was successfully created.'
+            redirect_to params.merge!(:action => "index", :myconn=>@myconn)
+          end
         else
           @csid = params[:csid]
           @member_attendance = MemberAttendance.new
@@ -158,7 +198,7 @@ class MembersController < ApplicationController
         end
       end
     else
-      if params[:mode].nil?
+      if params[:mode].blank?
         flash[:notice] = 'Member already Exists.'
         redirect_to params.merge!(:action => "new")
       else
@@ -223,7 +263,7 @@ def save_fdate
   end
 
   def add_connection
-    @member = Member.find(params[:mem_id])
+    
     @session_member_id = session[:user].member.id
       @conn_ids = []
       @session_member = Member.find(@session_member_id)
@@ -233,20 +273,15 @@ def save_fdate
            @conn_ids << mc.connected_member_id.to_s
         end
     end
-    
-    unless @conn_ids.empty?
-      unless @conn_ids.include?(params[:mem_id])
-        @member_connection = MemberConnection.new
-        @member_connection.member_id = @session_member.id
-        @member_connection.connected_member_id = @member.id
-        @member_connection.save
-      end
-    else
-      @member_connection = MemberConnection.new
-      @member_connection.member_id = @session_member.id
-      @member_connection.connected_member_id = @member.id
-      @member_connection.save
-    end
+
+    @memto = Member.find(params[:membersel_id])
+    @memfrom = Member.find(params[:memfrom_id])
+      MemberConnection.connected_member_id_eq(@memto.id).destroy_all
+
+    @member_connection = MemberConnection.new
+    @member_connection.member_id = @memfrom.id
+    @member_connection.connected_member_id = @memto.id
+    @member_connection.save
 
     respond_to do |format|
       format.html { redirect_to members_path }
