@@ -29,7 +29,7 @@
 <div id="columns">
 <div id="side">
         <a href="/myconnections">My Connections</a><br /><br />
-        <a href="/members">Members</a><br /><br />
+        <a href="/members?all=true">Members</a><br /><br />
         <% if permitted_to? :index, Course.new %>
 	<a href="/courses">Courses</a><br /><br />
         <% end %>

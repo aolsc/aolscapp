@@ -65,4 +65,10 @@ class Member < ActiveRecord::Base
     return user.nil?
   end
 
+   def self.all_members_cached(center_id)
+     Rails.cache.fetch('members_' + center_id) {
+      @members = find(:all,:conditions => ["center_id=?", center_id])
+     }
+   end
+
 end

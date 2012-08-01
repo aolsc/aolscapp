@@ -1,6 +1,7 @@
 class MembersController < ApplicationController
   add_crumb("Members") { |instance| instance.send :members_path }
   
+  
   #filter_access_to :all
   autocomplete_for :member, :emailid, :query => "%%{field} LIKE(%%{query}) AND deleted_at IS NULL", :mask => '%%{value}%%' do |items|
     items.map{|item| "#{item.firstname} #{item.lastname};#{item.emailid}"}.join("\n")
@@ -47,8 +48,6 @@ class MembersController < ApplicationController
       @search.member_attendances_created_at_less_than(@report_end_date)
     end
 
-    
-
     unless params[:coursedd].blank?
       @coursedd = params[:coursedd][:id]
       sql = CourseSchedule.send(:construct_finder_sql, :select => 'id', :conditions => ["course_id = ?",@coursedd])
@@ -63,41 +62,16 @@ class MembersController < ApplicationController
       @search.member_attendances_course_schedule_id_eq_any(@csid)
     end
 
-    @center_id = session[:center_id]+""
-    @search.center_id_eq(@center_id)
-    
-    @members = @search.all.paginate :page => params[:page], :per_page => 10
-
-    @assistantusers = User.find(:all,:order => 'username', :joins => :member, :conditions => ['members.center_id = ?', session[:center_id]])
-    @usermembers = []
-    @assistantusers.each do |tu|
-       if tu.member.center.id.to_s == session[:center_id]
-       @usermembers << tu.member
-      end
+    if params["all"].blank?
+      @members = @search.all.paginate :page => params[:page], :per_page => 10
+    else
+      @members = @search.all_members_cached(session[:center_id]).paginate :page => params[:page], :per_page => 10
     end
 
-
-      
-    #if session[:current_user_super_admin]
-     # @members = Member.find(:all, :order => 'firstname').paginate :page => params[:page], :per_page => 10
-    #else
-#      @members = Member.union([{:conditions => ['center_id = ?', session[:center_id]]}, {:conditions => ['id = ?', '33']}], {:order => 'firstname'}).paginate :page => params[:page], :per_page => 10
- #   end
-    @tags = Tag.find(:all,:conditions => ["center_id=?", session[:center_id]])
-    @tag_names = []
-    @tags.each do |tg|
-       @tag_names << tg.name
-    end
-    @tg = @tag_names.map {|element|
-        "'#{element}'"
-      }.join(',');
-
-    @courses = Course.find(:all)
-    @courseschedules = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :order => "start_date desc").paginate :page => params[:page], :per_page => 10
+    @usermembers = User.user_members_cached(session[:center_id])
+    @tg = Tag.get_tag_names_cached(session[:center_id])
+    @courses = Course.all_cached
     @cs_id = -1
-    
-
-
     unless params["mode"].blank?
       render :layout => "signup", :template => "member_attendances/index"
     end
