@@ -36,14 +36,14 @@ class User < ActiveRecord::Base
 
    def self.user_members_cached(center_id)
        @usermembers = []
-       Rails.cache.fetch('user_members_' + center_id) {
+#       Rails.cache.fetch('user_members_' + center_id) {
           @assistantusers = find(:all,:order => 'username', :joins => :member, :conditions => ['members.center_id = ?', center_id])
           @assistantusers.each do |tu|
              if tu.member.center.id.to_s == center_id
              @usermembers << tu.member
             end
           end
-       }
+#       }
        return @usermembers
    end
 end

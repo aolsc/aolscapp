@@ -5,21 +5,6 @@ class MemberReportController < ApplicationController
     @courses = Course.find(:all)
     @courseschedules = CourseSchedule.find(:all, :conditions => ["center_id = ?", session[:center_id]], :order => "start_date desc").paginate :page => params[:page], :per_page => 10
     @cs_id = -1
-    @teacherusers = Role.find_by_role_name("Teacher").users
-    @teachers = []
-    @teacherusers.each do |tu|
-      if tu.member.center.id.to_s == session[:center_id]
-        @teachers << tu.member
-      end
-    end
-
-    @assistantusers = Role.find_by_role_name("Volunteer").users
-    @assistants = []
-    @assistantusers.each do |tu|
-      if tu.member.center.id.to_s == session[:center_id]
-        @assistants << tu.member
-      end
-    end
 
 
     respond_to do |format|
@@ -41,24 +26,6 @@ class MemberReportController < ApplicationController
 
     @coursedd = params[:coursedd] unless params[:coursedd][:id].empty?
 
-    @teacherusers = Role.find_by_role_name("Teacher").users
-    @teachers = []
-    @teacherusers.each do |tu|
-      if tu.member.center.id.to_s == session[:center_id]
-      @teachers << tu.member
-      end
-    end
-
-    @assistantusers = Role.find_by_role_name("Volunteer").users
-    @assistants = []
-    @assistantusers.each do |tu|
-      if tu.member.center.id.to_s == session[:center_id]
-      @assistants << tu.member
-      end
-    end
-
-    @teacherssel = params[:teacherssel] unless params[:teacherssel][:id].empty?
-    @assistantssel = params[:assistantssel] unless params[:assistantssel][:id].empty?
 
     #if @report_start_date.nil? or @report_end_date.nil?
     # @courseschedules = CourseSchedule.find(:all, :conditions => ["course_id=?", params[:coursedd][:id]]).paginate :page => params[:page], :per_page => 10
@@ -163,14 +130,6 @@ class MemberReportController < ApplicationController
  def center_conditions
     ["center_id = ?", session[:center_id]]
  end
-
-  def teacher_conditions
-    ["teacher_id = ?", params[:teacherssel][:id]] unless params[:teacherssel][:id].empty?
-  end
-
-  def assistant_conditions
-    ["volunteer_id = ? or volunteer_id2 = ?", params[:assistantssel][:id], params[:assistantssel][:id]] unless params[:assistantssel][:id].empty?
-  end
 
   def start_date_conditions
     if !params[:from_date_cal].empty?

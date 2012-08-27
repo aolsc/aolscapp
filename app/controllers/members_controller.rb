@@ -50,9 +50,11 @@ class MembersController < ApplicationController
 
     unless params[:coursedd].blank?
       @coursedd = params[:coursedd][:id]
+     unless @coursedd.blank? 
       sql = CourseSchedule.send(:construct_finder_sql, :select => 'id', :conditions => ["course_id = ?",@coursedd])
       @cids = CourseSchedule.connection.select_values(sql)
       @search.member_attendances_course_schedule_id_eq_any(@cids)
+   end 
     end
 
     @csid = params["csid"]
@@ -62,11 +64,9 @@ class MembersController < ApplicationController
       @search.member_attendances_course_schedule_id_eq_any(@csid)
     end
 
-    if params["all"].blank?
-      @members = @search.all.paginate :page => params[:page], :per_page => 10
-    else
-      @members = @search.all_members_cached(session[:center_id]).paginate :page => params[:page], :per_page => 10
-    end
+@center_id = session[:center_id]+""
+@search.center_id_eq(@center_id)
+@members = @search.all.paginate :page => params[:page], :per_page => 10
 
     @usermembers = User.user_members_cached(session[:center_id])
     @tg = Tag.get_tag_names_cached(session[:center_id])
