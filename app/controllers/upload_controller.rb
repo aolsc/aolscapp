@@ -114,8 +114,8 @@ class UploadController < ApplicationController
             t =  Hash[
               'firstname',row[0].split(' ')[0],
               'lastname',row[0].split(' ')[1],
-              'emailid',row[1],
-              'homephone',row[2],
+              'emailid',row[6],
+              'homephone',row[7],
               'updateby',current_user[:id],
                'center_id',session[:center_id],
               'taken_course',0
