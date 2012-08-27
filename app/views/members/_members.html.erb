@@ -124,6 +124,7 @@ jQuery.fn.submitWithAjax = function() {
             <tr bgcolor="#A9F5F2">
               <td width="100"><b>Name</b></td>
               <td width="150"><b>Contact</b></td>
+              <td width="150"><b>Attended</b></td>
               <td width=120"><b>Tags</b></td>
               <td width="300"><b>Notes</b></td>
               <td width="250"><b>Volunteer connection</b></td>
@@ -134,6 +135,13 @@ jQuery.fn.submitWithAjax = function() {
               <tr mem_id="<%= member.id %>">
                 <td><%= link_to member.fullname, edit_member_path(member.id) %></td>
                 <td><%= member.contact_html %></td>
+                <td><% unless member.member_attendances.nil? %>
+                 <%    for ma in member.member_attendances.each %>
+                          <%=  ma.course_schedule.course.displayName + " - " +  ma.course_schedule.start_date.strftime('%b %d, %Y') %>
+                      <% end %>
+
+                        <% end %>
+                </td>
                 <td class="interest" mem_id="<%= member.id %>">
                   <% if session[:user].member.center_id == member.center_id %>
                     <a href="javascript:void(0);"><span id="edit">Edit Tags</span><span id="save">Save</span></a>
